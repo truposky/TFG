@@ -1,0 +1,327 @@
+\subsection{Controlador del Motor DC}
+Para que el robot pueda seguir las intrucciones de manera correcta y los algoritmos se puedan efectuar de manera acertada, el robot debe incorporar un control de velocidad lineal,el control se aplica a los dos moteres DC de las ruedas motrices. En el siguiente diagrama se puede ver el esquema del control.\\
+\tikzstyle{block} = [%bloque
+draw,
+minimum width=0.6cm,
+minimum height=0.3cm
+]
+\begin{center}
+\begin{tikzpicture}
+
+% Sum shape
+\node[draw,
+circle,
+minimum size=0.5cm,
+fill=Rhodamine!50
+] (sum) at (0,0){};
+
+\draw (sum.north east) -- (sum.south west)
+(sum.north west) -- (sum.south east);
+
+\draw (sum.north east) -- (sum.south west)
+(sum.north west) -- (sum.south east);
+
+\node[left=-3pt] at (sum.center){\tiny $+$};
+\node[below=-3pt] at (sum.center){\tiny $-$};
+
+
+
+% Sensor block sampler
+\node [block,
+fill=SeaGreen, 
+right=1cm of sum
+]  (sampler) {   \begin{tikzpicture}
+	\draw  ++ (0, 0)
+	to [nos,] ++ (0.5,0) ;
+	\end{tikzpicture}
+};
+
+% Controller
+\node [block,
+fill=Goldenrod,
+right=1cm of sampler
+]  (controller) {$PID(z)$};
+
+%sum2
+\node[draw,
+circle,
+minimum size=0.5cm,
+fill=Rhodamine!50,
+right=0.4 cm of controller
+]  (sum2) {};
+
+\draw (sum2.north east) -- (sum2.south west)
+(sum2.north west) -- (sum2.south east);
+
+\draw (sum2.north east) -- (sum2.south west)
+(sum2.north west) -- (sum2.south east);
+
+\node[left=-3pt] at (sum2.center){\tiny $+$};
+\node[above=-3pt] at (sum2.center){\tiny $+$};
+
+% FeedForward
+\node [block,
+fill=OrangeRed,
+above left= 0.5cm and 0.25cm of controller
+]  (feedforward) {$Feedforward$};
+
+
+% Sensor block sampler
+\node [block,
+fill=SeaGreen, 
+right=0.8cm of sum2
+]  (ZOH) {$ZOH$};
+
+% Entrada
+\node [block,
+fill=BlueGreen,
+left=1cm of sum
+]  (voltage) {$U(s)$};
+
+% System G(s)
+\node [block,
+fill=SpringGreen, 
+right=0.5cm of ZOH
+] (system) {$G(s)$};
+
+% Sensor block H(s)
+\node [block,
+fill=SeaGreen, 
+right= 0.5cm of system
+]  (sensor) {$H(s)$};
+
+
+% Arrows with text label
+\draw[-stealth] (sum.east) -- (sampler.west)
+node[midway,above]{};
+
+\draw[-stealth] (sampler.east) -- (controller.west)
+node[midway,above]{};
+
+\draw[-stealth] (controller.east) -- (sum2.west) 
+node[midway,above]{};
+
+\draw[-stealth] (ZOH.east) -- (system.west) 
+node[midway,above]{};
+\draw[-stealth] (system.east) -- (sensor.west) ;
+\draw[-stealth] (sensor.east) -- ++ (0.5,0) 
+node[midway](output){}node[midway,above]{$y$};
+
+\draw[-stealth] (output.center) |- (0,-3);
+\draw[-stealth] (0,-3) |- (sum.south);
+
+
+\draw[-stealth] (feedforward.east) -| (sum2.north);
+
+
+\draw[-stealth] (voltage.east) -- (sum.west);
+
+
+\draw[-stealth] (voltage.east) |- (feedforward.west);
+
+\draw[-stealth] (sum2.east) |- (ZOH.west);
+\end{tikzpicture}ç
+
+\end{center}
+
+En el diagrama de bloques se pueden ver las siguientes partes que conforman el sistema de control
+\begin{itemize}
+	\item $U(s)$ corresponde con una entrada escalón de $w$ que es la velocidad en rad/s de la rueda. La entrada se traduce en un valor de PWM que corresponde con un valor de voltaje el cual está limitado a un valor de 6.5 V.
+	\item Feedforward,para estimar sus parametros, se ha creado un programa en el microcontrolador, el cual introduce una señal de PWM al puente H y a su vez toma las lecturas proporcionadas por el sensor de velocidad y  se obtiene una tabla de entradas PWM que corresponde a un nivel de voltaje y una salida de rad/s que corresponde al giro de la rueda. Se hace para varios valores y a partir de los datos se hace una regresión líneal de la zona mas linealizada de los datos o si se puede hacer sobre todas las medidas mejor. En la Figura ~\ref{fig:feedforward} se puede ver las muestras obtenidas y la ecuación resultante que se aplica en el controlador de cada motor. Para realizar las medidas se ha tenido en cuenta el rozamiento, esto implica que las pruebas se han realizado con el robot montado y sobre la superficie del robotario.
+	\begin{figure}[p]
+		
+		\begin{subfigure}[b]{0.5\linewidth}
+			\centering
+			\includegraphics[width=1\linewidth]{FeedforwardR1_R}
+			\caption{Rueda derecha Robot1}
+			\label{fig:feedforwardR1_R}
+			\vspace{4ex}
+		\end{subfigure}%%	
+		\begin{subfigure}[b]{0.5\linewidth}
+			\centering
+			\includegraphics[width=1\linewidth]{FeedforwardR1_L}
+			\caption{Rueda izquierda Robot1}
+			\label{fig:feedforwardrR1_left}
+			\vspace{4ex}
+		\end{subfigure}	
+		\begin{subfigure}[b]{0.5\linewidth}
+			\includegraphics[width=1\linewidth]{FeedforwardR2_R}
+			\caption{Rueda derecha Robot2}
+			\label{fig:feedforwardR2_R}
+			\vspace{4ex}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.5\linewidth}
+			\includegraphics[width=1\linewidth]{FeedforwardR2_L}
+			\caption{Rueda izquierda Robot2}
+			\label{fig:feedforwardrR2_left}
+			\vspace{4ex}
+		\end{subfigure}	
+		\begin{subfigure}[b]{0.5\linewidth}
+			\includegraphics[width=1\linewidth]{FeedforwardR2_R}
+			\caption{Rueda derecha Robot2}
+			\label{fig:feedforwardR3_R}
+			\vspace{4ex}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.5\linewidth}
+			\includegraphics[width=1\linewidth]{FeedforwardR2_L}
+			\caption{Rueda izquierda Robot2}
+			\label{fig:feedforwardrR3_left}
+			\vspace{4ex}
+		\end{subfigure}
+		
+		\caption{FeedForward}
+		\label{fig:feedforward}
+	\end{figure}
+\newpage
+	\item $PID(z)$ corresponde al controlador. El control de acción directa no basta para mantener una velocidad debido a que las condiciones en las que se ha hehcho el control de acción directa no son las mismas en todo momento, por ello es necesario un control realimentado, para ello se usa uno de los controladores mas usados y conocidos que es el PID. Se desconoce como es la planta, se tiene un modelo del motor DC pero el modelo no basta para conocer el comportamiento real. Por ello para la sintonización de los parámetros del PID se usa el método de ziegler-Nichols para una primera aproximación y luego se va ajustando hasta conseguir una respuesta deseada. Ademas de la sintonización de los parametros del controlador, se implementa un modulo conocido como Anti-Wind-up.
+	
+	 \subitem El\textbf{ Wind-Up} es un problema que se tiene con el control integral, este controlador tiene memoria y, debido a que acucmula valores anteriores del error esta acción integradora crece incluso cunado se llegue al valor referencia, y cuando se produce un cambio en la referencia el controlador tarda en reaccionar debido a los valores acumulados que guarda, por ello se propone dentro del control PID el denominado Anti-Wind-Up, basicamente lo que hace es que cuando llega a un valor maximo el integrador deja de acumular valores.En la Figura ~\ref{fig:antiwindup} se puede ver como quedaria con la saturación el control PID.
+	 \begin{figure}
+	 	\centering
+	 	\includegraphics[width=0.7\linewidth]{AntiWindUp}
+	 	\caption{}
+	 	\label{fig:antiwindup}
+	 \end{figure}
+	 
+	 Por último para que el control integral reaccione de manera rapida a los cambios de consigna, si el signo del error cambia, el error acumulado se resetea, es decri se aplica un reset al control del integral. La manera en la cual se programa el control PI en el microcontrolador es la siguiente:\\
+	 \\
+	 \lstset{language=C++, breaklines=true, basicstyle=\footnotesize}
+	\begin{lstlisting}[frame=single]
+	 int pidI(double wI)
+	 {
+		 currentTimeI=millis();
+		 elapsedTimeI=currentTimeI - previousTimeI;
+		 int outputI=0;
+		 errorI = setpointWI - wI;   
+		 double aux;
+		 if(errorI<0){
+		 aux=-errorI;
+		 }
+		 else{
+		 aux=errorI ;          
+		 }
+		 cumErrorI += errorI * elapsedTimeI; 
+		 //se resetea el error acumulativo cuando se cambia de signo
+		 if(lastErrorI>0 && errorI<0){
+		 cumErrorI=errorI* elapsedTimeI;
+		 }
+		 if(lastErrorI<0 && errorI>0){
+		 cumErrorI=errorI* elapsedTimeI;
+		 }
+		 //se establece un maximo de error
+		 if(cumErrorI>200||cumErrorI<-200)cumErrorI=200; 
+		 
+		 rateErrorI = (errorI - lastErrorI) /elapsedTimeI;         // calcular la derivada del error
+		 
+		 outputI = static_cast<int> (round(KI_p*errorI  + KI_i*cumErrorI + KI_d*rateErrorI));     // calcular la salida del PID 
+		 lastErrorI = errorI;
+		 else{
+		 outputI=0;
+		 }
+		 return outputI;
+	 
+	 }
+	 
+	 
+	 \end{lstlisting}
+	 
+	\item $G(s)$ es el motor DC, en varios libros y documentos existen diversos modelos de un motor DC para el control, en este caso no es necesario modelar el motor, debido a que se va a trabajar sobre él directamente y se sintonizará el control sobre la planta real.
+	\item $H(s)$ es el sensor, que se refiere al encoder óptico, dicho encoder nos da pulsos que equivalen a $\theta=\frac{2\pi}{N}$ radianes, si se mide el tiempo entre pulsos se tiene la velocidad angular de la rueda.
+\end{itemize}
+En conjunto los bloques forman el lazo de control, que mantiene una velocidad a un determinado voltaje de entrada, que en este caso al ser discreto se traduce a un determinado PWM.\\
+En el diagrama de bloques anterior no se ha tenido en cuenta las perturbaciones que se obtienen, y debido a que el encoder y los motores no son de buena calidad y debido a las vibraciones del robot causadas por el movimiento, se tiene una alteración significativa de la lectura de pulsos. En el siguiente capítulo se comenta el tratamiento del ruido y su solución.  
+\subsubsection{Tratamiento del ruido}
+Las lecturas de los encoders tienen muchas variaciones y esto dificulta un correcto funcionamiento del control, una de las soluciones que se han hecho es reducir la resolución del encoder a la mitad, de esta manera se leen menos pulsos, pero la incertidumbre de la medida se reduce también.[figura de antes y despues].\\
+Y por último se ha aplicado un filtro de media movil,como su nombre indica el filtro hace la media de N valores, siendo N la ventana del filtro, su ecuación es la siguiente.
+\[
+Y[i]=\frac{1}{N}\sum_{j=0}^{N-1}x[i+j]
+\]
+Es un filtro sencillo pero eficaz, de esta manera se consigue reducir el ruido.
+\subsubsection{sintonización de parámetros PID}
+Debido al ruido del sistema, se decide por no incluir la parte derivativa del controlador PID, basta con poner $K_{d}=0$, esto se debe a que la acción derivativa amplifica el ruido, se podría poner un filtro a la acción derivativa, pero sería complicar el control de manera innecesaria y como se muestra a continuación con un control PI junto al control de acción directa es mas que suficente.\\
+Para la sintonización de los parámetros se recurre al método de Ziglers-Nichols, esto se debe a que se tiene una planta experimental y este método va a ser de ayuda para dar con los parámetros del controlador.\\
+Se toma como ejemplo de sintonización el robot1.
+Lo primero que se hace es aplicar una ganacia K en el lazo de control, se aumenta dicha ganacia hasta que se llegue a un comportamiento oscilatorio. Con la K que ha causado el comportamiento oscilatorio y el periodo de la oscilación se hallan los prámetros del controlador PI.
+\begin{figure}[htbp]
+
+	\begin{subfigure}[b]{0.52\linewidth}
+		\centering
+	\includegraphics[width=1.25\linewidth]{RespuestaEscalonRD}
+	\caption{}
+	\label{fig:respuestaescalonrd}
+	\end{subfigure}
+\quad
+	\begin{subfigure}[b]{0.52\linewidth}
+		\centering
+		\includegraphics[width=1\linewidth]{RespuestaEscalonRI}
+		\caption{}
+		\label{fig:respuestaescalonri}
+	\end{subfigure}
+\end{figure}\\
+
+De la representación gráfica se obtiene T, para la rueda derecha $TD=0.798$ y $ Ti=0.864$, con estos valores y con k=5.3 se obtiene la siguiente tabla.\\
+\begin{tabular}{|c|c|c|c|c|c|c|}
+	\hline
+	& $KD_{p}$ & $KD_{i}$ & $kD_{d}$ & $KI_{p}$ & $KI_{i}$ & $kI_{d}$ \\
+	\hline
+	P & 1.95 &  &  & 1.95 &  &  \\
+	\hline
+	PI & 1.755 & 0.6384 &  & 1.755 & 0.6912 &  \\
+	\hline
+	PID & 2.34 & 0.399 & 0.09975 & 2.34 & 0.432 & 0.108 \\
+	\hline
+\end{tabular}\\
+
+En la Figura ~\ref{fig:PI_Nichols}, se puede apreciar la respuesta de los motores, se puede ver que en el motor derecho se tiene una oscilación y el motor izquierdo llega al asentamiento pero tiene una sobre-elongación grande.
+
+
+\begin{figure}[h]
+	
+	\begin{subfigure}[b]{0.52\linewidth}
+		\centering
+		\includegraphics[width=1\linewidth]{RespuestaEscalonPID_R}
+		\caption{PI derecha}
+		\label{fig:PI_R}
+	\end{subfigure}
+	\quad
+		\begin{subfigure}[b]{0.52\linewidth}
+		\centering
+		\includegraphics[width=1\linewidth]{RespuestaEscalonPID_I}
+		\caption{PI izquierda}
+		\label{fig:PI_I}
+	\end{subfigure}
+	\caption{PI}
+	\label{fig:PI_Nichols}
+\end{figure}
+
+ Se ajusta manualmente los parámetros del PI y se llega al resultado mostrado ne la Figura ~\ref{fig:PI_sintonizado}. Se sigue teniendo una oscilación en la rueda derecha pero el robot corrige constantemente por lo tanto el movimiento es bastante bueno.
+ \begin{figure}[h]
+ 	
+ 	\begin{subfigure}[b]{0.49\linewidth}
+ 		\centering
+ 		\includegraphics[width=0.8\linewidth]{PI_sintonizado_R}
+ 		\caption{PI rueda derecha}
+ 		\label{fig:PIsintonizado_R}
+ 	\end{subfigure}
+ 	\quad
+ 	\begin{subfigure}[b]{0.49\linewidth}
+ 		\centering
+ 		\includegraphics[width=0.8\linewidth]{PI_sintonizado_I}
+ 		\caption{PI rueda izquierda}
+ 		\label{fig:PIsintonizado_I}
+ 	\end{subfigure}
+ 	\caption{PI}
+ 	\label{fig:PI_sintonizado}
+ \end{figure}
+La oscilación se debe al rozamiento del robot con el suelo puesto que si se quita el rozamiento y la friccion al robot la respuesta es buena, como se puede apreciar en la Figura ~\ref{fig:pisintonizadosinrozamiento}, Se ha superpuesto las dos respuestas, y en ambas se puede ver como la oscilación es mínima, esto puede implicar que la construcción del robot no es perfecta, se puede deber a que los ejes no están alineados, a que uno de los ejes de las ruedas no este recto, a la estructura de la rueda, en resumen es un fallo mecanico que afecta al comportamiento del control, como no se requiere una precisión milimétrica en el movimiento, se puede despreciar este efecto, ya que el robot sigue la consigna de control a pesar de la oscilación.
+Y la respuesta de los otros dos robots se puede apreciar en la figura [figura]\\
+
+las constantes de control de los 3 robots son los siguientes[tabla]\\
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{PI_sintonizado_sinrozamiento}
+	\caption{PI sin rozamiento}
+	\label{fig:pisintonizadosinrozamiento}
+\end{figure}
+
+ 
