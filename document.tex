@@ -1,0 +1,122 @@
+\documentclass[12pt, a4paper]{article} %tamaño mínimo de letra 11pto.
+\usepackage{fancyhdr} % para personalizar la cabecera y el pie de pagina
+\usepackage{lastpage} % para saber el numero de pagina del documento
+\usepackage{graphicx} 
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage[spanish]{babel} %Español 
+\usepackage[utf8x]{inputenc} %Para poder poner tildes
+\usepackage{vmargin} %Para modificar los márgenes
+\usepackage{listings}
+\usepackage{amsmath}%matrix
+\usepackage{color}
+\usepackage{listings}
+\usepackage{import}
+\lstset{ 
+	language=C++,                % choose the language of the code
+	basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+	numbers=left,                   % where to put the line-numbers
+	numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+	stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+	numbersep=5pt,                  % how far the line-numbers are from the code
+	backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+	showspaces=false,               % show spaces adding particular underscores
+	showstringspaces=false,         % underline spaces within strings
+	showtabs=false,                 % show tabs within strings adding particular underscores
+	frame=single,           % adds a frame around the code
+	tabsize=2,          % sets default tabsize to 2 spaces
+	captionpos=b,           % sets the caption-position to bottom
+	breaklines=true,        % sets automatic line breaking
+	breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+	escapeinside={\%*}{*)}          % if you want to add a comment within your code
+}
+
+\setmargins{2.5cm}{1.5cm}{16.5cm}{23.42cm}{10pt}{1cm}{0pt}{2cm}
+%margen izquierdo, superior, anchura del texto, altura del texto, altura de los encabezados, espacio entre el texto y los encabezados, altura del pie de página, espacio entre el texto y el pie de página
+% More defined colors
+\usepackage[dvipsnames]{xcolor}
+
+% Required package
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{circuitikz}
+\begin{document}
+	
+%%%%%%Portada%%%%%%%
+\begin{titlepage}
+\centering
+{ \bfseries \Large UNIVERSIDAD COMPLUTENSE DE MADRID}
+\vspace{0.5cm}
+
+{\bfseries  \Large FACULTAD DE CIENCIAS FÍSICAS} 
+\vspace{1cm}
+
+{\large DEPARTAMENTO DE XXXXX}
+\vspace{0.8cm}
+
+%%%%Logo Complutense%%%%%
+{\includegraphics[width=0.35\textwidth]{logo_UCM}} %Para ajustar la portada a una sola página se puede reducir el tamaño del logo
+\vspace{0.8cm}
+
+{\bfseries \Large TRABAJO DE FIN DE GRADO}
+\vspace{2cm}
+
+{\Large Código de TFG:  [C\'odigo TFG] } \vspace{5mm}
+
+{\Large [Título de TFG (exactamente el que aparece en la FICHA)]}\vspace{5mm}
+
+{\Large [Título de TFG en ingl\'es (el que aparece en la FICHA)]}\vspace{5mm}
+
+{\Large Supervisor/es: [Nombre del/os supervisores]}\vspace{20mm} 
+
+{\bfseries \LARGE [Nombre del alumno]}\vspace{5mm} 
+
+{\large Grado en Ingeniería Electrónica de Comunicaciones}\vspace{5mm} 
+
+{\large Curso acad\'emico 20[XX-XX]}\vspace{5mm} 
+
+{\large Convocatoria XXXX}\vspace{5mm} 
+
+\pagestyle{myheadings} 
+\end{titlepage}
+\newpage
+
+{\bfseries \large [Título extendido del TFG (si procede)] }\vspace{10mm} 
+
+{\bfseries \large Resumen:} \vspace{5mm}
+
+Esto es una prueba para probar el formato del Resumen. Esto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del Resumen.
+\vspace{1cm}
+
+{\bfseries \large Abstract: }\vspace{5mm} 
+
+This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.
+\vspace{1cm}
+
+[\Large\textbf{Nota}: el título extendido (si procede), el resumen y el abstract deben estar en una misma página y su extensión no debe superar una página. Tamaño mínimo 11pto ]\\
+
+{\Large\textbf{Extensión máxima 50 páginas sin contar portada ni resumen (sí se incluye índice, introducción, conclusiones y bibliografía}}
+\newpage
+
+%%Inicio: 
+\tableofcontents
+%SALTO DE PÁGINA
+\newpage 
+%SALTO DE PÁGINA 
+%%%% Comenzar a contar inicio de páginas
+
+\input{Introduccion.tex}
+\clearpage\thispagestyle{empty}\cleardoublepage
+\input{objetivos.tex}
+\clearpage\thispagestyle{empty}\cleardoublepage
+\input{metodologia.tex}
+\clearpage\thispagestyle{empty}\cleardoublepage
+\input{Demostracion.tex}
+\clearpage\thispagestyle{empty}\cleardoublepage
+\input{Conclusiones.tex}
+\clearpage\thispagestyle{empty}\cleardoublepage
+\input{Bibliografia.tex}
+\clearpage\thispagestyle{empty}\cleardoublepage
+
+\end{document}
