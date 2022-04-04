@@ -1,0 +1,76 @@
+\subsection{Navegación del robot}
+
+\begin{figure}[htbp]
+	
+	\begin{subfigure}[b]{0.52\linewidth}
+		\centering
+		\includegraphics[width=0.7\linewidth]{navegacion/RuedaRobotDibujo}
+		\caption{Rueda de robot}
+		\label{fig:ruedarobotdibujo}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}[b]{0.52\linewidth}
+		\centering
+		\includegraphics[width=0.7\linewidth]{navegacion/ArcoRecorridoRobot}
+		\caption{Arco que recorre robot}
+		\label{fig:arcorecorridorobot}
+	\end{subfigure}
+\end{figure}
+Una vez que se ha sintonizado el controlador y que se obtiene un movimiento suave y uniforme, se calculan las ecuaciones de cinemáticas que gobiernan al robot y sirven para establecer la navegación del robot.
+Se puede ver en la Figura ~\ref{fig:arcorecorridorobot} la distancia entre las ruedas del robot(L) y el arco que forma el robot al moverse,$S1$ y $S2$.
+La rueda izquierda forma un arco de radio x y la rueda derecha un arco de radio $x+l$
+	siendo las longitudes de ambos arcos:
+	
+	\begin{center}
+
+		$S2=x*\Delta\varphi=R\Delta\theta$\\
+	$S1=(x+L)*\Delta\varphi=R\Delta\theta$\\
+	\end{center}
+	Donde  $R\Delta\theta$ es la distancia que avanza el robot, siendo R el radio de la rueda. Se S1 y S2.
+	\begin{center}
+	 $S1-S2= L\Delta\varphi = R*\Delta\theta_{d}-R\Delta\theta_{i}$\\
+	 $\Delta\varphi = \frac{R(\Delta\theta_{d} - \Delta\theta_{i})}{L}$\\
+	\end{center}
+	 Se deriva respecto al tiempo.\\
+	 \begin{center}
+	 $ \frac{\Delta\varphi}{\Delta t}=  \frac{R(\Delta\theta_{d} - \Delta\theta_{i})}{L*\Delta t} = \frac{r(w_{d}-w{i})}{L}$\\
+	
+	\end{center}
+ de esta manera se tiene la velocidad angular del robot que depende de la velocidad angular de cada rueda y de la distancia que las separa. Y por último la velocidad lineal del robot viene dada por la siguiente expresión.
+ 
+ \begin{center}
+ 	$V= \frac{v_{d} + v_{i}}{2} = \frac{R(w_{d}-w{i})}{2}$
+ \end{center}
+Con las expresiones obtenidas, lo siguiente que se hace es ponerlas en forma matricial para poder pocersarlas en el robot.
+\[
+\begin{pmatrix}
+W\\
+V
+\end{pmatrix}
+= \begin{pmatrix}
+\frac{R}{L} & \frac{-R}{L}\\
+\frac{R}{2} & \frac{R}{2}
+\end{pmatrix}*
+\begin{pmatrix}
+w_{D}\\
+w_{I}
+\end{pmatrix}
+\]
+Las consignas de orden para el robot son $W$ y $V$ y el robot tendra como entrada $w_{D}$ y $w_{I}$, se resuelve la ecuación matricial y se obtiene las velocidades angulares de las ruedas en función de $W$ y $V$.
+\[
+\begin{pmatrix}
+w_{D}\\
+w_{I}
+\end{pmatrix}
+= \begin{pmatrix}
+\frac{L}{2R} & \frac{1}{R}\\
+\frac{-L}{2R} & \frac{1}{R}
+\end{pmatrix}*
+\begin{pmatrix}
+W\\
+V
+\end{pmatrix}
+\]
+
+Esta matriz se puede implementar en el código del robot y se tiene el gobierno del movimiento del robot.
+
