@@ -1,0 +1,179 @@
+\subsection{Robot}
+En este capítulo se explica como se construye un robot que pueda cumplir los objetivos. El robot que se elige para ensamblar es un robot movil de ruedas.
+
+
+\begin{figure}[h]
+	\includegraphics[width=0.55\textwidth]{ConstruccionRObot/arriba}
+	\includegraphics[width=0.58\textwidth]{ConstruccionRObot/abajo}
+	\caption{Medidas de estructura }
+	\label{fig:Croquis robot}
+\end{figure}
+En la Figura~\ref{fig:Croquis robot} estan esquematizadas las tres partes de la estructura del robot, el esquema de la izuierda es la planta superior e intermedia y el esquema de la derecha es la planta inferior, donde estarán los motores y las ruedas motrices,en los espacios que tienen forma de cruz están colocados dos encoders ópticos, que se usan para medir la velocidad de cada rueda.\\
+
+El robot es de tracción diferencial, tiene una geometría ciruclar y consta de tres plantas,en la planta de abajo están colocados los motores, las ruedas motrices y encoders, la bateria tambien se encuentra en la planta de abajo, en la planta intermedia, está colocado el microcontrolador Arduino nano 33IoT, tambien se encuentra un puente H LN298, dos conversores DC-DC y el interruptor de encendido.La planta superior del robot es intercambiable, puediendo optar por una raspberryPi con una camara conectada, y un QR denominado Marker encima de la raspberryPi, o se puede optar por solo colocar un Marker en vez de las raspberryPi, esto dependera del tipo de experimento.\\
+
+
+
+El sistema de tracción es 2WD o tambien conocido como tracción a dos ruedas, estas estan conectadas a dos motores DC, estas ruedas motrices están en el eje central del robot es decir en los extremos del diametro de la circunferencia que hace de base del robot, para que el robot no cabecee cuando avance adelante o atrás, se opta por unas ruedas locas, las ruedas locas que venian por defecto con el chasis del robot, han resultado ser perjudiciales al movimiento o a la precisión requerida. El motivo es debido al rozamiento y a la resistencia de arrastre de la rueda.En la siguiente figura se puede ver algunos efectos que ocurren en la rueda loca.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.35\textwidth]{ConstruccionRObot/Resistencia_rodadura} %Para ajustar la portada a una sola página se puede reducir el tamaño del logo
+		\caption{Efectos en la rueda }
+	\label{fig:Resistencia_rodadura}
+\end{figure}
+En la figura se tiene P que es el peso de la rueda y el que recae sobre el eje de dicha rueda, N es la fuerza normal que se produce por cada deformación del suelo es por ello que esta desplazada una cantida $\mu_{r}$ e incide sobre A", F es la fuerza aplicada sobre el eje de la rueda, se tiene f como la fuerza de rozamiento en A'
+Cuando un cuerpo rueda sobre una superficie, en este caso la rueda loca, esta, o la superficie se deforman o ambas.Este efecto produce una resistencia a la rodadura que sumado al coeficiente de rozamiento produce una resistencia al movimiento de la rueda, este efecto se puede reducir usando una rueda loca con rodamientos en la base y estos rodamientos reducen la fricción y resistencia de la rodadura al hacer que gire la rueda sobre su eje, pero al girar se produce una desviación en la trayectoria puediendo afectar al correcto funcionamiento del robot o a el seguimiento de una trayectoria dada, es por ello que se opta por ruedas esfericas, las cuales tienen la misma fuerza de arrastre en todas las direeciones, e impiden derivas en el desplazamiento, al realizar giros o cambiar de dirección.\\
+
+
+
+A continuación se detallaran los componentes del robot y una descripción de ellos.
+\subsubsection{partes del robot}
+	\paragraph{Arduino NANO 33 IoT}
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width=0.8\linewidth]{ConstruccionRObot/ArduinoPinOut}
+		\caption{PinOut}
+		\label{fig:arduinopinout}
+	\end{figure}
+	
+	El microcontrolador del robot es un Arduino NANO 33 IoT, este microcontrolador dispone de antena Bluetooth y antena WiFi, el voltaje de operación del microcontraldor es de 3.3V, y una corriente máxima de 700 mA, la recomendada es de 600 mA. El arduino se encarga del control de los motores de las ruedas, mediante un controlador PID, también se encarga de la comunicación con otros dispositivos. Está configurado para establecer una comunicación serie y  WiFi mediante paquetes UDP, el microcontrolador es de uso facil e intuituvo debido a la gran documentación que existe al rededor del dispositivo, se programa en c++ y dispone de multitud de librerias, para infinitas aplicaciones, además se pueden crear librerias propias e incorporarlas en el microcontrolador.\\
+	En la figura  ~\ref{fig:arduinopinout} se tiene un esquema del microcontrolador con sus diferentes salidas y entradas. Las salidas destinadas para el robot son 3 salidas/entradas digitales para controlar cada motor, 2  son para pulsos lógicos y la restante para PWM, en total seran 6 pines destinados a este proposito porque se usan 2 motores, los cuales estan comprendidos entre D12-D7,  ambos inclusive, mas adelante se detallará su conexión, además de los destinados al control de los motores, se usaran 2 entradas, para la lectura de los encoders, las cuales deben estar preparadas para reaccionar ante interrupciones, por ello con ayuda del DataSheet de arduino se identifican las entradas para este proposito y se elige la A1/D15 y la D3, las entradas típicas son D2 y D3 pero se evita juntar los cables para evitar intereferncias tipicas de diafonia.\\
+	 El microcontrolador dispone una entrada de alimentación que soporta hasta 21 voltios, a la cual se proporcionará 5 V, correspondientes a un regulador de tensión, también se tiene una salida de 3.3 V que se utiliza para alimentar los périfecos conectados al microcontrolador, en este caso se usa para alimentar los sensores de velocidad del robot. Y por último se tiene dos salidas de tierra. El microcontrolador cuenta con una IMU, compuesta por un giroscopio que mide la velocidad angular en los 3 ejes, y un acelerómetro en los 3 ejes, con está IMU se puede estimar la velocidad de giro del robot.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{ConstruccionRObot/EjesArduino}
+		\caption{Ejes arduino}
+		\label{fig:ejesarduino}
+	\end{figure}
+	En la Figura  ~\ref{fig:ejesarduino} se puede ver la orientación de los ejes de la IMU, aunque se puede cambiar mediante software. Esta IMU no se usa pues su uso requiere mas tiempo del disponible para este proyecto, require un estudio y desarrollo de un filtrado y un algoritmo que estime correctamente los giros producidos, lo que si se deja es configurado en la comunicación poder pedir los datos correspondientes a la IMU, para un futuro uso en el robot.
+	
+	
+	\paragraph{Encoder óptico}	%REVISAR LO DEL FILTRO%
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.4\linewidth]{ConstruccionRObot/Encoder}
+		\caption{Encoder óptico}
+		\label{fig:encoder}
+	\end{figure}
+	
+	Una de las partes fundamentales del robot es el encoder, sirve para poder medir la velocidad a la cual gira cada rueda y poder tambien estimar la distancia avanzada. El encoder óptico, es el modelo FC-03 , en la Figura ~\ref{fig:encoder} se pueder ver su forma. Del datasheet se sabe que tiene un LM393 el cual es un circuito integrado formado por dos comparadores, también lleva un optointerruptor,el cual consta de un diodo led y un transistor con la base expuesta, si este recibe luz, genera un pulso bajo de tensión y si no detecta luz genera un pulso alto de tensión, en conjunto con el comparador se obtendrán pulsos discretizados. El encoder además tiene dos salidas, una analógica y otra digital, esta última es la que interesa debido a que es más útil para el microcontrolador leer entradas discretas. El voltaje de funcionamiento del sensor puede ser de 3.3V a 5V, como el microcontrolador solo soporta 3.3V será esta la alimentación que se proporcionará.\\ 
+		\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.45\linewidth]{ConstruccionRObot/EncoderRobot}
+		\caption{Colocación del encoder}
+		\label{fig:encoderrobot}
+	\end{figure}
+	
+	Para contar pulsos de luz se usa una rueda ranurada que está enganchada al eje de la rueda,y  consta de 20 ranuras esto implica que se tiene una resolución de N=20 y se divide la rueda en $\Delta\theta=\frac{2\pi}{20} $ radianes. La mínima distancia que se puede medir es la correspondiente a un pulso de encoder que corresponde a $d_{min}=R*\Delta\theta$ donde R es el radio de la rueda. Además de tener una distancia mínima, también se tiene un tiempo mínimo de lectura de pulsos que corresponde con la Figura ~\ref{fig:maxvelencoder} donde se puede apreciar un tiempo entre pulsos de 13.4 ms. Esta medida se ha sacado poniendo un voltaje al motor, el cual está encganchado a la rueda pero no se tiene en cuenta el rozamiento producido por el suelo, en la Figura ~\ref{fig:encoderrobot} se puede ver el montaje.\\
+	 
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{ConstruccionRObot/maxVelEncoder}
+		\caption{velocidad máxima de la rueda \\ voltaje de 6.5V en el motor}
+		\label{fig:maxvelencoder}
+	\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{ConstruccionRObot/minVelEncoder}
+	\caption{velocidad mínima de la rueda \\ voltaje de 2V en el motor}
+	\label{fig:minvelencoder}
+\end{figure}
+
+	 Este, seria el tiempo mínimo de muestreo de la señal del encoder, si se va a la mínima velocidad posible, se puede ver en la Figura ~\ref{fig:minvelencoder} que el tiempo es 53.32ms , esto implica que el encoder no detecta variación del movimiento en un intervalo grande de tiempo, por ello a velocidades bajas no se podra estimar correctamente las variaciones de movimiento del robot. Con este componente se tiene una limitación en la medición de velocidad o distancia recorrida ya que no se podrá tomar muestras con un periodo inferior del mayor periodo de muestreo del encoder, si se hace no se detectará variación de la velocidad o del movimiento pudiendo tener errores en el control.
+	
+
+	Existe un problema con este sensor, y es que los pulsos que se obtienen del  sensor no son perfectos, esto puede deberse a diversos factores, como ruido en la entrada de alimentación, malas soldaduras en el integrado, vibraciones de los cables, o un problema de diafonía. Lo que se aplica para corregir en cierta manera este comportamiento no deseado es un filtro paso-bajo en la salida digital para al menos eliminar las componentes de alta frecuencia que perturban a la señal sin deformar el pulso cuadrado y manteniendo la frecuencia fundamental de la onda cuadrada, el filtro consiste en un condensador entre la tierra y la salida digital. En las siguientes figuras se analiza la salida del encoder y una posible solución.
+		\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.8\linewidth]{ConstruccionRObot/PulsosEncoder_sinFiltro}
+		\caption{Salida de encoder sin filtro}
+		\label{fig:pulsosencodersinfiltro}
+	\end{figure}
+	
+	Se puede apreciar en la Figura ~\ref{fig:pulsosencodersinfiltro} obtenida de las lecturas del microcontrolador, que los pulsos no son perfectos, y se puede observar que hay un pulso pequeño entre -0.25 s y -0.3 s que claramente no es una lectura del encoder, esto es un problema pues el arduino puede confundir este pulso como una lectura válida del encoder y entonces la velocidad no se estimará de forma adecuada. Lo que se hace es lo que se ha comentado anteriormente y es añadir un condensador de 47 $n_{f}$ este filtrará componentes de alta frecuencia y no deformará el pulso de manera significativa. El resultado es el siguiente
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{ConstruccionRObot/PulsosEncoder_ConFiltro}
+		\caption{}
+		\label{fig:pulsosencoderconfiltro}
+	\end{figure}
+	En la figura ~\ref{fig:pulsosencoderconfiltro} se pueden ver los pulsos del encoder, y esta vez están mejor definidos y no se aprecia ningún pulso pequeño que no corresponde a la lectura de encoder como en el caso anterior. Con este filtro se paga un precio y es que los pulsos ya no son discretos, pues se tiene ele fecto de la descarga del condensador, pero en el microcontrolador se pueden configurar las interrupciones para que detecte el flanco de subida de un pulso.\\
+	
+	El microcontrolador esta configurado para reaccionar mediante interrupciones a los flancos de bajada del pulso, de esta manera se evita mantener al procesador ocioso contando pulsos, cuando podria haber una comunicación o deberia actuar el controlador.
+	\paragraph{Motor DC}
+	Para mover las ruedas se usa dos motores DC convencional uno para cada rueda motriz. El motor Dc soporta un voltaje máximo de 10 Voltios, y trabaja con un voltaje óptimo de 6-8 V, según características del fabricante. Para hacer un uso adecuado del motor, lo primero que se hace es analizar las caracteŕisticas del motor. Lo primero que se analiza es la zona muerta del motor e identificar la zona lineal de operación. Esto es necesario para podera aplicar el controlador requerido para mover el robot.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.8\linewidth]{ConstruccionRObot/ZonaMuerta_DC}
+		\caption{}
+		\label{fig:zonamuertadc}
+	\end{figure}
+	
+	En la Figura ~\ref{fig:zonamuertadc} se tiene que el voltaje de saturación del motor está en 8 voltios aproximadamente, y el mínimo voltaje por el cual el motor empiza a rodar está entorno a 1 voltio, esta lectuara es sin rozamiento y sin el peso del propio robot, la zona líneal en este caso se reduce y para iniciar el movimiento se requieren de 3v a 3.3v para iniciar el movimiento de la rueda y si se quiere tener una velocidad lenta para poder realizar un buen control se debe reducir el voltaje maximo el cual se aplica en el motor.
+	\paragraph{Puente H L298n}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{ConstruccionRObot/PuenteH}
+		\caption{Puente H}
+		\label{fig:puenteH}
+	\end{figure}
+	Para poder gobernar los motores correctamente se usa un puente H para cada motor. En este caso se usa un integrado el cual incorpora 2 puente H y un regulador de tensión que proporciona 5 voltios a la salida y se aprovecha para alimentar el microcontrolador.\\
+	En la figura ~\ref{fig:puenteH} se puede ver el esquema del integrado, Las entradas EnA y EnB se usan para introducir el PWM, que este proviene del microcontrolador, las entradas IN1 e IN2 goviernan el sentido de giro de un motor mediante pulsos lógicos, lo mismo para las entradas In4 e In5 y para cada puente H se tiene dos salidas que son out1 y out2 para un motor y out3, out4 para otro motor.\\
+	
+
+	
+	
+	\paragraph{StepDown}
+		\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.25\linewidth]{ConstruccionRObot/StepDown}
+		\caption{conversor Step-Down}
+		\label{fig:StepDown}
+	\end{figure}
+	Como se ha comentado antes, es necesario bajar el voltaje para un correcto funcionamiento, para ello se usa un Step-Down, el cual se regula mediante un potenciómetro.
+
+	Se configura para que ofrezca como máximo un voltage de 6.5 Voltios.
+	\paragraph{RaspberryPi y PiCam}
+	Este módulo es opcional y no es esencial para el funcionamiento del robot y sin él se puede usar el robotario sin ningún impedimento, el objetivo de este modulo es la percepción del entorno, se usa una libreria muy desarrolada y documentada llamada OpenCV, la configuración que tiene la raspberryPi conjuntamentecon la libreria, es detectar codigos QR denominados Markers, y con un algoritmo integrado en openCV se puede estimar la posición del Marker, se podrian reconocer lineas para seguirlas por ejemplo o reconocer figuras, con este módulo queda abierto un desarrollo en percepción del entorno, que yo solamente he iniciado. Además de reconocimiento del entorno, la raspberryPi se comunica con arduino mediante un puerto serie, pudiendo dar instrucciones o pedir datos de la IMU y de la velocidad del robot. También es capaz de comunicarse con un ordenador central y poder enviar a un servidor los datos de IMU y velocidad del robot.
+	
+	\paragraph{Bateria}
+	Para alimentar el robot se usa una bateria LiFePo de 3 celdas de 3.3 V cada una en total se tiene 2200mAh, el consumo aproximado del robot es de (completar), si se usa la raspberryPi junto a la camara, se usan dos baterias conectadas en serie debido al alto consumo del robot{completar con estudio de consump}. 
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.35\linewidth]{ConstruccionRObot/bat}
+		\caption{bateria}
+		\label{fig:bateria}
+	\end{figure}
+
+	\paragraph{diagrama de cableado}
+	En conjunto todos los componentes forman al robot, en la Figura  ~\ref{fig:wiringDiagram} se puede ver como queda el cableado de los componentes en conjunto con arduino.Incluir raspberryPi.
+			\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.75\linewidth]{ConstruccionRObot/WiringDiagram}
+		\caption{Wiring Diagram}
+		\label{fig:wiringDiagram}
+	\end{figure}
+
+\begin{figure}[h]
+	\begin{subfigure}{0.52\linewidth}
+	\centering
+	\includegraphics[width=0.7\linewidth]{ConstruccionRObot/MontajeRobot1}
+	\caption{}
+	\label{fig:montajerobot1}
+\end{subfigure}
+\begin{subfigure}{0.52\linewidth}
+	\centering
+	\includegraphics[width=0.6\linewidth]{ConstruccionRObot/MontajeRobot2}
+	\caption{}
+	\label{fig:montajerobot2}
+\end{subfigure}
+	\caption{Montaje final de robot}
+	\label{fig:montajerobot}
+\end{figure}
+Finalmente en la figura ~\ref{fig:montajerobot} se puede apreciar como queda el robot totalmente montado.
+\newpage
+
+

@@ -26,7 +26,7 @@ La rueda izquierda forma un arco de radio x y la rueda derecha un arco de radio 
 		$S2=x*\Delta\varphi=R\Delta\theta$\\
 	$S1=(x+L)*\Delta\varphi=R\Delta\theta$\\
 	\end{center}
-	Donde  $R\Delta\theta$ es la distancia que avanza el robot, siendo R el radio de la rueda. Se S1 y S2.
+	Donde  $R\Delta\theta$ es la distancia que avanza el robot y $\Delta\theta=\frac{2\pi}{N}i$ son los pasos de encoder del robot, siendo R el radio de la rueda e i los pulsos de encoder. Se hace la resta de S1 y S2.
 	\begin{center}
 	 $S1-S2= L\Delta\varphi = R*\Delta\theta_{d}-R\Delta\theta_{i}$\\
 	 $\Delta\varphi = \frac{R(\Delta\theta_{d} - \Delta\theta_{i})}{L}$\\
