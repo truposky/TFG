@@ -7,6 +7,8 @@ Detallado como se ha construido el robot para tener multiples agentes que realic
 	\item suelo de goma
 \end{itemize}
 \subsubsection{Red LAN}
+
+
 \begin{figure}[h]
 	\includegraphics[width=1\textwidth]{CreacionInfraestructura/RedRobotario}
 	\caption{Red LAN robotario }
@@ -63,3 +65,16 @@ Se tiene un servidor que tiene la función de localizar a los robots en el robot
 	\label{fig:markers}
 \end{figure}
 Para poder usar correctamente la libreria, primero se deben calibrar las camaras, esto se hace imprimiendo a papel o usando en una tablet una tabla con diferentes marker como los de la Figura ~\ref{fig:markers}, se debe medir los lados y la separación entre marker consecutivos,con está información la librearia proporciona un programa que te estima los parámetros de las camaras, estos son coeficientes de distorsión en x,y,z, también te estima la longitud focal y los centros óticos. Con estos parámetros se puede estimar la posición de los diferentes markers en coordenadas x,y,z. Esta estimación se usa para la navegación de los robots.
+
+
+
+
+
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{LocalizacionRobots}
+	\caption{}
+	\label{fig:localizacionrobots}
+\end{figure}

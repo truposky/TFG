@@ -1,22 +1,110 @@
 
+
 \section{Introducci\'{o}n}
 
-	En la actualidad existen multitud de aplicaciones roboticas, uno de los campos de interés es el de robots moviles autónomos y por ende el cómo coordinar y controlar los robots para que trabajen de forma colaborativa. Existe un gran interés por parte de empresas privadas e instituciones publicas  en desarrollar algoritmos de control y coordinaci\'{o}n colaborativos para tales propositos.  (rellenar o  cammbiar)
-{
+
+En la actualidad existen multitud de aplicaciones robóticas, en entornos industriales, en tareas que ayudan a los profesionales de la medicina, transporte de mercancias, incluso en la exploración espacial. Uno de los campos de interés de la robotica está relacionado con los sistemas multiagente, se trata de agentes individuales que colaboran entre ellos o interactúan entre ellos. Estos sistemas multiagente son utilizados para resolver tareas complejas, o tareas que requeriria mucho tiempo para un agente individual. En la robótica la aplicación de sistemas multiagente tiene actualmente uso en robots móviles que realizan tareas como exploración, transporte de mercancias, o usos para la guerra. Debido a que es un area de interés para la robotica, se han creado multitud de investigaciones que abordan el problema de la coordinación y colaboración entre los diferentes robots, estas investigaciones normalmente dan como resultado algoritmos que se aplican a los robots.\\
+Los robots implicados en estas tareas suelen ser de un precio elevado dependiendo de las aplicaciones para las cuales se usen, por ello existe una necesidad poder comprobar los algoritmos mas alla de modelos computacionales y simulaciones en un entorno de prueba que no comprometa los prototipos relacioandos con las tareas .\\
+
+
+
+
+\input{fundamento.tex}
 \thispagestyle{empty}
 \subsection{Motivacion}
 Debido a la obligación de comprobar el correcto funcionamiento de los algoritmos de coordinacion, control o calobrativos desarrollados, más allá de las simulaciones, se necesita un entorno que permita observar el comportamiento de los agentes en un entorno lo mas realista posible y por lo tanto surge la necesidad de crear un banco de pruebas en el cual poder estudiar el comportamiento de los respectivos algoritmos.
 
+\input{objetivos.tex}
 
-\subsection{Objetivos}
-Para crear un entorno de pruebas se requiere unos determinados componentes, los cuales son: \begin{enumerate}
-	\item Construir robots moviles con sensores y capaces de comunicarse para poder comprobar diversos algoritmos.
-	\item Diseñar una infraestructura que permita el gobierno de los diferentes robots móviles y una observación de los resultados obtenidos.
-	\item Demostrar el funcionamiento del robotario.
-\end{enumerate}
-                     
-\subsection{Metódologia y plan de trabajo}
-El proyecto tiene dos partes diferenciadas, una, es la contrucción y el diseño del  control de múltiples robots móviles, para el cual como mas adelante se detallará, consistirá en un robot móvil diferencial gobernado por un microcontrolador Arduino nano 33 IoT, incluye una raspberryPi3 para la visión del entorno y la cual se usara como sensor. Para la comunicación y coordinación de los distintos robots se usara una infraestructura de red de topología jerarquíca, gobernada por un ordenador central, el cual gestionara el movimiento de los robots o recibira los datos de los diferentes robots que existan en la red.
 
-\cleardoublepage
-}
+%ya se ha hablado de robotario
+\section{Hardware y software}
+El robotario se ha podido desarrollar con los siguientes componentes.
+\subsection{Robot móvil}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\linewidth]{RobotAliexpres}
+	\caption{Robot móvil}
+	\label{fig:robotaliexpres}
+\end{figure}
+
+Se ha elegido un robot móvil de bajo presupuesto comprado en la pagina de Aliexpres\cite{robotAli} pero con piezas simples que se pueden reponer de manera sencilla si alguna se estropea, el chasis del robot incluye dos motores DC dos ruedas enganchadas a los motores, dos ruedas locas y consta de dos plantas.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.3\linewidth]{Arduinonano33}
+	\caption{Placa de Arduino nano 33 IoT}
+	\label{fig:arduinonano33}
+\end{figure}
+\subsection{Arduino nano 33 IoT}
+
+Para tener un control sobre el robot, poder tener sensores en el robot y poder establecer la comunicación del robot con el servidor y los demas robots se usa una placa Arduino\cite{arduinoTienda}, Arduino es una compañia de software y hardware libre que desarrolla y diseña placas con microcontroladores, la placa Arduino adquirida cuenta con un microprocesador Arm® Cortex®-M0 32-bit SAMD2 además tiene incorporado una antena que permite la comunicación WiFi y Bluetooth, se ha adquirido en la tienda oficial de Arduino.
+\subsection{L298n}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.25\linewidth]{PuenteH}
+	\caption{Puente H}
+	\label{fig:puenteH}
+\end{figure}
+Para poder gobernar los motores correctamente se usa un puente H para cada motor. En este caso se usa un integrado el cual incorpora 2 puentes H y un regulador de tensión que proporciona 5 voltios a la salida y se aprovecha para alimentar la placa con microcontrolador. Se ha adquirido también en la pagina de Aliexpress \cite{puenteHAli}. Cuenta con  un rango de voltaje de entrada de 5V-35V. El puente H se alimenta con la tensión de entrada y se regula la alimetación que le llega al motor mediante una señal PWM\cite{PWM} procedente de la placa arduino. Esta señal PWM que proviene de arduino cuenta con 256 niveles, esto implica se cuantifica el voltaje de entrada en estos 256 voltajes, este numero límitado de niveles de voltaje provoca una limitación en el gobierno de los motores.
+\subsection{Bateria}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\linewidth]{ConstruccionRObot/bat}
+	\caption{bateria}
+	\label{fig:bateria}
+\end{figure}
+	Para alimentar el robot se usa una bateria LiFePo de 3 celdas de 3.3 V cada una en total se tiene 2200mAh. Se usan dos bateria en paralelo para poder tener una mayor intensidad y tener una duración mas larga de la beteria.
+
+\subsection{Step-Down DC-DC}
+	\begin{figure}[h]
+		\centering
+	\includegraphics[width=0.25\linewidth]{ConstruccionRObot/StepDown}
+	\caption{Step-Down}
+	\label{fig:StepDown}
+	\end{figure}
+Se tiene un conversor DC-DC para bajar el voltaje de salida de la bateria, en el capitulo ?? se comenta porque.También se ha adquirido en la tienda de Aliexpress[referencia]
+
+\subsection{Encoder óptico}	%REVISAR LO DEL FILTRO%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.25\linewidth]{ConstruccionRObot/Encoder}
+	\caption{Encoder óptico}
+	\label{fig:encoder}
+\end{figure} 
+	Una de las partes fundamentales del robot es el encoder, sirve para poder medir la velocidad a la cual gira cada rueda y poder tambien estimar la distancia avanzada. El encoder óptico, es el modelo FC-03 , en la Figura ~\ref{fig:encoder} se pueder ver su forma. Del datasheet se sabe que tiene un LM393 el cual es un circuito integrado formado por dos comparadores, también lleva un optointerruptor,el cual consta de un diodo led y un transistor con la base expuesta, si este recibe luz, genera un pulso bajo de tensión y si no detecta luz genera un pulso alto de tensión, en conjunto con el comparador se obtendrán pulsos discretizados.\\
+
+El encoder además tiene dos salidas, una analógica y otra digital, esta última es la que interesa debido a que es más útil para el microcontrolador leer entradas discretas. El voltaje de funcionamiento del sensor puede ser de 3.3V a 5V, como el microcontrolador solo soporta 3.3V será esta la alimentación que se proporcionará.\\ 
+	Para contar pulsos de luz se usa una rueda ranurada que está enganchada al eje de la rueda,y  consta de 20 ranuras esto implica que se tiene una resolución de N=20 y se divide la rueda en $\Delta\theta=\frac{2\pi}{20} $ radianes.
+
+\subsection{RaspberryPi y Picam}
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.25\linewidth]{raspberry_cam}
+	\caption{RaspberryPi conectada con la camara}
+	\label{}
+\end{figure}
+	Se tiene una placa RaspberryPi4 montada en el robot para poder procesar imagenes adquiridas por una camara Picam que va conectada a la RaspberryPi.Se alimenta direactemente de la bateria usando un conversor DC-DC para adaptar el voltaje a 5 V y no tener que usar una segunda bateria para alimentar la RaspberryPi. La camara conectada a la raspberryPi permite obtener imagenes con un angular de 160º segun especificaciones del fabricante \cite{Picam}. Este modulo no es esencial para el robotario pero permite experimentar mas algoritmos debido a la localización con camara a bordo y vision artificial.
+	
+	\subsection{Camara logitech C920}
+		\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.3\linewidth]{Camaralogi}
+		\caption{Cámara Logitech}
+		\label{fig:camaralogi}
+	\end{figure}
+
+Se tienen 3 cámaras logitech que se usan para la localización de los robots. En el acutal montaje del robotario solo se usa una cámara. La conexión se realiza mediante USB al servidor.
+\subsection{OpenCV}
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\linewidth]{EjemploDeMarker}
+	\caption{sacada de la documentación, ejemplo de un marker}
+	\label{fig:ejemplodemarker}
+\end{figure}
+
+Para la visión por computador se usa una librería denominada OpenCV \cite{OpenCV} la cual está desarrollada en dos lenguajes de programación c++ y Python. Permite reconocer el entorno con una cámara y tratar las imagenes para desarrollar la aplicación que se desee. En particular yo uso la libreria ArUco\cite{ArUco} de OpenCV, que permite el reconocimiento de un marker de tamaño 4x4 formado por 16 bits.
+
+	\subsection{Suelo de goma}	
+Se usa un suelo de goma que permite que los robots no deslicen en el suelo, también sirve para deilimitar el área del robotario.

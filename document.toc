@@ -1,28 +1,41 @@
 \babel@toc {spanish}{}
 \contentsline {section}{\numberline {1}Introducci\'{o}n}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Motivacion}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Objetivos}{3}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Met\IeC {\'o}dologia y plan de trabajo}{4}{subsection.1.3}%
-\contentsline {section}{\numberline {2}Objetivos}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Dise\IeC {\~n}ar y montar robot}{5}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Red de comunicaci\IeC {\'o}n inal\IeC {\'a}mbirca}{5}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Sistema de localizaci\IeC {\'o}n}{6}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Metodolog\IeC {\'\i }a}{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Robot}{7}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}partes del robot}{9}{subsubsection.3.1.1}%
-\contentsline {paragraph}{Arduino NANO 33 IoT}{9}{figure.caption.5}%
-\contentsline {paragraph}{Encoder \IeC {\'o}ptico}{12}{figure.caption.8}%
-\contentsline {paragraph}{Motor DC}{16}{section*.14}%
-\contentsline {paragraph}{Puente H L298n}{17}{figure.caption.17}%
-\contentsline {paragraph}{StepDown}{18}{figure.caption.19}%
-\contentsline {paragraph}{RaspberryPi y PiCam}{19}{section*.20}%
-\contentsline {paragraph}{Bateria}{19}{section*.21}%
-\contentsline {paragraph}{diagrama de cableado}{20}{section*.23}%
-\contentsline {subsection}{\numberline {3.2}Controlador del Motor DC}{21}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Tratamiento del ruido}{26}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}sintonizaci\IeC {\'o}n de par\IeC {\'a}metros PID}{27}{subsubsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.3}Navegaci\IeC {\'o}n del robot}{29}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}infraestructura}{31}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Red LAN}{31}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Servidor}{34}{subsubsection.3.4.2}%
-\contentsline {section}{\numberline {4}Referencias}{35}{section.4}%
+\contentsline {subsection}{\numberline {1.1}Estado del arte}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Motivacion}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Objetivos}{3}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}{\large objetivos espec\IeC {\'\i }ficos }}{4}{subsubsection.1.3.1}%
+\contentsline {section}{\numberline {2}Hardware y software}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Robot m\IeC {\'o}vil}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Arduino nano 33 IoT}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}L298n}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Bateria}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Step-Down DC-DC}{6}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Encoder \IeC {\'o}ptico}{6}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}RaspberryPi y Picam}{6}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Camara logitech C920}{7}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}OpenCV}{7}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Suelo de goma}{7}{subsection.2.10}%
+\contentsline {section}{\numberline {3}Metodolog\IeC {\'\i }a}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Selecci\IeC {\'o}n de componentes}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Contrucci\IeC {\'o}n de un primer robot}{8}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Prueba de encoders}{8}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Prueba de motor}{9}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}programaci\IeC {\'o}n de arduino y Comprobaci\IeC {\'o}n del robot montado}{9}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Configuraci\IeC {\'o}n y desarrollo de red de comunicaci\IeC {\'o}n}{10}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Programaci\IeC {\'o}n para visi\IeC {\'o}n por computador}{10}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Configuraci\IeC {\'o}n y programaci\IeC {\'o}n de RaspberryPI}{10}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Montaje final de Robotario}{11}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Tratamiento del ruido}{12}{section.4}%
+\contentsline {section}{\numberline {5}Desarrollo de los objetivos}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Robot}{13}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}partes del robot}{14}{subsubsection.5.1.1}%
+\contentsline {paragraph}{Arduino NANO 33 IoT}{14}{figure.caption.13}%
+\contentsline {paragraph}{Motor DC}{17}{section*.20}%
+\contentsline {paragraph}{diagrama de cableado}{18}{section*.22}%
+\contentsline {subsection}{\numberline {5.2}Controlador del Motor DC}{20}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}sintonizaci\IeC {\'o}n de par\IeC {\'a}metros PID}{23}{subsubsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.3}Navegaci\IeC {\'o}n del robot}{25}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}infraestructura}{26}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Red LAN}{26}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Servidor}{28}{subsubsection.5.4.2}%
+\contentsline {section}{\numberline {6}Referencias}{31}{section.6}%

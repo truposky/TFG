@@ -1,15 +1,15 @@
-\section{Objetivos}
-EL objetivo principal es diseñar y crear una infraestructura en la cual, se puedan probar mas allá de la simulación, diversos algoritmos de cooordinación y multiagente, para ello primero se deben cumplir una serie de objetivos específicos, que se enumeran a continuación:
-\subsection{Diseñar y montar robot}
-Debido a que se quiere verificar como se comportan los algoritmos con agentes reales se deben construir una serie robots que cumplan con unos mínimos.
- 
- \begin{enumerate}
- 	\item\textit{\textbf{Movilidad}}.El robot debe ser capaz de mantener una velocidad estable, ser capaz de hacer giros de 360º, y tener una deriva perequeña en los movimientos para ser capaz de simular diversos algoritmos.
- 	\item\textit{\textbf{Comunicación}}. El robot debe ser capaz de comunicarse con los otros robots y con un servidor. La comunicación debe ser preferiblemente inalámbrica.
- 	\item\textit{\textbf{Tamaño}}.El tamaño del robot no debe ser muy grande, para facilitar la manipulación y que el peso del robot no sea un problema, tampoco puede ser muy pequeño, pues un robot de un tamaño muy reducido requeriría componentes electronicos integrados.
- 
- \end{enumerate}
-\subsection{Red de comunicación inalámbirca}
-Se debe diseñar y configurar una red inalámbrica para la comunicación entre los robots y un posible servidor.
-\subsection{Sistema de localización}
-Se requiere construir o diseñar un sistema de localización global, que identifique mediante algún tipo de identificador como un número, y además sepa localizar los agentes involucrados en el robotario.
+\subsection{Objetivos}
+El objetivo es crear un entorno de pruebas para poder probar algoritmos colaborativos y de coordinación u otros en el cual sea necesario robots móviles como el cual se denomina robotario, el entorno está basado en los trabajos anteriormente mencionados de Duckietown y Robotarium. Para poder llevarlo acabo se necesita cumplir unos oobjetivos
+\subsubsection{{\large objetivos específicos }}
+\begin{itemize}
+	\item Construir y diseñar un robot capaz de realizar los algoritmos requeridos por el robotario.
+	\item Diseñar un controlador de la velocidad del robot que permita realizar los algoritmos de manera correcta.
+	\item Configurar la comunicación de los robots, para poder comunicarse con otros robots y un servidor.
+	
+	\item Diseñar y configurar una red inalámbrica para la comunicación entre los robots y un servidor.
+	\item Crear y configurar un servidor que reciba la posición de los robots y se comunique con los diferentes robots del robotario.
+	\item Construir y diseñar un sistema de localización, que identifique y localice a los robots involucrados en los experimentos.
+	\item (duda)Llevar a cabo un experimento para demostrar el correcto funcionamiento del robotario.
+\end{itemize}
+
+

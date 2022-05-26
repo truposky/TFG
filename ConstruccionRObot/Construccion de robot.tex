@@ -14,16 +14,8 @@ El robot es de tracción diferencial, tiene una geometría ciruclar y consta de 
 
 
 
-El sistema de tracción es 2WD o tambien conocido como tracción a dos ruedas, estas estan conectadas a dos motores DC, estas ruedas motrices están en el eje central del robot es decir en los extremos del diametro de la circunferencia que hace de base del robot, para que el robot no cabecee cuando avance adelante o atrás, se opta por unas ruedas locas, las ruedas locas que venian por defecto con el chasis del robot, han resultado ser perjudiciales al movimiento o a la precisión requerida. El motivo es debido al rozamiento y a la resistencia de arrastre de la rueda.En la siguiente figura se puede ver algunos efectos que ocurren en la rueda loca.
+El sistema de tracción es 2WD o también conocido como tracción a dos ruedas, estas están conectadas a dos motores DC, estas ruedas motrices están en el eje central del robot es decir en los extremos del diámetro de la circunferencia que hace de base del robot, para que el robot no cabecee cuando avance adelante o atrás, se opta por unas ruedas locas, las ruedas locas que venían por defecto con el chasis del robot, han resultado ser perjudiciales al movimiento o a la precisión requerida. El motivo es debido al rozamiento y a la resistencia de arrastre de la rueda.En la siguiente figura se puede ver algunos efectos que ocurren en la rueda loca.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.35\textwidth]{ConstruccionRObot/Resistencia_rodadura} %Para ajustar la portada a una sola página se puede reducir el tamaño del logo
-		\caption{Efectos en la rueda }
-	\label{fig:Resistencia_rodadura}
-\end{figure}
-En la figura se tiene P que es el peso de la rueda y el que recae sobre el eje de dicha rueda, N es la fuerza normal que se produce por cada deformación del suelo es por ello que esta desplazada una cantida $\mu_{r}$ e incide sobre A", F es la fuerza aplicada sobre el eje de la rueda, se tiene f como la fuerza de rozamiento en A'
-Cuando un cuerpo rueda sobre una superficie, en este caso la rueda loca, esta, o la superficie se deforman o ambas.Este efecto produce una resistencia a la rodadura que sumado al coeficiente de rozamiento produce una resistencia al movimiento de la rueda, este efecto se puede reducir usando una rueda loca con rodamientos en la base y estos rodamientos reducen la fricción y resistencia de la rodadura al hacer que gire la rueda sobre su eje, pero al girar se produce una desviación en la trayectoria puediendo afectar al correcto funcionamiento del robot o a el seguimiento de una trayectoria dada, es por ello que se opta por ruedas esfericas, las cuales tienen la misma fuerza de arrastre en todas las direeciones, e impiden derivas en el desplazamiento, al realizar giros o cambiar de dirección.\\
 
 
 
@@ -49,15 +41,7 @@ A continuación se detallaran los componentes del robot y una descripción de el
 	En la Figura  ~\ref{fig:ejesarduino} se puede ver la orientación de los ejes de la IMU, aunque se puede cambiar mediante software. Esta IMU no se usa pues su uso requiere mas tiempo del disponible para este proyecto, require un estudio y desarrollo de un filtrado y un algoritmo que estime correctamente los giros producidos, lo que si se deja es configurado en la comunicación poder pedir los datos correspondientes a la IMU, para un futuro uso en el robot.
 	
 	
-	\paragraph{Encoder óptico}	%REVISAR LO DEL FILTRO%
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=0.4\linewidth]{ConstruccionRObot/Encoder}
-		\caption{Encoder óptico}
-		\label{fig:encoder}
-	\end{figure}
-	
-	Una de las partes fundamentales del robot es el encoder, sirve para poder medir la velocidad a la cual gira cada rueda y poder tambien estimar la distancia avanzada. El encoder óptico, es el modelo FC-03 , en la Figura ~\ref{fig:encoder} se pueder ver su forma. Del datasheet se sabe que tiene un LM393 el cual es un circuito integrado formado por dos comparadores, también lleva un optointerruptor,el cual consta de un diodo led y un transistor con la base expuesta, si este recibe luz, genera un pulso bajo de tensión y si no detecta luz genera un pulso alto de tensión, en conjunto con el comparador se obtendrán pulsos discretizados. El encoder además tiene dos salidas, una analógica y otra digital, esta última es la que interesa debido a que es más útil para el microcontrolador leer entradas discretas. El voltaje de funcionamiento del sensor puede ser de 3.3V a 5V, como el microcontrolador solo soporta 3.3V será esta la alimentación que se proporcionará.\\ 
+
 		\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.45\linewidth]{ConstruccionRObot/EncoderRobot}
@@ -111,53 +95,18 @@ A continuación se detallaran los componentes del robot y una descripción de el
 		\label{fig:zonamuertadc}
 	\end{figure}
 	
-	En la Figura ~\ref{fig:zonamuertadc} se tiene que el voltaje de saturación del motor está en 8 voltios aproximadamente, y el mínimo voltaje por el cual el motor empiza a rodar está entorno a 1 voltio, esta lectuara es sin rozamiento y sin el peso del propio robot, la zona líneal en este caso se reduce y para iniciar el movimiento se requieren de 3v a 3.3v para iniciar el movimiento de la rueda y si se quiere tener una velocidad lenta para poder realizar un buen control se debe reducir el voltaje maximo el cual se aplica en el motor.
-	\paragraph{Puente H L298n}
-	
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=0.7\linewidth]{ConstruccionRObot/PuenteH}
-		\caption{Puente H}
-		\label{fig:puenteH}
-	\end{figure}
-	Para poder gobernar los motores correctamente se usa un puente H para cada motor. En este caso se usa un integrado el cual incorpora 2 puente H y un regulador de tensión que proporciona 5 voltios a la salida y se aprovecha para alimentar el microcontrolador.\\
-	En la figura ~\ref{fig:puenteH} se puede ver el esquema del integrado, Las entradas EnA y EnB se usan para introducir el PWM, que este proviene del microcontrolador, las entradas IN1 e IN2 goviernan el sentido de giro de un motor mediante pulsos lógicos, lo mismo para las entradas In4 e In5 y para cada puente H se tiene dos salidas que son out1 y out2 para un motor y out3, out4 para otro motor.\\
-	
-
-	
-	
-	\paragraph{StepDown}
-		\begin{figure}[h]
-		\centering
-		\includegraphics[width=0.25\linewidth]{ConstruccionRObot/StepDown}
-		\caption{conversor Step-Down}
-		\label{fig:StepDown}
-	\end{figure}
-	Como se ha comentado antes, es necesario bajar el voltaje para un correcto funcionamiento, para ello se usa un Step-Down, el cual se regula mediante un potenciómetro.
-
-	Se configura para que ofrezca como máximo un voltage de 6.5 Voltios.
-	\paragraph{RaspberryPi y PiCam}
-	Este módulo es opcional y no es esencial para el funcionamiento del robot y sin él se puede usar el robotario sin ningún impedimento, el objetivo de este modulo es la percepción del entorno, se usa una libreria muy desarrolada y documentada llamada OpenCV, la configuración que tiene la raspberryPi conjuntamentecon la libreria, es detectar codigos QR denominados Markers, y con un algoritmo integrado en openCV se puede estimar la posición del Marker, se podrian reconocer lineas para seguirlas por ejemplo o reconocer figuras, con este módulo queda abierto un desarrollo en percepción del entorno, que yo solamente he iniciado. Además de reconocimiento del entorno, la raspberryPi se comunica con arduino mediante un puerto serie, pudiendo dar instrucciones o pedir datos de la IMU y de la velocidad del robot. También es capaz de comunicarse con un ordenador central y poder enviar a un servidor los datos de IMU y velocidad del robot.
-	
-	\paragraph{Bateria}
-	Para alimentar el robot se usa una bateria LiFePo de 3 celdas de 3.3 V cada una en total se tiene 2200mAh, el consumo aproximado del robot es de (completar), si se usa la raspberryPi junto a la camara, se usan dos baterias conectadas en serie debido al alto consumo del robot{completar con estudio de consump}. 
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=0.35\linewidth]{ConstruccionRObot/bat}
-		\caption{bateria}
-		\label{fig:bateria}
-	\end{figure}
+	En la Figura ~\ref{fig:zonamuertadc} se tiene que el voltaje de saturación del motor está en 8 voltios aproximadamente, y el mínimo voltaje por el cual el motor empieza a rodar está entorno a 1 voltio, esta lectura es sin rozamiento y sin el peso del propio robot, la zona lineal en este caso se reduce y para iniciar el movimiento se requieren de 3v a 3.3v para iniciar el movimiento de la rueda y si se quiere tener una velocidad lenta para poder realizar un buen control se debe reducir el voltaje máximo el cual se aplica en el motor.
 
 	\paragraph{diagrama de cableado}
 	En conjunto todos los componentes forman al robot, en la Figura  ~\ref{fig:wiringDiagram} se puede ver como queda el cableado de los componentes en conjunto con arduino.Incluir raspberryPi.
-			\begin{figure}[h]
+		\begin{figure}
 		\centering
 		\includegraphics[width=0.75\linewidth]{ConstruccionRObot/WiringDiagram}
 		\caption{Wiring Diagram}
 		\label{fig:wiringDiagram}
 	\end{figure}
 
-\begin{figure}[h]
+\begin{figure}
 	\begin{subfigure}{0.52\linewidth}
 	\centering
 	\includegraphics[width=0.7\linewidth]{ConstruccionRObot/MontajeRobot1}
@@ -174,6 +123,6 @@ A continuación se detallaran los componentes del robot y una descripción de el
 	\label{fig:montajerobot}
 \end{figure}
 Finalmente en la figura ~\ref{fig:montajerobot} se puede apreciar como queda el robot totalmente montado.
-\newpage
+
 
 

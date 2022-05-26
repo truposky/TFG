@@ -181,16 +181,11 @@ En el diagrama de bloques se pueden ver las siguientes partes que conforman el s
 		\label{fig:feedforward}
 	\end{figure}
 \newpage
-	\item $PID(z)$ corresponde al controlador. El control de acción directa no basta para mantener una velocidad debido a que las condiciones en las que se ha hehcho el control de acción directa no son las mismas en todo momento, por ello es necesario un control realimentado, para ello se usa uno de los controladores mas usados y conocidos que es el PID. Se desconoce como es la planta, se tiene un modelo del motor DC pero el modelo no basta para conocer el comportamiento real. Por ello para la sintonización de los parámetros del PID se usa el método de ziegler-Nichols para una primera aproximación y luego se va ajustando hasta conseguir una respuesta deseada. Ademas de la sintonización de los parametros del controlador, se implementa un modulo conocido como Anti-Wind-up.
+	\item $PID(z)$ corresponde al controlador. El control de acción directa no basta para mantener una velocidad debido a que las condiciones en las que se ha hecho el control de acción directa no son las mismas en todo momento, por ello es necesario un control realimentado, para ello se usa uno de los controladores mas usados y conocidos que es el PID. Se desconoce como es la planta, se tiene un modelo del motor DC pero el modelo no basta para conocer el comportamiento real. Por ello para la sintonización de los parámetros del PID se usa el método de ziegler-Nichols para una primera aproximación y luego se va ajustando hasta conseguir una respuesta deseada. Ademas de la sintonización de los parámetros del controlador, se implementa un modulo conocido como Anti-Wind-up.
 	
-	 \subitem El\textbf{ Wind-Up} es un problema que se tiene con el control integral, este controlador tiene memoria y, debido a que acucmula valores anteriores del error esta acción integradora crece incluso cunado se llegue al valor referencia, y cuando se produce un cambio en la referencia el controlador tarda en reaccionar debido a los valores acumulados que guarda, por ello se propone dentro del control PID el denominado Anti-Wind-Up, basicamente lo que hace es que cuando llega a un valor maximo el integrador deja de acumular valores y cuando se cambia el signo del error se borra la memoria del controlador.
-	 \begin{figure}[h]
-	 	\centering
-	 	\includegraphics[width=0.55\textwidth]{controlMotor/AntiWindUp}
-	 	\caption{AntiWindUp}
-	 	\label{fig:AntiWindUp}
-	 \end{figure}
- 	Implementado en codigo para introducirlo en el microcontrolador quedaría de la siguiente forma:
+	 \subitem El Wind-Up es un problema que se tiene con el control integral, este controlador tiene memoria y, debido a que acumula valores anteriores del error esta acción integradora crece incluso cunado se llegue al valor referencia, y cuando se produce un cambio en la referencia el controlador tarda en reaccionar debido a los valores acumulados que guarda, por ello se propone dentro del control PID el denominado Anti-Wind-Up, básicamente lo que hace es que cuando llega a un valor máximo el integrador deja de acumular valores y cuando se cambia el signo del error se borra la memoria del controlador.
+	 
+ 	Implementado en código para introducirlo en el microcontrolador quedaría de la siguiente forma:
  	
 	 \begin{lstlisting}
 	int pidI(double wI)
@@ -242,14 +237,7 @@ En el diagrama de bloques se pueden ver las siguientes partes que conforman el s
 \end{itemize}
 En conjunto los bloques forman el lazo de control, que mantiene una velocidad en referencia a la entrada.\\
 En el diagrama de bloques anterior no se ha tenido en cuenta las perturbaciones que se obtienen, y debido a que el encoder y los motores no son de buena calidad y debido a las vibraciones del robot causadas por el movimiento, se tiene una alteración significativa de la lectura de pulsos. En el siguiente apartado se comenta el tratamiento del ruido y su solución.  
-\subsubsection{Tratamiento del ruido}
-Las lecturas de los encoders tienen muchas incertidumbre en la medida y esto dificulta un correcto control del motor y por ende de la velocidad.\\
-Uno de los métodos que aplico es poner un límite de tiempo entre detecciones de pulsos, se analiza con un osciloscopio el periodo de la señal a una velocidad máxima, se obtiene que esté periodo es de 13.4ms en la Figura ~\ref{fig:maxvelencoder} se puede ver los pulsos de los encoders para una velocidad maxima que corresponde con un voltaje de 6.5V. Con esta configuración se condiciona la detección por interrupciones de arduino, despreciando los pulsos que ocurren en un intervalo inferior de tiempo.\\
-La condición de tiempo entre pulsos ha mejorado en sobremanera la estimación de la velocidad, pero se sigue teniendo variaciones en la medida por ello también se aplica un filtro de media movil, su ecuación es la siguiente:
-\[ 
-y(i)=\frac{1}{M} \sum_{j=0}^{M-1}x(i+j)
-\]
-El filtro lo que hace es hacer una media de los M valores que van entrando, donde M se denomina la ventana del filtro, de esta manera se consigue estabilizar la medida del encoder. Se usa porque es sencillo de implementar y eficaz.
+
 \subsubsection{sintonización de parámetros PID}
 Debido al ruido del sistema, se decide por no incluir la parte derivativa del controlador PID, basta con poner $K_{d}=0$, esto se debe a que la acción derivativa amplifica el ruido, se podría poner un filtro a la acción derivativa, pero sería complicar el control de manera innecesaria y como se muestra a continuación con un control PI junto al control de acción directa es mas que suficente.\\
 Para la sintonización de los parámetros se recurre al método de Ziglers-Nichols, esto se debe a que se tiene una planta experimental y este método va a ser de ayuda para dar con los parámetros del controlador.\\
@@ -259,7 +247,7 @@ Lo primero que se hace es aplicar una ganacia K en el lazo de control, se aument
 
 	\begin{subfigure}[b]{0.52\linewidth}
 		\centering
-	\includegraphics[width=1.25\linewidth]{controlMotor/RespuestaEscalonRD}
+	\includegraphics[width=0.95\linewidth]{controlMotor/RespuestaEscalonRD}
 	\caption{}
 	\label{fig:respuestaescalonrd}
 	\end{subfigure}

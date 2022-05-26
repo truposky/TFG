@@ -1,7 +1,8 @@
-\documentclass[12pt, a4paper]{article} %tamaño mínimo de letra 11pto.
+\documentclass[11pt, a4paper]{article} %tamaño mínimo de letra 11pto.
 \usepackage{fancyhdr} % para personalizar la cabecera y el pie de pagina
 \usepackage{lastpage} % para saber el numero de pagina del documento
 \usepackage{graphicx} 
+\usepackage{wrapfig}%figura en texto
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage[breaklinks=true]{hyperref}
@@ -19,7 +20,7 @@
 	numbers=left,                   % where to put the line-numbers
 	numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
 	stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
-	numbersep=5pt,                  % how far the line-numbers are from the code
+	numbersep=6pt,                  % how far the line-numbers are from the code
 	backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
 	showspaces=false,               % show spaces adding particular underscores
 	showstringspaces=false,         % underline spaces within strings
@@ -41,6 +42,7 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning}
 \usepackage{circuitikz}
+
 \begin{document}
 	
 %%%%%%Portada%%%%%%%
@@ -94,7 +96,7 @@ Esto es una prueba para probar el formato del Resumen. Esto es una prueba para p
 This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.
 \vspace{1cm}
 
-[\Large\textbf{Nota}: el título extendido (si procede), el resumen y el abstract deben estar en una misma página y su extensión no debe superar una página. Tamaño mínimo 11pto ]\\
+
 
 {\Large\textbf{Extensión máxima 50 páginas sin contar portada ni resumen (sí se incluye índice, introducción, conclusiones y bibliografía}}
 \newpage
@@ -107,10 +109,13 @@ This is a test to prove the abstract's layout.This is a test to prove the abstra
 %%%% Comenzar a contar inicio de páginas
 
 \input{Introduccion.tex}
-\clearpage\thispagestyle{empty}\cleardoublepage
-\input{objetivos.tex}
+
 \clearpage\thispagestyle{empty}\cleardoublepage
 \input{metodologia.tex}
+\clearpage\thispagestyle{empty}\cleardoublepage
+\input{TratamientoDeRuido.tex}
+\clearpage\thispagestyle{empty}\cleardoublepage
+\input{DesarrolloObjetivos.tex}
 \clearpage\thispagestyle{empty}\cleardoublepage
 \input{Demostracion.tex}
 \clearpage\thispagestyle{empty}\cleardoublepage
