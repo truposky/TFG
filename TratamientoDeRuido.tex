@@ -1,9 +1,0 @@
-\section{Tratamiento del ruido}
-
-Las lecturas de los encoders tienen muchas incertidumbre en la medida y esto dificulta un correcto control del motor y por ende de la velocidad.\\
-Uno de los métodos que aplico es poner un límite de tiempo entre detecciones de pulsos, se analiza con un osciloscopio el periodo de la señal a una velocidad máxima, se obtiene que esté periodo es de 13.4ms en la Figura ~\ref{fig:maxvelencoder} se puede ver los pulsos de los encoders para una velocidad maxima que corresponde con un voltaje de 6.5V. Con esta configuración se condiciona la detección por interrupciones de arduino, despreciando los pulsos que ocurren en un intervalo inferior de tiempo.\\
-La condición de tiempo entre pulsos ha mejorado en sobremanera la estimación de la velocidad, pero se sigue teniendo variaciones en la medida por ello también se aplica un filtro de media movil, su ecuación es la siguiente:
-\[ 
-y(i)=\frac{1}{M} \sum_{j=0}^{M-1}x(i+j)
-\]
-El filtro lo que hace es hacer una media de los M valores que van entrando, donde M se denomina la ventana del filtro, de esta manera se consigue estabilizar la medida del encoder. Se usa porque es sencillo de implementar y eficaz.

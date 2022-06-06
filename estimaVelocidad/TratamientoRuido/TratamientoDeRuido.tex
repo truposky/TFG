@@ -1,0 +1,37 @@
+\subsection{Tratamiento del ruido}
+
+Las lecturas que realiza la placa de Arduino de los pulsos de los encoders ópticos no son buenas, la placa de Arduino lee más pulsos de los reales, esto provoca que la estimación de la velocidad no se haga de manera correcta.
+El problema que se obtiene en la estima de la velocidad es que la placa de Arduino detecta mas pulsos del encoder de los reales, como se ha comentado esto se debe a  problemas mecánicos y a problemas con el ruido eléctrico.
+En la figura ~\ref{fig:pulsosencodersinfiltro} se puede apreciar que existe un pulso que no debería estar entre el segundo -0.35 y el segundo -0.3, ademas de los diferentes niveles de voltaje intermedios que se aprecia en la figura, esto provoca errores en la lectura del encoder.
+
+	
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{estimaVelocidad/TratamientoRuido/PulsosEncoder_sinFiltro}
+	\caption{Salida de encoder sin filtro}
+	\label{fig:pulsosencodersinfiltro}
+\end{figure}
+ Una solución que se aplica es diseñar un filtro paso-bajo, la manera mas sencilla de hacerlo es mediante un condensador, este condensador se coloca entre la salida analógica y tierra, se usa condensador  de 47 $n_{f}$ este filtrará componentes de alta frecuencia y no deformará el pulso de manera significativa.Por contra hay que modificar que las interrupciones para que se hagan cuando el la placa de Arduino detecte un flanco de subida. En la figura ~\ref{fig:pulsosencoderconfiltro} se puede observar el resultado final con el filtro paso-bajo, se ha eliminado pulsos intermedios y se tiene definido un flanco de subida que se utiliza para las interrupciones.
+ 		\begin{figure}[h]
+ 	\centering
+ 	\includegraphics[width=0.6\linewidth]{estimaVelocidad/TratamientoRuido/PulsosEncoder_ConFiltro}
+ 	\caption{}
+ 	\label{fig:pulsosencoderconfiltro}
+ \end{figure}
+ 
+A pesar de que este método corrige de buena manera el problema con el ruido y la estima de la velocidad, la placa de Arduino sigue contando mas pulsos de los reales, esto se puede deber a problemas de diafonía y al ruido causado por el campo magnético que produce el motor DC, que están muy cerca de los encoders, se han intentado corregir la diafonía trenzando los cables que llevan la señal de los pulsos a la placa y también se ha alejado lo máximo posible la placa Arduino de los motores DC, aun así se sigue teniendo error en la cuenta de pulsos que realiza la placa de Arduino, por lo que se recurre a filtros digitales que irán programados en la rutina que se usa para estimar la velocidad. 
+
+Uno de los métodos que aplico es poner un límite de tiempo entre detecciones de pulsos, se analiza con un osciloscopio el periodo de la señal a una velocidad máxima correspondiente al voltaje máximo impuesto, las medidas se realizan sin rozamiento por ello los valores difieren con los anteriormente comentados, pero de esta manera puedo verificar con mediciones del osciloscopio que la condición que impongo es correcta y también se hace la condición menos restrictiva e impide que si por algún casual la rueda gira más rapido de $15 rad/s$ no se obtengan errores en la medida y el controlador actúe correctamente. Del osciloscopio se obtiene que esté periodo es de 13.54ms en la Figura ~\ref{fig:maxvelencoder} se puede ver los pulsos de los encoders para una velocidad máxima que corresponde con un voltaje de 6.5V. Con esta configuración se condiciona la detección por interrupciones de arduino, despreciando los pulsos que ocurren en un intervalo inferior de tiempo.\\
+
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{estimaVelocidad/TratamientoRuido/maxVelEncoder}
+	\caption{velocidad máxima de la rueda \\ voltaje de 6.5V en el motor}
+	\label{fig:maxvelencoder}
+\end{figure}
+
+Esta condición de tiempo para contar pulsos ha mejorado notablemente respecto a los casos anteriores, comparando los pulsos contados con la placa de Arduino y los que se obtienen con el osciloscopio, de 500 pulsos se obtiene un error del 2\%,pero debido a los problemas mecánicos mencionados, que son, holgura en el eje de la rueda lo que provoca vibraciones y los ejes recibidos están ligeramente doblados y se doblan aun mas cuando se posa sobre el suelo, se sigue teniendo ruido en la lectura de pulsos, por ello como último recurso se aplica un filtro de media móvil que hace un promedio de las medidas en un intervalo de muestras.
+\[ 
+y(i)=\frac{1}{M} \sum_{j=0}^{M-1}x(i+j)
+\]
+El filtro lo que hace es hacer una media de los M valores que van entrando, donde M se denomina la ventana del filtro, de esta manera se consigue estabilizar la medida del encoder.

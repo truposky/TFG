@@ -1,0 +1,65 @@
+\begin{thebibliography}{1}
+
+\bibitem{opencv_library}
+G.~Bradski.
+\newblock {The OpenCV Library}.
+\newblock {\em Dr. Dobb's Journal of Software Tools}, 2000.
+
+\bibitem{ArUco2}
+Sergio Garrido-Jurado, Rafael Muñoz-Salinas, Francisco Madrid-Cuevas, and
+  Rafael Medina-Carnicer.
+\newblock Generation of fiducial marker dictionaries using mixed integer linear
+  programming.
+\newblock {\em Pattern Recognition}, 51, 10 2015.
+
+\bibitem{rodrigues}
+Wolfram Mathworld.
+\newblock Rodrigues' rotation formula.
+\newblock Available at
+  \url{https://mathworld.wolfram.com/RodriguesRotationFormula.html}.
+
+\bibitem{7989179}
+Liam Paull, Jacopo Tani, Heejin Ahn, Javier Alonso-Mora, Luca Carlone, Michal
+  Cap, Yu~Fan Chen, Changhyun Choi, Jeff Dusek, Yajun Fang, Daniel Hoehener,
+  Shih-Yuan Liu, Michael Novitzky, Igor~Franzoni Okuyama, Jason Pazis, Guy
+  Rosman, Valerio Varricchio, Hsueh-Cheng Wang, Dmitry Yershov, Hang Zhao,
+  Michael Benjamin, Christopher Carr, Maria Zuber, Sertac Karaman, Emilio
+  Frazzoli, Domitilla Del~Vecchio, Daniela Rus, Jonathan How, John Leonard, and
+  Andrea Censi.
+\newblock Duckietown: An open, inexpensive and flexible platform for autonomy
+  education and research.
+\newblock In {\em 2017 IEEE International Conference on Robotics and Automation
+  (ICRA)}, pages 1497--1504, 2017.
+
+\bibitem{pickem2017robotarium}
+Daniel Pickem, Paul Glotfelter, Li~Wang, Mark Mote, Aaron Ames, Eric Feron, and
+  Magnus Egerstedt.
+\newblock The robotarium: A remotely accessible swarm robotics research
+  testbed.
+\newblock In {\em 2017 IEEE International Conference on Robotics and Automation
+  (ICRA)}, pages 1699--1706. IEEEx, 2017.
+
+\bibitem{ArUco1}
+Francisco Romero-Ramirez, Rafael Muñoz-Salinas, and Rafael Medina-Carnicer.
+\newblock Speeded up detection of squared fiducial markers.
+\newblock {\em Image and Vision Computing}, 76, 06 2018.
+
+\bibitem{Hhbridge}
+STMicroelectronic.
+\newblock Dual full-bridge driver.
+\newblock Available at \url{https://www.st.com/resource/en/datasheet/l298.pdf}.
+
+\bibitem{8960572}
+Sean Wilson, Paul Glotfelter, Li~Wang, Siddharth Mayya, Gennaro Notomista, Mark
+  Mote, and Magnus Egerstedt.
+\newblock The robotarium: Globally impactful opportunities, challenges, and
+  lessons learned in remote-access, distributed control of multirobot systems.
+\newblock {\em IEEE Control Systems Magazine}, 40(1):26--44, 2020.
+
+\bibitem{router}
+Redes Zone.
+\newblock Router wi-fi zte zxhn f680.
+\newblock Available at
+  \url{https://www.redeszone.net/analisis/routers/zxhn-f680/}.
+
+\end{thebibliography}

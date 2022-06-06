@@ -50,38 +50,15 @@ A continuación se detallaran los componentes del robot y una descripción de el
 	\end{figure}
 	
 	Para contar pulsos de luz se usa una rueda ranurada que está enganchada al eje de la rueda,y  consta de 20 ranuras esto implica que se tiene una resolución de N=20 y se divide la rueda en $\Delta\theta=\frac{2\pi}{20} $ radianes. La mínima distancia que se puede medir es la correspondiente a un pulso de encoder que corresponde a $d_{min}=R*\Delta\theta$ donde R es el radio de la rueda. Además de tener una distancia mínima, también se tiene un tiempo mínimo de lectura de pulsos que corresponde con la Figura ~\ref{fig:maxvelencoder} donde se puede apreciar un tiempo entre pulsos de 13.4 ms. Esta medida se ha sacado poniendo un voltaje al motor, el cual está encganchado a la rueda pero no se tiene en cuenta el rozamiento producido por el suelo, en la Figura ~\ref{fig:encoderrobot} se puede ver el montaje.\\
-	 
-	\begin{figure}
-		\centering
-		\includegraphics[width=0.7\linewidth]{ConstruccionRObot/maxVelEncoder}
-		\caption{velocidad máxima de la rueda \\ voltaje de 6.5V en el motor}
-		\label{fig:maxvelencoder}
-	\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{ConstruccionRObot/minVelEncoder}
-	\caption{velocidad mínima de la rueda \\ voltaje de 2V en el motor}
-	\label{fig:minvelencoder}
-\end{figure}
 
 	 Este, seria el tiempo mínimo de muestreo de la señal del encoder, si se va a la mínima velocidad posible, se puede ver en la Figura ~\ref{fig:minvelencoder} que el tiempo es 53.32ms , esto implica que el encoder no detecta variación del movimiento en un intervalo grande de tiempo, por ello a velocidades bajas no se podra estimar correctamente las variaciones de movimiento del robot. Con este componente se tiene una limitación en la medición de velocidad o distancia recorrida ya que no se podrá tomar muestras con un periodo inferior del mayor periodo de muestreo del encoder, si se hace no se detectará variación de la velocidad o del movimiento pudiendo tener errores en el control.
 	
 
 	Existe un problema con este sensor, y es que los pulsos que se obtienen del  sensor no son perfectos, esto puede deberse a diversos factores, como ruido en la entrada de alimentación, malas soldaduras en el integrado, vibraciones de los cables, o un problema de diafonía. Lo que se aplica para corregir en cierta manera este comportamiento no deseado es un filtro paso-bajo en la salida digital para al menos eliminar las componentes de alta frecuencia que perturban a la señal sin deformar el pulso cuadrado y manteniendo la frecuencia fundamental de la onda cuadrada, el filtro consiste en un condensador entre la tierra y la salida digital. En las siguientes figuras se analiza la salida del encoder y una posible solución.
-		\begin{figure}[h]
-		\centering
-		\includegraphics[width=0.8\linewidth]{ConstruccionRObot/PulsosEncoder_sinFiltro}
-		\caption{Salida de encoder sin filtro}
-		\label{fig:pulsosencodersinfiltro}
-	\end{figure}
+
 	
 	Se puede apreciar en la Figura ~\ref{fig:pulsosencodersinfiltro} obtenida de las lecturas del microcontrolador, que los pulsos no son perfectos, y se puede observar que hay un pulso pequeño entre -0.25 s y -0.3 s que claramente no es una lectura del encoder, esto es un problema pues el arduino puede confundir este pulso como una lectura válida del encoder y entonces la velocidad no se estimará de forma adecuada. Lo que se hace es lo que se ha comentado anteriormente y es añadir un condensador de 47 $n_{f}$ este filtrará componentes de alta frecuencia y no deformará el pulso de manera significativa. El resultado es el siguiente
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=0.7\linewidth]{ConstruccionRObot/PulsosEncoder_ConFiltro}
-		\caption{}
-		\label{fig:pulsosencoderconfiltro}
-	\end{figure}
+
 	En la figura ~\ref{fig:pulsosencoderconfiltro} se pueden ver los pulsos del encoder, y esta vez están mejor definidos y no se aprecia ningún pulso pequeño que no corresponde a la lectura de encoder como en el caso anterior. Con este filtro se paga un precio y es que los pulsos ya no son discretos, pues se tiene ele fecto de la descarga del condensador, pero en el microcontrolador se pueden configurar las interrupciones para que detecte el flanco de subida de un pulso.\\
 	
 	El microcontrolador esta configurado para reaccionar mediante interrupciones a los flancos de bajada del pulso, de esta manera se evita mantener al procesador ocioso contando pulsos, cuando podria haber una comunicación o deberia actuar el controlador.
