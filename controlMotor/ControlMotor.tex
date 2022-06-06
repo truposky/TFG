@@ -195,67 +195,13 @@ En el diagrama de bloques se pueden ver las siguientes partes que conforman el s
 
 Ademas en las figuras ~\ref{fig:feedforward} se puede apreciar como la curva tiende a la saturación a medida que se aumenta el valor de PWM, esto es lo esperado pues con un PWM de 255 que corresponde con un ciclo de trabajo del 100\% se tiene el máximo voltaje impuesto de 6.5 V y como se comentó el fabricante da unos límites de 9 voltios, se está próximo a la saturación. Otro factor a notar es la diferencia de las medidas de los diferentes robot
 \newpage
-	\item $PID(z)$ corresponde al controlador. El control de acción directa no basta para mantener una velocidad igual a la de referencia, debido a que las condiciones en las que se ha hecho el control de acción directa no son las mismas en todo momento,y además el control de acción directa no responde adecuadamente a las variaciones debidas al ruido o perturbaciones. Es necesario un control realimentado que corrija el error y la salida sea igual o esté muy cercana a la salida, para ello se usa uno de los controladores más usados y conocidos que es el PID, es un control que tiene un control proporcional, integral y derivativa. El control proporcional es una ganancia que se multiplica al error para llegar al valor deseado, tiene el problema de que se puede quedar en un valor próximo y nunca llegar. El control integral sirve para integrar el error y como resultado corrige el error al cual no puede llegar el control proporcional. El control derivativo trata de anticiparse a un comportamiento futuro, este último control es muy sensible al ruido, y puesto que el robot tiene mucho ruido en las mediciones, no se pone este último controlador.\\
+	\item $PID(z)$ corresponde al controlador. El control de acción directa no basta para mantener una velocidad igual a la de referencia, debido a que las condiciones en las que se ha hecho el control de acción directa no son las mismas en todo momento,y además el control de acción directa no responde adecuadamente a las variaciones debidas al ruido o perturbaciones. Es necesario un control realimentado que corrija el error y la salida sea igual o esté muy cercana a la salida, para ello se usa uno de los controladores más usados y conocidos que es el PID, es un control que es proporcional al error, integral y derivativa. El control proporcional es una ganancia que se multiplica al error para llegar al valor de referencia y minimizar el error, tiene el problema de que se puede quedar en un valor próximo y nunca llegar. El control integral sirve para integrar el error y como resultado corrige el error al cual no puede llegar el control proporcional. El control derivativo trata de anticiparse a un comportamiento futuro, este último control es muy sensible al ruido, y puesto que el robot tiene mucho ruido en la medición de la velocidad, no se pone este último controlador.\\
 	
 	 Se desconoce como es la planta, se tiene un modelo del motor DC pero el modelo no basta para conocer el comportamiento real. Por ello para la sintonización de los parámetros del PID se usa el método de ziegler-Nichols que se explica en el libro de Feedback systems[REFERENCIA A LIBRO], es un método que permite sintonizar los parámetros del controlador PID sin tener que conocer la planta, y esto sirve  para una primera aproximación y luego se va ajustando hasta conseguir una respuesta deseada. Ademas de la sintonización de los parámetros del controlador, se implementa un modulo conocido como Anti-Wind-up.
 	
 	 \subitem El Wind-Up es un problema que se tiene con el control integral, este controlador tiene memoria y, debido a que acumula valores anteriores del error esta acción integradora crece incluso cuando se llegue al valor referencia, y cuando se produce un cambio en la referencia el controlador tarda en reaccionar debido a los valores acumulados que guarda, por ello se propone dentro del control PID el denominado Anti-Wind-Up, básicamente lo que hace es que cuando llega a un valor máximo el integrador deja de acumular valores y cuando se cambia el signo del error se borra la memoria del controlador.
 	 
- 	Implementado en código para introducirlo en el microcontrolador quedaría de la siguiente forma:
- 	
-	 \begin{lstlisting}
-	int pidI(double wI)
-	{
- 		 currentTimeI=millis();
-		elapsedTimeI=currentTimeI - previousTimeI;
-		int outputI=0;
-		errorI = setpointWI - wI;   
-		double aux;
-		if(errorI<0){
-			aux=-errorI;
-		}
-		else{
-			aux=errorI ;          
-		}
-		if(aux>=0.30){
-		
-			cumErrorI += errorI * elapsedTimeI; 
-			//se resetea el error acumulativo cuando se cambia de signo
-			if(lastErrorI>0 && errorI<0){
-				cumErrorI=errorI* elapsedTimeI/1000;
-			}
-			if(lastErrorI<0 && errorI>0){
-				cumErrorI=errorI* elapsedTimeI/1000;
-			}
-			if(cumErrorI>0){
-				if(cumErrorI>MAXCUMERROR)
-					cumErrorI=MAXCUMERROR;
-				}
-				else if(cumErrorI<0){
-					if(cumErrorI<(-MAXCUMERROR)){
-					cumErrorI=-MAXCUMERROR;
-				}
-			}
-		
-			rateErrorI = (errorI - lastErrorI) /elapsedTimeI;         // calcular la derivada del error
-			
-			outputI = static_cast<int> (round(KI_p*errorI  + KI_i*cumErrorI + KI_d*rateErrorI));     // calcular la salida del PID Kp*errorI  + Ki*cumErrorI + Kd*rateErrorI
-			lastErrorI = errorI;
-			}
-			previousTimeI=currentTimeI;
-			return outputI;
-		}
-		
-		else{
-			outputI=0;
-		}
-		return outputI;
-	
-	}
-	 \end{lstlisting}
-	 
-	Se ha puesto solo el controlador de la rueda izquierda pero el de la derecha es igual, como se puede apreciar en el codigo cada un cierto tiempo que es el denominado elapsedTimeI el controlador actúa haciendo una suma acumulada denominada cumErrorI que equivale al control integral. Se puede apreciar que en el codigo de programación se tienen unos límites denominados minError a partir del cual el controlador actua, este límite esta puesto debido la cuantificación del voltaje en PWM, como se tienen valores discretos de voltaje, se establecen un margen de error aceptable, si no fuera asi el controlador oscilaria tratando de alcanzar la señal de referencia y a la cual no siempre puede llegar.\\
-	El Anti wind-up se implementa junto con un borrado de la memoria del integrador, y cuando el error cambia de signo respecto al valor anterior, esto se aprecia en la linea , el proceso que se ha hecho para evitar el wind-up es dejar de sumar cuando se llega a un valor máximo, esto se puede ver de la línea 24 a 32.
+ 
 	\item $G(s)$ es el motor DC, en varios libros y documentos existen diversos modelos de un motor DC para el control, en este caso no es necesario modelar el motor y estudiar su comportameinto, debido a que se va a trabajar sobre él directamente y se sintonizará el control sobre la planta real.
 	\item $H(s)$ es el sensor, que se refiere al encoder óptico, dicho encoder nos da pulsos que equivalen a $\theta=\frac{2\pi}{N}$ radianes, si se mide el tiempo entre pulsos se tiene la velocidad angular de la rueda.
 \end{itemize}
@@ -263,10 +209,10 @@ En conjunto los bloques forman el lazo de control, que mantiene una velocidad en
 En el diagrama de bloques anterior no se ha tenido en cuenta las perturbaciones que se obtienen, y debido a que el encoder y los motores no son de buena calidad y debido a las vibraciones del robot causadas por el movimiento, se tiene una alteración significativa de la lectura de pulsos. En el siguiente apartado se comenta el tratamiento del ruido y su solución.  
 
 \subsection{sintonización de parámetros PID}
-Debido al ruido del sistema, se decide por no incluir la parte derivativa del controlador PID, basta con poner $K_{d}=0$, esto se debe a que la acción derivativa amplifica el ruido, se podría poner un filtro a la acción derivativa, pero sería complicar el control de manera innecesaria y como se muestra a continuación con un control PI junto al control de acción directa es mas que suficente.\\
+Debido al ruido del sistema, se decide por no incluir la parte derivativa del controlador PID, basta con poner $K_{d}=0$, esto se debe a que la acción derivativa amplifica el ruido, se podría poner un filtro a la acción derivativa, pero sería complicar el control de manera innecesaria y como se muestra a continuación con un control PI junto al control de acción directa es mas que suficiente.\\
 Para la sintonización de los parámetros se recurre al método de Ziglers-Nichols\\
 Se toma como ejemplo de sintonización el robot1, los siguientes robots se hace de la misma manera.
-Lo primero que se hace es aplicar una ganacia K en el lazo de control, se aumenta dicha ganacia hasta que se llegue a un comportamiento oscilatorio. Con la K que ha causado el comportamiento oscilatorio y el periodo de la oscilación se hallan los prámetros del controlador PI.
+Lo primero que se hace es aplicar una ganancia K en el lazo de control, se aumenta dicha ganancia hasta que se llegue a un comportamiento oscilatorio. Con la K que ha causado el comportamiento oscilatorio y el periodo de la oscilación se hallan los parámetros del controlador PI.
 \begin{figure}[htbp]
 
 	\begin{subfigure}[b]{0.52\linewidth}

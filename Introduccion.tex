@@ -20,36 +20,38 @@ Debido a la obligación de comprobar el correcto funcionamiento de los algoritmo
 
 %ya se ha hablado de robotario
 \section{Hardware y software}\label{ch:HardwareYsoftware}
-El robotario se ha podido desarrollar con los siguientes componentes.
+El robotario se ha podido desarrollar con los siguientes componentes, de los cuales se va a hacer una breve descripción.
 \subsection{Robot móvil}
+El robot móvil del robotario cuenta con varios componentes.
+\subsubsection{chasis robot}
 
-\begin{figure}[h]
+
+Se ha elegido un robot móvil de bajo presupuesto comprado en la tienda de Aliexpres\cite{robotAli} pero con piezas simples y comunes, que se pueden reponer de manera sencilla si alguna se estropea, el chasis del robot incluye dos motores DC dos ruedas enganchadas a los motores, dos ruedas locas y consta de dos plantas. Los motores tienen un rango de funcionamiento de 2.5V a 9 V según los datos del fabricante.
+\begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.3\linewidth]{RobotAliexpres}
-	\caption{Robot móvil}
+	\includegraphics[width=0.2\linewidth]{RobotAliexpres}
+	\caption{ chasis robot móvil}
 	\label{fig:robotaliexpres}
 \end{figure}
 
-Se ha elegido un robot móvil de bajo presupuesto comprado en la pagina de Aliexpres\cite{robotAli} pero con piezas simples que se pueden reponer de manera sencilla si alguna se estropea, el chasis del robot incluye dos motores DC dos ruedas enganchadas a los motores, dos ruedas locas y consta de dos plantas. Los motores tienen un rango de funcionamiento de 2.5V a 9 V según los datos del fabricante.
+\subsubsection{Arduino nano 33 IoT}
 
-\begin{figure}
+Para tener un control sobre el robot, poder tener sensores en el robot y poder establecer la comunicación del robot con el servidor y los demás robots se usa una placa Arduino\cite{arduinoTienda}, Arduino es una compañía de software y hardware libre que desarrolla y diseña placas con microcontroladores, la placa Arduino adquirida cuenta con un microprocesador Arm® Cortex®-M0 32-bit SAMD2 además tiene incorporado una antena que permite la comunicación WiFi y Bluetooth, se ha adquirido en la tienda oficial de Arduino. La paca cuenta con una IMU que puede que tiene acelerómetro y giroscopo, en este proyecto no se va usar este módulo pero es de utilidad para futuras versiones.
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=0.3\linewidth]{Arduinonano33}
 	\caption{Placa de Arduino nano 33 IoT}
 	\label{fig:arduinonano33}
 \end{figure}
-\subsection{Arduino nano 33 IoT}
-
-Para tener un control sobre el robot, poder tener sensores en el robot y poder establecer la comunicación del robot con el servidor y los demás robots se usa una placa Arduino\cite{arduinoTienda}, Arduino es una compañía de software y hardware libre que desarrolla y diseña placas con microcontroladores, la placa Arduino adquirida cuenta con un microprocesador Arm® Cortex®-M0 32-bit SAMD2 además tiene incorporado una antena que permite la comunicación WiFi y Bluetooth, se ha adquirido en la tienda oficial de Arduino.
-\subsection{L298n}
+\subsubsection{integrado L298n, puente H}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.25\linewidth]{PuenteH}
-	\caption{Puente H}
+	\caption{L298n}
 	\label{fig:puenteH}
 \end{figure}
 Para poder gobernar los motores correctamente se usa un puente H\cite{Hhbridge} para cada motor. En este caso se usa un integrado el cual incorpora 2 puentes H y un regulador de tensión que proporciona 5 voltios a la salida y se aprovecha para alimentar la placa con microcontrolador.El puente H es un circuito formado por transistores y diodos que es de uso común en el gobierno de motores o de circuitos de potencia. Cuenta con  un rango de voltaje de entrada de 5V-35V. El puente H se alimenta con la tensión de entrada y se regula la alimentación que le llega al motor mediante una señal PWM\cite{PWM} procedente de la placa arduino. se detalla el funcionamiento de la  señal PWM en conjunto con el puente H en el capítulo ~\ref{ch:ControlMotor} correspondiente al control del motor.
-\subsection{Batería}
+\subsubsection{Batería}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.3\linewidth]{ConstruccionRObot/bat}
@@ -58,16 +60,16 @@ Para poder gobernar los motores correctamente se usa un puente H\cite{Hhbridge} 
 \end{figure}
 	Para alimentar el robot se usa una batería LiFePo de 3 celdas de 3.3 V cada una en total se tiene 2200mAh. Se usan dos batería en paralelo para poder tener una mayor intensidad y tener una duración mas larga de la batería.
 
-\subsection{Step-Down DC-DC}
+\subsubsection{Step-Down DC-DC}
 	\begin{figure}[h]
 		\centering
 	\includegraphics[width=0.25\linewidth]{ConstruccionRObot/StepDown}
 	\caption{Step-Down}
 	\label{fig:StepDown}
 	\end{figure}
-Se tiene un conversor DC-DC para bajar el voltaje de salida de la batería, en el capitulo ?? se comenta porque.También se ha adquirido en la tienda de Aliexpress[referencia]
+Se tiene un conversor DC-DC para bajar el voltaje de salida de la batería, .También se ha adquirido en la tienda de Aliexpress[referencia]
 
-\subsection{Encoder óptico}	%REVISAR LO DEL FILTRO%
+\subsubsection{Encoder óptico}	%REVISAR LO DEL FILTRO%
 	\begin{figure}[h]
 	\centering
 	\includegraphics[width=0.25\linewidth]{ConstruccionRObot/Encoder}
@@ -79,7 +81,7 @@ Se tiene un conversor DC-DC para bajar el voltaje de salida de la batería, en e
 El encoder además tiene dos salidas, una analógica y otra digital, esta última es la que interesa debido a que es más útil para el microcontrolador leer entradas discretas que equivalen a un 1 cuando se lee un voltaje y un 0 cuando no hay voltaje o esta por debajo de un umbral establecido. El voltaje de funcionamiento del sensor puede ser de 3.3V a 5V, como el microcontrolador solo soporta 3.3V será esta la alimentación que se proporcionará.\\ 
 	Para contar pulsos de luz se usa una rueda ranurada que está enganchada al eje de la rueda,y  consta de 20 ranuras esto implica que se tiene una resolución de N=20 y se divide la rueda en $\Delta\theta=\frac{2\pi}{20} $ radianes.
 
-\subsection{RaspberryPi y Picam}
+\subsubsection{RaspberryPi y Picam}
 	\begin{figure}[h]
 	\centering
 	\includegraphics[width=0.25\linewidth]{raspberry_cam}

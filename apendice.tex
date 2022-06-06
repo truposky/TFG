@@ -1,0 +1,55 @@
+	Implementado en código para introducirlo en el microcontrolador quedaría de la siguiente forma:
+ 	
+	 \begin{lstlisting}
+	int pidI(double wI)
+	{
+ 		 currentTimeI=millis();
+		elapsedTimeI=currentTimeI - previousTimeI;
+		int outputI=0;
+		errorI = setpointWI - wI;   
+		double aux;
+		if(errorI<0){
+			aux=-errorI;
+		}
+		else{
+			aux=errorI ;          
+		}
+		if(aux>=0.30){
+		
+			cumErrorI += errorI * elapsedTimeI; 
+			//se resetea el error acumulativo cuando se cambia de signo
+			if(lastErrorI>0 && errorI<0){
+				cumErrorI=errorI* elapsedTimeI/1000;
+			}
+			if(lastErrorI<0 && errorI>0){
+				cumErrorI=errorI* elapsedTimeI/1000;
+			}
+			if(cumErrorI>0){
+				if(cumErrorI>MAXCUMERROR)
+					cumErrorI=MAXCUMERROR;
+				}
+				else if(cumErrorI<0){
+					if(cumErrorI<(-MAXCUMERROR)){
+					cumErrorI=-MAXCUMERROR;
+				}
+			}
+		
+			rateErrorI = (errorI - lastErrorI) /elapsedTimeI;         // calcular la derivada del error
+			
+			outputI = static_cast<int> (round(KI_p*errorI  + KI_i*cumErrorI + KI_d*rateErrorI));     // calcular la salida del PID Kp*errorI  + Ki*cumErrorI + Kd*rateErrorI
+			lastErrorI = errorI;
+			}
+			previousTimeI=currentTimeI;
+			return outputI;
+		}
+		
+		else{
+			outputI=0;
+		}
+		return outputI;
+	
+	}
+	 \end{lstlisting}
+	 
+	Se ha puesto solo el controlador de la rueda izquierda pero el de la derecha es igual, como se puede apreciar en el codigo cada un cierto tiempo que es el denominado elapsedTimeI el controlador actúa haciendo una suma acumulada denominada cumErrorI que equivale al control integral. Se puede apreciar que en el codigo de programación se tienen unos límites denominados minError a partir del cual el controlador actua, este límite esta puesto debido la cuantificación del voltaje en PWM, como se tienen valores discretos de voltaje, se establecen un margen de error aceptable, si no fuera asi el controlador oscilaria tratando de alcanzar la señal de referencia y a la cual no siempre puede llegar.\\
+	El Anti wind-up se implementa junto con un borrado de la memoria del integrador, y cuando el error cambia de signo respecto al valor anterior, esto se aprecia en la linea , el proceso que se ha hecho para evitar el wind-up es dejar de sumar cuando se llega a un valor máximo, esto se puede ver de la línea 24 a 32.
