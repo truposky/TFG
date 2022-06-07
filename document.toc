@@ -17,27 +17,32 @@
 \contentsline {subsection}{\numberline {2.3}OpenCV}{9}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Suelo de goma}{9}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Router}{9}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Metodolog\IeC {\'\i }a}{10}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Selecci\IeC {\'o}n de componentes}{10}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Construcci\IeC {\'o}n de un primer robot}{10}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Prueba de encoders y estimaci\IeC {\'o}n de la velocidad}{10}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Prueba de motor}{11}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}programaci\IeC {\'o}n de arduino y Comprobaci\IeC {\'o}n del robot montado}{11}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}Configuraci\IeC {\'o}n y desarrollo de red de comunicaci\IeC {\'o}n}{12}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Programaci\IeC {\'o}n para visi\IeC {\'o}n por computador}{12}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Configuraci\IeC {\'o}n y programaci\IeC {\'o}n de RaspberryPI}{13}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Montaje final de Robotario}{13}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Estimaci\IeC {\'o}n de la velocidad}{15}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Tratamiento del ruido}{17}{subsection.4.1}%
-\contentsline {section}{\numberline {5}Control del Motor DC}{19}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Cuantizaci\IeC {\'o}n del voltaje}{19}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Dise\IeC {\~n}o del controlador}{21}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}sintonizaci\IeC {\'o}n de par\IeC {\'a}metros PID}{23}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Navegaci\IeC {\'o}n del robot}{24}{section.6}%
-\contentsline {section}{\numberline {7}Localizaci\IeC {\'o}n de los robots}{26}{section.7}%
-\contentsline {section}{\numberline {8}Dise\IeC {\~n}o y configuraci\IeC {\'o}n de la red de Comunicaci\IeC {\'o}n}{29}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Red LAN}{30}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Caracter\IeC {\'\i }sticas de la red}{32}{subsection.8.2}%
-\contentsline {section}{\numberline {9}Demostraci\IeC {\'o}n de los experimentos}{34}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Experimento I}{34}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Experimento II}{34}{subsection.9.2}%
+\contentsline {subsection}{\numberline {2.6}Coste del material}{10}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Metodolog\IeC {\'\i }a}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Estudio de entornos de pruebas existentes}{11}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Selecci\IeC {\'o}n de componentes}{11}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Construcci\IeC {\'o}n de un primer robot}{11}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Prueba de encoders y estimaci\IeC {\'o}n de la velocidad}{11}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Prueba de motor}{12}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}programaci\IeC {\'o}n de arduino y Comprobaci\IeC {\'o}n del robot montado}{12}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}Contrucci\IeC {\'o}n de copias del primer robot}{13}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Configuraci\IeC {\'o}n y desarrollo de red de comunicaci\IeC {\'o}n}{13}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Programaci\IeC {\'o}n para visi\IeC {\'o}n por computador}{14}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Configuraci\IeC {\'o}n y programaci\IeC {\'o}n de RaspberryPI}{14}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Montaje final de Robotario}{14}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Realizaci\IeC {\'o}n de experimentos}{15}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Planificaci\IeC {\'o}n de proyecto}{15}{subsection.3.10}%
+\contentsline {section}{\numberline {4}Estimaci\IeC {\'o}n de la velocidad}{17}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Tratamiento del ruido}{19}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Control del Motor DC}{21}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Cuantizaci\IeC {\'o}n del voltaje}{21}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Dise\IeC {\~n}o del controlador}{23}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}sintonizaci\IeC {\'o}n de par\IeC {\'a}metros PID}{25}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Navegaci\IeC {\'o}n del robot}{26}{section.6}%
+\contentsline {section}{\numberline {7}Localizaci\IeC {\'o}n de los robots}{28}{section.7}%
+\contentsline {section}{\numberline {8}Dise\IeC {\~n}o y configuraci\IeC {\'o}n de la red de Comunicaci\IeC {\'o}n}{31}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Red LAN}{32}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Caracter\IeC {\'\i }sticas de la red}{34}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Demostraci\IeC {\'o}n de los experimentos}{36}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Experimento I}{36}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Experimento II}{36}{subsection.9.2}%

@@ -1,5 +1,7 @@
 \section{Metodología}\label{ch:metodologia}
 Para poder llevar a cabo el robotario, se hace un estudio de los ejemplos ya existentes y se establece un método de trabajo.
+\subsection{Estudio de entornos de pruebas existentes}
+Antes de ponerse a diseñar y montar el robtoario, se estudia los ejemplos existentes, en particular el Robotarium, se ve que componentes tienen, como son los robots, como se mueven para luego intentar recrearlo, como se localizan los robots, también se lee la documentación de Duckietown y se recopila información de como lo han hecho su experiencia construyendo los robots y lo que han necesitado. Después de haber estudiado con detenimiento ejemplos existentes se plantea que se necesita para poder construir un entorno de pruebas equivalente, y se decide por realizar una comunicación inalámbrica mediante la tecnología WiFi, que es fácil de implementar y mas barata que una emisora de radio.
 \subsection{Selección de componentes}
 Una vez que se ha recopilado información sobre lo necesario para elaborar el robotario se hace una lista de componentes a nivel de hardware y software.
 	
@@ -9,15 +11,15 @@ Una vez que se ha recopilado información sobre lo necesario para elaborar el ro
 		\item Router.
 		\item Ordenador que hace de servidor.
 		\item Placa con microcontrolador(Arduino).
-		\item Cámara webcam.
+		\item Cámara webcam, para localización.
 		\item Cámara a bordo de robot.
 		\item Ordenador de placa simple(RaspberryPi).
-		\item Selección de software para visión por computador.
-		\item Selección de lenguaje de programación.
+		\item Selección de software para visión por computador, OpenCV.
+		\item Selección de lenguaje de programación, C++ y C.
 	\end{enumerate}
 \end{center}
 \subsection{Construcción de un primer robot}
-Lo primero que se hace es evaluar el robot adquirido, como se comento antes, el robot cuenta con dos motores DC, se comprueba la zona de operación de los motores y se estima la velocidad a la cual pueden ir.
+Lo primero que se hace es evaluar el robot adquirido, se tenía componentes para poder montar un primer robot y no se tuvo que esperar, a que llegasen más componentes para poder comprobar el correcto funcionamiento. El robot cuenta con dos motores DC, se comprueba la zona de operación de los motores y se estima la velocidad a la cual pueden ir.
 	\subsubsection{Prueba de encoders y estimación de la velocidad}
 	El siguiente paso es verificar que los encoders ópticos adquiridos definen de manera adecuada los pulsos de salida y que la placa de Arduino cuenta de manera correcta los pulsos, para ello se configura la placa Arduino para que reaccione mediante interrupciones a los pulsos de voltaje proporcionados por el encoder óptico, es decir se provoca una interrupción cuando se tiene un nivel bajo de voltaje después de haber tenido uno alto y se crea una rutina sencilla que mide el tiempo entre interrupciones y cuenta las interrupciones que se producen, de esta manera se cuentan los pulsos.
 	\begin{itemize} 
@@ -50,16 +52,17 @@ Respecto al segundo problema se han localizado dos fuentes de origen, una es mec
 El problema mecánico se debe a que los ejes donde se enganchan las ruedas motrices tienen holgura y esto provoca una oscilación sobre el propio eje de la rueda motriz y otro problema es que el eje se dobla ligeramente cuando se posa sobre el suelo, esto último hace que haya mas superficie de contacto en un lado de la rueda que en otro, provocando perturbación en el movimiento. Estos problemas se deben a la calidad de los componentes y puesto que buscar y adquirir un componente adecuado o un mejor chasis del robot aumentaría el presupuesto se deja como esta y, se trata el problema mecánico como incertidumbre en la medida.\\
 El ruido eléctrico se debe a que se alimenta el circuito de potencia y el de la placa de arduino con la misma batería, y lo único que separa un circuito del otro es el regulador de tensión del LN298n, que al ser de baja calidad, no consigue aislar un circuito del otro. La solución que se hace es colocar un condensador electrolítico, como desacoplo en la entrada de alimentación de la placa de arduino. A pesar de la solución se sigue obteniendo ruido debido a la diafonía que producen los pulsos lógicos de lectura de los encoders, ante esto no se puede hacer nada al menos en la placa de arduino de la que se dispone.\\
 Las ruedas locas se cambian por otras ruedas, denominadas ruedas de bola que solucionan el problema.\\
-Una vez que se tiene ajustado el robot, se construyen 2 robots mas.
+\subsection{Contrucción de copias del primer robot}
+Una vez que se tiene ajustado el primer robot construido, se construyen 2 robots mas.A pesar de haber sido lo mas cuidadoso posible los robots construidos no son iguales entre sí, tienen distintos parámetros y cada uno debe tener su propio controlador, no se puede crear uno genérico y replicarlo a los demás pues si se hace, no funciona correctamente.
 \subsection{Configuración y desarrollo de red de comunicación}
-El siguiente paso es configurar la red de comunicación, la cual como se ha comentado es necesariamente inalámbrica, por ello se selecciona un router que estaba disponible en el departamento, pero se encuentra un problema y es que este router es muy antiuguo y se debe buscar otro con unos parámetros mejores que el anterior, como el ancho de banda, potencia, procesamiento de la información, etc. En las placas de arduino se crea un programa que permite conectarse a la red LAN. A su vez se crea un pequeño servidor para realizar pruebas de comunicación.Se obtiene de las diversas pruebas realizadas, que se tiene una latencia baja para un dispositivo y el servidor, se realiza una prueba de envio de paquetes con mas arduinos involucrados y se obtiene una latencia mayor entorno a 100 ms, es un factor a tener en cuenta que puede afectar negativamente al robotario.Se elige el protocolo UDP para realizar el envío de información y evitar una latencia mayor y retrasos.\\
+El siguiente paso es configurar la red de comunicación, la cual como se ha comentado es necesariamente inalámbrica, por ello se selecciona un router que estaba disponible en el departamento, pero se encuentra un problema y es que este router es muy antiguo y se debe buscar otro con unos parámetros mejores que el anterior, como el ancho de banda, potencia, procesamiento de la información, etc. En las placas de arduino se crea un programa que permite conectarse a la red LAN. A su vez se crea un pequeño servidor para realizar pruebas de comunicación.Se obtiene de las diversas pruebas realizadas, que se tiene una latencia baja para un dispositivo y el servidor, se realiza una prueba de envío de paquetes con mas arduinos involucrados y se obtiene una latencia mayor entorno a 100 ms, es un factor a tener en cuenta que puede afectar negativamente al robotario.Se elige el protocolo UDP para realizar el envío de información y evitar una latencia mayor y retrasos.\\
  Una vez que se tiene todo funcional se desarrollan funciones, protocolos e instrucciones de comunicación entre las placas de arduino y el servidor de manera que se pueda producir una correcta comunicación. Toda la programación se realiza en C++ y C.\\
- Además de la comunicación inalámbrica se crea una comunicación serie a traves del puerto USB entre arduino y una RaspberryPi que va implementada en el robot. Se usa la misma estructura utilizada para la comunicación WiFi, pero se envia bit a bit.
+ Además de la comunicación inalámbrica se crea una comunicación serie a través del puerto USB entre arduino y una RaspberryPi que va implementada en el robot. Se usa la misma estructura utilizada para la comunicación WiFi, pero se enviá bit a bit.
 
 \subsection{Programación para visión por computador}
 Una vez que se tiene la comunicación y el robot preparado se realiza un estudio de la librería de OpenCV en especial de la librería ArUco perteneciente a OpenCV.\\
 Estudiada la librería de OpenCV se crea un programa que permite localizar los Markers en el mundo visto por la cámara que en este caso es la cámara logitech, transformando los pixeles de la imagen en coordenadas X,Y,Z con distancia medida en metros, esto realiza con una calibración de la cámara y obteniendo dos matrices, una con los parámetros de distorsión de la cámara y  otra con la relación pixeles metros.\\
- Una vez que se tiene configurado el reconocimiento de markers y su localización en el mundo de la cámara, se procede a hacer lo mismo con la cámara de la raspberryPi de esta manera se tienen calibradas los dos tipos de cámaras.\\
+ Una vez que se tiene configurado el reconocimiento de Markers y su localización en el mundo de la cámara, se procede a hacer lo mismo con la cámara de la raspberryPi de esta manera se tienen calibradas los dos tipos de cámaras.\\
  Finalizada la calibración de las cámaras se colocan en su posición final, la de la raspberryPi se coloca en el robot y la cámara Logitech se coloca encima del lugar que se tiene reservado para el robotario, haciendo de cámara cenital.\\ 
  Por simplicidad solo se usa una cámara cenital.
 \subsection{Configuración y programación de RaspberryPI}
@@ -69,10 +72,25 @@ Con la cámara de la raspberryPi configurada, se desarrolla un programa que reco
  Se coloca una cámara cenital que sirve como sistema de localización global, la cámara se coloca encima del los límites del robotario y lo mas centrada posible.
 Por último se instala un suelo de goma en la zona del robotario que maraca los límites. Se hacen pruebas de movimientos con los robots y se detecta que a pesar de ser el suelo de goma, al ser de baja calidad los robots se quedan atrapados en unas zonas, reduciendo su velocidad o en otras zonas sus ruedas motrices resbalan. La solución a futuro es adquirir un suelo de goma duro y liso, similar al que te puedes encontrar en un gimnasio.
 
-En la figura ~\ref{fig:montajefinal} se puede ver como queda el robotario montado, con 3 robots. arriba se puede ver la cámara colocada. En la imagen se aprecia mejor como el espacio es pequeño, por ello se tiene la necesidad de que los robots vayan mas despacio.
-\begin{figure}
+En la figura ~\ref{fig:montajefinal} se puede ver como queda el robotario montado, con 3 robots. arriba se puede ver la cámara colocada. En la imagen se aprecia mejor como el espacio es pequeño, por ello se tiene la necesidad de que los robots vayan mas despacio.\\
+\begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.6\linewidth]{MontajeFinal}
+	\includegraphics[scale=0.6]{MontajeFinal}
 	\caption{Montaje final del robotario}
 	\label{fig:montajefinal}
 \end{figure}
+\newpage
+\subsection{Realización de experimentos}
+Por último para demostrar que el robotario se puede usar para comprobar el funcionamiento de diversos algoritmos, se realizan dos experimentos, uno sencillo de localización y orientación con la cámara cenital, y otro que sirve de ayuda para un proyecto de investigación, que trata de estimar la posición de los robots, midiendo la variación de los ángulos y la velocidad relativa de un robot respecto a otro, para este experimento se necesitan mínimo 3 robots. Gracias a la realización de estos experimentos se han conocido limitaciones del robotario, que se detallan en el capitulo ~\ref{ch:experimento1}
+
+
+\subsection{Planificación de proyecto}
+
+\begin{figure}[pt]
+
+	\includegraphics[width=01\linewidth, height=0.75\textheight]{gantt}
+	\caption{diagrama de Gantt}
+	\label{fig:gantt}
+\end{figure}
+
+En la Figura ~\ref{fig:gantt} se tiene un diagrama de Gantt donde se muestra las fases del proyecto y la duración de las mismas. El proceso mas complicado ha sido el correspondiente a la estimación de la velocidad, algo que parece sencillo de implementar con los encoders, han dado muchos problemas,siendo la duración de la implementación de 30 días, se puede deber a que son componentes de bajo coste y no han tenido mucho cuidado en la fabricación. Y por último el experimento 1 llevo mucho tiempo debido a que, ha costado mucho hacer que todo se integrase de manera correcta, también se han tenido problemas debido a la limitación de hardware y dificultó la realización del experimento.

@@ -119,4 +119,68 @@ El Router permite la comunicación de los distintos dispositivos de la red, es u
 	\item Potencia máxima en 2.4GHz de 20dBm.
 	\item Potencia máxima en 5 GHz de 23dBm y en la banda de 547-5725MHz la potencia máxima es de 30 dBm.
 \end{itemize}
-Según un análisis realizado por Red zone \cite{router} el router es mas que suficiente para la situación actual de robotario que cuenta con 3 robots contruidos y pronto serán 5. Se entra en más profundidad en el análisis de las características de la red en el cápitulo ~\ref{ch:RedLan}.
+Según un análisis realizado por Red zone \cite{router} el router es mas que suficiente para la situación actual de robotario que cuenta con 3 robots contruidos y pronto serán 5. Se entra en más profundidad en el análisis de las características de la red en el capítulo ~\ref{ch:RedLan}.
+\newpage
+\subsection{Coste del material}
+Se muestra el Cuadro ~\ref{tab:MatRobot} con el precio de los componentes de un robot.
+\begin{table}[h]
+\begin{center}
+	\begin{tabular}{| c | c |}
+		\hline
+		Material Robot & Precio(€) \\ 
+		\hline
+		Arduino nano 33 IoT & 16.00 \\
+		\hline
+		Chasis robot & 10.47 \\
+		\hline
+		Ln298(puente H) & 2.79 \\
+		\hline
+		step Down(x2) & 1.66 \\
+		\hline
+		Encoder óptico & 2.30 \\
+		\hline
+		Placa para soldar circuito & 5.05 \\
+		\hline
+		Ruedas de bola(x2) & 2.74 \\
+		\hline
+		switch & 0.82 \\
+		\hline
+		Bateria & 18.90 \\
+		\hline
+		Condensador de desacoplo & 0.16 \\
+		\hline
+		Condensador Filtro encoder & 0.06 \\
+		\hline
+		RaspberryPi 4, 2GB & 57.00\\
+		\hline
+		Picam & 17.04\\
+		\hline
+		TOTAL & 134.99 \\
+		\hline
+	\end{tabular} 
+	\caption{Material robot}
+	\label{tab:MatRobot} 
+\end{center}
+\end{table}
+El componente más caro del robot es la raspberryPi, bien se puede hacer con el modelo 3B+, pero de la que se disponía en el momento es el último modelo. Por 134.99€ se tiene un robot que permite desarrollar diversos algoritmos en el entorno de pruebas, poder comunicarse y  con reconocimiento del entorno. Además el robotario puede funcionar sin la raspberryPi y sin la cámara Picam, eso si limitaría el numero de experimentos a realizar. En total el coste de los robots del robotario, con 5 robots adquiridos de los cuales 2 tiene RaspberryPi es de 452.83 €.\\
+El material restante es el necesario para la comunicación y para que los robots se muevan de manera adecuada es el mostrado en el Cuadro ~\ref{tab:MatRobotario}	
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{| c | c |}
+			\hline
+			Material Robotario & Precio(€) \\ 
+			\hline
+			Cámara logitech c920 & 54.00 \\
+			\hline
+			Suelo de goma & 20.00 \\
+			\hline
+			Router & 35.00 \\
+			\hline
+			TOTAL & 109.00 \\
+			\hline
+		\end{tabular}
+	\caption{Material robotario}
+	\label{tab:MatRobotario}  
+	\end{center}
+\end{table}
+\\En total por 561.83€ se tiene un robotario funcional.
