@@ -9,7 +9,7 @@ draw,
 minimum width=0.6cm,
 minimum height=0.3cm
 ]
-
+\begin{figure}
 \begin{tikzpicture}
 
 % Sum shape
@@ -63,7 +63,6 @@ minimum size=0.5cm,
 fill=Rhodamine!50,
 right=0.4 cm of sampler3
 ]  (sum2) {};
-
 
 
 \draw (sum2.north east) -- (sum2.south west)
@@ -142,49 +141,55 @@ node[midway](output){}node[midway,above]{$y$};
 
 \draw[-stealth] (sum2.east) |- (ZOH.west);
 \end{tikzpicture}
-
+\caption{Diagrama de bloques del control}
+\end{figure}
 
 En el diagrama de bloques se pueden ver las siguientes partes que conforman el sistema de control
 \begin{itemize}
 	\item $U(s)$ corresponde con una entrada escalón de $w$, es la consigna de referencia de la velocidad angular de la rueda. La entrada se traduce en un valor de PWM que corresponde con un valor de voltaje el cual está limitado a un valor de 6.5 V.
-	\item $F$ corresponde con un controlador de acción directa, se ha creado un programa en el microcontrolador, el cual introduce una señal de PWM al puente H y a su vez toma las lecturas proporcionadas por el sensor de velocidad y  se obtiene una tabla de entradas PWM que corresponde a un nivel de voltaje y una salida de rad/s que corresponde al giro de la rueda. Se hace para varios valores y a partir de los datos se hace una regresión lineal de las medidas. En la Figura ~\ref{fig:feedforward} se puede ver las muestras obtenidas y la ecuación resultante que se aplica en el controlador de cada motor, correspondiente a la acción directa. Para realizar las medidas se ha tenido en cuenta el rozamiento, esto implica que las pruebas se han realizado con el robot montado y sobre la superficie del robotario.
-	\begin{figure}[p]
+		\begin{figure}[!hp]
 		
 		\begin{subfigure}[b]{0.5\linewidth}
 			\centering
 			\includegraphics[width=1\linewidth]{controlMotor/FeedforwardR1_R}
-			\caption{Rueda derecha Robot1}
+			\caption{Rueda derecha Robot1\\
+				$w=0.687+0.065\cdot pwm$}
 			\label{fig:feedforwardR1_R}
 			\vspace{4ex}
 		\end{subfigure}%%	
 		\begin{subfigure}[b]{0.5\linewidth}
 			\centering
 			\includegraphics[width=1\linewidth]{controlMotor/FeedforwardR1_L}
-			\caption{Rueda izquierda Robot1}
+			\caption{Rueda izquierda Robot1\\
+				$w=1.168+0.061\cdot pwm$}
 			\label{fig:feedforwardrR1_left}
 			\vspace{4ex}
 		\end{subfigure}	
 		\begin{subfigure}[b]{0.5\linewidth}
 			\includegraphics[width=1\linewidth]{controlMotor/FeedforwardR2_R}
-			\caption{Rueda derecha Robot2}
+			\caption{Rueda derecha Robot2\\
+				$w=0.083+0.071\cdot pwm$}
 			\label{fig:feedforwardR2_R}
 			\vspace{4ex}
 		\end{subfigure}
 		\begin{subfigure}[b]{0.5\linewidth}
 			\includegraphics[width=1\linewidth]{controlMotor/FeedforwardR2_L}
-			\caption{Rueda izquierda Robot2}
+			\caption{Rueda izquierda Robot2\\
+				$w=-1.656+0.072\cdot pwm$}
 			\label{fig:feedforwardrR2_left}
 			\vspace{4ex}
 		\end{subfigure}	
 		\begin{subfigure}[b]{0.5\linewidth}
-			\includegraphics[width=1\linewidth]{controlMotor/FeedforwardR2_R}
-			\caption{Rueda derecha Robot2}
+			\includegraphics[width=1\linewidth]{controlMotor/FeedforwardR3_R}
+			\caption{Rueda derecha Robot3\\
+				$w=1.257+0.057\cdot pwm$}
 			\label{fig:feedforwardR3_R}
 			\vspace{4ex}
 		\end{subfigure}
 		\begin{subfigure}[b]{0.5\linewidth}
-			\includegraphics[width=1\linewidth]{controlMotor/FeedforwardR2_L}
-			\caption{Rueda izquierda Robot2}
+			\includegraphics[width=1\linewidth]{controlMotor/FeedforwardR3_L}
+			\caption{Rueda izquierda Robot3\\
+				$w=0.332+0.060\cdot pwm$}
 			\label{fig:feedforwardrR3_left}
 			\vspace{4ex}
 		\end{subfigure}
@@ -192,9 +197,11 @@ En el diagrama de bloques se pueden ver las siguientes partes que conforman el s
 		\caption{FeedForward}
 		\label{fig:feedforward}
 	\end{figure}
+	\item $F$ corresponde con un controlador de acción directa, se ha creado un programa en el microcontrolador, el cual introduce una señal de PWM al puente H y a su vez toma las lecturas proporcionadas por el sensor de velocidad y  se obtiene una tabla de entradas PWM que corresponde a un nivel de voltaje y una salida de rad/s que corresponde al giro de la rueda. Se hace para varios valores y a partir de los datos se hace una regresión lineal de las medidas. En la Figura ~\ref{fig:feedforward} se puede ver las muestras obtenidas y la ecuación resultante que se aplica en el controlador de cada motor, correspondiente a la acción directa. Para realizar las medidas se ha tenido en cuenta el rozamiento, esto implica que las pruebas se han realizado con el robot montado y sobre la superficie del robotario.
 
-Ademas en las figuras ~\ref{fig:feedforward} se puede apreciar como la curva tiende a la saturación a medida que se aumenta el valor de PWM, esto es lo esperado pues con un PWM de 255 que corresponde con un ciclo de trabajo del 100\% se tiene el máximo voltaje impuesto de 6.5 V y como se comentó el fabricante da unos límites de 9 voltios, se está próximo a la saturación. Otro factor a notar es la diferencia de las medidas de los diferentes robot
-\newpage
+
+Ademas en las figuras ~\ref{fig:feedforward} se puede apreciar como la curva tiende a la saturación a medida que se aumenta el valor de PWM, esto es lo esperado pues con un PWM de 255 que corresponde con un ciclo de trabajo del 100\% se tiene el máximo voltaje impuesto de 6.5 V y como se comentó el fabricante da unos límites de 9 voltios, se está próximo a la saturación. Otro factor a notar es la diferencia de las medidas de los diferentes robot, se puede ver que las medidas dadas por el robot 1 son mas uniformes que las otras, siendo el robot 3 el que tiene medidas mas dispersas, uno pudiera pensar que se ha tenido un descuido al ir montando los diferentes robots, y esto no es así, pues el primero en montarse ha sido el robot2. La respuesta de las gráficas demuestra que cada robot es muy diferente en cuanto a mediciones y movimiento. Otro factor notable en las gráficas para realizar el control de acción directa es que el robot 3 tiene un valor menor de $w$  para un máximo PWM, como el voltaje máximo es el mismo para todos, lo que se deduce de esto es que el robot 3 tiene mas rozamiento en las ruedas, ya sea por ele eje que cueste mas girar o por la goma de las propias ruedas, esto complica el diseñar un controlador genérico y que sirva para todos los robots, por ello se debe hacer un control de acción directa para cada robot y un PID distinto.
+
 	\item $PID(z)$ corresponde al controlador. El control de acción directa no basta para mantener una velocidad igual a la de referencia, debido a que las condiciones en las que se ha hecho el control de acción directa no son las mismas en todo momento,y además el control de acción directa no responde adecuadamente a las variaciones debidas al ruido o perturbaciones. Es necesario un control realimentado que corrija el error y la salida sea igual o esté muy cercana a la salida, para ello se usa uno de los controladores más usados y conocidos que es el PID, es un control que es proporcional al error, integral y derivativa. El control proporcional es una ganancia que se multiplica al error para llegar al valor de referencia y minimizar el error, tiene el problema de que se puede quedar en un valor próximo y nunca llegar. El control integral sirve para integrar el error y como resultado corrige el error al cual no puede llegar el control proporcional. El control derivativo trata de anticiparse a un comportamiento futuro, este último control es muy sensible al ruido, y puesto que el robot tiene mucho ruido en la medición de la velocidad, no se pone este último controlador.\\
 	
 	 Se desconoce como es la planta, se tiene un modelo del motor DC pero el modelo no basta para conocer el comportamiento real. Por ello para la sintonización de los parámetros del PID se usa el método de ziegler-Nichols que se explica en el libro de Feedback systems[REFERENCIA A LIBRO], es un método que permite sintonizar los parámetros del controlador PID sin tener que conocer la planta, y esto sirve  para una primera aproximación y luego se va ajustando hasta conseguir una respuesta deseada. Ademas de la sintonización de los parámetros del controlador, se implementa un modulo conocido como Anti-Wind-up.
@@ -202,7 +209,7 @@ Ademas en las figuras ~\ref{fig:feedforward} se puede apreciar como la curva tie
 	 \subitem El Wind-Up es un problema que se tiene con el control integral, este controlador tiene memoria y, debido a que acumula valores anteriores del error esta acción integradora crece incluso cuando se llegue al valor referencia, y cuando se produce un cambio en la referencia el controlador tarda en reaccionar debido a los valores acumulados que guarda, por ello se propone dentro del control PID el denominado Anti-Wind-Up, básicamente lo que hace es que cuando llega a un valor máximo el integrador deja de acumular valores y cuando se cambia el signo del error se borra la memoria del controlador.
 	 
  
-	\item $G(s)$ es el motor DC, en varios libros y documentos existen diversos modelos de un motor DC para el control, en este caso no es necesario modelar el motor y estudiar su comportameinto, debido a que se va a trabajar sobre él directamente y se sintonizará el control sobre la planta real.
+	\item $G(s)$ es el motor DC, en varios libros y documentos existen diversos modelos de un motor DC para el control, en este caso no es necesario modelar el motor y estudiar su comportamiento, debido a que se va a trabajar sobre él directamente y se sintonizará el control sobre la planta real.
 	\item $H(s)$ es el sensor, que se refiere al encoder óptico, dicho encoder nos da pulsos que equivalen a $\theta=\frac{2\pi}{N}$ radianes, si se mide el tiempo entre pulsos se tiene la velocidad angular de la rueda.
 \end{itemize}
 En conjunto los bloques forman el lazo de control, que mantiene una velocidad en referencia a la entrada.\\
@@ -230,19 +237,24 @@ Lo primero que se hace es aplicar una ganancia K en el lazo de control, se aumen
 	\end{subfigure}
 \end{figure}\\
 
-De la representación gráfica se obtiene T, para la rueda derecha $TD=0.798$ y $ Ti=0.864$, con estos valores y con k=5.3 se obtiene la siguiente tabla.\\
-\begin{tabular}{|c|c|c|c|c|c|c|}
-	\hline
-	& $KD_{p}$ & $KD_{i}$ & $kD_{d}$ & $KI_{p}$ & $KI_{i}$ & $kI_{d}$ \\
-	\hline
-	P & 1.95 &  &  & 1.95 &  &  \\
-	\hline
-	PI & 1.755 & 0.6384 &  & 1.755 & 0.6912 &  \\
-	\hline
-	PID & 2.34 & 0.399 & 0.09975 & 2.34 & 0.432 & 0.108 \\
-	\hline
-\end{tabular}\\
-
+De la representación gráfica se obtiene T, para la rueda derecha $TD=0.59$ y $ Ti=0.55$, con estos valores y con k=5.3 se obtiene la siguiente el Cuadro ~\ref{tab:PID}.\\
+\begin{table}[h]
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		& $KD_{p}$ & $KD_{i}$ & $kD_{d}$ & $KI_{p}$ & $KI_{i}$ & $kI_{d}$ \\
+		\hline
+		P & 1 &  &  & 1 &  &  \\
+		\hline
+		PI & 0.8 & 0.472 &  & 0.8 & 0.44 &  \\
+		\hline
+		PID & 1.2 &  0.295 & 0.0738 & 1.2 & 0.2750 & 0.0688 \\
+		\hline
+	\end{tabular}
+	\caption{Sintonización de controlador }
+	\label{tab:PID} 
+	\end{center}
+\end{table}
 En la Figura ~\ref{fig:PI_Nichols}, se puede apreciar la respuesta de los motores, se puede ver que en el motor derecho se tiene una oscilación y el motor izquierdo llega al asentamiento pero tiene una sobre-elongación grande.
 
 
@@ -251,42 +263,65 @@ En la Figura ~\ref{fig:PI_Nichols}, se puede apreciar la respuesta de los motore
 	\begin{subfigure}[b]{0.52\linewidth}
 		\centering
 		\includegraphics[width=1\linewidth]{controlMotor/RespuestaEscalonPID_R}
-		\caption{PI derecha}
+		\caption{PI derecha\\
+			Robot1}
 		\label{fig:PI_R}
 	\end{subfigure}
 	\quad
 		\begin{subfigure}[b]{0.52\linewidth}
 		\centering
 		\includegraphics[width=1\linewidth]{controlMotor/RespuestaEscalonPID_I}
-		\caption{PI izquierda}
+		\caption{PI izquierda\\
+			Robot1}
 		\label{fig:PI_I}
 	\end{subfigure}
-	\caption{PI}
+	\caption{PI Zieglers-Nichols}
 	\label{fig:PI_Nichols}
 \end{figure}
 
- Se ajusta manualmente los parámetros del PI y se llega al resultado mostrado ne la Figura ~\ref{fig:PI_sintonizado}. Esta vez corrige de manera mas eficaz, la sobre-elongación se mantiene, pero la osiclación se ha reducido considerablemente, se tiene una pequeña oscilación que se debe a parámetros mecanicos del robot, a la situación de las ruedas, alineación de los ejes etc y al propio ruido de los encoders. Aún así el control es bastante efectivo.
+ Se ajusta manualmente los parámetros del PI y se llega al resultado mostrado en la Figura ~\ref{fig:PI_sintonizado}. Esta vez corrige de manera mas eficaz, la sobre-elongación se mantiene, pero dura un breve instante de tiempo, y la oscilación se ha reducido considerablemente, se tiene una pequeña oscilación que se debe a parámetros mecánicos del robot, a la situación de las ruedas, alineación de los ejes, al propio ruido de los encoders y posiblemente a la cuantización del voltaje y no poder llegar a un valor exacto. Aún así el control es bastante efectivo.
  \begin{figure}[!h]
  	
  	\begin{subfigure}[b]{0.49\linewidth}
  		\centering
  		\includegraphics[width=0.8\linewidth]{controlMotor/PI_sintonizado_R}
- 		\caption{PI rueda derecha}
+ 		\caption{PI rueda derecha\\
+ 			Robot1}
  		\label{fig:PIsintonizado_R}
  	\end{subfigure}
  	\quad
  	\begin{subfigure}[b]{0.49\linewidth}
  		\centering
  		\includegraphics[width=0.8\linewidth]{controlMotor/PI_sintonizado_I}
- 		\caption{PI rueda izquierda}
+ 		\caption{PI rueda izquierda\\
+ 		Robot1}
  		\label{fig:PIsintonizado_I}
  	\end{subfigure}
- 	\caption{PI}
+ 	\caption{PI optimizado}
  	\label{fig:PI_sintonizado}
  \end{figure}
+En los otros 2 robots se hace lo mismo, y se llega a tener los siguientes parámetros para los 3 robots que se puede ver en el cuadro ~\ref{tab:PIDSintonizado} , Se observa que los parámetros son muy similares, pero de diferentes valores, a pesar de ser un motor DC de la misma compañía, se ha tenido que variar cada uno individualmente para tener una respuesta aceptable
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+			\hline
+			& \multicolumn{2}{|c|} {Rueda derecha}& \multicolumn{2}{|c|} {Rueda izquierda}  \\
+			
+			\hline
+			&           kp  &    Ki 	 & kp   &    Ki\\
+			\hline
+			Robot 1 &  0.1  &  0.05  & 0.15  &   0.035   \\
+			\hline 
+			Robot 2 &  0.25  &  0.08  & 0.19  &   0.5  \\
+			\hline
+			Robot 3 &  0.22  &  0.09  & 0.15  &   0.06\\
+			\hline
+		\end{tabular}
+		\caption{Parámetros optimizados }
+		\label{tab:PIDSintonizado} 
+	\end{center}
+\end{table}
 
-Y la respuesta de los otros dos robots se puede apreciar en la figura [figura]\\
 
-las constantes de control de los 3 robots son los siguientes[tabla]\\
-
+\newpage
  

@@ -37,12 +37,12 @@
 \contentsline {section}{\numberline {5}Control del Motor DC}{21}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Cuantizaci\IeC {\'o}n del voltaje}{21}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Dise\IeC {\~n}o del controlador}{23}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}sintonizaci\IeC {\'o}n de par\IeC {\'a}metros PID}{25}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Navegaci\IeC {\'o}n del robot}{26}{section.6}%
-\contentsline {section}{\numberline {7}Localizaci\IeC {\'o}n de los robots}{28}{section.7}%
-\contentsline {section}{\numberline {8}Dise\IeC {\~n}o y configuraci\IeC {\'o}n de la red de Comunicaci\IeC {\'o}n}{31}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Red LAN}{32}{subsection.8.1}%
+\contentsline {subsection}{\numberline {5.3}sintonizaci\IeC {\'o}n de par\IeC {\'a}metros PID}{26}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Navegaci\IeC {\'o}n del robot}{28}{section.6}%
+\contentsline {section}{\numberline {7}Localizaci\IeC {\'o}n de los robots}{29}{section.7}%
+\contentsline {section}{\numberline {8}Dise\IeC {\~n}o y configuraci\IeC {\'o}n de la red de Comunicaci\IeC {\'o}n}{32}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Red LAN}{33}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}Caracter\IeC {\'\i }sticas de la red}{34}{subsection.8.2}%
 \contentsline {section}{\numberline {9}Demostraci\IeC {\'o}n de los experimentos}{36}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Experimento I}{36}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Experimento II}{36}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.2}Experimento II}{37}{subsection.9.2}%
