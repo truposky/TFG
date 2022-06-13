@@ -3,8 +3,8 @@
 \section{Introducci\'{o}n}\label{ch:introduccion}
 
 
-En la actualidad existen multitud de aplicaciones robóticas, en entornos industriales, en tareas que ayudan a los profesionales de la medicina, transporte de mercancías, incluso en la exploración espacial. Uno de los campos de interés de la robótica está relacionado con los sistemas multiagente, se trata de agentes individuales que colaboran entre ellos o interactúan entre ellos, utilizados para resolver tareas complejas, o tareas que requeriría mucho tiempo para un agente individual. En la robótica la aplicación de sistemas multiagente tiene actualmente uso en robots móviles que realizan tareas como exploración, transporte de mercancías, o usos para la guerra. Debido a que es un área de interés para la robótica, se han creado  multitud de grupos de investigación que abordan el problema de la coordinación y colaboración entre los diferentes robots, estas investigaciones normalmente dan como resultado algoritmos de coordinación o colaborativos o un conjunto de ambos, que se aplican a los robots.\\
-Los escenarios para los que se prepara los algoritmos, a veces son muy complejos y por ello no se puede simular en su totalidad, debido a esta razón existe una necesidad de verificar el correcto funcionamiento de los algoritmos en un entorno lo mas realista posible, es decir un entorno con robots que permita recopilar datos del funcionamiento de los algoritmos, que permita la programación individual de los robots implicados.
+En la actualidad existen multitud de aplicaciones robóticas, en entornos industriales, en tareas que ayudan a los profesionales de la medicina, transporte de mercancías, incluso en la exploración espacial. Uno de los campos de interés de la robótica está relacionado con los sistemas multiagente, se trata de agentes individuales que colaboran entre ellos o interactúan entre ellos, utilizados para resolver tareas complejas, o tareas que requeriría mucho tiempo para un agente individual. En la robótica la aplicación de sistemas multiagente tiene actualmente uso en robots móviles que realizan tareas como exploración, transporte de mercancías, o defensa. Debido a que es un área de interés para la robótica, se han creado  multitud de grupos de investigación que abordan el problema de la coordinación y colaboración entre los diferentes robots. Estas investigaciones normalmente dan como resultado algoritmos de coordinación o colaborativos o un conjunto de ambos, que se aplican a los robots.\\
+Los escenarios para los que se preparan los algoritmos, a veces son muy complejos y por ello no se puede simular en su totalidad. Debido a esta razón existe una necesidad de verificar el correcto funcionamiento de los algoritmos en un entorno lo más realista posible. Es decir, un entorno experimental con robots reales que premita programar los algoritmos individualmente en cada robot y recopular datos de su funcionamiento.
 
 
 
@@ -13,17 +13,17 @@ Los escenarios para los que se prepara los algoritmos, a veces son muy complejos
 \input{fundamento.tex}
 \thispagestyle{empty}
 \subsection{Motivación}
-Debido a la obligación de comprobar el correcto funcionamiento de los algoritmos de coordinación, control o colaborativos desarrollados, más allá de las simulaciones, se necesita un entorno que permita observar el comportamiento de los agentes en un entorno lo mas realista posible y por lo tanto surge la necesidad de crear un banco de pruebas en el cual poder estudiar el comportamiento de los respectivos algoritmos.
+Debido a la obligación de comprobar el correcto funcionamiento de los algoritmos de coordinación, control o colaborativos desarrollados, más allá de las simulaciones, se necesita un entorno que permita observar el comportamiento de los agentes en un entorno lo mas realista posible y por lo tanto surge la necesidad de crear un banco de pruebas en el cual poder estudiar el comportamiento de los respectivos algoritmos. Con motivo del interés del departamento de arquitectura de computadores y automática de la facultad de C.C. físicas en robótica móvil, se pretende desarrollar un entorno útil para la investigación de dicha robótica y que también sea aplicable a la docencia.
 
 \input{objetivos.tex}
 
 
 %ya se ha hablado de robotario
 \section{Hardware y software}\label{ch:HardwareYsoftware}
-El robotario se ha podido desarrollar con los siguientes componentes, de los cuales se va a hacer una breve descripción.
+A continuación se incluye una breve descripción de los componentes empleados en el desarrollo del robotario.
 \subsection{Robot móvil}
 El robot móvil del robotario cuenta con varios componentes.
-\subsubsection{chasis robot}
+\subsubsection{Chasis del robot}
 
 
 Se ha elegido un robot móvil de bajo presupuesto comprado en la tienda de Aliexpres\cite{robotAli} pero con piezas simples y comunes, que se pueden reponer de manera sencilla si alguna se estropea, el chasis del robot incluye dos motores DC dos ruedas enganchadas a los motores, dos ruedas locas y consta de dos plantas. Los motores tienen un rango de funcionamiento de 2.5V a 9 V según los datos del fabricante.
@@ -36,7 +36,7 @@ Se ha elegido un robot móvil de bajo presupuesto comprado en la tienda de Aliex
 
 \subsubsection{Arduino nano 33 IoT}
 
-Para tener un control sobre el robot, poder tener sensores en el robot y poder establecer la comunicación del robot con el servidor y los demás robots se usa una placa Arduino\cite{arduinoTienda}, Arduino es una compañía de software y hardware libre que desarrolla y diseña placas con microcontroladores, la placa Arduino adquirida cuenta con un microprocesador Arm® Cortex®-M0 32-bit SAMD2 además tiene incorporado una antena que permite la comunicación WiFi y Bluetooth, se ha adquirido en la tienda oficial de Arduino. La paca cuenta con una IMU que puede que tiene acelerómetro y giroscopo, en este proyecto no se va usar este módulo pero es de utilidad para futuras versiones.
+Para tener un control sobre el robot, obtener datos de los sensores y poder establecer la comunicación del robot con el servidor y los demás robots se usa una placa Arduino\cite{arduinoTienda}, Arduino es una compañía de software y hardware libre que desarrolla y diseña placas con microcontroladores, la placa Arduino adquirida cuenta con un microprocesador Arm Cortex-M0 32-bit SAMD2 además tiene incorporado una antena que permite la comunicación WiFi y Bluetooth, se ha adquirido en la tienda oficial de Arduino. La paca cuenta con una IMU que incorpora acelerómetro y giroscopo, en este proyecto no se va usar este módulo pero es de utilidad para futuras ampliaciones.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.3\linewidth]{Arduinonano33}
@@ -50,7 +50,7 @@ Para tener un control sobre el robot, poder tener sensores en el robot y poder e
 	\caption{L298n}
 	\label{fig:puenteH}
 \end{figure}
-Para poder gobernar los motores correctamente se usa un puente H\cite{Hhbridge} para cada motor. En este caso se usa un integrado el cual incorpora 2 puentes H y un regulador de tensión que proporciona 5 voltios a la salida y se aprovecha para alimentar la placa con microcontrolador.El puente H es un circuito formado por transistores y diodos que es de uso común en el gobierno de motores o de circuitos de potencia. Cuenta con  un rango de voltaje de entrada de 5V-35V. El puente H se alimenta con la tensión de entrada y se regula la alimentación que le llega al motor mediante una señal PWM\cite{PWM} procedente de la placa arduino. se detalla el funcionamiento de la  señal PWM en conjunto con el puente H en el capítulo ~\ref{ch:ControlMotor} correspondiente al control del motor.
+Para poder gobernar los motores correctamente se usa un puente H\cite{Hhbridge} para cada motor. En este caso se usa un integrado el cual incorpora 2 puentes H y un regulador de tensión que proporciona 5 voltios a la salida y se aprovecha para alimentar la placa de arduino ya que es una tensión estable.El puente H es un circuito formado por transistores y diodos que es de uso común en el gobierno de motores o de circuitos de potencia.El integrado Ln298n cuenta con  un rango de voltaje de entrada de 5V-35V, se alimenta con una batería de tensión nominal de 9.9 voltios. El puente H se alimenta con la tensión de entrada y se regula la alimentación que le llega al motor mediante una señal PWM procedente de la placa arduino. se detalla el funcionamiento de la  señal PWM en conjunto con el puente H en el capítulo ~\ref{ch:ControlMotor} correspondiente al control del motor.
 \subsubsection{Batería}
 \begin{figure}[h]
 	\centering
@@ -58,16 +58,16 @@ Para poder gobernar los motores correctamente se usa un puente H\cite{Hhbridge} 
 	\caption{batería}
 	\label{fig:bateria}
 \end{figure}
-	Para alimentar el robot se usa una batería LiFePo de 3 celdas de 3.3 V cada una en total se tiene 2200mAh. Se usan dos batería en paralelo para poder tener una mayor intensidad y tener una duración mas larga de la batería.
+	Para alimentar el robot se usa una batería LiFePo de 3 celdas de 3.3 V cada una en total se tiene 2200mAh y 9.9V. Se usan dos batería en paralelo para poder tener una mayor intensidad y tener una duración mas larga de la batería.
 
-\subsubsection{Step-Down DC-DC}
+\subsubsection{LM2596 (conversor DC-DC)}
 	\begin{figure}[h]
 		\centering
 	\includegraphics[width=0.25\linewidth]{ConstruccionRObot/StepDown}
 	\caption{Step-Down}
 	\label{fig:StepDown}
 	\end{figure}
-Se tiene dos conversores DC-DC para bajar el voltaje de salida de la batería, uno es para alimentar el módulo Ln298 y otro es para alimentar un miniordenador a bordo que requiere como máximo 5 V,y de esta manera se evita el uso de otra batería.
+Se emplean dos conversores DC-DC para bajar el voltaje de salida de la batería, uno es para alimentar el módulo Ln298 y otro es para alimentar un miniordenador a bordo que requiere como máximo 5 V. De esta manera se evita el uso de otra batería.
 
 \subsubsection{Encoder óptico}	%REVISAR LO DEL FILTRO%
 	\begin{figure}[h]
@@ -76,10 +76,10 @@ Se tiene dos conversores DC-DC para bajar el voltaje de salida de la batería, u
 	\caption{Encoder óptico}
 	\label{fig:encoder}
 \end{figure} 
-	Una de las partes fundamentales del robot es el encoder, sirve para poder medir la velocidad a la cual gira cada rueda y poder también estimar la distancia avanzada. El encoder óptico, es el modelo FC-03 , en la Figura ~\ref{fig:encoder} se puede ver como es el componente electrónico. Revisando la hoja de características se sabe que tiene un LM393 el cual es un circuito integrado formado por dos comparadores, también lleva un optointerruptor,el cual consta de un diodo led y un transistor con la base expuesta, si este recibe luz, genera un pulso bajo de tensión es decir un corto y si no detecta luz genera un pulso alto de tensión, deja el circuito abierto en conjunto con el comparador se obtendrán pulsos discretizados.\\ 
+	Una de las partes fundamentales del robot es el encoder, sirve para poder estimar la velocidad a la cual gira cada rueda y poder también estimar la distancia avanzada. El encoder óptico, es el modelo FC-03 , en la Figura ~\ref{fig:encoder} se puede ver como es el componente electrónico. Revisando la hoja de características se sabe que tiene un LM393 el cual es un circuito integrado formado por dos comparadores, también lleva un optointerruptor,el cual consta de un diodo led y un transistor con la base expuesta, si este recibe luz, genera un pulso bajo de tensión , se produce un corto y si no detecta luz genera un pulso alto de tensión, deja el circuito abierto . Mediante el uso de un comparador se obtiene un tren de pulsos cuadrados cuando el optointerruptor es activado o desactivado.\\ 
 
 El encoder además tiene dos salidas, una analógica y otra digital, esta última es la que interesa debido a que es más útil para el microcontrolador leer entradas discretas que equivalen a un 1 cuando se lee un voltaje y un 0 cuando no hay voltaje o esta por debajo de un umbral establecido. El voltaje de funcionamiento del sensor puede ser de 3.3V a 5V, como el microcontrolador solo soporta 3.3V será esta la alimentación que se proporcionará.\\ 
-	Para contar pulsos de luz se usa una rueda ranurada que está enganchada al eje de la rueda,y  consta de 20 ranuras esto implica que se tiene una resolución de N=20 y se divide la rueda en $\Delta\theta=\frac{2\pi}{20} $ radianes.
+	Para contar pulsos de luz se usa una rueda ranurada que está enganchada al eje de la rueda,y  consta de 20 ranuras esto implica que se tiene una resolución de N=20 y se tiene un paso angular para la rueda de  $\Delta\theta=\frac{2\pi}{20} $ radianes.
 
 \subsubsection{RaspberryPi y Picam}
 	\begin{figure}[h]
@@ -88,17 +88,17 @@ El encoder además tiene dos salidas, una analógica y otra digital, esta últim
 	\caption{RaspberryPi conectada con la cámara}
 	\label{}
 \end{figure}
-	Se tiene una placa RaspberryPi4 montada en el robot para poder procesar imágenes adquiridas por una cámara Picam que va conectada a la RaspberryPi.Se alimenta directamente de la batería usando un conversor DC-DC para adaptar el voltaje a 5 V y no tener que usar una segunda batería para alimentar la RaspberryPi. La cámara conectada a la raspberryPi permite obtener imágenes con un angular de 160º según especificaciones del fabricante \cite{Picam}. Este modulo no es esencial para el robotario pero permite experimentar mas algoritmos debido a la localización con cámara a bordo y visión artificial.
+	Se tiene una placa RaspberryPi4 montada en el robot para poder procesar imágenes adquiridas por una cámara Picam que va conectada a la RaspberryPi.Se alimenta directamente de la batería usando un conversor DC-DC para adaptar el voltaje a 5 V y no tener que usar una segunda batería para alimentar la RaspberryPi. La cámara conectada a la raspberryPi permite obtener imágenes con un angular de 160º según especificaciones del fabricante \cite{Picam}. Este modulo no es esencial para el robotario pero lo hace más versátil pudiendo experimentar con algoritmos de localización a bordo, visión artificial,etc.
 	
 	\subsection{Camara logitech C920}
-		\begin{figure}[h!]
+		\begin{figure}[!h]
 		\centering
 		\includegraphics[width=0.1\linewidth]{Camaralogi}
 		\caption{Cámara Logitech}
 		\label{fig:camaralogi}
 	\end{figure}
 
-Se tienen 3 cámaras logitech que se usan para la localización de los robots. En el acutal montaje del robotario solo se usa una cámara. La conexión se realiza mediante USB al servidor.
+Se tienen 3 cámaras logitech que se usan para la localización de los robots. En el actual montaje del robotario solo se usa una cámara. La conexión se realiza mediante USB al servidor.
 \subsection{OpenCV}
 	\begin{figure}[h]
 	\centering
@@ -110,7 +110,7 @@ Se tienen 3 cámaras logitech que se usan para la localización de los robots. E
 Para la visión por computador se usa una librería denominada OpenCV \cite{opencv_library} la cual está desarrollada en dos lenguajes de programación c++ y Python. Permite reconocer el entorno con una cámara y tratar las imágenes para desarrollar la aplicación que se desee. En particular yo uso la librería ArUco\cite{ArUco1}\cite{ArUco2} de OpenCV, que permite el reconocimiento de un marker de tamaño 4x4 formado por 16 bits.
 
 	\subsection{Suelo de goma}	
-Se usa un suelo de goma que permite que los robots no deslicen en el suelo, también sirve para delimitar el área del robotario.
+Se usa un suelo de goma que permite que los robots no deslicen al desplazarse, también sirve para delimitar el área del robotario.
 \subsection{Router}
 El Router permite la comunicación de los distintos dispositivos de la red, es un Router convencional de la marca ZTE. Sus características son las siguientes:
 \begin{itemize}
@@ -127,7 +127,7 @@ Se muestra el Cuadro ~\ref{tab:MatRobot} con el precio de los componentes de un 
 \begin{center}
 	\begin{tabular}{| c | c |}
 		\hline
-		Material Robot & Precio(€) \\ 
+		Material Robot & Precio(\euro) \\ 
 		\hline
 		Arduino nano 33 IoT & 16.00 \\
 		\hline
@@ -162,13 +162,13 @@ Se muestra el Cuadro ~\ref{tab:MatRobot} con el precio de los componentes de un 
 	\label{tab:MatRobot} 
 \end{center}
 \end{table}
-El componente más caro del robot es la raspberryPi, bien se puede hacer con el modelo 3B+, pero de la que se disponía en el momento es el último modelo. Por 134.99€ se tiene un robot que permite desarrollar diversos algoritmos en el entorno de pruebas, poder comunicarse y  con reconocimiento del entorno. Además el robotario puede funcionar sin la raspberryPi y sin la cámara Picam, eso si limitaría el numero de experimentos a realizar. En total el coste de los robots del robotario, con 5 robots adquiridos de los cuales 2 tiene RaspberryPi es de 452.83 €.\\
+El componente más caro del robot es la raspberryPi. Por 134.99\euro se tiene un robot que permite desarrollar diversos algoritmos en el entorno de pruebas,puede comunicarse y reconocer el entorno. Además el robotario puede funcionar sin la raspberryPi y la cámara de Picam, pero esto limita el tipo de experimentos realizables, eso si limitaría el numero de experimentos a realizar. En total el coste de los robots del robotario, con 5 robots adquiridos de los cuales 2 tiene RaspberryPi es de 452.83 \euro.\\
 El material restante es el necesario para la comunicación y para que los robots se muevan de manera adecuada es el mostrado en el Cuadro ~\ref{tab:MatRobotario}	
 \begin{table}[h]
 	\begin{center}
 		\begin{tabular}{| c | c |}
 			\hline
-			Material Robotario & Precio(€) \\ 
+			Material Robotario & Precio(\euro) \\ 
 			\hline
 			Cámara logitech c920 & 54.00 \\
 			\hline
@@ -183,4 +183,4 @@ El material restante es el necesario para la comunicación y para que los robots
 	\label{tab:MatRobotario}  
 	\end{center}
 \end{table}
-\\En total por 561.83€ se tiene un robotario funcional.
+\\En total por 561.83 \euro se tiene un robotario funcional.

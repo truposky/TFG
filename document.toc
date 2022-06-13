@@ -4,46 +4,52 @@
 \contentsline {subsection}{\numberline {1.2}Motivaci\IeC {\'o}n}{5}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}Objetivos}{5}{subsection.1.3}%
 \contentsline {subsubsection}{\numberline {1.3.1}{\large objetivos espec\IeC {\'\i }ficos }}{5}{subsubsection.1.3.1}%
-\contentsline {section}{\numberline {2}Hardware y software}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Robot m\IeC {\'o}vil}{5}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}chasis robot}{6}{subsubsection.2.1.1}%
+\contentsline {section}{\numberline {2}Hardware y software}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Robot m\IeC {\'o}vil}{6}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Chasis del robot}{6}{subsubsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.2}Arduino nano 33 IoT}{6}{subsubsection.2.1.2}%
 \contentsline {subsubsection}{\numberline {2.1.3}integrado L298n, puente H}{6}{subsubsection.2.1.3}%
 \contentsline {subsubsection}{\numberline {2.1.4}Bater\IeC {\'\i }a}{7}{subsubsection.2.1.4}%
-\contentsline {subsubsection}{\numberline {2.1.5}Step-Down DC-DC}{7}{subsubsection.2.1.5}%
-\contentsline {subsubsection}{\numberline {2.1.6}Encoder \IeC {\'o}ptico}{7}{subsubsection.2.1.6}%
+\contentsline {subsubsection}{\numberline {2.1.5}LM2596 (conversor DC-DC)}{7}{subsubsection.2.1.5}%
+\contentsline {subsubsection}{\numberline {2.1.6}Encoder \IeC {\'o}ptico}{8}{subsubsection.2.1.6}%
 \contentsline {subsubsection}{\numberline {2.1.7}RaspberryPi y Picam}{8}{subsubsection.2.1.7}%
-\contentsline {subsection}{\numberline {2.2}Camara logitech C920}{8}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}Camara logitech C920}{9}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}OpenCV}{9}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Suelo de goma}{9}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Router}{9}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Coste del material}{10}{subsection.2.6}%
-\contentsline {section}{\numberline {3}Metodolog\IeC {\'\i }a}{11}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Estudio de entornos de pruebas existentes}{11}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Selecci\IeC {\'o}n de componentes}{11}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Construcci\IeC {\'o}n de un primer robot}{11}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Prueba de encoders y estimaci\IeC {\'o}n de la velocidad}{11}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Prueba de motor}{12}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}programaci\IeC {\'o}n de arduino y Comprobaci\IeC {\'o}n del robot montado}{12}{subsubsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.4}Contrucci\IeC {\'o}n de copias del primer robot}{13}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Configuraci\IeC {\'o}n y desarrollo de red de comunicaci\IeC {\'o}n}{13}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Programaci\IeC {\'o}n para visi\IeC {\'o}n por computador}{14}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Configuraci\IeC {\'o}n y programaci\IeC {\'o}n de RaspberryPI}{14}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Montaje final de Robotario}{14}{subsection.3.8}%
-\contentsline {subsection}{\numberline {3.9}Realizaci\IeC {\'o}n de experimentos}{15}{subsection.3.9}%
-\contentsline {subsection}{\numberline {3.10}Planificaci\IeC {\'o}n de proyecto}{15}{subsection.3.10}%
-\contentsline {section}{\numberline {4}Estimaci\IeC {\'o}n de la velocidad}{17}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Tratamiento del ruido}{19}{subsection.4.1}%
-\contentsline {section}{\numberline {5}Control del Motor DC}{21}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Cuantizaci\IeC {\'o}n del voltaje}{21}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Dise\IeC {\~n}o del controlador}{23}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}sintonizaci\IeC {\'o}n de par\IeC {\'a}metros PID}{26}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Navegaci\IeC {\'o}n del robot}{28}{section.6}%
-\contentsline {section}{\numberline {7}Localizaci\IeC {\'o}n de los robots}{29}{section.7}%
-\contentsline {section}{\numberline {8}Dise\IeC {\~n}o y configuraci\IeC {\'o}n de la red de Comunicaci\IeC {\'o}n}{32}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Red LAN}{33}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Caracter\IeC {\'\i }sticas de la red}{34}{subsection.8.2}%
-\contentsline {section}{\numberline {9}Demostraci\IeC {\'o}n de los experimentos}{36}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Experimento I}{36}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Experimento II}{37}{subsection.9.2}%
-\contentsline {section}{\numberline {10}Conclusiones\IeC {\'{}}}{38}{section.10}%
+\contentsline {subsection}{\numberline {2.6}Coste del material}{11}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Metodolog\IeC {\'\i }a}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Estudio de entornos de pruebas existentes}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Selecci\IeC {\'o}n de componentes}{12}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Construcci\IeC {\'o}n de un primer robot}{12}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Prueba de encoders y estimaci\IeC {\'o}n de la velocidad}{12}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Prueba de motor}{13}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}programaci\IeC {\'o}n de arduino y Comprobaci\IeC {\'o}n del robot montado}{13}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}Contrucci\IeC {\'o}n de copias del primer robot}{14}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Configuraci\IeC {\'o}n y desarrollo de red de comunicaci\IeC {\'o}n}{14}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Programaci\IeC {\'o}n para visi\IeC {\'o}n por computador}{15}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Configuraci\IeC {\'o}n y programaci\IeC {\'o}n de RaspberryPI}{15}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Montaje final de Robotario}{15}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Realizaci\IeC {\'o}n de experimentos}{17}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Planificaci\IeC {\'o}n de proyecto}{17}{subsection.3.10}%
+\contentsline {section}{\numberline {4}Estimaci\IeC {\'o}n de la velocidad}{19}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Tratamiento del ruido}{20}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Control del Motor DC}{23}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Cuantizaci\IeC {\'o}n del voltaje}{23}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Dise\IeC {\~n}o del controlador}{25}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}sintonizaci\IeC {\'o}n de par\IeC {\'a}metros PID}{28}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Navegaci\IeC {\'o}n del robot}{30}{section.6}%
+\contentsline {section}{\numberline {7}Localizaci\IeC {\'o}n de los robots}{31}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Calibraci\IeC {\'o}n de c\IeC {\'a}maras}{32}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Ruido en la estimaci\IeC {\'o}n de posici\IeC {\'o}n}{34}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Dise\IeC {\~n}o y configuraci\IeC {\'o}n de la red de Comunicaci\IeC {\'o}n}{34}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Red LAN}{35}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Caracter\IeC {\'\i }sticas de la red}{37}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Demostraci\IeC {\'o}n del robotario}{38}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Experimento I}{39}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}Preparaci\IeC {\'o}n del experimento}{39}{subsubsection.9.1.1}%
+\contentsline {subsubsection}{\numberline {9.1.2}Resultados de la prueba}{40}{subsubsection.9.1.2}%
+\contentsline {subsubsection}{\numberline {9.1.3}Segunda prueba}{41}{subsubsection.9.1.3}%
+\contentsline {subsection}{\numberline {9.2}Experimento II}{42}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Conclusiones}{43}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Futuros trabajos}{43}{subsection.10.1}%
