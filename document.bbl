@@ -1,4 +1,9 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{arduino}
+Arduino.
+\newblock Arduino nano 33 iot.
+\newblock Available at \url{https://docs.arduino.cc/hardware/nano-33-iot}.
 
 \bibitem{opencv_library}
 G.~Bradski.
@@ -11,6 +16,12 @@ Sergio Garrido-Jurado, Rafael Muñoz-Salinas, Francisco Madrid-Cuevas, and
 \newblock Generation of fiducial marker dictionaries using mixed integer linear
   programming.
 \newblock {\em Pattern Recognition}, 51, 10 2015.
+
+\bibitem{picam}
+kubii.
+\newblock cámara de 5mp para raspberrypi 160º.
+\newblock Available at
+  \url{https://www.kubii.es/camaras-sensores/2667-camara-de-5mp-para-raspberry-pi-3-160--3272496298354.html}.
 
 \bibitem{rodrigues}
 Wolfram Mathworld.
@@ -56,10 +67,25 @@ Sean Wilson, Paul Glotfelter, Li~Wang, Siddharth Mayya, Gennaro Notomista, Mark
   lessons learned in remote-access, distributed control of multirobot systems.
 \newblock {\em IEEE Control Systems Magazine}, 40(1):26--44, 2020.
 
+\bibitem{feedbacksystems}
+Karl Johan~Aström y~Richard M.~Murray.
+\newblock {\em Feedback Systems}, chapter~10, pages 302--304.
+\newblock 1 edition, 2008.
+
+\bibitem{chasis}
+{YX Electronic Components}.
+\newblock Robot chasis de coche diy.
+
 \bibitem{router}
 Redes Zone.
 \newblock Router wi-fi zte zxhn f680.
 \newblock Available at
   \url{https://www.redeszone.net/analisis/routers/zxhn-f680/}.
+
+\bibitem{cardama}
+Juan Manuel Rius Casals Jordi Romeu Robert Sebastián Blanch~Boris Ángel
+  Cardama~Aznar, Lluís Jofre~Roca.
+\newblock {\em Antenas}, chapter~1, pages 28--31.
+\newblock 2 edition, 2002.
 
 \end{thebibliography}

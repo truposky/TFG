@@ -1,0 +1,199 @@
+%ya se ha hablado de robotario
+\section{Hardware y software}\label{ch:HardwareYsoftware}
+A continuación se incluye una breve descripción de los componentes empleados en el desarrollo del robotario.
+\subsection{Robot móvil}
+El robot móvil del robotario cuenta con varios componentes.
+\subsubsection{Chasis del robot}
+
+
+Se ha elegido un robot móvil de bajo presupuesto\cite{chasis} que incluye piezas simples y comunes que se pueden localizar fácilmente, que se pueden reponer de manera sencilla si alguna se estropea. El chasis del robot incluye dos motores DC dos ruedas enganchadas a los motores, dos ruedas locas y consta de dos plantas. Los motores tienen un rango de funcionamiento de 2.5V a 9 V según los datos del fabricante.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.2\linewidth]{RobotAliexpres}
+	\caption{ chasis robot móvil}
+	\label{fig:robotaliexpres}
+\end{figure}
+
+\subsubsection{Arduino nano 33 IoT}
+
+Para tener un control sobre el robot, obtener datos de los sensores y poder establecer la comunicación del robot con el servidor y los demás robots se usa una placa Arduino\cite{arduino}, Arduino es una compañía de software y hardware libre que desarrolla y diseña placas con microcontroladores. La placa Arduino adquirida cuenta con un microprocesador Arm Cortex-M0 32-bit SAMD2. Además, tiene incorporado una antena, que permite la comunicación WiFi y Bluetooth. Se ha adquirido en la tienda oficial de Arduino. La placa cuenta con una IMU que incorpora acelerómetro y giróscopo, en este proyecto no se va usar este módulo pero es de utilidad para futuras ampliaciones.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\linewidth]{Arduinonano33}
+	\caption{Placa de Arduino nano 33 IoT}
+	\label{fig:arduinonano33}
+\end{figure}
+\subsubsection{Integrado L298n, puente H}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.25\linewidth]{PuenteH}
+	\caption{L298n}
+	\label{fig:puenteH}
+\end{figure}
+Para poder gobernar los motores correctamente se usa un puente H\cite{Hhbridge} para cada motor. En este caso se usa un integrado el cual incorpora 2 puentes H y un regulador de tensión que proporciona 5 voltios a la salida y se aprovecha para alimentar la placa de arduino ya que es una tensión estable. El puente H es un circuito formado por transistores y diodos que es de uso común en el gobierno de motores. El integrado Ln298n cuenta con  un rango de voltaje de entrada de 2.5V-46V y soporta una corriente DC de hasta 4 amperios. En el caso del robot se alimenta con una batería de tensión nominal de 9.9 voltios para ajustarse a al rango de operación de los motores. El puente H se alimenta con la tensión de entrada y se regula la alimentación que le llega al motor mediante una señal PWM procedente de la placa arduino. Se detalla el funcionamiento de la  señal PWM en conjunto con el puente H en el capítulo ~\ref{ch:ControlMotor}, correspondiente al control del motor.
+\subsubsection{Batería}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\linewidth]{ConstruccionRObot/bat}
+	\caption{batería}
+	\label{fig:bateria}
+\end{figure}
+	Para alimentar el robot se usa una batería LiFePo de 3 celdas de 3.3 V cada una. En total se tiene 2200mAh y 9.9V. Se usan dos batería en paralelo para poder tener una mayor intensidad y tener una duración mas larga de la batería. Esto se debe a que la raspberryPi requiere mucha potencia y reduce la duración de los experimentos en torno a 5 minutos.
+
+\subsubsection{LM2596 (conversor DC-DC)}
+	\begin{figure}[h]
+		\centering
+	\includegraphics[width=0.25\linewidth]{ConstruccionRObot/StepDown}
+	\caption{Step-Down}
+	\label{fig:StepDown}
+	\end{figure}
+Se emplean dos conversores DC-DC para bajar el voltaje de salida de la batería, uno es para alimentar el módulo Ln298 y otro es para alimentar un miniordenador a bordo que requiere como máximo 5 V. De esta manera se evita el uso de otra batería.
+
+\subsubsection{Encoder óptico}	%REVISAR LO DEL FILTRO%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.25\linewidth]{ConstruccionRObot/Encoder}
+	\caption{Encoder}
+	\label{fig:encoder}
+\end{figure} 
+	 Para poder estimar la velocidad a la cual gira cada rueda y poder también estimar la distancia avanzada se emplean un par de encoder ópticos. El encoder óptico, es el modelo FC-03 , en la Figura ~\ref{fig:encoder} se puede ver cómo es el componente electrónico. Revisando la hoja de características se sabe que tiene un LM393 el cual es un circuito integrado formado por dos comparadores, también lleva un optointerruptor,el cual consta de un diodo led y un transistor con la base expuesta, si este recibe luz, genera un pulso bajo de tensión y se produce un corto, si no detecta luz genera un pulso alto de tensión y deja el circuito abierto. Mediante el uso de un comparador se obtiene un tren de pulsos cuadrados cuando el optointerruptor es activado o desactivado.\\ 
+
+El encoder además tiene dos salidas, una analógica y otra digital, esta última es la que interesa debido a que es más sencillo para el microcontrolador leer entradas discretas que equivalen a un 1 cuando se lee un voltaje y un 0 cuando no hay voltaje o está por debajo de un umbral establecido. El voltaje de funcionamiento del sensor puede ser de 3.3V a 5V, como el microcontrolador solo soporta 3.3V será esta la alimentación que se proporcionará.\\ 
+
+	Para contar pulsos de luz se usa una rueda ranurada que está enganchada al eje de la rueda,y  consta de 20 ranuras esto implica que se tiene una resolución de N=20 y se tiene un paso angular para la rueda de  $\Delta\theta=\frac{2\pi}{20} $ radianes.
+
+\subsubsection{RaspberryPi y Picam}
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.25\linewidth]{raspberry_cam}
+	\caption{RaspberryPi conectada con la cámara}
+	\label{}
+\end{figure}
+	Se tiene una placa RaspberryPi4 montada en el robot para poder procesar imágenes adquiridas por una cámara Picam que va conectada a la RaspberryPi. Se alimenta directamente de la batería usando un conversor DC-DC para adaptar el voltaje a 5V que es el requerido por la raspberryPi y de esta manera,no tener que usar una segunda batería. La cámara conectada a la raspberryPi permite obtener imágenes con un angular de 160º según especificaciones del fabricante \cite{picam}. Este modulo no es esencial para el robotario pero lo hace más versátil pudiendo experimentar con algoritmos de localización a bordo, visión artificial,etc.
+	
+	\subsubsection{Montaje final de robots}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.8\linewidth]{montajefinalR}
+		\caption{Robots construidos}
+		\label{fig:montajefinalr}
+	\end{figure}
+En la figura ~\ref{fig:montajefinalr} se tiene 3 robots montados, con los componentes anteriormente mencionados. Solo se dispone de 2 raspberryPi por ello uno no la lleva incorporada, pero con dos es suficiente para los requerimientos actuales del robotario. Se ha tenido que añadir una tercera planta donde se ha colocado el identificador de cada robot para que pueda ser localizado en el robotario, en la Figura ~\ref{fig:robotfinal} se tiene los robots montados con un identificador en la parte delantera y otro en la parte superior, para poder ser identificados y localizados por las cámaras.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{robotfinal}
+	\caption{Robots construidos con tercera planta}
+	\label{fig:robotfinal}
+\end{figure}
+
+\newpage	
+	\subsection{Camara logitech C920}
+	
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.1\linewidth]{Camaralogi}
+		\caption{Cámara Logitech}
+		\label{fig:camaralogi}
+	\end{figure}
+
+Se tienen 3 cámaras logitech que se usan para la localización de los robots. En el actual montaje del robotario solo se usa una cámara. La conexión se realiza mediante USB al ordenador que hace de servidor. La cámara tiene una resolución de 1080p. Se puede grabar a 30 fps como máximo, es decir que se procesan 30 imágenes en un segundo, esto es más que suficiente para el robotario.
+\subsection{OpenCV}
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\linewidth]{EjemploDeMarker}
+	\caption{sacada de la documentación, ejemplo de un marker}
+	\label{fig:ejemplodemarker}
+\end{figure}
+
+Para la visión por computador se usa una librería denominada OpenCV \cite{opencv_library} la cual está desarrollada en dos lenguajes de programación c++ y Python. Permite reconocer el entorno con una cámara y tratar las imágenes para desarrollar la aplicación que se desee. En este proyecto se usa ArUco\cite{ArUco1}\cite{ArUco2} de OpenCV, que permite el reconocimiento de un Marker de tamaño 4x4 formado por 16 bits en la figura ~\ref{fig:ejemploMarker} se tiene un ejemplo de como son lo identificadores de los robots.
+\subsection{Ordenador de sobremesa}
+El ordenador que hace de servidor es un ordenador de sobremesa con un procesador i7 de sexta generación y con 6 GB de ram, el sistema operativo que se usa para el propósito del robotario es Ubuntu 20.04.
+	\subsection{Suelo de goma}	
+Se usa un suelo de goma que permite que los robots no deslicen al desplazarse, también sirve para delimitar el área del robotario.
+\subsection{Router}
+El Router permite la comunicación de los distintos dispositivos de la red, es un Router convencional de la marca ZTE. Sus características son las siguientes:
+\begin{itemize}
+	\item Wireless: en la banda de 2.4GHz se tiene una velocidad de hasta 450Mbps. En la banda de 5GHz se tiene una velocidad de hasta 1300Mbps.
+	\item Se tiene un ancho de banda inalámbrico máximo de 1750Mbps.
+	\item Potencia máxima en 2.4GHz de 20dBm.
+	\item Potencia máxima en 5 GHz de 23dBm y en la banda de 547-5725MHz la potencia máxima es de 30 dBm.
+\end{itemize}
+Según un análisis realizado por Red zone \cite{router} el router es mas que suficiente para la situación actual de robotario que cuenta con 3 robots contruidos y pronto serán 5. Se entra en más profundidad en el análisis de las características de la red en el capítulo ~\ref{ch:RedLan}.
+
+\subsection{Coste del material}
+Se muestra el Cuadro ~\ref{tab:MatRobot} con el precio de los componentes de un robot.
+\begin{table}[h]
+\begin{center}
+	\begin{tabular}{| c | c |}
+		\hline
+		Material Robot & Precio(\euro) \\ 
+		\hline
+		Arduino nano 33 IoT & 16.00 \\
+		\hline
+		Chasis robot & 10.47 \\
+		\hline
+		Ln298(puente H) & 2.79 \\
+		\hline
+		step Down(x2) & 1.66 \\
+		\hline
+		Encoder óptico & 2.30 \\
+		\hline
+		Placa para soldar circuito & 5.05 \\
+		\hline
+		Ruedas de bola(x2) & 2.74 \\
+		\hline
+		switch & 0.82 \\
+		\hline
+		Bateria & 18.90 \\
+		\hline
+		Condensador de desacoplo & 0.16 \\
+		\hline
+		Condensador Filtro encoder & 0.06 \\
+		\hline
+		RaspberryPi 4, 2GB & 57.00\\
+		\hline
+		Picam & 17.04\\
+		\hline
+		TOTAL & 134.99 \\
+		\hline
+	\end{tabular} 
+	\caption{Material robot}
+	\label{tab:MatRobot} 
+\end{center}
+\end{table}
+El componente más caro del robot es la raspberryPi. Por 134.99\euro, se tiene un robot que permite desarrollar diversos algoritmos en el entorno de pruebas,puede comunicarse y reconocer el entorno. Además el robotario puede funcionar sin la raspberryPi y la cámara de Picam, pero esto limita el tipo de experimentos realizables. En total el coste de los robots del robotario, con 5 robots adquiridos de los cuales 2 tiene RaspberryPi es de 452.83 \euro.\\
+El material restante es el necesario para la comunicación y para que los robots se muevan de manera adecuada es el mostrado en el Cuadro ~\ref{tab:MatRobotario}	
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{| c | c |}
+			\hline
+			Material Robotario & Precio(\euro) \\ 
+			\hline
+			Cámara logitech c920 & 54.00 \\
+			\hline
+			Suelo de goma & 20.00 \\
+			\hline
+			Router & 35.00 \\
+			\hline
+			Ordenador de sobre-mesa & 560.00\\
+			\hline
+			TOTAL & 669.00 \\
+			\hline
+		\end{tabular}
+	\caption{Material robotario}
+	\label{tab:MatRobotario}  
+	\end{center}
+\end{table}
+\\En total por 1121.83 \euro se tiene un robotario funcional.
+
+\subsection{Montaje final de Robotario}
+Por último con los componentes adquiridos se ensambla el robotario que se muestra en la figura ~\ref{fig:montajefinal}. Se coloca la cámara Logitec cámara cenital que sirve como sistema de localización global, la cámara se coloca encima del los límites del robotario y lo mas centrada posible.
+Por último se instala un suelo de goma en la zona del robotario que marcará los límites. Se hacen pruebas de movimientos con los robots y se detecta que a pesar de ser el suelo de goma, al ser de baja calidad los robots se quedan atrapados en unas zonas, reduciendo su velocidad o en otras zonas sus ruedas motrices resbalan. La solución a futuro es adquirir un suelo de goma duro y liso, similar al que se puede encontrar en un gimnasio.
+
+En la figura ~\ref{fig:montajefinal} se puede ver como queda el robotario montado, con 3 robots. arriba se puede ver la cámara colocada. En la imagen se aprecia como el espacio es pequeño, por ello se tiene la necesidad de que los robots vayan despacio, para aprovechar de manera eficaz el espacio.\\ %[FALTA MEDIDAS NECESITO METRO]
+\begin{figure}[p]
+	\centering
+	\includegraphics[scale=01]{MontajeFinal}
+	\caption{Montaje final del robotario}
+	\label{fig:montajefinal}
+\end{figure}

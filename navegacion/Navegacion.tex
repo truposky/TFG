@@ -15,9 +15,10 @@
 		\caption{Arco que recorre robot}
 		\label{fig:arcorecorridorobot}
 	\end{subfigure}
+\caption{Parámetros usados para el cálculo de la navegación}
 \end{figure}
-Una vez que se ha sintonizado el controlador y que se obtiene un movimiento suave y uniforme, se calculan las ecuaciones de cinemáticas que gobiernan al robot y sirven para establecer la navegación del robot.
-Se puede ver en la Figura ~\ref{fig:arcorecorridorobot} la distancia entre las ruedas del robot(L) y el arco que forma el robot al moverse,$S1$ y $S2$.
+Una vez que se ha sintonizado el controlador y que se obtiene un movimiento suave y uniforme, se calculan las ecuaciones de cinemáticas que gobiernan al robot y sirven para establecer la navegación.
+Se puede ver en la Figura ~\ref{fig:arcorecorridorobot} la distancia entre las ruedas del robot(L) que es de 12.5cm y los arcos que forman al moverse el robot. $S1$ y $S2$.
 La rueda izquierda forma un arco de radio x y la rueda derecha un arco de radio $x+l$
 	siendo las longitudes de ambos arcos:
 	
@@ -41,12 +42,12 @@ La rueda izquierda forma un arco de radio x y la rueda derecha un arco de radio 
 	 
 	 Se deriva respecto al tiempo.
 	 \begin{equation}
-	  \frac{\Delta\varphi}{\Delta t}=  \frac{R(\Delta\theta_{d} - \Delta\theta_{i})}{L*\Delta t} = \frac{r(w_{d}-w{i})}{L}
+	  \frac{\Delta\varphi}{\Delta t}=  \frac{R(\Delta\theta_{d} - \Delta\theta_{i})}{L*\Delta t} = \frac{R(w_{d}-w{i})}{L}
 	\end{equation}
  de esta manera se tiene la velocidad angular del robot que depende de la velocidad angular de cada rueda y de la distancia que las separa. Y por último la velocidad lineal del robot viene dada por la siguiente expresión.
  
  \begin{equation}
- 	V= \frac{v_{d} + v_{i}}{2} = \frac{R(w_{d}-w{i})}{2}
+ 	V= \frac{v_{d} + v_{i}}{2} = \frac{R(w_{d} + w{i})}{2}
  \end{equation}
 Con las expresiones obtenidas, lo siguiente que se hace es ponerlas en forma matricial para poder procesarlas en el robot.
 \begin{equation}

@@ -1,4 +1,11 @@
 \documentclass[11pt, a4paper]{article} %tamaño mínimo de letra 11pto.
+
+\usepackage{url}
+
+\topmargin      = -0.56in
+\textheight     =  8.60in
+\textwidth      =  6.46in
+\oddsidemargin  =  0.02in
 \usepackage{fancyhdr} % para personalizar la cabecera y el pie de pagina
 \usepackage{lastpage} % para saber el numero de pagina del documento
 \usepackage{graphicx} 
@@ -15,6 +22,11 @@
 \usepackage{listings}
 \usepackage{import}
 \usepackage{eurosym}
+
+
+
+
+
 \lstset{ 
 	language=C++,                % choose the language of the code
 	basicstyle=\footnotesize,       % the size of the fonts that are used for the code
@@ -45,6 +57,7 @@
 \usepackage{circuitikz}
 
 \begin{document}
+	  \setcounter{page}{-1}
 	
 %%%%%%Portada%%%%%%%
 \begin{titlepage}
@@ -84,8 +97,24 @@
 
 \pagestyle{myheadings} 
 \end{titlepage}
+
+\setcounter{page}{1}
+%\newpage{\ }
+%\thispagestyle{empty} 
+
+\input{autorizacion.tex}
+\pdfbookmark[0]{Autorización}{PDFAutorizacionPage}
+
+
+\newpage
+\setcounter{page}{1}
+\tableofcontents
+\listoffigures
+\listoftables
 \newpage
 
+
+\pagestyle{empty} 
 {\bfseries \large [Título extendido del TFG (si procede)] }\vspace{10mm} 
 
 {\bfseries \large Resumen:} \vspace{5mm}
@@ -103,29 +132,33 @@ This is a test to prove the abstract's layout.This is a test to prove the abstra
 {\Large\textbf{Extensión máxima 50 páginas sin contar portada ni resumen (sí se incluye índice, introducción, conclusiones y bibliografía}}
 \newpage
 
-%%Inicio: 
-\tableofcontents
-%SALTO DE PÁGINA
-\newpage 
-%SALTO DE PÁGINA 
+%%Inicio:
+\setcounter{page}{1} 
+\pagestyle{plain}
+
+
+%SALTO D
+%SALTO DEE PÁGINA
+
 %%%% Comenzar a contar inicio de páginas
-
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
 \input{Introduccion.tex}
-
 \clearpage\thispagestyle{empty}\cleardoublepage
 \input{metodologia.tex}
-\clearpage\thispagestyle{empty}\cleardoublepage
+\input{hardware.tex}
 \input{estimaVelocidad/velocidad.tex}
 
-\clearpage\thispagestyle{empty}\cleardoublepage
 \input{controlMotor/ControlMotor.tex}
 \input{navegacion/Navegacion.tex}
 \input{Localizacion/Localizacion.tex}
 \input{CreacionInfraestructura/creacion de infraestructura.tex}
+\input{software/estructuraSoftware.tex}
 \input{Demostracion/Demostracion.tex}
-\clearpage\thispagestyle{empty}\cleardoublepage
+\newpage
 \input{Conclusiones.tex}
-\clearpage\thispagestyle{empty}\cleardoublepage
+\newpage
 \input{bibliografia/Bibliografia.tex}
 \clearpage\thispagestyle{empty}\cleardoublepage
 %\input{apendice.tex}

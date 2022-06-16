@@ -1,52 +1,11 @@
-\subsection{Experimento I}\label{ch:experimento1}
-El primer experimento que se realiza, es correspondiente a un algoritmo que estima la posición de un robot respecto a otro con las medidas que realizan los robots a bordo sin necesidad de un sistema de localización global. Este algoritmo está desarrollado por Liangming Chen, Hector Garcia de Marina, y Lihua Xie, que están preparando un artículo cientifico para publicarlo en IEE.\\
- El algoritmo necesita conocer la variación de los ángulos internos que forman los robots vecinos y conocer la velocidad relativa de un robot respecto a otro, además mínimo debe haber 3 robots involucrados.  Para obtener los ángulos internos se usan las cámaras que llevan los robots a bordo y la velocidad se conoce con los encoders. Como se tiene los vectores de posición de los robots involucrados, se calcula el ángulo interno, con los ángulos calculados y registrando la velocidad de avance de los robots ya se tiene los parámetros que necesita el algoritmo para estimar la posición.
-\subsubsection{Preparación del experimento}
-Se plantea un escenario ideal. Se colocan los 3 robots de manera que formen un triangulo isósceles, el cuál tiene dos lados de la misma longitud y los ángulos opuestos a los lados iguales tienen los mismos grados. En la Figura ~\ref{fig:triangulorobots} se tiene como están colocados los robots, donde se ha medido con un metro para verificar que la posición inicial es de un triángulo isósceles.\\
+\subsection{Experimento II}\label{ch:experimento1}
+El segundo experimento se trata de una prueba de apoyo a la investigación, que pone de manifiesto algunas limitaciones del robotario. El objetivo es obtener datos experimentales para validar un algoritmo que estima la posición relativa de un robot en movimiento respecto a otros, empleando medidas locales tomadas desde los robots sin necesidad de posicionamiento global. Este algoritmo está en fase de desarrollo. Desarrollado por Liangming Chen, Hector Garcia de Marina, y Lihua Xie, donde tienen un artículo científico preparando se para publicarlo.\\
+Dado un conjunto de robots en movimiento distribuidos en el plano, se puede considerar que en cada instante de tiempo los robots ocupan la posición de los vértices de un polígono. El algoritmo necesita conocer la variación de los ángulos internos del polígono así como la velocidad relativa de los robots para que cada uno determine la posición relativa de sus compañeros.
+\subsection{Preparación del experimento}
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Demostracion/trianguloRobots}
-	\caption{Formación inicial de robots}
-	\label{fig:triangulorobots}
+	\includegraphics[width=0.7\linewidth]{Demostracion/trianguloRobotsInicio}
+	\caption{Posición inicial de los robots}
+	\label{fig:isosceles}
 \end{figure}
-Se empieza el experimento haciendo que el robot situado en el lado opuesto de los ángulos iguales avance por la bisectriz del triangulo. Para ello se crea una ley de control para que el robot siga la bisectriz del triángulo, mientras avanza y retrocede. En este experimento el control y el registro de los ángulos y velocidades, lo hace la raspberryPi que se tiene a bordo, y la comunicación con la placa de Arduino se hace mediante el puerto serie de la raspberryPi y la placa Arduino.\\
-\subsubsection{Resultados de la prueba}
-Al realizar el experimento se tiene un problema y es que el robot tiene una aceleración
- inicial muy fuerte lo que hace que se desvíe de la bisectriz al inicio y a pesar de que el robot acaba corrigiendo, el triángulo que forman los 3 robots deja de ser isósceles. Además los encoders no son capaces de registrar de manera correcta la variación de velocidades cuando se cambia la dirección de avance, es decir hacia adelante o hacia atrás, y tampoco detecta el incremento de velocidades cuando se pasa del reposo a una velocidad determinada.
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{Demostracion/velAutomatico}
-	\caption{Velocidad lineal con el control automático}
-	\label{fig:velocidadrobot}
-\end{figure}
-En la Figura ~\ref{fig:velocidadrobot} se puede ver los datos adquiridos de la prueba, correspondientes a la velocidad lineal. Las velocidades registradas del movimiento adelante y atrás en la bisectriz del triángulo son discontinuas, pues se pasa de una velocidad hacia adelante a una hacia atrás de manera instantánea, y esto en la realidad no es así, pero el encoder hardware disponible es incapaz de registrarlo.\\
-
-El algoritmo, no acepta estas discontinuidades, pues es incompatible la variación de ángulos que se está registrando, con estas discontinuidades en la velocidad. Además de que el robot gira para corregir su desviación de la bisectriz, lo cual complica la adquisición de datos,debido a que se necesita al menos otro robot que mida la variación de los ángulos, y el tercero se obtiene restando los 180º de la suma total de los ángulos del triangulo, y  por último el escenario deja de ser el caso ideal planteado.\\
-
-Otro problema detectado en el experimento, es la duración de la batería, hasta ahora no se había hecho un estudio de la duración de la batería y de cuanto consumen los componentes del robot. Se ha analizado y se ha registrado picos de 10 amperios demandados por la raspberryPi, y provocando que la duración de la batería del robot en movimiento que también manda datos de temeraria no dure mas de 6 minutos. El consumo del motor cuando tiene que vencer el rozamiento inicial para girar la rueda es de 200 mA y despues ronda el valor de 80-120 mA, no es un consumo excesivo. Debido a este problema se ha optado por poner 2 baterías en paralelo cuando se use el módulo de la raspberryPi, se balancea la carga de las dos mediante un cargador de celdas, de está manera se consigue que ambas baterías tenga el mismo voltaje.\\
-
-\subsubsection{Segunda prueba}
-Se hace una segunda prueba, se decide poner un control manual a los robots, en este caso como solo se mueve uno es sencillo de controlar, se hace esto para tener unmayor control sobre la velocidad del robot y sobre los giros que realiza este.\\
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\linewidth]{LocalizacionRobots}
-	\caption{Imagen de experimento 1 con control manual}
-	\label{fig:localizacionrobots}
-\end{figure}
- Se toma un mando de radiocontrol que tiene una salida USB y se conecta al servidor, como el servidor está preparado para mantener una comunicación con los robots involucrados en el robotario, se añade una función que registra el mando USB y se traducen a velocidades y dirección, de esta manera el usuario tiene el control manual de un robot. Esta vez se prepara otro robot para que también registre la variaciones de los ángulos y guarde los datos. En la Figura ~\ref{fig:localizacionrobots} se puede ver una captura de la grabación del experimento.
-
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.7\linewidth]{Demostracion/velManual}
-	\caption{Velocidad lineal con el control manual}
-	\label{fig:velocidadrobotman}
-\end{figure}
-Los datos de las velocidades registradas se pueden ver en la Figura ~\ref{fig:velocidadrobotman}, a pesar de tener un control manual que ayuda a tener la orientación y velocidad deseada, las velocidades registradas siguen siendo discontinuas, y esto supone una limitación en algoritmos que requieran una precisión en el registro de velocidades.\\
-
-Este problema es principalmente debido al hardware. El encoder ha dado problemas desde que se instaló, contando mas pulsos de los reales y no estimando bien la velocidad, el hecho de que se produzca esta discontinuidad en el cambio de velocidades cuando se registra velocidades pequeñas hasta llegar a la deseada, puede ser debido a los filtros aplicados para solucionar el problema del ruido. Debido a que los filtros dan más importancia a los valores constantes que a los cambios pequeños de las velocidades, es porque se usan filtros paso-bajo.\\
-
-Los datos aun así han podido dar resultados favorables en la comprobación del algoritmo, pero antes se han tenido que procesar para que el algoritmo interprete de manera adecuada estas discontinuidades.
-
-
-MOSTRAR FIGURAS DE RESULTADOS
+Inicialmente se planteó un escenario simplificado: Se emplean tres robots (R1,R2,R3) colocados de modo que sus posiciones iniciales formen un triángulo isósceles tal y como se muestra en la Figura~\ref{fig:isosceles}. Cada robot lleva un identificador en su parte frontal, de modo que su posición relativa puede ser estimada por sus compañeros mediante las cámaras que llevan a bordo empleando para ello 

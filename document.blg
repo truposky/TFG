@@ -3,49 +3,65 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: document.aux
 The style file: plain.bst
 Database file #1: bibliografia/ref.bib
-Warning--I didn't find a database entry for "robotAli"
-Warning--I didn't find a database entry for "arduinoTienda"
-Warning--I didn't find a database entry for "PWM"
-Warning--I didn't find a database entry for "Picam"
-You've used 9 entries,
+I was expecting a `,' or a `}'---line 118 of file bibliografia/ref.bib
+ :  
+ :  publisher = {Princeton University Press},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 128 of file bibliografia/ref.bib
+ :  
+ :  publisher = {Ediciones UPC},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Too many commas in name 1 of "Ángel Cardama Aznar,Lluís Jofre Roca, Juan Manuel Rius Casals, Jordi Romeu Robert, Sebastián Blanch Boris" for entry cardama
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Ángel Cardama Aznar,Lluís Jofre Roca, Juan Manuel Rius Casals, Jordi Romeu Robert, Sebastián Blanch Boris" for entry cardama
+while executing---line 1049 of file plain.bst
+Warning--empty publisher in feedbacksystems
+Too many commas in name 1 of "Ángel Cardama Aznar,Lluís Jofre Roca, Juan Manuel Rius Casals, Jordi Romeu Robert, Sebastián Blanch Boris" for entry cardama
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Ángel Cardama Aznar,Lluís Jofre Roca, Juan Manuel Rius Casals, Jordi Romeu Robert, Sebastián Blanch Boris" for entry cardama
+while executing---line 1090 of file plain.bst
+Warning--empty publisher in cardama
+You've used 14 entries,
             2118 wiz_defined-function locations,
-            557 strings with 6205 characters,
-and the built_in function-call counts, 3890 in all, are:
-= -- 343
-> -- 298
-< -- 2
-+ -- 121
-- -- 110
-* -- 299
-:= -- 670
-add.period$ -- 28
-call.type$ -- 9
-change.case$ -- 82
+            570 strings with 6677 characters,
+and the built_in function-call counts, 5285 in all, are:
+= -- 474
+> -- 333
+< -- 6
++ -- 136
+- -- 120
+* -- 364
+:= -- 876
+add.period$ -- 42
+call.type$ -- 14
+change.case$ -- 102
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 112
-empty$ -- 231
-format.name$ -- 110
-if$ -- 781
+cite$ -- 16
+duplicate$ -- 177
+empty$ -- 374
+format.name$ -- 120
+if$ -- 1103
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 6
-newline$ -- 48
-num.names$ -- 18
-pop$ -- 94
+int.to.str$ -- 14
+missing$ -- 10
+newline$ -- 72
+num.names$ -- 28
+pop$ -- 136
 preamble$ -- 1
-purify$ -- 73
+purify$ -- 88
 quote$ -- 0
-skip$ -- 98
+skip$ -- 156
 stack$ -- 0
-substring$ -- 138
-swap$ -- 33
-text.length$ -- 2
+substring$ -- 211
+swap$ -- 56
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 36
-warning$ -- 0
-while$ -- 24
-width$ -- 10
-write$ -- 95
-(There were 4 warnings)
+type$ -- 52
+warning$ -- 2
+while$ -- 38
+width$ -- 16
+write$ -- 142
+(There were 6 error messages)

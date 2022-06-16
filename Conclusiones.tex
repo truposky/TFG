@@ -3,7 +3,7 @@ Como resultado de las pruebas realizadas se pude concluir que se ha conseguido d
 
 El robot construido es capaz de seguir las ordenes de manera correcta. Los robots tienen una limitación en la velocidad al no poder iniciar con una velocidad menor que $7.5 rad/s$. Se han encontrado limites en la estimación de la velocidad de los robots, lo que limita el uso de algoritmos como se ha visto en el experimento I. Esto último implica que no todos los algoritmos se pueden implementar en robotario, sobre todo los que requieran lecturas de velocidad muy precisas. El control del robot ha resultado ser favorable, pero se tiene incertidumbre en la medida debido al hardware disponible que limita la precisión con la cual los robots se mueven.\\
 
-La comunicación implementada mediante la tecnologia WiFi resulta ser suficiente para los robots involucrados, es cierto que se tiene un retraso, y una pérdida de paquetes. El retraso es un factor que se debe aceptar debido al hardware utilizado para la comunicación y la perdida de paquetes no suponen un problema pues se envían muchos paquetes en un intervalo pequeño de tiempo.\\
+La comunicación implementada mediante la tecnología WiFi resulta ser suficiente para los robots involucrados, es cierto que se tiene un retraso, y una pérdida de paquetes. El retraso es un factor que se debe aceptar debido al hardware utilizado para la comunicación y la perdida de paquetes no suponen un problema pues se envían muchos paquetes en un intervalo pequeño de tiempo.\\
 
 La posición se ha conseguido estimar con gran precisión, con una variación en la medida como se ha visto en el capítulo ~\ref{ch:RuidoPosicion}, pero respecto al hardware empleado el resultado es favorable.\\
 
@@ -11,4 +11,4 @@ Con los dos algoritmos implementados, se ha podido conocer las limitaciones del 
 
 \subsection{Futuros trabajos}
 Como una futura implementación, se comentó que la placa de Arduino tiene una IMU, con un acelerómetro y un giroscopo, este módulo es interesante para tener una precisión mayor cuando el robot realiza giros ya que puede ayudar al controlador PID y por lo tanto al gobierno del motor.\\
-También es intersante aplicar un entorno que permita a la persona que quiere llevar su algoritmo una facil aplicación del mismo. Hasta ahora la manera de implementar un algoritmo se hace a bajo nivel mandando instrucciones de la velocidad a los robots.
+También es interesante aplicar un entorno que permita a la persona que quiere llevar su algoritmo una fácil aplicación del mismo. Hasta ahora la manera de implementar un algoritmo se hace a bajo nivel mandando instrucciones de la velocidad a los robots.

@@ -1,9 +1,40 @@
-\subsection{Experimento II}
-El segundo experimento que se realiza es para comprobar el correcto funcionamiento de la localización global proporcionada por la cámara cenital y la comunicación del servidor con los robots involucrados en el experimento. Para ello se ha desarrollado un algoritmo que hace que los robots tengan que ir a un punto en el robotario. Con este algoritmo se demuestra que se pueden orientar y guiar los robot, además de que se puede tener datos recibidos de los distintos robots, que en este caso es la velocidad.\\
+\subsection{Experimento I}
+El experimento que se realiza es para comprobar el correcto funcionamiento de la localización global proporcionada por la cámara cenital y la comunicación del servidor con los robots involucrados en el experimento. Para ello se ha desarrollado un algoritmo que hace que los robots tengan que ir a un punto en el robotario. Con este algoritmo se demuestra que se pueden orientar y guiar los robot, además de que se puede tener datos de los distintos robots, en este caso es la posición.\\
+\begin{figure}[!h]
+\begin{subfigure}[b]{0.55\linewidth}
+	\centering
+	\includegraphics[width=0.7\linewidth]{Demostracion/posicionInicial}
+	\caption{Posición inicial experimento I}
+	\label{fig:posicioninicial}
+\end{subfigure}
+\quad
+\begin{subfigure}[b]{0.55\linewidth}
+	\centering
+	\includegraphics[width=0.7\linewidth]{Demostracion/posicionFinal}
+	\caption{Posición final experimento I}
+	\label{fig:posicionfinal}
+\end{subfigure}
+\caption{Experimento I}
+\label{fig:experimentoI}
+\end{figure}
+El algoritmo lo que hace es orientar los robots al punto deseado de manera aproximada, y una vez están orientados se desplazan al punto corrigiendo el rumbo mediante las instrucciones proporcionadas por el servidor, de esta manera convergen todos los robots en el punto deseado. En la Figura ~\ref{fig:experimentoI}, se tiene el inicio y el final del experimento. En la Figura ~\ref{fig:posicioninicial} se puede apreciar como los robots empiezan en una posición determinada y mirando cada uno a un sitio distinto. Se recuerda que la parte delantera del robot esta marcada con el vector de rojo que corresponde con el eje y del sistema de referencia del robot y el verde corresponde con el eje x. En la Figura~\ref{fig:posicionfinal} se tiene el final del experimento donde todos los robots han convergido al punto deseado.\\
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Demostracion/calculoVector}
+	\caption{}
+	\label{fig:calculovector}
+\end{figure}
 
-El algoritmo lo que hace es orientar los robots al punto deseado de manera aproximada, y una vez están orientados se desplazan al punto corrigiendo el rumbo mediante las instrucciones proporcionadas por el servido, de esta manera convergen todos los robots en el punto deseado.
+La manera en la cual se orientan, es restando los vectores del robot y el punto deseado, se calcula el angulo del vecto resultante de la resta y esté se resta con el ángulo que tiene el robot que viene dado por la orientación, de esta manera se sabe cuanto tiene que girar el robot. En la Figura~\ref{fig:calculovector} se tiene el calculo vectorial que se hace al robot2 en este experimento. El cálculo se realiza al inicio del algoritmo. Siendo $V_{R}=(x1,y1)$ el vector del robot y $V_{d}=(x2,y2)$ el vector del punto al cual se quiere ir. De la resta se obtiene un nuevo vector, de este se calcula el ángulo respecto al eje X de la cámara. Una vez se tiene el ángulo del vector resultante de la resta,  se resta con el ángulo que posee el robot respecto al eje X que viene dado por la orientación del robot. De esta manera se conoce el error de orientación del robot. Para corregir el error se multiplica por una ganancia y se hace girar el robot hasta que esté aproximadamente orientado al punto deseado, cuando esto ocurra el robot iniciara el rumbo al punto deseado y corregirá la orientación si fuese necesario mediante las consignas proporcionadas por el servidor.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Demostracion/navegacion}
+	\caption{Navegación de  Robots}
+	\label{fig:navegacionExperimento1}
+\end{figure}
+En la Figura ~\ref{fig:navegacionExperimento1} se tiene la navegación que han realizado los robots para llegar al Marker deseado. El punto inicial viene denotado por un cuadrado. Se tiene observando la Figura~\ref{fig:navegacionExperimento1} que el robot3 (azul), ha recorrido mas trayectoria que el robot1 (verde) o el robot2 (rojo). Como el algoritmo es sencillo y solo orienta y corrige el rumbo multiplicando el error por una ganacia determinada, el control es tosco, pero los robots consiguen llegar al destino. En la Figura~\ref{fig:navegacionExperimento1} se tienen lineas continuas, estas significan que se ha perdido la posición del robot. Esto se debe a que cuando los robots están en movimiento la cámara no es capaz de registrar la posición de los robots en cada fotograma. se aprecia que el robot dos ha dado más problemas en el registro de la posición que los demás robots. A pesar de esto no supone un problema para el algoritmo, pues los robots consiguen llegar a la posición final.
 
+\newpage
 
-GRAFICAS, EXPLICACION GRAFICAS, ALGIUNA FOTO.
 
 

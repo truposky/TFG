@@ -3,7 +3,15 @@
 \input{estimaVelocidad/cuantizacion/cuantizacion.tex}
 
 \subsection{Diseño del controlador}
-Para que el robot pueda seguir las instrucciones de manera correcta y los algoritmos se puedan efectuar de manera acertada, el robot debe incorporar un control de la velocidad de las ruedas,el cual se aplica a los dos motores DC de las ruedas motrices. En la figura ~\ref{fig:diagramabloque1}.\\
+Para que el robot pueda seguir las instrucciones de manera correcta y los algoritmos se puedan efectuar de manera acertada, el robot debe incorporar un control de la velocidad de las ruedas,el cual se aplica a los dos motores DC de las ruedas motrices. En la figura~\ref{fig:diagramabloque1} se tiene el diagrama de bloque del control que se usa para controlar la velocidad de cada rueda del robot. Cuyas partes son:
+\begin{itemize}
+	\item $U(s)$. Señal de entrada.
+	\item $F$. Control de acción directa.
+	\item $PID$. Controlador.
+	\item $ZOH$. Retenedor de orden cero, mantiene la señal constante entre muestra y muestra
+	\item $G(s)$. Es la planta a controlar.
+	\item $H(s)$. Sensor que estima la velocidad. 
+\end{itemize}
 \tikzstyle{block} = [%bloque
 draw,
 minimum width=0.6cm,
@@ -145,9 +153,8 @@ node[midway](output){}node[midway,above]{$y$};
 \label{fig:diagramabloque1}
 \end{figure}
 
-En el diagrama de bloques se pueden ver las siguientes partes que conforman el sistema de control
 \begin{itemize}
-	\item $U(s)$ corresponde a la consigna para la velocidad angular de la rueda ($w$). La entrada se traduce en un valor de PWM que corresponde con un valor de voltaje el cual está limitado a un valor de 6.5 V.
+	\item $U(s)$ corresponde a la consigna para la velocidad angular de la rueda ($w rad/s$). La entrada se traduce en un valor de PWM que corresponde con un valor de voltaje que está limitado a un valor máximo de 6.5 V.
 		\begin{figure}[!hp]
 		
 		\begin{subfigure}[b]{0.5\linewidth}
@@ -201,17 +208,17 @@ En el diagrama de bloques se pueden ver las siguientes partes que conforman el s
 	\item $F$ corresponde con un controlador de acción directa que trata de acercar la respuesta del motor al valor de consigna para facilitar la acción del controlador PID. La respuesta no va a ser lineal, debido a la saturación del motor. Para ajusta el valor de su ganancia se ha creado un programa en el microcontrolador, el cual introduce una señal de PWM al puente H y a su vez toma las lecturas proporcionadas por el sensor de velocidad y  se obtiene una tabla de entradas PWM que corresponde a un nivel de voltaje y una salida de $rad/s$ que corresponde al giro de la rueda. Se hace para varios valores y a partir de los datos se hace una regresión lineal de las medidas. En la Figura ~\ref{fig:feedforward} se puede ver las muestras obtenidas y la ecuación resultante que se aplica en el controlador de cada motor, correspondiente a la acción directa. Para realizar las medidas se ha tenido en cuenta el rozamiento, esto implica que las pruebas se han realizado con el robot montado y sobre la superficie del robotario.
 
 
-Ademas en las figuras ~\ref{fig:feedforward} se puede apreciar como la curva tiende a la saturación a medida que se aumenta el valor de PWM, esto es lo esperado pues con un PWM de 255 que corresponde con un ciclo de trabajo del 100\% se tiene el máximo voltaje impuesto de 6.5 V y como se comentó el fabricante da unos límites de 9 voltios, se está próximo a la saturación. Otro factor a notar es la diferencia de las medidas de los diferentes robot, se puede ver que las medidas dadas por el robot 1 son mas uniformes que las otras, siendo el robot 3 el que tiene medidas mas dispersas, uno pudiera pensar que se ha tenido un descuido al ir montando los diferentes robots, y esto no es así, pues el primero en montarse ha sido el robot2. La respuesta de las gráficas demuestra que cada robot es muy diferente en cuanto a mediciones y movimiento. Otro factor notable en las gráficas para realizar el control de acción directa es que el robot 3 tiene un valor menor de $w$  para un máximo PWM, como el voltaje máximo es el mismo para todos, lo que se deduce de esto es que el robot 3 tiene mas rozamiento en las ruedas, ya sea por ele eje que cueste mas girar o por la goma de las propias ruedas, esto complica el diseñar un controlador genérico y que sirva para todos los robots, por ello se debe hacer un control de acción directa para cada robot y un PID distinto.
+Ademas en las Figura~\ref{fig:feedforward} se puede apreciar como la curva tiende a la saturación a medida que se aumenta el valor de PWM, este fenómeno se debe a causas mecánicas, como rozamiento, fricción y también a que se está próximo del voltaje máximo que acepta el motor. Otro factor a notar es la diferencia de las medidas de los diferentes robot, se puede ver que las medidas dadas por el robot 1 son más uniformes que las otras, siendo el robot 3 el que tiene medidas más dispersas, uno pudiera pensar que se ha tenido un descuido al ir montando los diferentes robots, y esto no es así, pues el primero en montarse ha sido el robot2. La respuesta de las gráficas demuestra que cada robot es diferente en cuanto a mediciones y movimiento. Otro factor notable en las gráficas para realizar el control de acción directa es que el robot 3 tiene un valor menor de $w$  para un máximo PWM, como el voltaje máximo es el mismo para todos, lo que se deduce de esto es que el robot 3 tiene mas rozamiento en las ruedas, esto complica el diseñar un controlador genérico y que sirva para todos los robots, por ello se debe hacer un control de acción directa para cada robot y un PID distinto.
 
 	\item $PID(z)$ corresponde al controlador. El control de acción directa no basta para mantener una velocidad igual a la de referencia, debido a que las condiciones en las que se ha hecho el control de acción directa no son las mismas en todo momento,y además el control de acción directa no responde adecuadamente a las variaciones debidas al ruido o perturbaciones. Es necesario un control realimentado que corrija el error y la salida sea igual o esté muy cercana a la salida, para ello se usa uno de los controladores más usados y conocidos que es el PID, es un control que es proporcional al error,a su integral y a su derivada temporal. El control proporcional es una ganancia que se multiplica al error para llegar al valor de referencia y minimizar el error, tiene el problema de que se puede quedar en un valor próximo y nunca llegar al valor de consigna. El control integral sirve para integrar el error y como resultado corrige el error al cual no puede llegar el control proporcional. El control derivativo trata de anticiparse a un comportamiento futuro, este último control es muy sensible al ruido, y puesto que el robot tiene mucho ruido en la medición de la velocidad, se ha decidido no activarlo.\\
 	
-	 Se desconoce como es la planta, se tiene un modelo del motor DC pero el modelo no basta para conocer el comportamiento real. Por ello para la sintonización de los parámetros del PID se usa el método de ziegler-Nichols que se explica en el libro de Feedback systems[REFERENCIA A LIBRO], es un método que permite sintonizar los parámetros del controlador PID sin tener que conocer la planta, y esto sirve  para una primera aproximación y luego se va ajustando hasta conseguir una respuesta deseada. Ademas de la sintonización de los parámetros del controlador, se implementa un modulo conocido como Anti-Wind-up.
+	 Se desconoce como es la planta, se tiene un modelo del motor DC pero el modelo no basta para conocer el comportamiento real. Por ello para la sintonización de los parámetros del PID se usa el método de ziegler-Nichols \cite{feedbacksystems}, es un método que permite sintonizar los parámetros del controlador PID sin tener que conocer la planta, y esto sirve  para una primera aproximación y luego se va ajustando hasta conseguir una respuesta deseada. Ademas de la sintonización de los parámetros del controlador, se implementa un modulo conocido como Anti-Wind-up.
 	
 	 \subitem El Wind-Up es un problema que se tiene con el control integral, relacionado con el tiempo que tarda el controlador en alcanzar el valor de consigna. Hasta que no se alcance la consigna y el error no cambié de signo el valor de la integral del error sigue creciendo, y puede ocurrir que una vez alcanzado el valor de consigna , el de la integral no sea cero, y el controlador sigue corrigiendo un error que no existe. Esté fenómeno provoca una sobreoscilación indeseada en el sistema, y puede llegar a inestabilizarlo en algunos casos. Debido a esto se propone dentro del control PID el denominado Anti-Wind-Up, básicamente lo que hace es que cuando llega a un valor máximo el integrador deja de acumular valores y cuando se cambia el signo del error se borra la memoria del controlador.
 	 
  
 	\item $G(s)$ es el motor DC, en varios libros y documentos existen diversos modelos de un motor DC para el control, en este caso no es necesario modelar el motor y estudiar su comportamiento, debido a que se va a trabajar sobre él directamente y se sintonizará el control sobre la planta real.
-	\item $H(s)$ es el sensor, que se refiere al encoder óptico, dicho encoder nos da pulsos que equivalen a $\theta=\frac{2\pi}{N}$ radianes, si se mide el tiempo entre pulsos se tiene la velocidad angular de la rueda.
+	\item $H(s)$ es el sensor, que se refiere al encoder óptico, dicho encoder nos da pulsos que equivalen a $\theta=\frac{2\pi}{N}$ radianes, donde N=20, si se mide el tiempo entre pulsos se tiene la velocidad angular de la rueda.
 \end{itemize}
 En conjunto los bloques forman el lazo de control, que mantiene una velocidad en referencia a la entrada.\\
 En el diagrama de bloques anterior no se ha tenido en cuenta las perturbaciones que se obtienen, y debido a que el encoder y los motores no son de buena calidad y debido a las vibraciones del robot causadas por el movimiento, se tiene una alteración significativa de la lectura de pulsos. En el siguiente apartado se comenta el tratamiento del ruido y su solución.  
@@ -220,30 +227,34 @@ En el diagrama de bloques anterior no se ha tenido en cuenta las perturbaciones 
 Debido al ruido del sistema, se decide no incluir la parte derivativa del controlador PID, basta con poner $K_{d}=0$, esto se debe a que la acción derivativa amplifica el ruido, se podría poner un filtro a la acción derivativa, pero sería complicar el control de manera innecesaria y como se muestra a continuación con un control PI junto al control de acción directa es mas que suficiente.\\
 Para la sintonización de los parámetros se recurre al método de Ziglers-Nichols\\
 Se toma como ejemplo de sintonización el robot1, los siguientes robots se hace de la misma manera.
-Lo primero que se hace es aplicar una ganancia K en el lazo de control, se aumenta dicha ganancia hasta que se llegue a un comportamiento oscilatorio. Con la K que ha causado el comportamiento oscilatorio y el periodo de la oscilación se hallan los parámetros del controlador PI.
+Lo primero que se hace es aplicar una ganancia K en el lazo de control, se aumenta dicha ganancia hasta que se llegue a un comportamiento oscilatorio tal y como se aprecia en la Figura~\ref{fig:respuestaEscalon}. Con la K que ha causado el comportamiento oscilatorio y el periodo de la oscilación resultante se hallan los parámetros del controlador PI.
 \begin{figure}[htbp]
 
 	\begin{subfigure}[b]{0.52\linewidth}
 		\centering
 	\includegraphics[width=0.95\linewidth]{controlMotor/RespuestaEscalonRD}
-	\caption{}
+	\caption{Respuesta a entrada de referencia W.\\Rueda derecha}
 	\label{fig:respuestaescalonrd}
 	\end{subfigure}
 \quad
 	\begin{subfigure}[b]{0.52\linewidth}
 		\centering
 		\includegraphics[width=1\linewidth]{controlMotor/RespuestaEscalonRI}
-		\caption{}
+		\caption{Respuesta a entrada de referencia W.\\ Rueda izquierda}
 		\label{fig:respuestaescalonri}
 	\end{subfigure}
+	\caption{Respuesta de los motores en el límite de la estabilidad}
+	\label{fig:respuestaEscalon}
 \end{figure}\\
 
-De la representación gráfica se obtiene T, para la rueda derecha $TD=0.59$ y $ Ti=0.55$, con estos valores y con k=5.3 se obtiene la siguiente el Cuadro ~\ref{tab:PID}.\\
+De la representación gráfica se obtiene T, para la rueda derecha $TD=0.59$ que se obtiene tomando el tiempo entre dos máximos, tal y como se aprecia en la Figura~\ref{fig:respuestaescalonrd} y para la rueda izquierda se tiene $Ti=0.55$ en la Figura~\ref{fig:respuestaescalonri} se tienen los máximos que se han usado. Con estos valores y con k=2 ,se obtiene los valores del Cuadro~\ref{tab:PID}. Para la ganancia proporcional se toma proporciones de la K original, según sea P, PI o PID la proporción cambia, para P por ejemplo se toma 0.5K, para PI se toma 0.4K y para PID se toma 0.6K. En el caso de la ganancia para el control integral se toma proporciones del periodo de oscilación, siendo para el control PI 0.8T y para PID 0.5T y por último para la ganancia del control derivativo se toma 0.125T como ganancia. \\
 \begin{table}[h]
 	\begin{center}
 	\begin{tabular}{|c|c|c|c|c|c|c|}
 		\hline
-		& $KD_{p}$ & $KD_{i}$ & $kD_{d}$ & $KI_{p}$ & $KI_{i}$ & $kI_{d}$ \\
+			& \multicolumn{3}{|c|} {Rueda derecha}& \multicolumn{3}{|c|} {Rueda izquierda}  \\
+		\hline
+		& $K_{p}$ & $K_{i}$ & $K_{d}$ & $K_{p}$ & $K_{i}$ & $K_{d}$ \\
 		\hline
 		P & 1 &  &  & 1 &  &  \\
 		\hline
@@ -256,7 +267,7 @@ De la representación gráfica se obtiene T, para la rueda derecha $TD=0.59$ y $
 	\label{tab:PID} 
 	\end{center}
 \end{table}
-En la Figura ~\ref{fig:PI_Nichols}, se puede apreciar la respuesta de los motores, se puede ver que en el motor derecho se tiene una oscilación y el motor izquierdo llega al asentamiento pero tiene una sobre-elongación grande.
+Con las ganacias calculadas en el Cuadro~\ref{tab:PID} se vuelve a realizar una prueba para ver la respuesta de los motores. En la Figura~\ref{fig:PI_Nichols}, se puede apreciar la respuesta de los motores, se puede ver que en el motor derecho se tiene una oscilación y el motor izquierdo llega al asentamiento pero tiene una sobre-elongación grande.
 
 
 \begin{figure}[h]
