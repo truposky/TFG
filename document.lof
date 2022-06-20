@@ -1,41 +1,46 @@
 \babel@toc {spanish}{}
 \contentsline {figure}{\numberline {1}{\ignorespaces diagrama de Gantt\relax }}{6}{figure.caption.4}%
 \contentsline {figure}{\numberline {2}{\ignorespaces chasis robot m\IeC {\'o}vil\relax }}{7}{figure.caption.5}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Placa de Arduino nano 33 IoT\relax }}{7}{figure.caption.6}%
-\contentsline {figure}{\numberline {4}{\ignorespaces L298n\relax }}{7}{figure.caption.7}%
-\contentsline {figure}{\numberline {5}{\ignorespaces bater\IeC {\'\i }a\relax }}{8}{figure.caption.8}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Step-Down\relax }}{8}{figure.caption.9}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Encoder\relax }}{8}{figure.caption.10}%
-\contentsline {figure}{\numberline {8}{\ignorespaces RaspberryPi conectada con la c\IeC {\'a}mara\relax }}{9}{figure.caption.11}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Robots construidos\relax }}{10}{figure.caption.12}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Robots construidos con tercera planta\relax }}{10}{figure.caption.13}%
-\contentsline {figure}{\numberline {11}{\ignorespaces C\IeC {\'a}mara Logitech\relax }}{10}{figure.caption.14}%
-\contentsline {figure}{\numberline {12}{\ignorespaces sacada de la documentaci\IeC {\'o}n, ejemplo de un marker\relax }}{11}{figure.caption.15}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Montaje final del robotario\relax }}{14}{figure.caption.18}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Placa de Arduino nano 33 IoT\relax }}{8}{figure.caption.6}%
+\contentsline {figure}{\numberline {4}{\ignorespaces L298n\relax }}{8}{figure.caption.7}%
+\contentsline {figure}{\numberline {5}{\ignorespaces bater\IeC {\'\i }a\relax }}{9}{figure.caption.8}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Step-Down\relax }}{9}{figure.caption.9}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Encoder\relax }}{9}{figure.caption.10}%
+\contentsline {figure}{\numberline {8}{\ignorespaces RaspberryPi conectada con la c\IeC {\'a}mara\relax }}{10}{figure.caption.11}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Robots construidos\relax }}{11}{figure.caption.12}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Robots construidos con tercera planta\relax }}{11}{figure.caption.13}%
+\contentsline {figure}{\numberline {11}{\ignorespaces C\IeC {\'a}mara Logitech\relax }}{11}{figure.caption.14}%
+\contentsline {figure}{\numberline {12}{\ignorespaces sacada de la documentaci\IeC {\'o}n, ejemplo de un marker\relax }}{12}{figure.caption.15}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Montaje final del Robotario\relax }}{14}{figure.caption.18}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Colocaci\IeC {\'o}n del encoder\relax }}{15}{figure.caption.19}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Salida de encoder sin filtro\relax }}{16}{figure.caption.20}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Lectura de pulsos con filtro paso-bajo\relax }}{16}{figure.caption.21}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Pulsos de encoder a velocidad m\IeC {\'a}xima de la rueda. Voltaje de 6.5V en el motor\relax }}{17}{figure.caption.22}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Variaci\IeC {\'o}n del ciclo de trabajo\relax }}{18}{figure.caption.23}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Ejemplo de se\IeC {\~n}ales de entrada al comparador\relax }}{19}{figure.caption.24}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Esquema del puente H\relax }}{20}{figure.caption.25}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Diagrama de bloques del control\relax }}{20}{figure.caption.26}%
-\contentsline {figure}{\numberline {22}{\ignorespaces FeedForward\relax }}{22}{figure.caption.27}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Respuesta de los motores en el l\IeC {\'\i }mite de la estabilidad\relax }}{24}{figure.caption.28}%
-\contentsline {figure}{\numberline {24}{\ignorespaces PI Zieglers-Nichols\relax }}{25}{figure.caption.30}%
-\contentsline {figure}{\numberline {25}{\ignorespaces PI optimizado\relax }}{25}{figure.caption.31}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Par\IeC {\'a}metros usados para el c\IeC {\'a}lculo de la navegaci\IeC {\'o}n\relax }}{26}{figure.caption.33}%
-\contentsline {figure}{\numberline {27}{\ignorespaces Robots Con Markers para identificaci\IeC {\'o}n y localizaci\IeC {\'o}n\relax }}{27}{figure.caption.34}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Markers para calibraci\IeC {\'o}n\relax }}{28}{figure.caption.35}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Ejes de coordenadas\relax }}{29}{figure.caption.36}%
-\contentsline {figure}{\numberline {30}{\ignorespaces Red LAN robotario \relax }}{31}{figure.caption.37}%
-\contentsline {figure}{\numberline {31}{\ignorespaces Estructura de mensaje enviado/recibido y operaciones de instrucci\IeC {\'o}n \relax }}{32}{figure.caption.38}%
-\contentsline {figure}{\numberline {32}{\ignorespaces latencia\relax }}{33}{figure.caption.39}%
-\contentsline {figure}{\numberline {33}{\ignorespaces Analisis de la red\relax }}{34}{figure.caption.40}%
-\contentsline {figure}{\numberline {34}{\ignorespaces Estructura del servidor\relax }}{35}{figure.caption.41}%
-\contentsline {figure}{\numberline {35}{\ignorespaces Estructura del programa de Arduino\relax }}{36}{figure.caption.42}%
-\contentsline {figure}{\numberline {36}{\ignorespaces Estructura del programa de Arduino\relax }}{37}{figure.caption.43}%
-\contentsline {figure}{\numberline {37}{\ignorespaces Experimento I\relax }}{38}{figure.caption.44}%
-\contentsline {figure}{\numberline {38}{\ignorespaces \relax }}{39}{figure.caption.45}%
-\contentsline {figure}{\numberline {39}{\ignorespaces Navegaci\IeC {\'o}n de Robots\relax }}{40}{figure.caption.46}%
-\contentsline {figure}{\numberline {40}{\ignorespaces Posici\IeC {\'o}n inicial de los robots\relax }}{41}{figure.caption.47}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Salida de encoder sin filtro\relax }}{17}{figure.caption.20}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Lectura de pulsos con filtro paso-bajo\relax }}{17}{figure.caption.21}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Pulsos de encoder a velocidad m\IeC {\'a}xima de la rueda. Voltaje de 6.5V en el motor\relax }}{18}{figure.caption.22}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Variaci\IeC {\'o}n del ciclo de trabajo\relax }}{19}{figure.caption.23}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Ejemplo de se\IeC {\~n}ales de entrada al comparador\relax }}{20}{figure.caption.24}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Esquema del puente H\relax }}{21}{figure.caption.25}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Diagrama de bloques del control\relax }}{21}{figure.caption.26}%
+\contentsline {figure}{\numberline {22}{\ignorespaces FeedForward\relax }}{23}{figure.caption.27}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Respuesta de los motores en el l\IeC {\'\i }mite de la estabilidad\relax }}{25}{figure.caption.28}%
+\contentsline {figure}{\numberline {24}{\ignorespaces PI Zieglers-Nichols\relax }}{26}{figure.caption.30}%
+\contentsline {figure}{\numberline {25}{\ignorespaces PI optimizado\relax }}{26}{figure.caption.31}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Par\IeC {\'a}metros usados para el c\IeC {\'a}lculo de la navegaci\IeC {\'o}n\relax }}{27}{figure.caption.33}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Robots Con Markers para identificaci\IeC {\'o}n y localizaci\IeC {\'o}n\relax }}{28}{figure.caption.34}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Markers para calibraci\IeC {\'o}n\relax }}{29}{figure.caption.35}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Ejes de coordenadas\relax }}{30}{figure.caption.36}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Rudio en la localizaci\IeC {\'o}n\relax }}{31}{figure.caption.37}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Red LAN robotario \relax }}{33}{figure.caption.38}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Estructura de mensaje enviado/recibido y operaciones de instrucci\IeC {\'o}n \relax }}{34}{figure.caption.39}%
+\contentsline {figure}{\numberline {33}{\ignorespaces latencia\relax }}{35}{figure.caption.40}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Analisis de la red\relax }}{35}{figure.caption.41}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Estructura del servidor\relax }}{37}{figure.caption.42}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Estructura del programa de Arduino\relax }}{38}{figure.caption.43}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Estructura del programa de Arduino\relax }}{39}{figure.caption.44}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Experimento I\relax }}{40}{figure.caption.45}%
+\contentsline {figure}{\numberline {39}{\ignorespaces \relax }}{41}{figure.caption.46}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Navegaci\IeC {\'o}n de Robots\relax }}{42}{figure.caption.47}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Algoritmo de control del experimento 2\relax }}{43}{figure.caption.48}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Posici\IeC {\'o}n inicial de los robots\relax }}{44}{figure.caption.49}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Trayectoria del robot 2\relax }}{44}{figure.caption.50}%
+\contentsline {figure}{\numberline {44}{\ignorespaces Resultados aplicando el m\IeC {\'e}todo 1\relax }}{45}{figure.caption.51}%
+\contentsline {figure}{\numberline {45}{\ignorespaces Resultados aplicando el m\IeC {\'e}todo 2(estimador)\relax }}{45}{figure.caption.52}%

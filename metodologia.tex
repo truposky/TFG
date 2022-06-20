@@ -1,43 +1,79 @@
 \section{Metodología}\label{ch:metodologia}
-Para poder llevar a cabo el robotario, se hace un estudio de los ejemplos ya existentes y se establece un método de trabajo.
+Para poder llevar a cabo el Robotario, se hace un estudio de los ejemplos ya existentes y se establece un método de trabajo.
 \subsection{Estudio preliminar de entornos de pruebas existentes}
-Se realiza un estudio de los proyectos de el Robotarium y Duckietown, que son los que han sido referencia principal de este proyecto. Se estudia los componentes dedicados al Robotarium y como son los robots que emplean. Duckietown tiene un curso online de acceso libre, el cual permite conocer con precisión como es su robot. Robotarium tiene documentación a disposición de todo el mundo, describiendo su entorno y los robots empleados. Se recopila su experiencia en la construcción de los robots y cuáles han sido los requisitos. Después de haber estudiado con detenimiento estos ejemplos, se plantean los recursos necesarios para construir un entorno de pruebas equivalente. A diferencia de los proyectos mencionados, se decide emplear para las comunicaciones la tecnología WiFi, que es fácil de implementar y tiene un precio asequible
-\subsection{Selección de componentes}
-Una vez que se ha recopilado información sobre lo necesario para elaborar el robotario se hace una lista de componentes a nivel de hardware y software y se realiza un pedido para poder desarrollar el robotario.
-	
-\begin{center}
-		\begin{enumerate}
-		\item Robot móvil.
-		\item Sensor de velocidad.
-		\item Router.
-		\item Ordenador que hace de servidor.
-		\item Placa con microcontrolador(Arduino).
-		\item Cámara webcam, para localización.
-		\item Cámara a bordo de robot.
-		\item Ordenador de placa simple(RaspberryPi).
-		\item Selección de software para visión por computador, OpenCV.
-		\item Selección de lenguaje de programación, C++ y C.
-	\end{enumerate}
-\end{center}
+Se realiza un estudio de los proyectos de el Robotarium y Duckietown, que son los que han sido referencia principal de este proyecto. Se estudia los componentes dedicados al Robotarium y como son los robots que emplean. Duckietown tiene un curso online de acceso libre, el cual permite conocer con precisión como es su robot. Robotarium tiene documentación a disposición de todo el mundo, describiendo su entorno y los robots empleados. Se recopila su experiencia en la construcción de los robots y cuáles han sido los requisitos. Después de haber estudiado con detenimiento estos ejemplos, se plantean los recursos necesarios para construir un entorno de pruebas equivalente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Selección de componentes y software}
+Una vez que se ha recopilado información sobre lo necesario para elaborar el Robotario se hace una lista de componentes a nivel de hardware y software.\\
+Los criterios que se siguen en la elección del software y hardware en base a los ejemplos estudiados son los siguientes:
+\begin{itemize}
+	\item Se debe diseñar un robot móvil, de un presupuesto razonable y que sea fácil de replicar. 
+	\item Se debe seleccionar un sensor para poder estimar la velocidad a la cual se mueve el robot.
+	\item Se debe elegir un microcontrolador para las tareas de bajo nivel del robot.
+	\item Se debe elegir un sistema de visión a bordo del robot y un ordenador a bordo que procese los datos.
+	\item Se debe conseguir un sistema de comunicación sencillo y fácil de configurar. Que pueda soportar varios dispositivos conectados.
+	\item El lenguaje de programación debe ser multiplataforma y bien documentado. Compatible con el hardware adquirido
+\end{itemize} 
+
+ 
+
 \subsection{Construcción de un primer robot}
 Lo primero que se hace es montar y evaluar el robot adquirido. El robot cuenta con dos motores DC, se comprueba la zona de operación de los motores y se estima la velocidad a la cual pueden ir.
 
-	\subsubsection{Prueba de motor}
+	\subsubsection{Motor}
 
-Se monta el robot y se ensambla el módulo integrado que va a controlar la velocidad del motor. Se tienen que realizar diversas pruebas hasta encontrar los parámetros óptimos para el gobierno del motor, tales como voltajes máximos y mínimos.\\
+Se monta el robot y se ensambla el módulo integrado que va a controlar la velocidad del motor. Se tienen que realizar diversas pruebas hasta encontrar los parámetros óptimos para el gobierno del motor, tales como voltajes máximos y mínimos.
 
-	\subsubsection{Prueba de encoders y estimación de la velocidad}
-	El siguiente paso es verificar que los sensores de velocidad miden de manera adecuada la velocidad a la cual se mueve el robot y si no es así, hay que solucionarlo mediante algún filtrado.
+\subsubsection{Encoders y estimación de la velocidad}
+El siguiente paso es verificar que los sensores de velocidad miden de manera adecuada la velocidad a la cual se mueve el robot y si no es así, hay que solucionarlo mediante algún filtrado.
 
 	 
 
-	\subsubsection{Programación del robot y comprobación del robot montado}
+	\subsubsection{Programación del robot y verificación del robot montado}
 	
-	 Se crea el programa de control de velocidad y  de la comunicación entre dispositivos. El control se hace mediante un controlador para cada rueda el cual se detalla en el capitulo ~\ref{ch:ControlMotor}. Para verificar que está bien diseñado se realizan varias pruebas haciendo que ambos motores sigan la misma señal de referencia y al seguir la misma señal de referencia el robot debe ir en línea recta y que esto implica que el control actúa de manera adecuada siguiendo la señal de referencia. Si este se desvía sobrepasando un margen de error aceptable implica que se deben ajustar los parámetros del controlador.
-\subsection{Contrucción de copias del primer robot}
+Se crea el programa de comunicación entre dispositivos y del control de velocidad. El control se hace mediante un controlador para cada rueda el cual se detalla en el capitulo ~\ref{ch:ControlMotor}. Para verificar que está bien diseñado se realizan varias pruebas haciendo que ambos motores sigan la misma señal de referencia y al seguir la misma señal de referencia el robot debe ir en línea recta y que esto implica que el control actúa de manera adecuada siguiendo la señal de referencia. Si este se desvía sobrepasando un margen de error aceptable implica que se deben ajustar los parámetros del controlador.
+\subsection{Construcción de copias del primer robot}
 Una vez que se tiene ajustado el primer robot construido, se construyen 2 robots más. Se debe intentar que los robots sean lo más parecidos posible en cuanto a la posición de las piezas, ejes de las ruedas, etc. Esto facilitará crear un controlador genérico para todos los robots, o al menos que no sea muy distinto.
 \subsection{Configuración y desarrollo de red de comunicación}
-El siguiente paso es configurar la red de comunicación, la cual es necesariamente inalámbrica, por ello se debe seleccionar un router lo suficientemente capaz para admitir las comunicaciones del robotario. En las placas del microcontrolador se crea un programa que permite conectarse a la red LAN y establecer una comunicación con los distintos dispositivos conectados a la red. A su vez se crea un pequeño servidor para realizar pruebas de comunicación.\\
+El siguiente paso es configurar la red de comunicación, la cual es necesariamente inalámbrica, por ello se debe seleccionar un router lo suficientemente capaz para admitir las comunicaciones del Robotario. En las placas del microcontrolador se crea un programa que permite conectarse a la red LAN y establecer una comunicación con los distintos dispositivos conectados a la red. A su vez se crea un pequeño servidor para realizar pruebas de comunicación.\\
  Una vez que se tiene todo funcional se desarrollan funciones, protocolos e instrucciones de comunicación entre las placas del microcontrolador y el servidor de manera que se pueda producir una correcta comunicación.\\
  Además de la comunicación inalámbrica se crea una comunicación serie a través del puerto USB entre la placa del microcontrolador y una RaspberryPi que va implementada en el robot.
 
@@ -50,16 +86,17 @@ Con la cámara de la raspberryPi configurada, se desarrolla un programa que reco
 
 
 \subsection{Realización de experimentos}
-Por último para demostrar que el robotario se puede usar para comprobar el funcionamiento de diversos algoritmos, se realizan dos experimentos, uno sencillo de localización y orientación con la cámara cenital, y otro que sirve de ayuda para un proyecto de investigación, que trata de estimar la posición de los robots, midiendo la variación de los ángulos y la velocidad relativa de un robot respecto a otro, para este experimento se necesitan mínimo 3 robots. Gracias a la realización de estos experimentos se han conocido limitaciones del robotario, que se detallan en el capitulo ~\ref{ch:experimento1}
+Por último para demostrar que el Robotario se puede usar para comprobar el funcionamiento de diversos algoritmos, se realizan dos experimentos, uno sencillo de localización y orientación con la cámara cenital, y otro que sirve de ayuda para un proyecto de investigación, que trata de estimar la posición de los robots, midiendo la variación de los ángulos y la velocidad relativa de un robot respecto a otro, para este experimento se necesitan mínimo 3 robots. Gracias a la realización de estos experimentos se han conocido limitaciones del Robotario, que se detallan en el capitulo ~\ref{ch:experimento1}
 
 
 \subsection{Planificación de proyecto}
 
-\begin{figure}[pt]
+\begin{figure}[!hp]
 
-	\includegraphics[width=01\linewidth, height=0.75\textheight]{gantt}
+	\includegraphics[width=01\linewidth, height=0.75\textheight]{gantt2}
 	\caption{diagrama de Gantt}
 	\label{fig:gantt}
 \end{figure}
 
-En la Figura ~\ref{fig:gantt} se tiene un diagrama de Gantt donde se muestra las fases del proyecto y la duración de las mismas. El proceso mas complicado ha sido el correspondiente a la estimación de la velocidad, algo que parece sencillo de implementar con los encoders, han dado muchos problemas,siendo la duración de la implementación de 30 días, se puede deber a que son componentes de bajo coste y no han tenido mucho cuidado en la fabricación. Y por último el experimento 1 llevo mucho tiempo debido a que, ha costado mucho hacer que todo se integrase de manera correcta, también se han tenido problemas debido a la limitación de hardware y dificultó la realización del experimento.
+En la Figura ~\ref{fig:gantt} se tiene un diagrama de Gantt donde se muestra las fases del proyecto y la duración de las mismas. La duración estimada es de 300 horas repartidas en las semanas mostradas en la Figura~\ref{fig:gantt}. En la fase de montaje de robot se tiene el apartado de montaje de más robots. El numero de robots a montar dependerá de la dificultad o tiempo que requiera y del espacio que se disponga del Robotario.
+\newpage

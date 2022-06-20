@@ -23,6 +23,11 @@ kubii.
 \newblock Available at
   \url{https://www.kubii.es/camaras-sensores/2667-camara-de-5mp-para-raspberry-pi-3-160--3272496298354.html}.
 
+\bibitem{hector}
+y~Lihua~Xie Liangming~Chen, Hector Garcia de~Marina.
+\newblock Multi-robot relative localization using interior angle measurements.
+\newblock En desarrollo.
+
 \bibitem{rodrigues}
 Wolfram Mathworld.
 \newblock Rodrigues' rotation formula.
@@ -34,9 +39,7 @@ Liam Paull, Jacopo Tani, Heejin Ahn, Javier Alonso-Mora, Luca Carlone, Michal
   Cap, Yu~Fan Chen, Changhyun Choi, Jeff Dusek, Yajun Fang, Daniel Hoehener,
   Shih-Yuan Liu, Michael Novitzky, Igor~Franzoni Okuyama, Jason Pazis, Guy
   Rosman, Valerio Varricchio, Hsueh-Cheng Wang, Dmitry Yershov, Hang Zhao,
-  Michael Benjamin, Christopher Carr, Maria Zuber, Sertac Karaman, Emilio
-  Frazzoli, Domitilla Del~Vecchio, Daniela Rus, Jonathan How, John Leonard, and
-  Andrea Censi.
+  Michael Benjamin, Christopher Carr, Maria Zuber, and Karaman.
 \newblock Duckietown: An open, inexpensive and flexible platform for autonomy
   education and research.
 \newblock In {\em 2017 IEEE International Conference on Robotics and Automation

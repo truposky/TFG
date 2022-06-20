@@ -6,7 +6,7 @@
 	\label{fig:ejemploMarkerrobot}
 \end{figure}
 
-Para localizar los distintos robots involucrados en el robotario se usan cámaras, se tiene una cámara cenital y cada robot dispone de una cámara conectada a una raspberryPi, que son las cámara mencionadas en el capítulo ~\ref{ch:HardwareYsoftware} . Para obtener información del entorno con las cámaras se usa la librería OpenCV, la librería tiene múltiples aplicaciones para el reconocimiento del entorno, en particular, para determinar la posición y orientación de los robots se van a usar unas figuras denominadas Markers que constan de un fondo negro, y en blanco tienen un identificador, la información que se puede almacenar en el Marker consta de 16 bits. El borde es negro lo que permite su rápida localización en el entorno, además la formar del Marker es cuadrada, con todos los lados iguales. Cada esquina del Marker se identifica de manera única y se guarda su localización en la imagen, en pixeles, esto permite obtener la orientación del Marker en el mundo observado por la cámara, se detalla el proceso más adelante. Para identificar y crear los diferentes Marker se debe usar un diccionario prefijado por la librearía ArUcO mencionada en el capitulo ~\ref{ch:HardwareYsoftware} (OpenCV), en los cuales está la codificación de los diferentes Markers, tienen 16 diccionarios cada cual está codificado de manera diferente, las principales características del diccionario son las dimensiones del Marker y el número de Markers a usar.\\
+Para localizar los distintos robots involucrados en el robotario se usan cámaras, se tiene una cámara cenital y cada robot dispone de una cámara conectada a una raspberryPi, que son las cámara mencionadas en el capítulo ~\ref{ch:HardwareYsoftware} . Para obtener información del entorno con las cámaras se usa la librería OpenCV. La librería tiene múltiples aplicaciones para el reconocimiento del entorno, en particular, para determinar la posición y orientación de los robots se van a usar unas figuras denominadas Markers que constan de un fondo negro, y en blanco tienen un identificador, la información que se puede almacenar en el Marker consta de 16 bits. El borde es negro lo que permite su rápida localización en el entorno, además la formar del Marker es cuadrada, con todos los lados iguales. Cada esquina del Marker se identifica de manera única y se guarda su localización en la imagen, en pixeles, esto permite obtener la orientación del Marker en el mundo observado por la cámara, se detalla el proceso más adelante. Para identificar y crear los diferentes Marker se debe usar un diccionario prefijado por la librería ArUcO mencionada en el capitulo ~\ref{ch:HardwareYsoftware} (OpenCV), en los cuales está la codificación de los diferentes Markers, tienen 16 diccionarios cada cual está codificado de manera diferente, las principales características del diccionario son las dimensiones del Marker y el número de Markers a usar.\\
 
 Para generar un Marker se usa un programa que proporciona OpenCV donde se puede generar un solo Marker o varios a la vez, se guardan en formato .PNG y luego se pueden imprimir, se debe elegir el tamaño que se quiere que tenga el Marker, el diccionario a usar y el identificador, y como resultado se obtienen los diferentes Marker para los robots, en la Figura ~\ref{fig:ejemploMarkerrobot} se muestra un ejemplo de como son los Markers y la colocación en los robots.Se puede apreciar como cada robot dispone de un Marker en la parte delantera del robot y otro en la parte superior, esto es así para permitir la localización entre ellos y para permitir la localización en el robotario y tener un sistema de localización global.\\
 	\begin{figure}
@@ -25,17 +25,17 @@ fx & 0 & cx\\
 \end{bmatrix}
 \end{equation} 
 
-La matriz y los coeficientes de distorsión se utilizan para localizar en unidades físicas (metros) donde se encuentran los diferentes Markers identificados por la cámara. Tambiénse puede conocer la orientación respecto a los ejes de la cámara. Para ello se emplean las esquinas de cada Marker, siendo identificada cada esquina y guardada. Se puede identificar la orientación calculando el centroide del cuadrado y el ángulo respecto a una esquina de referencia, esta esquina es siempre la superior izquierda del Marker. Observando la Figura \ref{fig:eMarkerBoard} las esquinas se cuentan en el sentido de las agujas del reloj empezando por la esquina superior izquierda y acabando por la inferior izquierda.\\
+La matriz y los coeficientes de distorsión se utilizan para localizar en unidades físicas (metros) donde se encuentran los diferentes Markers identificados por la cámara. También se puede conocer la orientación respecto a los ejes de la cámara. Para ello se emplean las esquinas de cada Marker, siendo identificada cada esquina y guardada. Se puede identificar la orientación calculando el centroide del cuadrado y el ángulo respecto a una esquina de referencia, esta esquina es siempre la superior izquierda del Marker. Observando la Figura \ref{fig:eMarkerBoard} las esquinas se cuentan en el sentido de las agujas del reloj empezando por la esquina superior izquierda y acabando por la inferior izquierda.\\
 \subsection{Identificación y localización}
 La cámara tiene sus  propios ejes, siendo el centro del foco el origen de coordenadas , la cámara tiene el eje Z apuntado fuera de su foco, el eje X apunta desde la izquierda hasta la derecha de la imagen y el eje Y apunta desde arriba hasta abajo de la  imagen. Es importante tener en cuenta la orientación de los ejes de la cámara para poder localizar los robots en el mundo.
-Para localizar un Marker y estimar su posición en coordenadas XYZ en metros, OpenCV tiene una serie de funciones que permiten hacerlo, primero se debe identificar donde se encuentra el Marker en la imagen que proporciona la cámara, esto se hace con $ cv::aruco::detectMarkers(image, dictionary, corners, ids);$ , esta función te devuelve un array de vectores con la localización de las esquinas de cada Marker en pixeles y con el identificador del marker localizado, los parámetros que se tienen que pasar son el frame o captura de la imagen y el diccionario que se está usando.\\
-El siguiente paso es estimar la posición, para ello se necesitan los coeficientes de distorsión, la matriz de la cámara y la dimensión del Marker en metros, siendo estos cuadrados basta con conocer un lado. la función que permite conocer la posición y orientación es la siguiente:
+Para localizar un Marker y estimar su posición en coordenadas XYZ en metros, OpenCV tiene una serie de funciones que permiten hacerlo, primero se debe identificar donde se encuentra el Marker en la imagen que proporciona la cámara, esto se hace con $ cv::aruco::detectMarkers(image, dictionary, corners, ids);$, esta función te devuelve un array de vectores con la localización de las esquinas de cada Marker en pixeles y con el identificador del marker localizado, los parámetros que se tienen que pasar son el frame o captura de la imagen y el diccionario que se está usando.\\
+El siguiente paso es estimar la posición, para ello se necesitan los coeficientes de distorsión, la matriz de la cámara y la dimensión del Marker en metros, siendo estos cuadrados basta con conocer un lado. La función que permite conocer la posición y orientación es la siguiente:
 \begin{lstlisting} 
 cv::aruco::estimatePoseSingleMarkers(corners, marker_length_m,camera_matrix, dist_coeffs, rvecs, tvecs); 
 \end{lstlisting}
 A esta función se le deben pasar los parámetros mencionados y te devuelve un vector de traslación $tvecs$ y un vector de rotación $rvecs$ con estos vectores se puede conocer la posición de cada marker y su respectiva orientación además de que permite conocer el sistema de referencia del Marker, siendo su origen de coordenadas el centro del Marker.\\
 
-En la Figura ~\ref{fig:EjesCoordenadas} se puede ver como se localizan los Markers y los ejes de la cámara y el Marker, siendo para ambos el verde el eje X el rojo el eje Y y el azul el eje Z, 
+En la Figura~\ref{fig:EjesCoordenadas} se puede ver como se localizan los Markers y los ejes de la cámara y el Marker, siendo para ambos el verde el eje X el rojo el eje Y y el azul el eje Z, 
 
 Con el vector de rotación no bastaría para conocer la orientación, es preciso transformarlo en una matriz de rotación y esto se consigue con el algoritmo de Rodrigues \cite{rodrigues}.
 \begin{figure}[h]
@@ -104,4 +104,22 @@ De la matriz de rotación se puede despejar el ángulo de rotación respecto al 
 Con este parámetro ya se obtiene la orientación del robot respecto al eje Z del sistema de referencia de la cámara.
 
 \subsection{Ruido en la estimación de posición}\label{ch:RuidoPosicion}
-Se ha detectado que en la localización existe una variación en la posición. Las coordenadas devueltas por el programa oscilan incluso cuando el objeto está parado.
+Se ha detectado que en la localización existe una variación en la posición. Las coordenadas devueltas por el programa oscilan incluso cuando el objeto está parado. En la Figura~\ref{fig:Ruidolocalizacion} se tiene el ruido que se produce al localizar un Marker. La osicalción en la posición es de 2 cm, teniendo en cuenta que los Markers que se van a usar tienen unas dimensiones de 8 x 8 cm, el error no es significativo en cuanto a localizar y mandar instrucciones y se puede tolerar.
+
+\begin{figure}[h!]
+	\begin{subfigure}[b]{0.62\linewidth}
+	\centering
+	\includegraphics[width=0.7\linewidth]{Localizacion/oscilacionX}
+	\caption{Oscilación respecto al eje x}
+	\label{fig:oscilacionx}
+\end{subfigure}
+	\begin{subfigure}[b]{0.62\linewidth}
+	\centering
+	\includegraphics[width=0.7\linewidth]{Localizacion/oscilacionY}
+	\caption{oscilación respecto al eje y}
+	\label{fig:oscilaciony}
+\end{subfigure}
+\caption{Rudio en la localización}
+\label{fig:Ruidolocalizacion}
+\end{figure}
+

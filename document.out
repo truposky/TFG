@@ -3,15 +3,15 @@
 \BOOKMARK [2][-]{subsection.1.1}{Estado del arte}{section.1}% 3
 \BOOKMARK [2][-]{subsection.1.2}{Motivaci\363n}{section.1}% 4
 \BOOKMARK [2][-]{subsection.1.3}{Objetivos}{section.1}% 5
-\BOOKMARK [3][-]{subsubsection.1.3.1}{objetivos espec\355ficos }{subsection.1.3}% 6
+\BOOKMARK [3][-]{subsubsection.1.3.1}{Objetivos espec\355ficos }{subsection.1.3}% 6
 \BOOKMARK [1][-]{section.2}{Metodolog\355a}{PDFAutorizacionPage.0}% 7
 \BOOKMARK [2][-]{subsection.2.1}{Estudio preliminar de entornos de pruebas existentes}{section.2}% 8
-\BOOKMARK [2][-]{subsection.2.2}{Selecci\363n de componentes}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.2}{Selecci\363n de componentes y software}{section.2}% 9
 \BOOKMARK [2][-]{subsection.2.3}{Construcci\363n de un primer robot}{section.2}% 10
-\BOOKMARK [3][-]{subsubsection.2.3.1}{Prueba de motor}{subsection.2.3}% 11
-\BOOKMARK [3][-]{subsubsection.2.3.2}{Prueba de encoders y estimaci\363n de la velocidad}{subsection.2.3}% 12
-\BOOKMARK [3][-]{subsubsection.2.3.3}{Programaci\363n del robot y comprobaci\363n del robot montado}{subsection.2.3}% 13
-\BOOKMARK [2][-]{subsection.2.4}{Contrucci\363n de copias del primer robot}{section.2}% 14
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Motor}{subsection.2.3}% 11
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Encoders y estimaci\363n de la velocidad}{subsection.2.3}% 12
+\BOOKMARK [3][-]{subsubsection.2.3.3}{Programaci\363n del robot y verificaci\363n del robot montado}{subsection.2.3}% 13
+\BOOKMARK [2][-]{subsection.2.4}{Construcci\363n de copias del primer robot}{section.2}% 14
 \BOOKMARK [2][-]{subsection.2.5}{Configuraci\363n y desarrollo de red de comunicaci\363n}{section.2}% 15
 \BOOKMARK [2][-]{subsection.2.6}{Programaci\363n para visi\363n por computador}{section.2}% 16
 \BOOKMARK [2][-]{subsection.2.7}{Configuraci\363n y programaci\363n de RaspberryPI}{section.2}% 17
@@ -28,34 +28,37 @@
 \BOOKMARK [3][-]{subsubsection.3.1.7}{RaspberryPi y Picam}{subsection.3.1}% 28
 \BOOKMARK [3][-]{subsubsection.3.1.8}{Montaje final de robots}{subsection.3.1}% 29
 \BOOKMARK [2][-]{subsection.3.2}{Camara logitech C920}{section.3}% 30
-\BOOKMARK [2][-]{subsection.3.3}{OpenCV}{section.3}% 31
-\BOOKMARK [2][-]{subsection.3.4}{Ordenador de sobremesa}{section.3}% 32
-\BOOKMARK [2][-]{subsection.3.5}{Suelo de goma}{section.3}% 33
-\BOOKMARK [2][-]{subsection.3.6}{Router}{section.3}% 34
-\BOOKMARK [2][-]{subsection.3.7}{Coste del material}{section.3}% 35
-\BOOKMARK [2][-]{subsection.3.8}{Montaje final de Robotario}{section.3}% 36
-\BOOKMARK [1][-]{section.4}{Estimaci\363n de la velocidad}{PDFAutorizacionPage.0}% 37
-\BOOKMARK [2][-]{subsection.4.1}{Limitaci\363n de la alimentaci\363n del motor}{section.4}% 38
-\BOOKMARK [2][-]{subsection.4.2}{Tratamiento del ruido}{section.4}% 39
-\BOOKMARK [1][-]{section.5}{Control del Motor DC}{PDFAutorizacionPage.0}% 40
-\BOOKMARK [2][-]{subsection.5.1}{Cuantizaci\363n del voltaje}{section.5}% 41
-\BOOKMARK [2][-]{subsection.5.2}{Dise\361o del controlador}{section.5}% 42
-\BOOKMARK [2][-]{subsection.5.3}{sintonizaci\363n de par\341metros PID}{section.5}% 43
-\BOOKMARK [1][-]{section.6}{Navegaci\363n del robot}{PDFAutorizacionPage.0}% 44
-\BOOKMARK [1][-]{section.7}{Localizaci\363n de los robots}{PDFAutorizacionPage.0}% 45
-\BOOKMARK [2][-]{subsection.7.1}{Calibraci\363n de c\341maras}{section.7}% 46
-\BOOKMARK [2][-]{subsection.7.2}{Identificaci\363n y localizaci\363n}{section.7}% 47
-\BOOKMARK [2][-]{subsection.7.3}{Ruido en la estimaci\363n de posici\363n}{section.7}% 48
-\BOOKMARK [1][-]{section.8}{Dise\361o y configuraci\363n de la red de Comunicaci\363n}{PDFAutorizacionPage.0}% 49
-\BOOKMARK [2][-]{subsection.8.1}{Red LAN}{section.8}% 50
-\BOOKMARK [2][-]{subsection.8.2}{Caracter\355sticas de la red}{section.8}% 51
-\BOOKMARK [1][-]{section.9}{Estructura del software}{PDFAutorizacionPage.0}% 52
-\BOOKMARK [2][-]{subsection.9.1}{Servidor}{section.9}% 53
-\BOOKMARK [2][-]{subsection.9.2}{placa de Arduino}{section.9}% 54
-\BOOKMARK [2][-]{subsection.9.3}{RaspberryPi}{section.9}% 55
-\BOOKMARK [1][-]{section.10}{Demostraci\363n del robotario}{PDFAutorizacionPage.0}% 56
-\BOOKMARK [2][-]{subsection.10.1}{Experimento I}{section.10}% 57
-\BOOKMARK [2][-]{subsection.10.2}{Experimento II}{section.10}% 58
-\BOOKMARK [2][-]{subsection.10.3}{Preparaci\363n del experimento}{section.10}% 59
-\BOOKMARK [1][-]{section.11}{Conclusiones}{PDFAutorizacionPage.0}% 60
-\BOOKMARK [2][-]{subsection.11.1}{Futuros trabajos}{section.11}% 61
+\BOOKMARK [2][-]{subsection.3.3}{Ordenador de sobremesa}{section.3}% 31
+\BOOKMARK [2][-]{subsection.3.4}{Suelo de goma}{section.3}% 32
+\BOOKMARK [2][-]{subsection.3.5}{Router}{section.3}% 33
+\BOOKMARK [2][-]{subsection.3.6}{Software}{section.3}% 34
+\BOOKMARK [3][-]{subsubsection.3.6.1}{OpenCV}{subsection.3.6}% 35
+\BOOKMARK [3][-]{subsubsection.3.6.2}{Lenguaje de programaci\363n}{subsection.3.6}% 36
+\BOOKMARK [2][-]{subsection.3.7}{Coste del material}{section.3}% 37
+\BOOKMARK [2][-]{subsection.3.8}{Montaje final de Robotario}{section.3}% 38
+\BOOKMARK [1][-]{section.4}{Estimaci\363n de la velocidad}{PDFAutorizacionPage.0}% 39
+\BOOKMARK [2][-]{subsection.4.1}{Limitaci\363n de la alimentaci\363n del motor}{section.4}% 40
+\BOOKMARK [2][-]{subsection.4.2}{Tratamiento del ruido}{section.4}% 41
+\BOOKMARK [1][-]{section.5}{Control del Motor DC}{PDFAutorizacionPage.0}% 42
+\BOOKMARK [2][-]{subsection.5.1}{Cuantizaci\363n del voltaje}{section.5}% 43
+\BOOKMARK [2][-]{subsection.5.2}{Dise\361o del controlador}{section.5}% 44
+\BOOKMARK [2][-]{subsection.5.3}{Sintonizaci\363n de par\341metros PID}{section.5}% 45
+\BOOKMARK [1][-]{section.6}{Navegaci\363n del robot}{PDFAutorizacionPage.0}% 46
+\BOOKMARK [1][-]{section.7}{Localizaci\363n de los robots}{PDFAutorizacionPage.0}% 47
+\BOOKMARK [2][-]{subsection.7.1}{Calibraci\363n de c\341maras}{section.7}% 48
+\BOOKMARK [2][-]{subsection.7.2}{Identificaci\363n y localizaci\363n}{section.7}% 49
+\BOOKMARK [2][-]{subsection.7.3}{Ruido en la estimaci\363n de posici\363n}{section.7}% 50
+\BOOKMARK [1][-]{section.8}{Dise\361o y configuraci\363n de la red de Comunicaci\363n}{PDFAutorizacionPage.0}% 51
+\BOOKMARK [2][-]{subsection.8.1}{Red LAN}{section.8}% 52
+\BOOKMARK [2][-]{subsection.8.2}{Caracter\355sticas de la red}{section.8}% 53
+\BOOKMARK [1][-]{section.9}{Estructura del software}{PDFAutorizacionPage.0}% 54
+\BOOKMARK [2][-]{subsection.9.1}{Servidor}{section.9}% 55
+\BOOKMARK [2][-]{subsection.9.2}{placa de Arduino}{section.9}% 56
+\BOOKMARK [2][-]{subsection.9.3}{RaspberryPi}{section.9}% 57
+\BOOKMARK [1][-]{section.10}{Demostraci\363n del robotario}{PDFAutorizacionPage.0}% 58
+\BOOKMARK [2][-]{subsection.10.1}{Experimento I}{section.10}% 59
+\BOOKMARK [2][-]{subsection.10.2}{Experimento II}{section.10}% 60
+\BOOKMARK [2][-]{subsection.10.3}{Preparaci\363n del experimento}{section.10}% 61
+\BOOKMARK [2][-]{subsection.10.4}{Resultados}{section.10}% 62
+\BOOKMARK [1][-]{section.11}{Conclusiones}{PDFAutorizacionPage.0}% 63
+\BOOKMARK [2][-]{subsection.11.1}{Futuros trabajos}{section.11}% 64
