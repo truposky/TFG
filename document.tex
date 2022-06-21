@@ -107,6 +107,7 @@
 
 
 \newpage
+\pagenumbering{roman}
 \setcounter{page}{1}
 \tableofcontents
 \listoffigures
@@ -114,27 +115,42 @@
 \newpage
 
 
-\pagestyle{empty} 
-{\bfseries \large [Título extendido del TFG (si procede)] }\vspace{10mm} 
+\thispagestyle{empty} 
+%{\bfseries \large [Título extendido del TFG (si procede)] }\vspace{10mm} 
 
 {\bfseries \large Resumen:} \vspace{5mm}
 
-Esto es una prueba para probar el formato del Resumen. Esto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del ResumenEsto es una prueba para probar el formato del Resumen.
+El proyecto presente responde a una demanda de un entorno de pruebas de robótica multi-agente, con aplicaciones en investigación y docencia, el cual se llama Robotario. Permite comprobar el funcionamiento de algoritmos multi-agente en entornos lo más realista posibles. Para ello, se ha diseñado y construido una serie de robots móviles, que incorporan un control de velocidad PID, son capaces de comunicarse con los dispositivos del Robotario y pueden identificar a otros robots con una cámara a bordo. Se ha programado un sistema de localización global que localiza a todos los robots del Robotario. Se ha diseñado y programado un servidor que recopila información de los robots involucrados en los experimentos y además les manda instrucciones para que puedan efectuar el algoritmo correspondiente. Como parte final del proyecto se ejecutan dos algoritmos en el Robotario para comprobar el funcionamiento del mismo.
 \vspace{1cm}
+\begin{center}
+	
+	{\bf Palabras clave}
+	
+\end{center}
+
+\vspace{0.5cm}
+
+Separadas, por, comas.\\
+
 
 {\bfseries \large Abstract: }\vspace{5mm} 
 
-This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.This is a test to prove the abstract's layout.
+The present proyect reply to a demand of a muli-agent robotic testbed, wich is called Robotario, with aplications in research and university teaching. Allow to verify the proper operation of multi-agent algorithm in most posible realistic environment. For it, has been developed and built a few mobile robots, wich incorporate a velocity PID controller. They are able to communicate with other Robotario  devices and they can identify other Robotario robots with onboard camera. It has been programmed and designed a server that get data from the robots involve in the tets and besides give them instructions so they can do the respective algorithm. As final part of the proyect two algorithms are implemented in the Robotario to test the proper functioning of the Robotario.
 \vspace{1cm}
 
+\begin{center}
+	
+	{\bf Keywords}
+	
+\end{center}
+
+\vspace{0.5cm}
+
+Separadas, por, comas.\\
 
 
-{\Large\textbf{Extensión máxima 50 páginas sin contar portada ni resumen (sí se incluye índice, introducción, conclusiones y bibliografía}}
-\newpage
 
-%%Inicio:
-\setcounter{page}{1} 
-\pagestyle{plain}
+
 
 
 %SALTO D
@@ -145,7 +161,6 @@ This is a test to prove the abstract's layout.This is a test to prove the abstra
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \input{Introduccion.tex}
-\clearpage\thispagestyle{empty}\cleardoublepage
 \input{metodologia.tex}
 \input{hardware.tex}
 \input{estimaVelocidad/velocidad.tex}
@@ -156,11 +171,9 @@ This is a test to prove the abstract's layout.This is a test to prove the abstra
 \input{CreacionInfraestructura/creacion de infraestructura.tex}
 \input{software/estructuraSoftware.tex}
 \input{Demostracion/Demostracion.tex}
-\cleardoublepage
 \input{Conclusiones.tex}
 \newpage
 \input{bibliografia/Bibliografia.tex}
-\clearpage\thispagestyle{empty}\cleardoublepage
 %\input{apendice.tex}
 %\clearpage\thispagestyle{empty}\cleardoublepage
 
