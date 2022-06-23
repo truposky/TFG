@@ -10,6 +10,11 @@ G.~Bradski.
 \newblock {The OpenCV Library}.
 \newblock {\em Dr. Dobb's Journal of Software Tools}, 2000.
 
+\bibitem{10.5555/2901567}
+Bruce~A. Francis and Manfredi Maggiore.
+\newblock {\em Flocking and Rendezvous in Distributed Robotics}.
+\newblock Springer Publishing Company, Incorporated, 1st edition, 2015.
+
 \bibitem{ArUco2}
 Sergio Garrido-Jurado, Rafael Muñoz-Salinas, Francisco Madrid-Cuevas, and
   Rafael Medina-Carnicer.
@@ -37,9 +42,8 @@ Wolfram Mathworld.
 \bibitem{7989179}
 Liam Paull, Jacopo Tani, Heejin Ahn, Javier Alonso-Mora, Luca Carlone, Michal
   Cap, Yu~Fan Chen, Changhyun Choi, Jeff Dusek, Yajun Fang, Daniel Hoehener,
-  Shih-Yuan Liu, Michael Novitzky, Igor~Franzoni Okuyama, Jason Pazis, Guy
-  Rosman, Valerio Varricchio, Hsueh-Cheng Wang, Dmitry Yershov, Hang Zhao,
-  Michael Benjamin, Christopher Carr, Maria Zuber, and Karaman.
+  Shih-Yuan Liu, Michael Novitzky, Igor~Franzoni Okuyama, Jason Pazis, and
+  Rosman.
 \newblock Duckietown: An open, inexpensive and flexible platform for autonomy
   education and research.
 \newblock In {\em 2017 IEEE International Conference on Robotics and Automation

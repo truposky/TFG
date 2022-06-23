@@ -10,16 +10,16 @@
 \BOOKMARK [2][-]{subsection.2.3}{Construcci\363n de copias del primer robot}{section.2}% 10
 \BOOKMARK [2][-]{subsection.2.4}{Configuraci\363n y desarrollo de red de comunicaci\363n}{section.2}% 11
 \BOOKMARK [2][-]{subsection.2.5}{Localizaci\363n de los robots}{section.2}% 12
-\BOOKMARK [2][-]{subsection.2.6}{Realizaci\363n de experimentos}{section.2}% 13
+\BOOKMARK [2][-]{subsection.2.6}{Realizaci\363n de pruebas de validaci\363n}{section.2}% 13
 \BOOKMARK [2][-]{subsection.2.7}{Planificaci\363n de proyecto}{section.2}% 14
 \BOOKMARK [1][-]{section.3}{Hardware y software para el desarrollo del Robotario}{PDFAutorizacionPage.0}% 15
 \BOOKMARK [2][-]{subsection.3.1}{Robot m\363vil}{section.3}% 16
 \BOOKMARK [3][-]{subsubsection.3.1.1}{Chasis del robot}{subsection.3.1}% 17
 \BOOKMARK [3][-]{subsubsection.3.1.2}{Arduino nano 33 IoT}{subsection.3.1}% 18
 \BOOKMARK [3][-]{subsubsection.3.1.3}{Integrado L298n, puente H}{subsection.3.1}% 19
-\BOOKMARK [3][-]{subsubsection.3.1.4}{Bater\355a}{subsection.3.1}% 20
-\BOOKMARK [3][-]{subsubsection.3.1.5}{LM2596 \(conversor DC-DC\)}{subsection.3.1}% 21
-\BOOKMARK [3][-]{subsubsection.3.1.6}{Encoder \363ptico}{subsection.3.1}% 22
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Encoder \363ptico}{subsection.3.1}% 20
+\BOOKMARK [3][-]{subsubsection.3.1.5}{Bater\355a}{subsection.3.1}% 21
+\BOOKMARK [3][-]{subsubsection.3.1.6}{LM2596 \(conversor DC-DC\)}{subsection.3.1}% 22
 \BOOKMARK [3][-]{subsubsection.3.1.7}{RaspberryPi y Picam}{subsection.3.1}% 23
 \BOOKMARK [3][-]{subsubsection.3.1.8}{Montaje final de robot}{subsection.3.1}% 24
 \BOOKMARK [2][-]{subsection.3.2}{Camara logitech C920}{section.3}% 25
@@ -46,16 +46,23 @@
 \BOOKMARK [2][-]{subsection.7.3}{Ruido en la estimaci\363n de posici\363n}{section.7}% 46
 \BOOKMARK [1][-]{section.8}{Dise\361o y configuraci\363n de la red de Comunicaci\363n}{PDFAutorizacionPage.0}% 47
 \BOOKMARK [2][-]{subsection.8.1}{Red LAN}{section.8}% 48
-\BOOKMARK [2][-]{subsection.8.2}{Caracter\355sticas de la red}{section.8}% 49
-\BOOKMARK [1][-]{section.9}{Estructura del software}{PDFAutorizacionPage.0}% 50
-\BOOKMARK [2][-]{subsection.9.1}{Servidor}{section.9}% 51
-\BOOKMARK [2][-]{subsection.9.2}{placa de Arduino}{section.9}% 52
-\BOOKMARK [2][-]{subsection.9.3}{RaspberryPi}{section.9}% 53
-\BOOKMARK [1][-]{section.10}{Demostraci\363n del robotario}{PDFAutorizacionPage.0}% 54
-\BOOKMARK [2][-]{subsection.10.1}{Experimento I}{section.10}% 55
-\BOOKMARK [2][-]{subsection.10.2}{Experimento II}{section.10}% 56
-\BOOKMARK [2][-]{subsection.10.3}{Preparaci\363n del experimento}{section.10}% 57
-\BOOKMARK [2][-]{subsection.10.4}{Resultados}{section.10}% 58
-\BOOKMARK [1][-]{section.11}{Conclusiones}{PDFAutorizacionPage.0}% 59
-\BOOKMARK [2][-]{subsection.11.1}{Futuros trabajos}{section.11}% 60
-\BOOKMARK [1][-]{subsection.11.1}{Referencias}{PDFAutorizacionPage.0}% 61
+\BOOKMARK [2][-]{subsection.8.2}{Calidad de servicio}{section.8}% 49
+\BOOKMARK [3][-]{subsubsection.8.2.1}{Ancho de banda}{subsection.8.2}% 50
+\BOOKMARK [3][-]{subsubsection.8.2.2}{Latencia o retardo}{subsection.8.2}% 51
+\BOOKMARK [3][-]{subsubsection.8.2.3}{Jitter y perdida de paquetes}{subsection.8.2}% 52
+\BOOKMARK [1][-]{section.9}{Estructura del software}{PDFAutorizacionPage.0}% 53
+\BOOKMARK [2][-]{subsection.9.1}{Servidor}{section.9}% 54
+\BOOKMARK [2][-]{subsection.9.2}{RaspberryPi}{section.9}% 55
+\BOOKMARK [2][-]{subsection.9.3}{placa de Arduino}{section.9}% 56
+\BOOKMARK [1][-]{section.10}{Pruebas de validaci\363n}{PDFAutorizacionPage.0}% 57
+\BOOKMARK [2][-]{subsection.10.1}{Prueba I}{section.10}% 58
+\BOOKMARK [2][-]{subsection.10.2}{Preparaci\363n de la prueba}{section.10}% 59
+\BOOKMARK [3][-]{subsubsection.10.2.1}{Orientaci\363n}{subsection.10.2}% 60
+\BOOKMARK [3][-]{subsubsection.10.2.2}{Guiado}{subsection.10.2}% 61
+\BOOKMARK [2][-]{subsection.10.3}{Resultados}{section.10}% 62
+\BOOKMARK [2][-]{subsection.10.4}{Prueba II}{section.10}% 63
+\BOOKMARK [2][-]{subsection.10.5}{Preparaci\363n del experimento}{section.10}% 64
+\BOOKMARK [2][-]{subsection.10.6}{Resultados}{section.10}% 65
+\BOOKMARK [1][-]{section.11}{Conclusiones}{PDFAutorizacionPage.0}% 66
+\BOOKMARK [2][-]{subsection.11.1}{Futuros trabajos}{section.11}% 67
+\BOOKMARK [1][-]{subsection.11.1}{Referencias}{PDFAutorizacionPage.0}% 68

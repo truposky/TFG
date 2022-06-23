@@ -2,31 +2,32 @@
 \section{Estructura del software}
 En este capítulo se explica como está estructurado el software del servidor, de la raspberryPi y de la placa de Arduino. En la raspberryPi y el servidor se ha creado una librería denominada robot.hh que tiene incorporada todas las dimensiones del robot, las operaciones que deben realizar para pasar de velocidad lineal y velocidad angular del robot a la velocidad angular de las ruedas. Además el servidor, arduino y raspberryPi comparten la misma estructura de envío de mensajes.
 \subsection{Servidor}
-\begin{figure}
+\begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.9\linewidth]{software/servidor}
+	\includegraphics[width=0.7\linewidth]{software/servidor}
 	\caption{Estructura del servidor}
 	\label{fig:servidor}
 \end{figure}
 En la figura ~\ref{fig:servidor} se tiene las funciones que realiza el servidor. Al iniciar el servidor, este prepara los sockets para la comunicación con los dispositivos conectados en la red. Un socket permite el intercambio de información entre dos dispositivos de la red, o a través de internet. El servidor tiene dos tipos de socket. Se tiene un socket para recibir mensajes, con una ip asignada que es 192.168.78.2 y un puerto asignado que es 4242. Además se generan tantos sockets como robots haya en el Robotario, a dicho socket se le pasa como información la ip del robot destino y el puerto por el cual el robot estará escuchando y preparado para recibir instrucciones. El servidor, al inicializarse, habilita la cámara conectada y configura los parámetros para poder visualizar, identificar y grabar. Una vez esta configurada la cámara y preparado los parámetros para guardar en un video todo lo que registre la cámara, se pasa a un bucle donde se está buscando constantemente identificadores de los robots. Si el servidor encuentra un robot, lo identifica y guarda su posición en una lista para que pueda ser accedido por algún subproceso.\\
 La última tarea que realiza el servidor es programable, puesto que se configura dependiendo de qué desea hacer el usuario con los robots del Robotario.
 
-\subsection{placa de Arduino}
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.8\linewidth]{software/arduino}
-	\caption{Estructura del programa de Arduino}
-	\label{fig:softwareArduino}
-\end{figure}
-
-El programa que incorpora la placa de Arduino, la cual va montada en el robot, tiene la estructura que se puede ver en la figura ~\ref{fig:softwareArduino}. Primero se inicializa la comunicación tanto serie como WiFi. Después se preparan los motores, configurando los pines de salida para controlar la dirección y el voltaje que le llega al motor. Una vez se tiene todo inicializado, se inicia un bucle infinito. En él siempre se está controlado la velocidad de las ruedas con el controlador PID, siempre se está estimando la velocidad del robot, y siempre se está esperando instrucciones. La placa de arduino es mono-proceso y no se puede realizar una programación multi-hilos o multiproceso, por ello todo se ejecuta de forma secuencial en el bucle.
 \subsection{RaspberryPi}
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.8\linewidth]{software/softwareRaspberryPi}
+	\includegraphics[width=0.7\linewidth]{software/softwareRaspberryPi}
 	\caption{Estructura del programa de Arduino}
 	\label{fig:softwareRaspberry}
 \end{figure}
 El programa que está en la raspberryPi es muy similar al que se tiene en el servidor. La comunicación se inicializa inalámbrica puede ser con los robots del robotario y con el servidor, pero además permite la comunicación serie con la placa Arduino y tiene una parte programable que cambia dependiendo del algoritmo a usar
+
+\subsection{placa de Arduino}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\linewidth]{software/arduino}
+	\caption{Estructura del programa de Arduino}
+	\label{fig:softwareArduino}
+\end{figure}
+
+El programa que incorpora la placa de Arduino, tiene la estructura que se puede ver en la figura ~\ref{fig:softwareArduino}. Primero se inicializa la comunicación tanto serie como WiFi. Después se preparan los motores, configurando los pines de salida para controlar la dirección y el voltaje que le llega al motor. Una vez se tiene todo inicializado, se inicia un bucle infinito. En el bucle primero se comprueba si se ha recibido una instrucción, si no es así, se toma la lectura guardada del encoder, pues estos siempre están tomando lecturas debido a que se hace por interrupciones. La lectura de velocidad se pasa al controlador y este efectúa la correspondiente acción sobre los motores y se vuelve a iniciar el bucle. Este bucle cuenta con un tiempo de muestreo mencionado en el capítulo~\ref{ch:estimacionVelocdida}. La placa de arduino es mono-proceso y no se puede realizar una programación multi-hilos o multiproceso, por ello todo se ejecuta de forma secuencial en el bucle.
 \newpage.

@@ -1,6 +1,6 @@
 \section{Diseño y configuración de la red de Comunicación}\label{ch:RedLan}
 La comunicación de los robots se lleva a cabo de manera inalámbrica, para ello se ha elegido establecer la comunicación con los distintos robots mediante WiFi. Debido a que las placas de arduino tienen una antena incorporada para la conexión a redes inalámbricas con la tecnología WiFI, es la opción mas económica sin necesidad de añadir un módulo extra. Además como el espacio donde se realizan los experimentos es limitado y de pequeña extensión está asegurada la cobertura.\\
- Para poner en situación se hace un cálculo con el caso peor, se tiene que la antena de arduino tiene una PIRE de 18 dBm. La ganancia de la antena del router se desconoce, pero consultando el mercado se sabe que están en un valor desde 2 dBi a 9 dBi. Como se quiere probar el caso peor se toma 2 dBi, la sensibilidad del router es de 80 dBm y como frecuencia de referencia se toma 2.4GHz. Con estos datos y a partir de la ecuación de Friis\cite{cardama}
+ Para poner en situación el alcance de la comunicación se hace un cálculo con el caso peor, se tiene que la antena de arduino tiene una PIRE de 18 dBm. La ganancia de la antena del router se desconoce, pero consultando el mercado se sabe que están en un valor desde 2 dBi a 9 dBi. Como se quiere probar el caso peor se toma 2 dBi, la sensibilidad del router es de 80 dBm y como frecuencia de referencia se toma 2.4GHz. Con estos datos y a partir de la ecuación de Friis\cite{cardama}
 \begin{equation}
 	Pr(dBm)=PIRE(dBm)+ Gr(dBi) + 20·log(\frac{\lambda}{4\pi d})
 \end{equation} 
@@ -9,15 +9,15 @@ Despejando se obtiene $d$ que es la distancia máxima y da como resultado 994 me
 Las dimensiones del Robotario son adecuadas para esta comunicación, se recuerda que 180cm de largo y 132 cm de ancho. El router se encuentra como máximo a tres metros de cualquier punto del Robotario.
 
 \subsection{Red LAN}
-
-
 \begin{figure}[h]
-	\includegraphics[width=1\textwidth]{CreacionInfraestructura/RedRobotario}
+	\centering
+	\includegraphics[width=0.7\textwidth]{CreacionInfraestructura/RedRobotario}
 	\caption{Red LAN Robotario }
 	\label{fig:ConfiguracionRed}
 \end{figure}
-Se tiene una red LAN con topología de red en estrella. En la figura ~\ref{fig:ConfiguracionRed} se puede ver una representación gráfica de las conexiones, donde los robots se conectan de forma inalámbrica y el servidor esta conectado mediante una conexión cableada, si bien puede ser también inalámbrica.\\
-La transmisión de la información se realiza a través del protocolo UDP. Se trata de un servicio no orientado a conexión, en el cual no se tiene un control de errores, ni control de secuencia, se envían datagramas con la información como paquetes individuales, el por qué se usa este protocolo y no otro como TCP, es para evitar retrasos producidos por el protocolo TCP, lo que puede provocar que al dar una instrucción al robot está no llegue a tiempo y se produzca un fallo en el algoritmo. Además UDP es un protocolo más ligero al no mantener la conexión, lo que permite tener más dispositivos conectados a la red sin saturarla. Un factor a tener en cuenta es que los paquetes no van a llegar en orden o la información se va a perder, este problema tiene solución pues el robot puede estimar su posición con los encoders y corregirla cuando le llegue un paquete del router, y respecto al problema del orden en el cual llegan los paquetes se puede solucionar con un timestamp, es decir una marca de tiempo y ordenarlos, esto último no está implementado, y se deja como una posible mejora a futuras versiones del Robotario. 
+Se tiene una red LAN con topología de red en estrella. En la figura ~\ref{fig:ConfiguracionRed} se puede ver una representación gráfica de las conexiones, donde los robots se conectan de forma inalámbrica y el servidor esta conectado mediante una conexión cableada, si bien puede ser también inalámbrica. En la situación actual del Robotario, se tienen 3 robots y el servidor\\
+La transmisión de la información se realiza a través del protocolo UDP. Se usa este protocolo y no otro como TCP, para evitar retrasos en el envío de información. Un retraso puede provocar que al dar una instrucción al robot está no llegue a tiempo y se produzca un fallo en el algoritmo. Además UDP es un protocolo más ligero al no mantener la conexión. Un factor a tener en cuenta es que los paquetes no van a llegar en orden o la información se  puede perder, pues no se garantiza la entrega de información con el protocolo UDP. Una solución ante este problema es enviar muchos paquetes en un intervalo pequeño de tiempo, teniendo cuidado con no congestionar la red. Esto puede ayudar en la comunicación servidor-robot. Como el servidor actualmente envía instrucciones al robot relacionadas con la posición, si el intervalo de envío es pequeño un paquete que llegue en desorden o se pierda, no afecta en gran medida pues si el intervalo es mas pequeño que la distancia avanzada el error es insignificante. En los datos que se requieran del robot como velocidad, u otro sensor a bordo, basta con poner una marca de tiempo junto al envío de la información y ordenar los paquetes según van llegando al servidor.
+
 
 La información que se enviá mediante la red LAN tiene una estructura definida para que los robots o el servidor puedan identificar la información que les llega, de dónde les llega y cómo procesarla. Los paquetes tienen la siguiente cabecera:
 \begin{itemize}
@@ -26,8 +26,7 @@ La información que se enviá mediante la red LAN tiene una estructura definida 
 	\item \textbf{len}. Longitud de los datos que se envían.
 \end{itemize}
 Cada robot dispone de un identificador que es un numero en decimal, el servidor también dispone de un identificador siendo este el 0, las operaciones que se quieren ejecutar están almacenadas en una librería y codificadas en hexadecimal, todos los robots y el servidor deben tener la misma librería de instrucciones, y por último el apartado de la longitud sirve para detectar errores, si llega un paquete con un  tamaño de información distinto al tamaño de la cabecera o a la longitud de la información que viene determinado por len y corresponde a datos enviados, el paquete recibido se desecha. Se muestra la estructura del mensaje enviado/recibido en la figura ~\ref{fig:estructuraMensaje} que comparten los robots y el servidor para poder comunicarse entre ellos. También se tienen definidas las instrucciones que se pueden ejecutar en el Robotario.\\
-
-\begin{figure}
+\begin{figure}[!h]
 	 \begin{lstlisting}
 		const int MAXDATASIZE =255; //numero de bytes que se pueden recibir
 		const int HEADER_LEN = sizeof(unsigned short)*3;
@@ -36,21 +35,17 @@ Cada robot dispone de un identificador que es un numero en decimal, el servidor 
 			unsigned short id; //identificador
 			unsigned short op; //codigo de operacion
 			unsigned short len; /* longitud de datos */
-			unsigned char data [MAXDATASIZE-HEADER_LEN];//datos
-		
-			
-			
+			unsigned char data [MAXDATASIZE-HEADER_LEN];//datos		
 		};
 		//operacion error
-		#define OP_ERROR            0xFFFF
-		//operaciones requeridas por central
+		#define OP_ERROR            0xFFFF //Error de operacion
 		#define OP_SALUDO           0x0001//Se verifica que el robot esta encendido y conectado a la red
 		#define OP_MOVE_WHEEL       0x0002//da orden para mover ruedas wd,wi
 		#define OP_STOP_WHEEL       0x0003//para las ruedas wd,wi
-		#define OP_VEL_ROBOT        0X0005//devuelve la velocidad de las ruedas en rad/s wd,wi
-		#define OP_IMU              0x0006//devuelve lectura de giroscopo y acelerometro
-		#define OP_STOP_SERIAL      0X0007//para la comuniacion serie del robot
-		#define OP_POSITION         0x0008//manda la posicion inicial de robot
+		#define OP_VEL_ROBOT        0X0004//devuelve la velocidad de las ruedas en rad/s wd,wi
+		#define OP_IMU              0x0005//devuelve lectura de giroscopo y acelerometro
+		#define OP_STOP_SERIAL      0X0006//para la comuniacion serie del robot
+		#define OP_POSITION         0x0007//manda la posicion inicial de robot
 		//broadcast
 		#define OP_BROADCAST        0x9999//operacion de difusion
 
@@ -58,39 +53,39 @@ Cada robot dispone de un identificador que es un numero en decimal, el servidor 
  	\caption{Estructura de mensaje enviado/recibido y operaciones de instrucción }
  	\label{fig:estructuraMensaje}
  \end{figure}
-La estructura appdata que aparece en la figura~\ref{fig:estructuraMensaje} es lo comentado anteriormente, donde se tiene un array para poder enviar datos, como velocidad  del robot, información del acelerómetro etc. Después de la estructura se puede apreciar las intrucciones que se puede ejecutar, las instrucciones se pueden ir ampliando y aumentar la complejidad del Robotario. El tamaño máximo de datos enviados consta de 255 bytes. Es un tamaño pequeño lo que dificulta la
-fragmentación del paquete debido a la unidad de transmisión máxima (MTU) de una red, que es el tamaño máximo permitido en bytes de un paquete que se puede transmitir en una red, si se supera el tamaño máximo el paque se fragmenta. La red actual tiene una MTU de 1500 bytes.
-
-
- 
-\subsection{Características de la red}
-
-Es necesario hacer un analísis de los parámetros de la red, para poder estimar sus límites y hacer una aproximación de la cantidad de dispositivos que se pueden conectar. Como se ha comentado en el cápitulo~\ref{ch:HardwareYsoftware} en el apartado de Router se cuenta con un ancho de banda en la comunicación inalámbrica de 1750 Mbps, siendo esta la capacidad máxima de datos que se pueden transmitir. Normalmente los valores reales son inferiores, aun así, un valor algo inferior no es un problema para la comunicación del Robotario, pues se envían paquetes con una longitud máxima de 255 bytes más la cabecera UDP que son 8 Bytes y las demás cabeceras de encapsulación se tiene un tamaño máximo de 297 bytes. Comparando la longitud máxima de los paquetes con el ancho de banda uno se da cuenta de que este es suficiente para manejar el tamaño de los paquetes sin problema en un intervalo de tiempo.  La latencia es otro factor muy importante en el Robotario. Analizando la situación actual del Robotario, se tienen 3 robots y el servidor, todos comparten la misma estructura de transmisión de la información esto implica que el tiempo de transmisión si se relaciona solo con el ancho de banda se tiene un tiempo de $t=\frac{L}{C}$ donde L es la longitud del paquete(297 bytes) y C corresponde al ancho de banda (1750 Mbps) $t=1.36\mu s$. El siguiente parámetro a analizar es el retardo, se tiene un retardo debido a la propagación y un retardo debido a la congestión. El retardo de propagación depende de la velocidad de propagación y de la distancia del router al robot, se puede estimar una velocidad de propagación próxima a la velocidad de la luz, se ha comentado que la distancia máxima del router a un robot es de 3 metros, esto implica que se tiene un retardo como máximo de 0.1 ns, es insignificante. El retardo debido a la congestión depende solo del router, y se produce por un tráfico alto de paquetes en el router.\\\\
+La estructura appdata que aparece en la figura~\ref{fig:estructuraMensaje} es lo comentado anteriormente, donde se tiene un array para poder enviar datos, como velocidad  del robot, información del acelerómetro etc. Después de la estructura se puede apreciar las intrucciones que se puede ejecutar, las instrucciones se pueden ir ampliando y aumentar la complejidad del Robotario. El tamaño máximo de datos enviados consta de 255 bytes. Es un tamaño pequeño lo que dificulta la fragmentación del paquete debido a la unidad de transmisión máxima (MTU) de una red, que es el tamaño máximo permitido en bytes de un paquete que se puede transmitir en una red, si se supera el tamaño máximo el paque se fragmenta. La red actual tiene una MTU de 1500 bytes.
+\newpage
+\subsection{Calidad de servicio}
+Se hace  un analísis de los parámetros de la red para poder estimar sus límites y hacer una aproximación de la cantidad de dispositivos que se pueden conectar. 
+\subsubsection{Ancho de banda}
+ Se cuenta con un ancho de banda en la comunicación inalámbrica de 1750 Mbps, siendo esta la capacidad máxima de datos que se pueden transmitir a través del canal. Normalmente los valores reales son inferiores, aun así, un valor algo inferior no es un problema para la comunicación del Robotario, pues se envían paquetes con una longitud máxima de 255 bytes más la cabecera UDP que son 8 Bytes y las demás cabeceras de encapsulación se tiene un tamaño máximo de 297 bytes. Comparando la longitud máxima de los paquetes con el ancho de banda uno se da cuenta de que este es suficiente para manejar el tamaño de los paquetes sin problema en un intervalo de tiempo dado.
+\subsubsection{Latencia o retardo}
+  La latencia se define como el tiempo que  tardan los flujos de datos en llegar a su destino. El retardo depende del tiempo de transmisión que se define como :
+  \begin{equation}
+ t_{t}=\frac{L}{C}
+  \end{equation} 
+  Donde L es la longitud del paquete (297 bytes) y C se refiere al ancho de banda (1750Mbps), calculando para el caso peor, se obtiene un tiempo de transmisión $t_{t}=1.36\mu s$. 
+  El retardo debido a la congestión depende solo del router, y se produce por un tráfico alto de paquetes en el router o por como procesa éste la información.\\
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.6\linewidth]{CreacionInfraestructura/latencia}
+	\includegraphics[width=0.5\linewidth]{CreacionInfraestructura/latencia}
 	\caption{Captura de pantalla de una prueba de latenca de la red}
 	\label{fig:latencia}
 \end{figure}
-En la figura ~\ref{fig:latencia} se tiene la captura de una prueba de latencia de la red, esta prueba se ha realizado con 3 robots transmitiendo información al servidor y viceversa. La  se ha realizado entre el servidor que está conectado por cable y una raspberryPi conectada a la red mediante WiFi. La prueba sirve para estimar la latencia, se ha hecho diversas pruebas, para encontrar el caso peor y como máximo se obtiene el resultado mostrado que es de 119 ms de retardo. Este tiempo máximo puede afectar de manera significativa en la transmisión de ordenes al robot, pero en general la latencia está por debajo de los 10ms que es un parámetro muy bueno y permite una transmisión de información de manera fluida.\\
-
+En la figura ~\ref{fig:latencia} se tiene la captura de una prueba de latencia de la red, esta prueba se ha realizado con 3 robots transmitiendo información al servidor y viceversa. Se ha realizado entre el servidor que está conectado por cable y una raspberryPi conectada a la red mediante WiFi. La prueba sirve para estimar la latencia, se ha hecho diversas pruebas, para encontrar el caso peor y como máximo se obtiene el resultado mostrado que es de 119 ms de retardo. Este tiempo máximo puede afectar de manera significativa en la transmisión de ordenes al robot, pero en general la latencia está por debajo de los 10ms que es un parámetro muy bueno y permite una transmisión de información de manera fluida.\\
+\subsubsection{Jitter y perdida de paquetes}
 \begin{figure}[!h]
-	\begin{subfigure}[b]{0.8\linewidth}
-	\centering
-	\includegraphics[width=0.9\linewidth]{CreacionInfraestructura/jitterS}
-	\caption{Analisis de la red}
-	\label{fig:jitters}
-\end{subfigure}
 
-	\begin{subfigure}[b]{0.8\linewidth}
 	\centering
-	\includegraphics[width=0.9\linewidth]{CreacionInfraestructura/jitterC}
-	\caption{Analisis de la red}
+	\includegraphics[width=0.7\linewidth]{CreacionInfraestructura/jitterS}
+	\caption{Analisis de la red con iperf3}
 	\label{fig:jitters}
-\end{subfigure}
+
 \end{figure}
-El último parámetro a medir de la red es el jitter, se trata de la variabilidad del retardo, se produce debido a la congestión de la red o a cambios en la ruta de los paquetes, es un factor muy importante en el protocolo TCP, pero menos importante en el protocolo UDP, ya que no hay una conexión establecida y no importa el retardo, tan solo que llegue el paquete, aun así interesa analizar este parámetros por si en un futuro se desea implementar otro protocolo o estudiar la implementación de TCP en el rorbotario y sus efectos.
-En la figura ~\ref{fig:jitters} se puede ver una prueba realizada en la red de transferencia de datagramas, con un bitrate de 2 Mbps se puede apreciar que el máximo jitter ocurre en el primer datagrama y esto es normal pues, al no tener el router el destino guardado, debe realizar un broadcast para buscarlo y luego enviarle la información una vez lo ha encontrado, despues de este primer paquete se puede ver como el jitter no pasa de los 2 ms, lo cual es muy buena señal.
+Se realiza una prueba con iperf3 un programa que permite analizar las redes creandote un servidor y cliente y enviando paquetes de longitud a elegir. Se puede elgir la velocidad de transmisión. En la prueba realizada que corresponde a la figura~\ref{fig:jitters} se ha elegido una velocidad de transmisión de 1 Mbps. La prueba se realiza con los robots y el servidor mandado pquetes a la red. En la figura~\ref{fig:jitters} se tiene un error en el parámetro de perdida de paquetes en el primer intervalo, esto se debe a que los paquetes han llegado desordenados y el programa ha contado mal el numero de paquetes, después de este intervalo se tiene una perdida de paquetes del 0\%. Este dato es muy bueno pues a pesar de estar enviado paquetes a la red procendete de otros dispositivos no se ha perdido información esto significa que el router soporta el flujo de datos de manera adecuada.
+El último parámetro a medir de la red es el jitter que se trata de la variabilidad del retardo, se produce debido a la congestión de la red o a cambios en la ruta de los paquetes.
+En la figura ~\ref{fig:jitters} se puede apreciar que el máximo jitter ocurre en el primer intervalo de tiempo que es el intervalo erroneo, después de este primer intervalo se puede ver como el jitter no pasa de los 2 ms, lo cual es un buen resultado.\\
 
-De los 3 parámetros el que da peores resultados es la latencia. Posiblemente se debe a la congestión y a como el propio router procesa los paquetes entrantes. También se puede deber a las interferencias que hay en el entorno, hay que tener en cuenta que los canales de WiFi de los routers en los que se divide el ancho de banda de la señal son comunes para todos los routers, y en la facultad hay multitud de routers que proporciona internet a los estudiantes y personal de la facultad. Es posible que la latencia que se produce sea más bien debido a las interferencias que a la congestión, pues el valor del jitter es muy bajo y esto quiere decir que no hay variación del retardo, lo cual indica que no se produce una congestión significativa. Ante esto no hay nada que hacer, lo único que se podría hacer es buscar un router con mejores características, más potencia, más protección a ruido o usar otro medio de comunicación. Esto análisis da a enteder que se puede poner más robots sin problema, el único notable es la latencia, habría que ver hasta cuantos robots soporta el Robotario sin que la latencia suponga un problema en la realización de experimentos, es dificil de estimar pues la latencia es muy probable que se deba a factores externos, pero hasta ahora la red consta de 5 equipos y se tiene un funcionamiento normal del Robotario.
+
+Analizando  los parámetros de la red se tiene un buen resultado para los dispositivos conectados, de hecho se podria conectar más sin problema. El factor que daría problemas dependiendo del numero de dispositivos enviando información es la latencia, debido a como el router encamina y procesa la información y que éste tiene una memoria limitada para almacenar los paquetes que le van llegando hasta que estos puedan ser enviados. Si se tienen muchos dispositivos enviando información en la red se pueden producir retardos debido a la memoria limitada del router.
 

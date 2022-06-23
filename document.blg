@@ -23,45 +23,45 @@ while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "Ángel Cardama Aznar,Lluís Jofre Roca, Juan Manuel Rius Casals, Jordi Romeu Robert, Sebastián Blanch Boris" for entry cardama
 while executing---line 1090 of file plain.bst
 Warning--empty publisher in cardama
-You've used 15 entries,
+You've used 16 entries,
             2118 wiz_defined-function locations,
-            574 strings with 6688 characters,
-and the built_in function-call counts, 5303 in all, are:
-= -- 481
-> -- 310
+            579 strings with 6675 characters,
+and the built_in function-call counts, 5314 in all, are:
+= -- 489
+> -- 283
 < -- 6
-+ -- 127
-- -- 110
-* -- 345
-:= -- 874
-add.period$ -- 45
-call.type$ -- 15
-change.case$ -- 100
++ -- 116
+- -- 98
+* -- 327
+:= -- 871
+add.period$ -- 48
+call.type$ -- 16
+change.case$ -- 97
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 184
-empty$ -- 396
-format.name$ -- 110
-if$ -- 1118
+cite$ -- 18
+duplicate$ -- 196
+empty$ -- 418
+format.name$ -- 98
+if$ -- 1133
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 10
-newline$ -- 77
-num.names$ -- 30
+int.to.str$ -- 16
+missing$ -- 12
+newline$ -- 82
+num.names$ -- 32
 pop$ -- 138
 preamble$ -- 1
-purify$ -- 85
+purify$ -- 81
 quote$ -- 0
-skip$ -- 164
+skip$ -- 171
 stack$ -- 0
-substring$ -- 216
-swap$ -- 57
+substring$ -- 221
+swap$ -- 58
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
+type$ -- 58
 warning$ -- 2
-while$ -- 40
-width$ -- 17
-write$ -- 151
+while$ -- 42
+width$ -- 18
+write$ -- 162
 (There were 6 error messages)
