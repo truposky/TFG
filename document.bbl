@@ -39,11 +39,20 @@ Wolfram Mathworld.
 \newblock Available at
   \url{https://mathworld.wolfram.com/RodriguesRotationFormula.html}.
 
+\bibitem{encoder}
+Motorola.
+\newblock Lm393.
+\newblock Available at
+  \url{https://pdf1.alldatasheet.com/datasheet-pdf/view/3068/MOTOROLA/LM393.html}.
+
+\bibitem{MarkeropenCV}
+OpenCV.
+\newblock Markers and dictionaries.
+\newblock
+  \url{https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html}.
+
 \bibitem{7989179}
-Liam Paull, Jacopo Tani, Heejin Ahn, Javier Alonso-Mora, Luca Carlone, Michal
-  Cap, Yu~Fan Chen, Changhyun Choi, Jeff Dusek, Yajun Fang, Daniel Hoehener,
-  Shih-Yuan Liu, Michael Novitzky, Igor~Franzoni Okuyama, Jason Pazis, and
-  Rosman.
+Liam Paull, Jacopo Tani, Heejin Ahn, Javier Alonso-Mora, and Carlone.
 \newblock Duckietown: An open, inexpensive and flexible platform for autonomy
   education and research.
 \newblock In {\em 2017 IEEE International Conference on Robotics and Automation

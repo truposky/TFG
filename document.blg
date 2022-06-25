@@ -3,12 +3,12 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: document.aux
 The style file: plain.bst
 Database file #1: bibliografia/ref.bib
-I was expecting a `,' or a `}'---line 118 of file bibliografia/ref.bib
+I was expecting a `,' or a `}'---line 129 of file bibliografia/ref.bib
  :  
  :  publisher = {Princeton University Press},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 128 of file bibliografia/ref.bib
+I was expecting a `,' or a `}'---line 139 of file bibliografia/ref.bib
  :  
  :  publisher = {Ediciones UPC},
 (Error may have been on previous line)
@@ -23,45 +23,45 @@ while executing---line 1090 of file plain.bst
 Too many commas in name 1 of "Ángel Cardama Aznar,Lluís Jofre Roca, Juan Manuel Rius Casals, Jordi Romeu Robert, Sebastián Blanch Boris" for entry cardama
 while executing---line 1090 of file plain.bst
 Warning--empty publisher in cardama
-You've used 16 entries,
+You've used 18 entries,
             2118 wiz_defined-function locations,
-            579 strings with 6675 characters,
-and the built_in function-call counts, 5314 in all, are:
-= -- 489
-> -- 283
+            588 strings with 6703 characters,
+and the built_in function-call counts, 5381 in all, are:
+= -- 505
+> -- 242
 < -- 6
-+ -- 116
-- -- 98
-* -- 327
-:= -- 871
-add.period$ -- 48
-call.type$ -- 16
-change.case$ -- 97
++ -- 100
+- -- 80
+* -- 293
+:= -- 873
+add.period$ -- 54
+call.type$ -- 18
+change.case$ -- 94
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 196
-empty$ -- 418
-format.name$ -- 98
-if$ -- 1133
+cite$ -- 20
+duplicate$ -- 210
+empty$ -- 462
+format.name$ -- 80
+if$ -- 1168
 int.to.chr$ -- 0
-int.to.str$ -- 16
+int.to.str$ -- 18
 missing$ -- 12
-newline$ -- 82
-num.names$ -- 32
-pop$ -- 138
+newline$ -- 92
+num.names$ -- 36
+pop$ -- 143
 preamble$ -- 1
-purify$ -- 81
+purify$ -- 76
 quote$ -- 0
-skip$ -- 171
+skip$ -- 187
 stack$ -- 0
-substring$ -- 221
-swap$ -- 58
+substring$ -- 231
+swap$ -- 60
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 58
+type$ -- 66
 warning$ -- 2
-while$ -- 42
-width$ -- 18
-write$ -- 162
+while$ -- 46
+width$ -- 20
+write$ -- 180
 (There were 6 error messages)

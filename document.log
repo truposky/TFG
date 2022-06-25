@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.11.12)  23 JUN 2022 12:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.11.12)  26 JUN 2022 01:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -841,28 +841,20 @@ ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
-<logo_UCM.png, id=279, 145.5036pt x 169.5936pt>
+<logo_UCM.png, id=275, 145.5036pt x 169.5936pt>
 File: logo_UCM.png Graphic file (type png)
 <use logo_UCM.png>
 Package pdftex.def Info: logo_UCM.png  used on input line 75.
 (pdftex.def)             Requested size: 164.31752pt x 191.52466pt.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo_UCM.png>] (./autori
-zacion.texpdfTeX warning (ext4): destination with the same identifier (name{pag
-e.1}) has been already used, duplicate ignored
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo_UCM.png>]pdfTeX war
+ning (ext4): destination with the same identifier (name{page.1}) has been alrea
+dy used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8 \newpage
-             [1] (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
-<cc-by-nc-sa.png, id=292, 323.2075pt x 112.42pt>
-File: cc-by-nc-sa.png Graphic file (type png)
-<use cc-by-nc-sa.png>
-Package pdftex.def Info: cc-by-nc-sa.png  used on input line 49.
-(pdftex.def)             Requested size: 323.20671pt x 112.41972pt.
-) [2 <./cc-by-nc-sa.png>] (./document.toc
+l.109 \newpage
+               [1] (./document.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
  [1])
@@ -876,15 +868,15 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@lof=\write6
 \openout6 = `document.lof'.
 
-
-(./document.lot
+ (./document.lot
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@lot=\write7
 \openout7 = `document.lot'.
 
- [3]
+
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
@@ -914,85 +906,84 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-) (./objetivos.tex)) (./metodologia.texpdfTeX warning (ext4): destination with 
-the same identifier (name{page.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3 \subsection
-               {Estudio preliminar de entornos de pruebas existentes} [2]
-[3]
-<gantt2.png, id=515, 912.40875pt x 595.47469pt>
+) (./objetivos.tex)) (./metodologia.tex [2] [3]
+<gantt2.png, id=504, 912.40875pt x 595.47469pt>
 File: gantt2.png Graphic file (type png)
 <use gantt2.png>
 Package pdftex.def Info: gantt2.png  used on input line 41.
 (pdftex.def)             Requested size: 469.45721pt x 499.76826pt.
- [4] [5 <./gantt2.png>]) (./hardware.tex
-<RobotAliexpres.png, id=528, 341.02406pt x 339.51843pt>
+ [4] [5 <./gantt2.png>])
+(./hardware.tex
+<RobotAliexpres.png, id=518, 341.02406pt x 339.51843pt>
 File: RobotAliexpres.png Graphic file (type png)
 <use RobotAliexpres.png>
 Package pdftex.def Info: RobotAliexpres.png  used on input line 27.
 (pdftex.def)             Requested size: 93.89265pt x 93.47923pt.
  [6 <./RobotAliexpres.png>]
-<Arduinonano33.png, id=540, 462.97969pt x 220.57407pt>
+<Arduinonano33.png, id=529, 462.97969pt x 220.57407pt>
 File: Arduinonano33.png Graphic file (type png)
 <use Arduinonano33.png>
 Package pdftex.def Info: Arduinonano33.png  used on input line 40.
 (pdftex.def)             Requested size: 140.84256pt x 67.10165pt.
-<PuenteH.jpg, id=541, 4047.12pt x 3035.34pt>
+<PuenteH.jpg, id=530, 4047.12pt x 3035.34pt>
 File: PuenteH.jpg Graphic file (type jpg)
 <use PuenteH.jpg>
 Package pdftex.def Info: PuenteH.jpg  used on input line 47.
 (pdftex.def)             Requested size: 117.36761pt x 87.99944pt.
  [7 <./Arduinonano33.png> <./PuenteH.jpg>]
-<ConstruccionRObot/Encoder.png, id=552, 490.83376pt x 497.60907pt>
+<ConstruccionRObot/Encoder.png, id=542, 490.83376pt x 497.60907pt>
 File: ConstruccionRObot/Encoder.png Graphic file (type png)
 <use ConstruccionRObot/Encoder.png>
 Package pdftex.def Info: ConstruccionRObot/Encoder.png  used on input line 56.
 (pdftex.def)             Requested size: 117.36761pt x 118.98822pt.
-<ConstruccionRObot/bat.jpg, id=554, 4047.12pt x 3035.34pt>
-File: ConstruccionRObot/bat.jpg Graphic file (type jpg)
-<use ConstruccionRObot/bat.jpg>
-Package pdftex.def Info: ConstruccionRObot/bat.jpg  used on input line 65.
-(pdftex.def)             Requested size: 117.36761pt x 87.99944pt.
-<ConstruccionRObot/StepDown.jpg, id=556, 4047.12pt x 3035.34pt>
+<ConstruccionRObot/StepDown.jpg, id=545, 4047.12pt x 3035.34pt>
 File: ConstruccionRObot/StepDown.jpg Graphic file (type jpg)
 <use ConstruccionRObot/StepDown.jpg>
-Package pdftex.def Info: ConstruccionRObot/StepDown.jpg  used on input line 74.
+Package pdftex.def Info: ConstruccionRObot/StepDown.jpg  used on input line 67.
 
 (pdftex.def)             Requested size: 93.89265pt x 70.39955pt.
+<raspberry_cam.jpg, id=547, 4047.12pt x 3035.34pt>
+File: raspberry_cam.jpg Graphic file (type jpg)
+<use raspberry_cam.jpg>
+Package pdftex.def Info: raspberry_cam.jpg  used on input line 78.
+(pdftex.def)             Requested size: 117.36761pt x 87.99944pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<raspberry_cam.jpg, id=558, 4047.12pt x 3035.34pt>
-File: raspberry_cam.jpg Graphic file (type jpg)
-<use raspberry_cam.jpg>
-Package pdftex.def Info: raspberry_cam.jpg  used on input line 85.
+<ConstruccionRObot/bat.jpg, id=550, 4047.12pt x 3035.34pt>
+File: ConstruccionRObot/bat.jpg Graphic file (type jpg)
+<use ConstruccionRObot/bat.jpg>
+Package pdftex.def Info: ConstruccionRObot/bat.jpg  used on input line 86.
 (pdftex.def)             Requested size: 117.36761pt x 87.99944pt.
-[8 <./ConstruccionRObot/Encoder.png> <./ConstruccionRObot/bat.jpg>]
-<RobotPerfil.jpg, id=566, 1891.065pt x 3062.44125pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8 <./ConstruccionRObot/Encoder.png> <./ConstruccionRObot/StepDown.jpg>]
+<RobotPerfil.jpg, id=560, 1891.065pt x 3062.44125pt>
 File: RobotPerfil.jpg Graphic file (type jpg)
 <use RobotPerfil.jpg>
 Package pdftex.def Info: RobotPerfil.jpg  used on input line 95.
 (pdftex.def)             Requested size: 97.64915pt x 158.13104pt.
-<RobotFrente.jpg, id=567, 1558.82375pt x 2691.05376pt>
+<RobotFrente.jpg, id=561, 1558.82375pt x 2691.05376pt>
 File: RobotFrente.jpg Graphic file (type jpg)
 <use RobotFrente.jpg>
 Package pdftex.def Info: RobotFrente.jpg  used on input line 101.
 (pdftex.def)             Requested size: 97.64915pt x 168.56pt.
-<Camaralogi.png, id=569, 252.19218pt x 264.23718pt>
+<Camaralogi.png, id=563, 252.19218pt x 264.23718pt>
 File: Camaralogi.png Graphic file (type png)
 <use Camaralogi.png>
 Package pdftex.def Info: Camaralogi.png  used on input line 114.
 (pdftex.def)             Requested size: 93.89265pt x 98.37505pt.
- [9 <./ConstruccionRObot/StepDown.jpg> <./raspberry_cam.jpg> <./RobotPerfil.jpg
-> <./RobotFrente.jpg>] [10 <./Camaralogi.png>]
-<EjemploDeMarker.png, id=585, 350.05782pt x 291.33844pt>
+
+[9 <./raspberry_cam.jpg> <./ConstruccionRObot/bat.jpg> <./RobotPerfil.jpg> <./R
+obotFrente.jpg>] [10 <./Camaralogi.png>]
+<EjemploDeMarker.png, id=577, 350.05782pt x 291.33844pt>
 File: EjemploDeMarker.png Graphic file (type png)
 <use EjemploDeMarker.png>
 Package pdftex.def Info: EjemploDeMarker.png  used on input line 143.
 (pdftex.def)             Requested size: 140.84256pt x 117.21791pt.
-<RobotMarker.jpg, id=591, 2422.04875pt x 2821.54124pt>
+<RobotMarker.jpg, id=585, 2422.04875pt x 2821.54124pt>
 File: RobotMarker.jpg Graphic file (type jpg)
 <use RobotMarker.jpg>
 Package pdftex.def Info: RobotMarker.jpg  used on input line 152.
@@ -1002,13 +993,13 @@ Package pdftex.def Info: RobotMarker.jpg  used on input line 152.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [11 <./EjemploDeMarker.png> <./RobotMarker.jpg>] [12]
-<MontajeFinal.png, id=610, 357.58594pt x 606.76688pt>
+<MontajeFinal.png, id=603, 357.58594pt x 606.76688pt>
 File: MontajeFinal.png Graphic file (type png)
 <use MontajeFinal.png>
 Package pdftex.def Info: MontajeFinal.png  used on input line 229.
 (pdftex.def)             Requested size: 214.5532pt x 364.06293pt.
  [13 <./MontajeFinal.png>]) (./estimaVelocidad/velocidad.tex
-<ConstruccionRObot/EncoderRobot.png, id=618, 3035.34pt x 2276.505pt>
+<ConstruccionRObot/EncoderRobot.png, id=611, 3035.34pt x 2276.505pt>
 File: ConstruccionRObot/EncoderRobot.png Graphic file (type png)
 <use ConstruccionRObot/EncoderRobot.png>
 Package pdftex.def Info: ConstruccionRObot/EncoderRobot.png  used on input line
@@ -1052,7 +1043,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-<estimaVelocidad/TratamientoRuido/PulsosEncoder_sinFiltro.png, id=636, 651.9356
+<estimaVelocidad/TratamientoRuido/PulsosEncoder_sinFiltro.png, id=630, 651.9356
 2pt x 325.215pt>
 File: estimaVelocidad/TratamientoRuido/PulsosEncoder_sinFiltro.png Graphic file
  (type png)
@@ -1065,7 +1056,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
-<estimaVelocidad/TratamientoRuido/PulsosEncoder_ConFiltro.png, id=639, 439.6425
+<estimaVelocidad/TratamientoRuido/PulsosEncoder_ConFiltro.png, id=633, 439.6425
 pt x 261.97874pt>
 File: estimaVelocidad/TratamientoRuido/PulsosEncoder_ConFiltro.png Graphic file
  (type png)
@@ -1081,7 +1072,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-<estimaVelocidad/TratamientoRuido/maxVelEncoder.png, id=647, 683.55376pt x 392.
+<estimaVelocidad/TratamientoRuido/maxVelEncoder.png, id=641, 683.55376pt x 392.
 96812pt>
 File: estimaVelocidad/TratamientoRuido/maxVelEncoder.png Graphic file (type png
 )
@@ -1097,7 +1088,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--42
 
 )) (./controlMotor/ControlMotor.tex
 (./estimaVelocidad/cuantizacion/cuantizacion.tex
-<dutycicle.png, id=654, 408.77719pt x 307.90031pt>
+<dutycicle.png, id=648, 408.77719pt x 307.90031pt>
 File: dutycicle.png Graphic file (type png)
 <use dutycicle.png>
 Package pdftex.def Info: dutycicle.png  used on input line 6.
@@ -1106,7 +1097,7 @@ Package pdftex.def Info: dutycicle.png  used on input line 6.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<GeneradorDePWM.png, id=656, 417.05812pt x 313.17pt>
+<GeneradorDePWM.png, id=650, 417.05812pt x 313.17pt>
 File: GeneradorDePWM.png Graphic file (type png)
 <use GeneradorDePWM.png>
 Package pdftex.def Info: GeneradorDePWM.png  used on input line 15.
@@ -1116,47 +1107,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--20
 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [18]
-<controlMotor/PuenteH.png, id=667, 616.55344pt x 395.22656pt>
+<controlMotor/PuenteH.png, id=660, 616.55344pt x 395.22656pt>
 File: controlMotor/PuenteH.png Graphic file (type png)
 <use controlMotor/PuenteH.png>
 Package pdftex.def Info: controlMotor/PuenteH.png  used on input line 24.
 (pdftex.def)             Requested size: 328.62788pt x 210.66315pt.
 ) [19 <./dutycicle.png> <./GeneradorDePWM.png>]
-<controlMotor/FeedforwardR1_R.png, id=675, 428.40463pt x 318.88206pt>
+<controlMotor/FeedforwardR1_R.png, id=669, 428.40463pt x 318.88206pt>
 File: controlMotor/FeedforwardR1_R.png Graphic file (type png)
 <use controlMotor/FeedforwardR1_R.png>
 Package pdftex.def Info: controlMotor/FeedforwardR1_R.png  used on input line 1
 63.
 (pdftex.def)             Requested size: 234.73523pt x 174.72879pt.
-<controlMotor/FeedforwardR1_L.png, id=676, 428.40463pt x 318.88206pt>
+<controlMotor/FeedforwardR1_L.png, id=670, 428.40463pt x 318.88206pt>
 File: controlMotor/FeedforwardR1_L.png Graphic file (type png)
 <use controlMotor/FeedforwardR1_L.png>
 Package pdftex.def Info: controlMotor/FeedforwardR1_L.png  used on input line 1
 71.
 (pdftex.def)             Requested size: 234.73523pt x 174.72879pt.
-<controlMotor/FeedforwardR2_R.png, id=677, 428.40463pt x 318.88206pt>
+<controlMotor/FeedforwardR2_R.png, id=671, 428.40463pt x 318.88206pt>
 File: controlMotor/FeedforwardR2_R.png Graphic file (type png)
 <use controlMotor/FeedforwardR2_R.png>
 Package pdftex.def Info: controlMotor/FeedforwardR2_R.png  used on input line 1
 78.
 (pdftex.def)             Requested size: 234.73523pt x 174.72879pt.
-<controlMotor/FeedforwardR2_L.png, id=678, 428.40463pt x 318.88206pt>
+<controlMotor/FeedforwardR2_L.png, id=672, 428.40463pt x 318.88206pt>
 File: controlMotor/FeedforwardR2_L.png Graphic file (type png)
 <use controlMotor/FeedforwardR2_L.png>
 Package pdftex.def Info: controlMotor/FeedforwardR2_L.png  used on input line 1
 85.
 (pdftex.def)             Requested size: 234.73523pt x 174.72879pt.
-<controlMotor/FeedforwardR3_R.png, id=679, 420.95412pt x 315.90186pt>
+<controlMotor/FeedforwardR3_R.png, id=673, 420.95412pt x 315.90186pt>
 File: controlMotor/FeedforwardR3_R.png Graphic file (type png)
 <use controlMotor/FeedforwardR3_R.png>
 Package pdftex.def Info: controlMotor/FeedforwardR3_R.png  used on input line 1
 92.
 (pdftex.def)             Requested size: 234.73523pt x 176.1615pt.
-<controlMotor/FeedforwardR3_L.png, id=680, 420.95412pt x 315.90186pt>
+<controlMotor/FeedforwardR3_L.png, id=674, 420.95412pt x 315.90186pt>
 File: controlMotor/FeedforwardR3_L.png Graphic file (type png)
 <use controlMotor/FeedforwardR3_L.png>
 Package pdftex.def Info: controlMotor/FeedforwardR3_L.png  used on input line 1
@@ -1184,36 +1172,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
 
-<controlMotor/RespuestaEscalonRD.png, id=707, 420.95412pt x 315.90186pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
+
+ []
+
+<controlMotor/RespuestaEscalonRD.png, id=701, 420.95412pt x 315.90186pt>
 File: controlMotor/RespuestaEscalonRD.png Graphic file (type png)
 <use controlMotor/RespuestaEscalonRD.png>
 Package pdftex.def Info: controlMotor/RespuestaEscalonRD.png  used on input lin
-e 236.
+e 235.
 (pdftex.def)             Requested size: 231.91956pt x 174.04541pt.
-<controlMotor/RespuestaEscalonRI.png, id=708, 420.95412pt x 315.90186pt>
+<controlMotor/RespuestaEscalonRI.png, id=702, 420.95412pt x 315.90186pt>
 File: controlMotor/RespuestaEscalonRI.png Graphic file (type png)
 <use controlMotor/RespuestaEscalonRI.png>
 Package pdftex.def Info: controlMotor/RespuestaEscalonRI.png  used on input lin
-e 243.
+e 242.
 (pdftex.def)             Requested size: 244.12663pt x 183.20874pt.
 
-Overfull \hbox (32.16617pt too wide) in paragraph at lines 234--247
+Overfull \hbox (32.16617pt too wide) in paragraph at lines 233--246
 [][]  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--250
+Underfull \hbox (badness 10000) in paragraph at lines 228--249
 
  []
 
 [23]
-<controlMotor/RespuestaEscalonPID_R.png, id=720, 420.95412pt x 315.90186pt>
+<controlMotor/RespuestaEscalonPID_R.png, id=714, 420.95412pt x 315.90186pt>
 File: controlMotor/RespuestaEscalonPID_R.png Graphic file (type png)
 <use controlMotor/RespuestaEscalonPID_R.png>
 Package pdftex.def Info: controlMotor/RespuestaEscalonPID_R.png  used on input 
 line 278.
 (pdftex.def)             Requested size: 244.12663pt x 183.20874pt.
-<controlMotor/RespuestaEscalonPID_I.png, id=721, 420.95412pt x 315.90186pt>
+<controlMotor/RespuestaEscalonPID_I.png, id=715, 420.95412pt x 315.90186pt>
 File: controlMotor/RespuestaEscalonPID_I.png Graphic file (type png)
 <use controlMotor/RespuestaEscalonPID_I.png>
 Package pdftex.def Info: controlMotor/RespuestaEscalonPID_I.png  used on input 
@@ -1227,13 +1220,13 @@ Overfull \hbox (32.16617pt too wide) in paragraph at lines 276--291
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<controlMotor/PI_sintonizado_R.png, id=723, 420.95412pt x 315.90186pt>
+<controlMotor/PI_sintonizado_R.png, id=717, 420.95412pt x 315.90186pt>
 File: controlMotor/PI_sintonizado_R.png Graphic file (type png)
 <use controlMotor/PI_sintonizado_R.png>
 Package pdftex.def Info: controlMotor/PI_sintonizado_R.png  used on input line 
 300.
 (pdftex.def)             Requested size: 184.03517pt x 138.1103pt.
-<controlMotor/PI_sintonizado_I.png, id=724, 420.95412pt x 315.90186pt>
+<controlMotor/PI_sintonizado_I.png, id=718, 420.95412pt x 315.90186pt>
 File: controlMotor/PI_sintonizado_I.png Graphic file (type png)
 <use controlMotor/PI_sintonizado_I.png>
 Package pdftex.def Info: controlMotor/PI_sintonizado_I.png  used on input line 
@@ -1244,22 +1237,21 @@ Overfull \hbox (3.99908pt too wide) in paragraph at lines 298--313
 [][]  [] 
  []
 
-[24 <./controlMotor/RespuestaEscalonRD.png (PNG copy)> <./controlMotor/Respuest
-aEscalonRI.png (PNG copy)>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[25 <./controlMotor/RespuestaEscalonPID_R.png (PNG copy)> <./controlMotor/Respu
-estaEscalonPID_I.png (PNG copy)> <./controlMotor/PI_sintonizado_R.png (PNG copy
-)> <./controlMotor/PI_sintonizado_I.png (PNG copy)>])
-(./navegacion/Navegacion.tex
-<navegacion/RuedaRobotDibujo.png, id=735, 245.41687pt x 271.0125pt>
+[24 <./controlMotor/RespuestaEscalonRD.png (PNG copy)> <./controlMotor/Respuest
+aEscalonRI.png (PNG copy)>] [25 <./controlMotor/RespuestaEscalonPID_R.png (PNG 
+copy)> <./controlMotor/RespuestaEscalonPID_I.png (PNG copy)> <./controlMotor/PI
+_sintonizado_R.png (PNG copy)> <./controlMotor/PI_sintonizado_I.png (PNG copy)>
+]) (./navegacion/Navegacion.tex
+<navegacion/RuedaRobotDibujo.png, id=729, 245.41687pt x 271.0125pt>
 File: navegacion/RuedaRobotDibujo.png Graphic file (type png)
 <use navegacion/RuedaRobotDibujo.png>
 Package pdftex.def Info: navegacion/RuedaRobotDibujo.png  used on input line 7.
 
 (pdftex.def)             Requested size: 93.89265pt x 103.68468pt.
-<navegacion/ArcoRecorridoRobot.png, id=736, 197.23688pt x 182.18062pt>
+<navegacion/ArcoRecorridoRobot.png, id=730, 197.23688pt x 182.18062pt>
 File: navegacion/ArcoRecorridoRobot.png Graphic file (type png)
 <use navegacion/ArcoRecorridoRobot.png>
 Package pdftex.def Info: navegacion/ArcoRecorridoRobot.png  used on input line 
@@ -1276,15 +1268,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-<Localizacion/board.jpg, id=752, 1304.875pt x 702.625pt>
+<Localizacion/board.jpg, id=748, 1304.875pt x 702.625pt>
 File: Localizacion/board.jpg Graphic file (type jpg)
 <use Localizacion/board.jpg>
 Package pdftex.def Info: Localizacion/board.jpg  used on input line 8.
 (pdftex.def)             Requested size: 234.73523pt x 126.39198pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[27]
+[27 <./Localizacion/board.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 22--23
 
  []
@@ -1294,13 +1283,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
-[28 <./Localizacion/board.jpg>]
-<PoseEstimation.png, id=772, 600.74437pt x 332.74312pt>
+<PoseEstimation.png, id=758, 600.74437pt x 332.74312pt>
 File: PoseEstimation.png Graphic file (type png)
 <use PoseEstimation.png>
 Package pdftex.def Info: PoseEstimation.png  used on input line 40.
 (pdftex.def)             Requested size: 211.26027pt x 117.01524pt.
-<ejesCamara.png, id=773, 3035.34pt x 2276.505pt>
+<ejesCamara.png, id=759, 3035.34pt x 2276.505pt>
 File: ejesCamara.png Graphic file (type png)
 <use ejesCamara.png>
 Package pdftex.def Info: ejesCamara.png  used on input line 47.
@@ -1310,13 +1298,16 @@ Overfull \hbox (22.77477pt too wide) in paragraph at lines 38--51
 [][]  [] 
  []
 
-[29 <./PoseEstimation.png> <./ejesCamara.png (PNG copy)>]
-<Localizacion/oscilacionX.png, id=786, 399.74344pt x 304.88907pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[28] [29 <./PoseEstimation.png> <./ejesCamara.png (PNG copy)>]
+<Localizacion/oscilacionX.png, id=781, 399.74344pt x 304.88907pt>
 File: Localizacion/oscilacionX.png Graphic file (type png)
 <use Localizacion/oscilacionX.png>
 Package pdftex.def Info: Localizacion/oscilacionX.png  used on input line 107.
 (pdftex.def)             Requested size: 180.74632pt x 137.85942pt.
-<Localizacion/oscilacionY.png, id=787, 406.51875pt x 309.40594pt>
+<Localizacion/oscilacionY.png, id=782, 406.51875pt x 309.40594pt>
 File: Localizacion/oscilacionY.png Graphic file (type png)
 <use Localizacion/oscilacionY.png>
 Package pdftex.def Info: Localizacion/oscilacionY.png  used on input line 113.
@@ -1336,14 +1327,13 @@ LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
 .
 
 Missing character: There is no · in font cmr10!
-[30 <./Localizacion/oscilacionX.png> <./Localizacion/oscilacionY.png>]
-<CreacionInfraestructura/RedRobotario.png, id=799, 423.83344pt x 297.36093pt>
+<CreacionInfraestructura/RedRobotario.png, id=784, 423.83344pt x 297.36093pt>
 File: CreacionInfraestructura/RedRobotario.png Graphic file (type png)
 <use CreacionInfraestructura/RedRobotario.png>
 Package pdftex.def Info: CreacionInfraestructura/RedRobotario.png  used on inpu
 t line 14.
 (pdftex.def)             Requested size: 328.62788pt x 230.57484pt.
- [31 <./CreacionInfraestructura/RedRobotario.png>]
+[30 <./Localizacion/oscilacionX.png> <./Localizacion/oscilacionY.png>]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 3
 3.
 
@@ -1352,8 +1342,8 @@ File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
- [32]
-<CreacionInfraestructura/latencia.png, id=838, 396.7322pt x 263.48438pt>
+ [31 <./CreacionInfraestructura/RedRobotario.png>] [32]
+<CreacionInfraestructura/latencia.png, id=832, 396.7322pt x 263.48438pt>
 File: CreacionInfraestructura/latencia.png Graphic file (type png)
 <use CreacionInfraestructura/latencia.png>
 Package pdftex.def Info: CreacionInfraestructura/latencia.png  used on input li
@@ -1364,7 +1354,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--76
 
  []
 
-<CreacionInfraestructura/jitterS.png, id=840, 693.34032pt x 277.035pt>
+<CreacionInfraestructura/jitterS.png, id=834, 693.34032pt x 277.035pt>
 File: CreacionInfraestructura/jitterS.png Graphic file (type png)
 <use CreacionInfraestructura/jitterS.png>
 Package pdftex.def Info: CreacionInfraestructura/jitterS.png  used on input lin
@@ -1377,19 +1367,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--88
 
 ) (./software/estructuraSoftware.tex [34 <./CreacionInfraestructura/jitterS.png
 >]
-<software/servidor.png, id=855, 521.44812pt x 451.18562pt>
+<software/servidor.png, id=849, 521.44812pt x 451.18562pt>
 File: software/servidor.png Graphic file (type png)
 <use software/servidor.png>
 Package pdftex.def Info: software/servidor.png  used on input line 7.
 (pdftex.def)             Requested size: 328.62788pt x 284.3517pt.
-<software/softwareRaspberryPi.png, id=857, 523.7166pt x 451.4466pt>
+<software/softwareRaspberryPi.png, id=851, 523.7166pt x 451.4466pt>
 File: software/softwareRaspberryPi.png Graphic file (type png)
 <use software/softwareRaspberryPi.png>
 Package pdftex.def Info: software/softwareRaspberryPi.png  used on input line 1
 7.
 (pdftex.def)             Requested size: 328.62788pt x 283.29002pt.
  [35 <./software/servidor.png>]
-<software/arduino.png, id=864, 344.487pt x 691.6239pt>
+<software/arduino.png, id=857, 344.487pt x 691.6239pt>
 File: software/arduino.png Graphic file (type png)
 <use software/arduino.png>
 Package pdftex.def Info: software/arduino.png  used on input line 27.
@@ -1397,18 +1387,14 @@ Package pdftex.def Info: software/arduino.png  used on input line 27.
  [36 <./software/softwareRaspberryPi.png>]
 [37 <./software/arduino.png>]) (./Demostracion/Demostracion.tex
 (./Demostracion/experimento2.tex
-<Demostracion/calculoVector.png, id=879, 421.575pt x 316.18124pt>
+<Demostracion/calculoVector.png, id=873, 745.05154pt x 435.1101pt>
 File: Demostracion/calculoVector.png Graphic file (type png)
 <use Demostracion/calculoVector.png>
 Package pdftex.def Info: Demostracion/calculoVector.png  used on input line 10.
 
-(pdftex.def)             Requested size: 328.62788pt x 246.47563pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[38]
-<Demostracion/navegacion.jpg, id=894, 407.27156pt x 310.91156pt>
+(pdftex.def)             Requested size: 352.10284pt x 205.63045pt.
+ [38 <./Demostracion/calculoVector.png (PNG copy)>]
+<Demostracion/navegacion.jpg, id=885, 407.27156pt x 310.91156pt>
 File: Demostracion/navegacion.jpg Graphic file (type jpg)
 <use Demostracion/navegacion.jpg>
 Package pdftex.def Info: Demostracion/navegacion.jpg  used on input line 37.
@@ -1417,13 +1403,13 @@ Package pdftex.def Info: Demostracion/navegacion.jpg  used on input line 37.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Demostracion/posicionInicial.png, id=899, 463.7325pt x 338.01282pt>
+<Demostracion/posicionInicial.png, id=890, 463.7325pt x 338.01282pt>
 File: Demostracion/posicionInicial.png Graphic file (type png)
 <use Demostracion/posicionInicial.png>
 Package pdftex.def Info: Demostracion/posicionInicial.png  used on input line 4
 9.
 (pdftex.def)             Requested size: 180.74632pt x 131.74709pt.
-<Demostracion/posicionFinal.png, id=900, 450.9347pt x 325.215pt>
+<Demostracion/posicionFinal.png, id=891, 450.9347pt x 325.215pt>
 File: Demostracion/posicionFinal.png Graphic file (type png)
 <use Demostracion/posicionFinal.png>
 Package pdftex.def Info: Demostracion/posicionFinal.png  used on input line 56.
@@ -1437,9 +1423,8 @@ Overfull \hbox (60.33325pt too wide) in paragraph at lines 47--60
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[39 <./Demostracion/calculoVector.png (PNG copy)>])
-(./Demostracion/experimento1.tex
-<Demostracion/algoritmoExp2.png, id=906, 424.7067pt x 566.5968pt>
+[39]) (./Demostracion/experimento1.tex
+<Demostracion/algoritmoExp2.png, id=901, 424.7067pt x 566.5968pt>
 File: Demostracion/algoritmoExp2.png Graphic file (type png)
 <use Demostracion/algoritmoExp2.png>
 Package pdftex.def Info: Demostracion/algoritmoExp2.png  used on input line 8.
@@ -1448,7 +1433,7 @@ Package pdftex.def Info: Demostracion/algoritmoExp2.png  used on input line 8.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Demostracion/trianguloRobotsInicio.png, id=907, 474.27188pt x 360.59718pt>
+<Demostracion/trianguloRobotsInicio.png, id=902, 474.27188pt x 360.59718pt>
 File: Demostracion/trianguloRobotsInicio.png Graphic file (type png)
 <use Demostracion/trianguloRobotsInicio.png>
 Package pdftex.def Info: Demostracion/trianguloRobotsInicio.png  used on input 
@@ -1457,13 +1442,13 @@ line 14.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Demostracion/trayectoriaExp2.jpg, id=912, 567.11874pt x 425.59pt>
+<Demostracion/trayectoriaExp2.jpg, id=907, 567.11874pt x 425.59pt>
 File: Demostracion/trayectoriaExp2.jpg Graphic file (type jpg)
 <use Demostracion/trayectoriaExp2.jpg>
 Package pdftex.def Info: Demostracion/trayectoriaExp2.jpg  used on input line 2
 5.
 (pdftex.def)             Requested size: 305.15292pt x 229.00342pt.
-<Demostracion/velAutomatico.jpg, id=915, 567.11874pt x 425.59pt>
+<Demostracion/velAutomatico.jpg, id=910, 567.11874pt x 425.59pt>
 File: Demostracion/velAutomatico.jpg Graphic file (type jpg)
 <use Demostracion/velAutomatico.jpg>
 Package pdftex.def Info: Demostracion/velAutomatico.jpg  used on input line 32.
@@ -1473,7 +1458,7 @@ Package pdftex.def Info: Demostracion/velAutomatico.jpg  used on input line 32.
 ostracion/posicionFinal.png>] [41 <./Demostracion/algoritmoExp2.png>] [42 <./De
 mostracion/trianguloRobotsInicio.png (PNG copy)> <./Demostracion/trayectoriaExp
 2.jpg>]
-<Demostracion/LocalizacionRobots.png, id=934, 944.02687pt x 345.54094pt>
+<Demostracion/LocalizacionRobots.png, id=928, 944.02687pt x 345.54094pt>
 File: Demostracion/LocalizacionRobots.png Graphic file (type png)
 <use Demostracion/LocalizacionRobots.png>
 Package pdftex.def Info: Demostracion/LocalizacionRobots.png  used on input lin
@@ -1492,7 +1477,7 @@ Package epstopdf Info: Source file: <Demostracion/p21_thm1.eps>
 converted-to.pdf Demostracion/p21_thm1.eps>
 (epstopdf)             \includegraphics on input line 51.
 Package epstopdf Info: Output file is already uptodate.
-<Demostracion/p21_thm1-eps-converted-to.pdf, id=943, 1388.18625pt x 697.60625pt
+<Demostracion/p21_thm1-eps-converted-to.pdf, id=938, 1388.18625pt x 697.60625pt
 >
 File: Demostracion/p21_thm1-eps-converted-to.pdf Graphic file (type pdf)
 <use Demostracion/p21_thm1-eps-converted-to.pdf>
@@ -1510,7 +1495,7 @@ Package epstopdf Info: Source file: <Demostracion/p23_thm1.eps>
 converted-to.pdf Demostracion/p23_thm1.eps>
 (epstopdf)             \includegraphics on input line 58.
 Package epstopdf Info: Output file is already uptodate.
-<Demostracion/p23_thm1-eps-converted-to.pdf, id=944, 1388.18625pt x 697.60625pt
+<Demostracion/p23_thm1-eps-converted-to.pdf, id=939, 1388.18625pt x 697.60625pt
 >
 File: Demostracion/p23_thm1-eps-converted-to.pdf Graphic file (type pdf)
 <use Demostracion/p23_thm1-eps-converted-to.pdf>
@@ -1533,7 +1518,7 @@ Package epstopdf Info: Source file: <Demostracion/p21_thm2.eps>
 converted-to.pdf Demostracion/p21_thm2.eps>
 (epstopdf)             \includegraphics on input line 68.
 Package epstopdf Info: Output file is already uptodate.
-<Demostracion/p21_thm2-eps-converted-to.pdf, id=945, 1388.18625pt x 697.60625pt
+<Demostracion/p21_thm2-eps-converted-to.pdf, id=940, 1388.18625pt x 697.60625pt
 >
 File: Demostracion/p21_thm2-eps-converted-to.pdf Graphic file (type pdf)
 <use Demostracion/p21_thm2-eps-converted-to.pdf>
@@ -1551,7 +1536,7 @@ Package epstopdf Info: Source file: <Demostracion/p23_thm2.eps>
 converted-to.pdf Demostracion/p23_thm2.eps>
 (epstopdf)             \includegraphics on input line 75.
 Package epstopdf Info: Output file is already uptodate.
-<Demostracion/p23_thm2-eps-converted-to.pdf, id=946, 1388.18625pt x 697.60625pt
+<Demostracion/p23_thm2-eps-converted-to.pdf, id=941, 1388.18625pt x 697.60625pt
 >
 File: Demostracion/p23_thm2-eps-converted-to.pdf Graphic file (type pdf)
 <use Demostracion/p23_thm2-eps-converted-to.pdf>
@@ -1597,9 +1582,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--30
 berry-[]pi-[]3-[]160-[]-[]3272496298354 .
  []
 
-)) 
+[46])) 
 AED: lastpage setting LastPage
-[46]
+[47]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
  (./document.aux
@@ -1609,17 +1594,17 @@ LaTeX Info: Redefining \% on input line 24.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 180.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: FDD5F409ADCF7D9F37050E586035596A;5250.
+(rerunfilecheck)             Checksum: BC18202A3B43426E383DF5D32E51CE20;4976.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
  ) 
 Here is how much of TeX's memory you used:
- 33717 strings out of 481239
- 748601 string characters out of 5920376
- 1217609 words of memory out of 5000000
- 48126 multiletter control sequences out of 15000+600000
- 542113 words of font info for 58 fonts, out of 8000000 for 9000
+ 33465 strings out of 481239
+ 745657 string characters out of 5920376
+ 1221944 words of memory out of 5000000
+ 47879 multiletter control sequences out of 15000+600000
+ 541806 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,11n,71p,1965b,1443s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,11n,71p,1909b,1443s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
@@ -1646,10 +1631,10 @@ texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/share/texmf/fonts/typ
 e1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
 frm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb>
-Output written on document.pdf (53 pages, 33884223 bytes).
+Output written on document.pdf (53 pages, 33880572 bytes).
 PDF statistics:
- 1165 PDF objects out of 1200 (max. 8388607)
- 982 compressed objects within 10 object streams
- 241 named destinations out of 1000 (max. 500000)
- 862 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1168 PDF objects out of 1200 (max. 8388607)
+ 986 compressed objects within 10 object streams
+ 243 named destinations out of 1000 (max. 500000)
+ 849 words of extra memory for PDF output out of 10000 (max. 10000000)
 

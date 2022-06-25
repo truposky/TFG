@@ -18,9 +18,9 @@
 \contentsline {subsubsection}{\numberline {3.1.2}Arduino nano 33 IoT}{7}{subsubsection.3.1.2}%
 \contentsline {subsubsection}{\numberline {3.1.3}Integrado L298n, puente H}{7}{subsubsection.3.1.3}%
 \contentsline {subsubsection}{\numberline {3.1.4}Encoder \IeC {\'o}ptico}{8}{subsubsection.3.1.4}%
-\contentsline {subsubsection}{\numberline {3.1.5}Bater\IeC {\'\i }a}{8}{subsubsection.3.1.5}%
-\contentsline {subsubsection}{\numberline {3.1.6}LM2596 (conversor DC-DC)}{8}{subsubsection.3.1.6}%
-\contentsline {subsubsection}{\numberline {3.1.7}RaspberryPi y Picam}{9}{subsubsection.3.1.7}%
+\contentsline {subsubsection}{\numberline {3.1.5}LM2596 (conversor DC-DC)}{8}{subsubsection.3.1.5}%
+\contentsline {subsubsection}{\numberline {3.1.6}RaspberryPi y Picam}{8}{subsubsection.3.1.6}%
+\contentsline {subsubsection}{\numberline {3.1.7}Bater\IeC {\'\i }a}{9}{subsubsection.3.1.7}%
 \contentsline {subsubsection}{\numberline {3.1.8}Montaje final de robot}{9}{subsubsection.3.1.8}%
 \contentsline {subsection}{\numberline {3.2}Camara logitech C920}{10}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Ordenador de sobremesa}{10}{subsection.3.3}%
@@ -38,7 +38,7 @@
 \contentsline {section}{\numberline {5}Control del Motor DC}{18}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Cuantizaci\IeC {\'o}n del voltaje}{18}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Dise\IeC {\~n}o del controlador para la velocidad de las ruedas}{20}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Sintonizaci\IeC {\'o}n de par\IeC {\'a}metros PID}{23}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.3}Sintonizaci\IeC {\'o}n de par\IeC {\'a}metros PID medainte el m\IeC {\'e}todo de Ziglers-Nichols}{23}{subsection.5.3}%
 \contentsline {section}{\numberline {6}Navegaci\IeC {\'o}n del robot}{26}{section.6}%
 \contentsline {section}{\numberline {7}Localizaci\IeC {\'o}n de los robots}{27}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Calibraci\IeC {\'o}n de c\IeC {\'a}maras}{27}{subsection.7.1}%
@@ -53,7 +53,7 @@
 \contentsline {section}{\numberline {9}Estructura del software}{35}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Servidor}{35}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}RaspberryPi}{36}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}placa de Arduino}{36}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.3}Placa de Arduino}{36}{subsection.9.3}%
 \contentsline {section}{\numberline {10}Pruebas de validaci\IeC {\'o}n}{38}{section.10}%
 \contentsline {subsection}{\numberline {10.1}Prueba I}{38}{subsection.10.1}%
 \contentsline {subsection}{\numberline {10.2}Preparaci\IeC {\'o}n de la prueba}{38}{subsection.10.2}%
