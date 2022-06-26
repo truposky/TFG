@@ -10,6 +10,11 @@ G.~Bradski.
 \newblock {The OpenCV Library}.
 \newblock {\em Dr. Dobb's Journal of Software Tools}, 2000.
 
+\bibitem{Codigo}
+Alejandro~Gutiérrez Fontán.
+\newblock Robotarium.
+\newblock Available at \url{https://github.com/truposky/Robotario}.
+
 \bibitem{10.5555/2901567}
 Bruce~A. Francis and Manfredi Maggiore.
 \newblock {\em Flocking and Rendezvous in Distributed Robotics}.

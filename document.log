@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.11.12)  26 JUN 2022 01:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.11.12)  26 JUN 2022 02:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1367,19 +1367,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--88
 
 ) (./software/estructuraSoftware.tex [34 <./CreacionInfraestructura/jitterS.png
 >]
-<software/servidor.png, id=849, 521.44812pt x 451.18562pt>
+<software/servidor.png, id=850, 521.44812pt x 451.18562pt>
 File: software/servidor.png Graphic file (type png)
 <use software/servidor.png>
 Package pdftex.def Info: software/servidor.png  used on input line 7.
 (pdftex.def)             Requested size: 328.62788pt x 284.3517pt.
-<software/softwareRaspberryPi.png, id=851, 523.7166pt x 451.4466pt>
+<software/softwareRaspberryPi.png, id=852, 523.7166pt x 451.4466pt>
 File: software/softwareRaspberryPi.png Graphic file (type png)
 <use software/softwareRaspberryPi.png>
 Package pdftex.def Info: software/softwareRaspberryPi.png  used on input line 1
 7.
 (pdftex.def)             Requested size: 328.62788pt x 283.29002pt.
  [35 <./software/servidor.png>]
-<software/arduino.png, id=857, 344.487pt x 691.6239pt>
+<software/arduino.png, id=860, 344.487pt x 691.6239pt>
 File: software/arduino.png Graphic file (type png)
 <use software/arduino.png>
 Package pdftex.def Info: software/arduino.png  used on input line 27.
@@ -1387,14 +1387,14 @@ Package pdftex.def Info: software/arduino.png  used on input line 27.
  [36 <./software/softwareRaspberryPi.png>]
 [37 <./software/arduino.png>]) (./Demostracion/Demostracion.tex
 (./Demostracion/experimento2.tex
-<Demostracion/calculoVector.png, id=873, 745.05154pt x 435.1101pt>
+<Demostracion/calculoVector.png, id=875, 745.05154pt x 435.1101pt>
 File: Demostracion/calculoVector.png Graphic file (type png)
 <use Demostracion/calculoVector.png>
 Package pdftex.def Info: Demostracion/calculoVector.png  used on input line 10.
 
 (pdftex.def)             Requested size: 352.10284pt x 205.63045pt.
  [38 <./Demostracion/calculoVector.png (PNG copy)>]
-<Demostracion/navegacion.jpg, id=885, 407.27156pt x 310.91156pt>
+<Demostracion/navegacion.jpg, id=887, 407.27156pt x 310.91156pt>
 File: Demostracion/navegacion.jpg Graphic file (type jpg)
 <use Demostracion/navegacion.jpg>
 Package pdftex.def Info: Demostracion/navegacion.jpg  used on input line 37.
@@ -1403,13 +1403,13 @@ Package pdftex.def Info: Demostracion/navegacion.jpg  used on input line 37.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Demostracion/posicionInicial.png, id=890, 463.7325pt x 338.01282pt>
+<Demostracion/posicionInicial.png, id=892, 463.7325pt x 338.01282pt>
 File: Demostracion/posicionInicial.png Graphic file (type png)
 <use Demostracion/posicionInicial.png>
 Package pdftex.def Info: Demostracion/posicionInicial.png  used on input line 4
 9.
 (pdftex.def)             Requested size: 180.74632pt x 131.74709pt.
-<Demostracion/posicionFinal.png, id=891, 450.9347pt x 325.215pt>
+<Demostracion/posicionFinal.png, id=893, 450.9347pt x 325.215pt>
 File: Demostracion/posicionFinal.png Graphic file (type png)
 <use Demostracion/posicionFinal.png>
 Package pdftex.def Info: Demostracion/posicionFinal.png  used on input line 56.
@@ -1424,7 +1424,7 @@ Overfull \hbox (60.33325pt too wide) in paragraph at lines 47--60
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [39]) (./Demostracion/experimento1.tex
-<Demostracion/algoritmoExp2.png, id=901, 424.7067pt x 566.5968pt>
+<Demostracion/algoritmoExp2.png, id=903, 424.7067pt x 566.5968pt>
 File: Demostracion/algoritmoExp2.png Graphic file (type png)
 <use Demostracion/algoritmoExp2.png>
 Package pdftex.def Info: Demostracion/algoritmoExp2.png  used on input line 8.
@@ -1433,7 +1433,7 @@ Package pdftex.def Info: Demostracion/algoritmoExp2.png  used on input line 8.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Demostracion/trianguloRobotsInicio.png, id=902, 474.27188pt x 360.59718pt>
+<Demostracion/trianguloRobotsInicio.png, id=904, 474.27188pt x 360.59718pt>
 File: Demostracion/trianguloRobotsInicio.png Graphic file (type png)
 <use Demostracion/trianguloRobotsInicio.png>
 Package pdftex.def Info: Demostracion/trianguloRobotsInicio.png  used on input 
@@ -1442,13 +1442,13 @@ line 14.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Demostracion/trayectoriaExp2.jpg, id=907, 567.11874pt x 425.59pt>
+<Demostracion/trayectoriaExp2.jpg, id=909, 567.11874pt x 425.59pt>
 File: Demostracion/trayectoriaExp2.jpg Graphic file (type jpg)
 <use Demostracion/trayectoriaExp2.jpg>
 Package pdftex.def Info: Demostracion/trayectoriaExp2.jpg  used on input line 2
 5.
 (pdftex.def)             Requested size: 305.15292pt x 229.00342pt.
-<Demostracion/velAutomatico.jpg, id=910, 567.11874pt x 425.59pt>
+<Demostracion/velAutomatico.jpg, id=912, 567.11874pt x 425.59pt>
 File: Demostracion/velAutomatico.jpg Graphic file (type jpg)
 <use Demostracion/velAutomatico.jpg>
 Package pdftex.def Info: Demostracion/velAutomatico.jpg  used on input line 32.
@@ -1458,7 +1458,7 @@ Package pdftex.def Info: Demostracion/velAutomatico.jpg  used on input line 32.
 ostracion/posicionFinal.png>] [41 <./Demostracion/algoritmoExp2.png>] [42 <./De
 mostracion/trianguloRobotsInicio.png (PNG copy)> <./Demostracion/trayectoriaExp
 2.jpg>]
-<Demostracion/LocalizacionRobots.png, id=928, 944.02687pt x 345.54094pt>
+<Demostracion/LocalizacionRobots.png, id=930, 944.02687pt x 345.54094pt>
 File: Demostracion/LocalizacionRobots.png Graphic file (type png)
 <use Demostracion/LocalizacionRobots.png>
 Package pdftex.def Info: Demostracion/LocalizacionRobots.png  used on input lin
@@ -1477,7 +1477,7 @@ Package epstopdf Info: Source file: <Demostracion/p21_thm1.eps>
 converted-to.pdf Demostracion/p21_thm1.eps>
 (epstopdf)             \includegraphics on input line 51.
 Package epstopdf Info: Output file is already uptodate.
-<Demostracion/p21_thm1-eps-converted-to.pdf, id=938, 1388.18625pt x 697.60625pt
+<Demostracion/p21_thm1-eps-converted-to.pdf, id=940, 1388.18625pt x 697.60625pt
 >
 File: Demostracion/p21_thm1-eps-converted-to.pdf Graphic file (type pdf)
 <use Demostracion/p21_thm1-eps-converted-to.pdf>
@@ -1495,7 +1495,7 @@ Package epstopdf Info: Source file: <Demostracion/p23_thm1.eps>
 converted-to.pdf Demostracion/p23_thm1.eps>
 (epstopdf)             \includegraphics on input line 58.
 Package epstopdf Info: Output file is already uptodate.
-<Demostracion/p23_thm1-eps-converted-to.pdf, id=939, 1388.18625pt x 697.60625pt
+<Demostracion/p23_thm1-eps-converted-to.pdf, id=941, 1388.18625pt x 697.60625pt
 >
 File: Demostracion/p23_thm1-eps-converted-to.pdf Graphic file (type pdf)
 <use Demostracion/p23_thm1-eps-converted-to.pdf>
@@ -1518,7 +1518,7 @@ Package epstopdf Info: Source file: <Demostracion/p21_thm2.eps>
 converted-to.pdf Demostracion/p21_thm2.eps>
 (epstopdf)             \includegraphics on input line 68.
 Package epstopdf Info: Output file is already uptodate.
-<Demostracion/p21_thm2-eps-converted-to.pdf, id=940, 1388.18625pt x 697.60625pt
+<Demostracion/p21_thm2-eps-converted-to.pdf, id=942, 1388.18625pt x 697.60625pt
 >
 File: Demostracion/p21_thm2-eps-converted-to.pdf Graphic file (type pdf)
 <use Demostracion/p21_thm2-eps-converted-to.pdf>
@@ -1536,7 +1536,7 @@ Package epstopdf Info: Source file: <Demostracion/p23_thm2.eps>
 converted-to.pdf Demostracion/p23_thm2.eps>
 (epstopdf)             \includegraphics on input line 75.
 Package epstopdf Info: Output file is already uptodate.
-<Demostracion/p23_thm2-eps-converted-to.pdf, id=941, 1388.18625pt x 697.60625pt
+<Demostracion/p23_thm2-eps-converted-to.pdf, id=943, 1388.18625pt x 697.60625pt
 >
 File: Demostracion/p23_thm2-eps-converted-to.pdf Graphic file (type pdf)
 <use Demostracion/p23_thm2-eps-converted-to.pdf>
@@ -1577,7 +1577,7 @@ tt/m/n/10.95 https : / / docs . arduino . cc / hardware /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 26--30
+Underfull \hbox (badness 10000) in paragraph at lines 31--35
 \OT1/cmtt/m/n/10.95 camaras-[]sensores / 2667-[]camara-[]de-[]5mp-[]para-[]rasp
 berry-[]pi-[]3-[]160-[]-[]3272496298354 .
  []
@@ -1598,10 +1598,10 @@ Package rerunfilecheck Info: File `document.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
  ) 
 Here is how much of TeX's memory you used:
- 33465 strings out of 481239
- 745657 string characters out of 5920376
- 1221944 words of memory out of 5000000
- 47879 multiletter control sequences out of 15000+600000
+ 33468 strings out of 481239
+ 745691 string characters out of 5920376
+ 1221974 words of memory out of 5000000
+ 47881 multiletter control sequences out of 15000+600000
  541806 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,11n,71p,1909b,1443s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1631,10 +1631,10 @@ texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/share/texmf/fonts/typ
 e1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
 frm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb>
-Output written on document.pdf (53 pages, 33880572 bytes).
+Output written on document.pdf (53 pages, 33880945 bytes).
 PDF statistics:
- 1168 PDF objects out of 1200 (max. 8388607)
- 986 compressed objects within 10 object streams
- 243 named destinations out of 1000 (max. 500000)
+ 1172 PDF objects out of 1200 (max. 8388607)
+ 990 compressed objects within 10 object streams
+ 244 named destinations out of 1000 (max. 500000)
  849 words of extra memory for PDF output out of 10000 (max. 10000000)
 
