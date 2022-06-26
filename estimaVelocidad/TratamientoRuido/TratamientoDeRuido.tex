@@ -3,7 +3,7 @@
 Las lecturas que realiza la placa de Arduino de los pulsos de los encoders ópticos no son buenas, la placa de Arduino lee más pulsos de los reales. Esto provoca que la estimación de la velocidad no se haga de manera correcta.
 Se tienen dos problemas identificados. Uno es mecánico y se debe a que los ejes donde se enganchan las ruedas motrices tienen holgura y esto provoca  una oscilación sobre el propio eje de la rueda motriz. El otro problema es que el eje se dobla ligeramente cuando se posa sobre el suelo. Esto último hace que haya más superficie de contacto en un lado de la rueda que en el otro. Estos problemas provocan oscilaciones en el movimiento y por lo tanto en las lecturas. Se deben a la calidad de los componentes puesto que es un robot de bajo presupuesto, y no tienen solución a no ser que se cambie de hardware. Se trata este ruido como incertidumbre en la medida.\\
 
-El otro problema identificado es ruido eléctrico. Se debe a que se alimenta el circuito de potencia y el de la placa de Arduino con la misma batería, y lo único que separa un circuito del otro es el regulador de tensión que incorpora el integrado LN298n. Al ser de baja calidad no consigue aislar un circuito del otro. Se coloca un condensador de desacoplo en la alimentación de la placa de Arduino para minimizar el ruido de alta frecuencia. A pesar de esta solución, como la comunicación de la placa de Arduino con los motores y con los encoders se hace mediante pulsos, se tiene ruido debido a la diafonía que producen estas señales. se han trenzado los cables como medida de protección, pero en el propio integrado de la placa de Arduino no se puede hacer nada para solucionarlo.\\
+El otro problema identificado es ruido eléctrico. Se debe a que se alimenta el circuito de potencia y el de la placa de Arduino con la misma batería, y lo único que separa un circuito del otro es el regulador de tensión que incorpora el integrado L298n. Al ser de baja calidad no consigue aislar un circuito del otro. Se coloca un condensador de desacoplo en la alimentación de la placa de Arduino para minimizar el ruido de alta frecuencia. A pesar de esta solución, como la comunicación de la placa de Arduino con los motores y con los encoders se hace mediante pulsos, se tiene ruido debido a la diafonía que producen estas señales, se han trenzado los cables como medida de protección, pero en el propio integrado de la placa de Arduino no se puede hacer nada para solucionarlo.\\
 
 \begin{figure}[h]
 	\centering
@@ -11,7 +11,7 @@ El otro problema identificado es ruido eléctrico. Se debe a que se alimenta el 
 	\caption{Salida de encoder sin filtro}
 	\label{fig:pulsosencodersinfiltro}
 \end{figure}
-En la figura ~\ref{fig:pulsosencodersinfiltro} se tiene una lectura del encoder que se hace con un osciloscopio. Se puede apreciar que existe un pulso que no debería estar entre el segundo -0.35 y el segundo -0.3, además de los diferentes niveles de voltaje intermedios que se aprecia en la figura. Esto provoca errores en la lectura del encoder.\\
+En la figura~\ref{fig:pulsosencodersinfiltro} se tiene una lectura del encoder que se hace con un osciloscopio. Se puede apreciar que existe un pulso que no debería estar entre el segundo -0.35 y el segundo -0.3, además de los diferentes niveles de voltaje intermedios que se aprecia en la figura. Esto provoca errores en la lectura del encoder.\\
 
 	
 

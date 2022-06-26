@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.11.12)  26 JUN 2022 02:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.11.12)  26 JUN 2022 21:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -157,6 +157,7 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count182
 \pdfmajorversion=\count183
+Package hyperref Info: Option `final' set `true' on input line 4421.
 Package hyperref Info: Option `breaklinks' set `true' on input line 4421.
 Package hyperref Info: Hyper figures OFF on input line 4547.
 Package hyperref Info: Link nesting OFF on input line 4552.
@@ -367,6 +368,32 @@ Package: import 2009/03/23  v 5.1
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
 \@eurobox=\box50
 )
+(/usr/share/texlive/texmf-dist/tex/latex/fncychap/fncychap.sty
+Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
+\RW=\skip62
+\mylen=\skip63
+\myhi=\skip64
+\px=\skip65
+\py=\skip66
+\pyy=\skip67
+\pxx=\skip68
+\backskip=\skip69
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2019/10/16 v2.13 Sectioning titles
+\ttl@box=\box51
+\beforetitleunit=\skip70
+\aftertitleunit=\skip71
+\ttl@plus=\dimen166
+\ttl@minus=\dimen167
+\ttl@toksa=\toks28
+\titlewidth=\dimen168
+\titlewidthlast=\dimen169
+\titlewidthfirst=\dimen170
+)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
@@ -401,13 +428,13 @@ File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks28
-\pgfutil@tempdima=\dimen166
-\pgfutil@tempdimb=\dimen167
+\pgfutil@everybye=\toks29
+\pgfutil@tempdima=\dimen171
+\pgfutil@tempdimb=\dimen172
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
 ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box51
+\pgfutil@abb=\box52
 (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
@@ -423,32 +450,32 @@ Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
 Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks29
-\pgfkeys@temptoks=\toks30
+\pgfkeys@pathtoks=\toks30
+\pgfkeys@temptoks=\toks31
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
 ex
-\pgfkeys@tmptoks=\toks31
+\pgfkeys@tmptoks=\toks32
 ))
-\pgf@x=\dimen168
-\pgf@y=\dimen169
-\pgf@xa=\dimen170
-\pgf@ya=\dimen171
-\pgf@xb=\dimen172
-\pgf@yb=\dimen173
-\pgf@xc=\dimen174
-\pgf@yc=\dimen175
-\pgf@xd=\dimen176
-\pgf@yd=\dimen177
+\pgf@x=\dimen173
+\pgf@y=\dimen174
+\pgf@xa=\dimen175
+\pgf@ya=\dimen176
+\pgf@xb=\dimen177
+\pgf@yb=\dimen178
+\pgf@xc=\dimen179
+\pgf@yc=\dimen180
+\pgf@xd=\dimen181
+\pgf@yd=\dimen182
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
 \c@pgf@counta=\count281
 \c@pgf@countb=\count282
 \c@pgf@countc=\count283
 \c@pgf@countd=\count284
-\t@pgf@toka=\toks32
-\t@pgf@tokb=\toks33
-\t@pgf@tokc=\toks34
+\t@pgf@toka=\toks33
+\t@pgf@tokb=\toks34
+\t@pgf@tokc=\toks35
 \pgf@sys@id@count=\count285
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
@@ -479,12 +506,12 @@ Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen178
+\pgfmath@dimen=\dimen183
 \pgfmath@count=\count288
-\pgfmath@box=\box52
-\pgfmath@toks=\toks35
-\pgfmath@stack@operand=\toks36
-\pgfmath@stack@operation=\toks37
+\pgfmath@box=\box53
+\pgfmath@toks=\toks36
+\pgfmath@stack@operand=\toks37
+\pgfmath@stack@operation=\toks38
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
@@ -510,52 +537,52 @@ thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen179
-\pgf@picmaxx=\dimen180
-\pgf@picminy=\dimen181
-\pgf@picmaxy=\dimen182
-\pgf@pathminx=\dimen183
-\pgf@pathmaxx=\dimen184
-\pgf@pathminy=\dimen185
-\pgf@pathmaxy=\dimen186
-\pgf@xx=\dimen187
-\pgf@xy=\dimen188
-\pgf@yx=\dimen189
-\pgf@yy=\dimen190
-\pgf@zx=\dimen191
-\pgf@zy=\dimen192
+\pgf@picminx=\dimen184
+\pgf@picmaxx=\dimen185
+\pgf@picminy=\dimen186
+\pgf@picmaxy=\dimen187
+\pgf@pathminx=\dimen188
+\pgf@pathmaxx=\dimen189
+\pgf@pathminy=\dimen190
+\pgf@pathmaxy=\dimen191
+\pgf@xx=\dimen192
+\pgf@xy=\dimen193
+\pgf@yx=\dimen194
+\pgf@yy=\dimen195
+\pgf@zx=\dimen196
+\pgf@zy=\dimen197
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
 code.tex
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen193
-\pgf@path@lasty=\dimen194
+\pgf@path@lastx=\dimen198
+\pgf@path@lasty=\dimen199
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
 .tex
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen195
-\pgf@shorten@start@additional=\dimen196
+\pgf@shorten@end@additional=\dimen256
+\pgf@shorten@start@additional=\dimen257
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
 x
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box53
-\pgf@hbox=\box54
-\pgf@layerbox@main=\box55
+\pgfpic=\box54
+\pgf@hbox=\box55
+\pgf@layerbox@main=\box56
 \pgf@picture@serial@count=\count290
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen197
+\pgflinewidth=\dimen258
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
 s.code.tex
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen198
-\pgf@pt@y=\dimen199
-\pgf@pt@temp=\dimen256
+\pgf@pt@x=\dimen259
+\pgf@pt@y=\dimen260
+\pgf@pt@temp=\dimen261
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -571,11 +598,11 @@ File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
 x
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen257
+\pgfarrowsep=\dimen262
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen258
+\pgf@max=\dimen263
 \pgf@sys@shading@range@num=\count291
 \pgf@shadingcount=\count292
 )
@@ -585,7 +612,7 @@ File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
 tex
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box56
+\pgfexternal@startupbox=\box57
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
 x
@@ -604,15 +631,15 @@ File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box57
+\pgfnodeparttextbox=\box58
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
 .sty
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen259
-\pgf@nodesepend=\dimen260
+\pgf@nodesepstart=\dimen264
+\pgf@nodesepend=\dimen265
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
 .sty
@@ -626,10 +653,10 @@ Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
 Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen261
-\pgffor@skip=\dimen262
-\pgffor@stack=\toks38
-\pgffor@toks=\toks39
+\pgffor@iter=\dimen266
+\pgffor@skip=\dimen267
+\pgffor@stack=\toks39
+\pgffor@toks=\toks40
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
@@ -638,20 +665,20 @@ Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 .code.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@plot@mark@count=\count293
-\pgfplotmarksize=\dimen263
+\pgfplotmarksize=\dimen268
 )
-\tikz@lastx=\dimen264
-\tikz@lasty=\dimen265
-\tikz@lastxsaved=\dimen266
-\tikz@lastysaved=\dimen267
-\tikz@lastmovetox=\dimen268
-\tikz@lastmovetoy=\dimen269
-\tikzleveldistance=\dimen270
-\tikzsiblingdistance=\dimen271
-\tikz@figbox=\box58
-\tikz@figbox@bg=\box59
-\tikz@tempbox=\box60
-\tikz@tempbox@bg=\box61
+\tikz@lastx=\dimen269
+\tikz@lasty=\dimen270
+\tikz@lastxsaved=\dimen271
+\tikz@lastysaved=\dimen272
+\tikz@lastmovetox=\dimen273
+\tikz@lastmovetoy=\dimen274
+\tikzleveldistance=\dimen275
+\tikzsiblingdistance=\dimen276
+\tikz@figbox=\box59
+\tikz@figbox@bg=\box60
+\tikz@tempbox=\box61
+\tikz@tempbox@bg=\box62
 \tikztreelevel=\count294
 \tikznumberofchildren=\count295
 \tikznumberofcurrentchild=\count296
@@ -684,10 +711,10 @@ File: tikzlibrarycalc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
 code.tex
 File: pgflibraryarrows.meta.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowinset=\dimen272
-\pgfarrowlength=\dimen273
-\pgfarrowwidth=\dimen274
-\pgfarrowlinewidth=\dimen275
+\pgfarrowinset=\dimen277
+\pgfarrowlength=\dimen278
+\pgfarrowwidth=\dimen279
+\pgfarrowlinewidth=\dimen280
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarybending.code.tex
@@ -700,34 +727,34 @@ File: pgfmodulebending.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulenonlineartransf
 ormations.code.tex
 File: pgfmodulenonlineartransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgftransformnonlinearflatness=\dimen276
+\pgftransformnonlinearflatness=\dimen281
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarycurvilinear.
 code.tex
 File: pgflibrarycurvilinear.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@curvilinear@time@a=\dimen277
-\pgf@curvilinear@length@a=\dimen278
-\pgf@curvilinear@length@b=\dimen279
-\pgf@curvilinear@length@c=\dimen280
-\pgf@curvilinear@length@d=\dimen281
+\pgf@curvilinear@time@a=\dimen282
+\pgf@curvilinear@length@a=\dimen283
+\pgf@curvilinear@length@b=\dimen284
+\pgf@curvilinear@length@c=\dimen285
+\pgf@curvilinear@length@d=\dimen286
 )
-\pgf@arrows@the@rigidity=\dimen282
+\pgf@arrows@the@rigidity=\dimen287
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcirc.defines.tex
 \pgf@circ@count@a=\count302
 \pgf@circ@count@b=\count303
 \pgf@circ@count@c=\count304
-\pgf@circ@res@up=\dimen283
-\pgf@circ@res@down=\dimen284
-\pgf@circ@res@zero=\dimen285
-\pgf@circ@res@left=\dimen286
-\pgf@circ@res@right=\dimen287
-\pgf@circ@res@other=\dimen288
-\pgf@circ@res@step=\dimen289
-\pgf@circ@res@temp=\dimen290
-\pgfstartlinewidth=\dimen291
-\pgf@circ@Rlen=\dimen292
-\pgf@circ@scaled@Rlen=\dimen293
+\pgf@circ@res@up=\dimen288
+\pgf@circ@res@down=\dimen289
+\pgf@circ@res@zero=\dimen290
+\pgf@circ@res@left=\dimen291
+\pgf@circ@res@right=\dimen292
+\pgf@circ@res@other=\dimen293
+\pgf@circ@res@step=\dimen294
+\pgf@circ@res@temp=\dimen295
+\pgfstartlinewidth=\dimen296
+\pgf@circ@Rlen=\dimen297
+\pgf@circ@scaled@Rlen=\dimen298
 )
 (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircutils.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/circuitikz/pgfcircshapes.tex)
@@ -753,7 +780,7 @@ Package circuitikz Warning: You did not specify one of the voltage directions:
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count306
-\l__pdf_internal_box=\box62
+\l__pdf_internal_box=\box63
 )
 (./document.aux
 LaTeX Info: Redefining \. on input line 24.
@@ -761,39 +788,39 @@ LaTeX Info: Redefining \% on input line 24.
 )
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 59.
+(lastpage)             ! on input line 64.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count307
-\scratchdimen=\dimen294
-\scratchbox=\box63
+\scratchdimen=\dimen299
+\scratchbox=\box64
 \nofMPsegments=\count308
 \nofMParguments=\count309
-\everyMPshowfont=\toks40
+\everyMPshowfont=\toks41
 \MPscratchCnt=\count310
-\MPscratchDim=\dimen295
+\MPscratchDim=\dimen300
 \MPnumerator=\count311
 \makeMPintoPDFobject=\count312
-\everyMPtoPDFconversion=\toks41
+\everyMPtoPDFconversion=\toks42
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -807,8 +834,8 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box64
-Package hyperref Info: Link coloring OFF on input line 59.
+\AtBeginShipoutBox=\box65
+Package hyperref Info: Link coloring OFF on input line 64.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -821,16 +848,16 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count313
 )
-LaTeX Info: Redefining \ref on input line 59.
-LaTeX Info: Redefining \pageref on input line 59.
-LaTeX Info: Redefining \nameref on input line 59.
+LaTeX Info: Redefining \ref on input line 64.
+LaTeX Info: Redefining \pageref on input line 64.
+LaTeX Info: Redefining \nameref on input line 64.
 
 (./document.out) (./document.out)
 \@outlinefile=\write4
 \openout4 = `document.out'.
 
-LaTeX Info: Redefining \. on input line 59.
-LaTeX Info: Redefining \% on input line 59.
+LaTeX Info: Redefining \. on input line 64.
+LaTeX Info: Redefining \% on input line 64.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
@@ -844,7 +871,7 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 <logo_UCM.png, id=275, 145.5036pt x 169.5936pt>
 File: logo_UCM.png Graphic file (type png)
 <use logo_UCM.png>
-Package pdftex.def Info: logo_UCM.png  used on input line 75.
+Package pdftex.def Info: logo_UCM.png  used on input line 80.
 (pdftex.def)             Requested size: 164.31752pt x 191.52466pt.
  [1
 
@@ -853,7 +880,7 @@ ning (ext4): destination with the same identifier (name{page.1}) has been alrea
 dy used, duplicate ignored
 <to be read again> 
                    \relax 
-l.109 \newpage
+l.114 \newpage
                [1] (./document.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -877,12 +904,12 @@ LaTeX Info: Redefining \% on input line 1.
 
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
@@ -925,41 +952,39 @@ File: Arduinonano33.png Graphic file (type png)
 <use Arduinonano33.png>
 Package pdftex.def Info: Arduinonano33.png  used on input line 40.
 (pdftex.def)             Requested size: 140.84256pt x 67.10165pt.
-<PuenteH.jpg, id=530, 4047.12pt x 3035.34pt>
-File: PuenteH.jpg Graphic file (type jpg)
-<use PuenteH.jpg>
-Package pdftex.def Info: PuenteH.jpg  used on input line 47.
-(pdftex.def)             Requested size: 117.36761pt x 87.99944pt.
- [7 <./Arduinonano33.png> <./PuenteH.jpg>]
-<ConstruccionRObot/Encoder.png, id=542, 490.83376pt x 497.60907pt>
-File: ConstruccionRObot/Encoder.png Graphic file (type png)
-<use ConstruccionRObot/Encoder.png>
-Package pdftex.def Info: ConstruccionRObot/Encoder.png  used on input line 56.
-(pdftex.def)             Requested size: 117.36761pt x 118.98822pt.
-<ConstruccionRObot/StepDown.jpg, id=545, 4047.12pt x 3035.34pt>
-File: ConstruccionRObot/StepDown.jpg Graphic file (type jpg)
-<use ConstruccionRObot/StepDown.jpg>
-Package pdftex.def Info: ConstruccionRObot/StepDown.jpg  used on input line 67.
-
-(pdftex.def)             Requested size: 93.89265pt x 70.39955pt.
-<raspberry_cam.jpg, id=547, 4047.12pt x 3035.34pt>
+<raspberry_cam.jpg, id=530, 4047.12pt x 3035.34pt>
 File: raspberry_cam.jpg Graphic file (type jpg)
 <use raspberry_cam.jpg>
-Package pdftex.def Info: raspberry_cam.jpg  used on input line 78.
+Package pdftex.def Info: raspberry_cam.jpg  used on input line 48.
+(pdftex.def)             Requested size: 117.36761pt x 87.99944pt.
+<PuenteH.jpg, id=533, 4047.12pt x 3035.34pt>
+File: PuenteH.jpg Graphic file (type jpg)
+<use PuenteH.jpg>
+Package pdftex.def Info: PuenteH.jpg  used on input line 56.
 (pdftex.def)             Requested size: 117.36761pt x 87.99944pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<ConstruccionRObot/bat.jpg, id=550, 4047.12pt x 3035.34pt>
+[7 <./Arduinonano33.png> <./raspberry_cam.jpg>]
+<ConstruccionRObot/Encoder.png, id=547, 490.83376pt x 497.60907pt>
+File: ConstruccionRObot/Encoder.png Graphic file (type png)
+<use ConstruccionRObot/Encoder.png>
+Package pdftex.def Info: ConstruccionRObot/Encoder.png  used on input line 64.
+(pdftex.def)             Requested size: 117.36761pt x 118.98822pt.
+<ConstruccionRObot/StepDown.jpg, id=550, 4047.12pt x 3035.34pt>
+File: ConstruccionRObot/StepDown.jpg Graphic file (type jpg)
+<use ConstruccionRObot/StepDown.jpg>
+Package pdftex.def Info: ConstruccionRObot/StepDown.jpg  used on input line 75.
+
+(pdftex.def)             Requested size: 93.89265pt x 70.39955pt.
+ [8 <./PuenteH.jpg> <./ConstruccionRObot/Encoder.png> <./ConstruccionRObot/Step
+Down.jpg>]
+<ConstruccionRObot/bat.jpg, id=558, 4047.12pt x 3035.34pt>
 File: ConstruccionRObot/bat.jpg Graphic file (type jpg)
 <use ConstruccionRObot/bat.jpg>
 Package pdftex.def Info: ConstruccionRObot/bat.jpg  used on input line 86.
 (pdftex.def)             Requested size: 117.36761pt x 87.99944pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[8 <./ConstruccionRObot/Encoder.png> <./ConstruccionRObot/StepDown.jpg>]
 <RobotPerfil.jpg, id=560, 1891.065pt x 3062.44125pt>
 File: RobotPerfil.jpg Graphic file (type jpg)
 <use RobotPerfil.jpg>
@@ -970,20 +995,19 @@ File: RobotFrente.jpg Graphic file (type jpg)
 <use RobotFrente.jpg>
 Package pdftex.def Info: RobotFrente.jpg  used on input line 101.
 (pdftex.def)             Requested size: 97.64915pt x 168.56pt.
-<Camaralogi.png, id=563, 252.19218pt x 264.23718pt>
+ [9 <./ConstruccionRObot/bat.jpg> <./RobotPerfil.jpg> <./RobotFrente.jpg>]
+<Camaralogi.png, id=568, 252.19218pt x 264.23718pt>
 File: Camaralogi.png Graphic file (type png)
 <use Camaralogi.png>
 Package pdftex.def Info: Camaralogi.png  used on input line 114.
 (pdftex.def)             Requested size: 93.89265pt x 98.37505pt.
-
-[9 <./raspberry_cam.jpg> <./ConstruccionRObot/bat.jpg> <./RobotPerfil.jpg> <./R
-obotFrente.jpg>] [10 <./Camaralogi.png>]
-<EjemploDeMarker.png, id=577, 350.05782pt x 291.33844pt>
+ [10 <./Camaralogi.png>]
+<EjemploDeMarker.png, id=578, 350.05782pt x 291.33844pt>
 File: EjemploDeMarker.png Graphic file (type png)
 <use EjemploDeMarker.png>
 Package pdftex.def Info: EjemploDeMarker.png  used on input line 143.
 (pdftex.def)             Requested size: 140.84256pt x 117.21791pt.
-<RobotMarker.jpg, id=585, 2422.04875pt x 2821.54124pt>
+<RobotMarker.jpg, id=586, 2422.04875pt x 2821.54124pt>
 File: RobotMarker.jpg Graphic file (type jpg)
 <use RobotMarker.jpg>
 Package pdftex.def Info: RobotMarker.jpg  used on input line 152.
@@ -993,13 +1017,13 @@ Package pdftex.def Info: RobotMarker.jpg  used on input line 152.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [11 <./EjemploDeMarker.png> <./RobotMarker.jpg>] [12]
-<MontajeFinal.png, id=603, 357.58594pt x 606.76688pt>
+<MontajeFinal.png, id=604, 357.58594pt x 606.76688pt>
 File: MontajeFinal.png Graphic file (type png)
 <use MontajeFinal.png>
 Package pdftex.def Info: MontajeFinal.png  used on input line 229.
 (pdftex.def)             Requested size: 214.5532pt x 364.06293pt.
  [13 <./MontajeFinal.png>]) (./estimaVelocidad/velocidad.tex
-<ConstruccionRObot/EncoderRobot.png, id=611, 3035.34pt x 2276.505pt>
+<ConstruccionRObot/EncoderRobot.png, id=612, 3035.34pt x 2276.505pt>
 File: ConstruccionRObot/EncoderRobot.png Graphic file (type png)
 <use ConstruccionRObot/EncoderRobot.png>
 Package pdftex.def Info: ConstruccionRObot/EncoderRobot.png  used on input line
@@ -1043,7 +1067,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-<estimaVelocidad/TratamientoRuido/PulsosEncoder_sinFiltro.png, id=630, 651.9356
+<estimaVelocidad/TratamientoRuido/PulsosEncoder_sinFiltro.png, id=632, 651.9356
 2pt x 325.215pt>
 File: estimaVelocidad/TratamientoRuido/PulsosEncoder_sinFiltro.png Graphic file
  (type png)
@@ -1056,7 +1080,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
-<estimaVelocidad/TratamientoRuido/PulsosEncoder_ConFiltro.png, id=633, 439.6425
+<estimaVelocidad/TratamientoRuido/PulsosEncoder_ConFiltro.png, id=635, 439.6425
 pt x 261.97874pt>
 File: estimaVelocidad/TratamientoRuido/PulsosEncoder_ConFiltro.png Graphic file
  (type png)
@@ -1072,7 +1096,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-<estimaVelocidad/TratamientoRuido/maxVelEncoder.png, id=641, 683.55376pt x 392.
+<estimaVelocidad/TratamientoRuido/maxVelEncoder.png, id=643, 683.55376pt x 392.
 96812pt>
 File: estimaVelocidad/TratamientoRuido/maxVelEncoder.png Graphic file (type png
 )
@@ -1088,7 +1112,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--42
 
 )) (./controlMotor/ControlMotor.tex
 (./estimaVelocidad/cuantizacion/cuantizacion.tex
-<dutycicle.png, id=648, 408.77719pt x 307.90031pt>
+<dutycicle.png, id=650, 408.77719pt x 307.90031pt>
 File: dutycicle.png Graphic file (type png)
 <use dutycicle.png>
 Package pdftex.def Info: dutycicle.png  used on input line 6.
@@ -1097,7 +1121,7 @@ Package pdftex.def Info: dutycicle.png  used on input line 6.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<GeneradorDePWM.png, id=650, 417.05812pt x 313.17pt>
+<GeneradorDePWM.png, id=652, 417.05812pt x 313.17pt>
 File: GeneradorDePWM.png Graphic file (type png)
 <use GeneradorDePWM.png>
 Package pdftex.def Info: GeneradorDePWM.png  used on input line 15.
@@ -1108,60 +1132,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--20
  []
 
 [18]
-<controlMotor/PuenteH.png, id=660, 616.55344pt x 395.22656pt>
+<controlMotor/PuenteH.png, id=662, 616.55344pt x 395.22656pt>
 File: controlMotor/PuenteH.png Graphic file (type png)
 <use controlMotor/PuenteH.png>
 Package pdftex.def Info: controlMotor/PuenteH.png  used on input line 24.
 (pdftex.def)             Requested size: 328.62788pt x 210.66315pt.
 ) [19 <./dutycicle.png> <./GeneradorDePWM.png>]
-<controlMotor/FeedforwardR1_R.png, id=669, 428.40463pt x 318.88206pt>
+<controlMotor/FeedforwardR1_R.png, id=671, 428.40463pt x 318.88206pt>
 File: controlMotor/FeedforwardR1_R.png Graphic file (type png)
 <use controlMotor/FeedforwardR1_R.png>
 Package pdftex.def Info: controlMotor/FeedforwardR1_R.png  used on input line 1
 63.
 (pdftex.def)             Requested size: 234.73523pt x 174.72879pt.
-<controlMotor/FeedforwardR1_L.png, id=670, 428.40463pt x 318.88206pt>
+<controlMotor/FeedforwardR1_L.png, id=672, 428.40463pt x 318.88206pt>
 File: controlMotor/FeedforwardR1_L.png Graphic file (type png)
 <use controlMotor/FeedforwardR1_L.png>
 Package pdftex.def Info: controlMotor/FeedforwardR1_L.png  used on input line 1
 71.
 (pdftex.def)             Requested size: 234.73523pt x 174.72879pt.
-<controlMotor/FeedforwardR2_R.png, id=671, 428.40463pt x 318.88206pt>
+<controlMotor/FeedforwardR2_R.png, id=673, 428.40463pt x 318.88206pt>
 File: controlMotor/FeedforwardR2_R.png Graphic file (type png)
 <use controlMotor/FeedforwardR2_R.png>
 Package pdftex.def Info: controlMotor/FeedforwardR2_R.png  used on input line 1
 78.
 (pdftex.def)             Requested size: 234.73523pt x 174.72879pt.
-<controlMotor/FeedforwardR2_L.png, id=672, 428.40463pt x 318.88206pt>
+<controlMotor/FeedforwardR2_L.png, id=674, 428.40463pt x 318.88206pt>
 File: controlMotor/FeedforwardR2_L.png Graphic file (type png)
 <use controlMotor/FeedforwardR2_L.png>
 Package pdftex.def Info: controlMotor/FeedforwardR2_L.png  used on input line 1
 85.
 (pdftex.def)             Requested size: 234.73523pt x 174.72879pt.
-<controlMotor/FeedforwardR3_R.png, id=673, 420.95412pt x 315.90186pt>
+<controlMotor/FeedforwardR3_R.png, id=675, 420.95412pt x 315.90186pt>
 File: controlMotor/FeedforwardR3_R.png Graphic file (type png)
 <use controlMotor/FeedforwardR3_R.png>
 Package pdftex.def Info: controlMotor/FeedforwardR3_R.png  used on input line 1
 92.
 (pdftex.def)             Requested size: 234.73523pt x 176.1615pt.
-<controlMotor/FeedforwardR3_L.png, id=674, 420.95412pt x 315.90186pt>
+<controlMotor/FeedforwardR3_L.png, id=676, 420.95412pt x 315.90186pt>
 File: controlMotor/FeedforwardR3_L.png Graphic file (type png)
 <use controlMotor/FeedforwardR3_L.png>
 Package pdftex.def Info: controlMotor/FeedforwardR3_L.png  used on input line 1
 99.
 (pdftex.def)             Requested size: 234.73523pt x 176.1615pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 161--205
+Overfull \hbox (2.42162pt too wide) in paragraph at lines 161--205
 [] []
  []
 
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 161--205
+Overfull \hbox (2.42162pt too wide) in paragraph at lines 161--205
 [] [] 
  []
 
 
-LaTeX Warning: Float too large for page by 31.43042pt on input line 208.
+LaTeX Warning: Float too large for page by 31.4165pt on input line 208.
 
 [20 <./controlMotor/PuenteH.png>] [21] [22 <./controlMotor/FeedforwardR1_R.png 
 (PNG copy)> <./controlMotor/FeedforwardR1_L.png (PNG copy)> <./controlMotor/Fee
@@ -1177,20 +1201,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 224--225
 
  []
 
-<controlMotor/RespuestaEscalonRD.png, id=701, 420.95412pt x 315.90186pt>
+<controlMotor/RespuestaEscalonRD.png, id=703, 420.95412pt x 315.90186pt>
 File: controlMotor/RespuestaEscalonRD.png Graphic file (type png)
 <use controlMotor/RespuestaEscalonRD.png>
 Package pdftex.def Info: controlMotor/RespuestaEscalonRD.png  used on input lin
 e 235.
 (pdftex.def)             Requested size: 231.91956pt x 174.04541pt.
-<controlMotor/RespuestaEscalonRI.png, id=702, 420.95412pt x 315.90186pt>
+<controlMotor/RespuestaEscalonRI.png, id=704, 420.95412pt x 315.90186pt>
 File: controlMotor/RespuestaEscalonRI.png Graphic file (type png)
 <use controlMotor/RespuestaEscalonRI.png>
 Package pdftex.def Info: controlMotor/RespuestaEscalonRI.png  used on input lin
 e 242.
 (pdftex.def)             Requested size: 244.12663pt x 183.20874pt.
 
-Overfull \hbox (32.16617pt too wide) in paragraph at lines 233--246
+Overfull \hbox (32.0923pt too wide) in paragraph at lines 233--246
 [][]  [] 
  []
 
@@ -1200,40 +1224,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 228--249
  []
 
 [23]
-<controlMotor/RespuestaEscalonPID_R.png, id=714, 420.95412pt x 315.90186pt>
+<controlMotor/RespuestaEscalonPID_R.png, id=716, 420.95412pt x 315.90186pt>
 File: controlMotor/RespuestaEscalonPID_R.png Graphic file (type png)
 <use controlMotor/RespuestaEscalonPID_R.png>
 Package pdftex.def Info: controlMotor/RespuestaEscalonPID_R.png  used on input 
 line 278.
 (pdftex.def)             Requested size: 244.12663pt x 183.20874pt.
-<controlMotor/RespuestaEscalonPID_I.png, id=715, 420.95412pt x 315.90186pt>
+<controlMotor/RespuestaEscalonPID_I.png, id=717, 420.95412pt x 315.90186pt>
 File: controlMotor/RespuestaEscalonPID_I.png Graphic file (type png)
 <use controlMotor/RespuestaEscalonPID_I.png>
 Package pdftex.def Info: controlMotor/RespuestaEscalonPID_I.png  used on input 
 line 286.
 (pdftex.def)             Requested size: 244.12663pt x 183.20874pt.
 
-Overfull \hbox (32.16617pt too wide) in paragraph at lines 276--291
+Overfull \hbox (32.0923pt too wide) in paragraph at lines 276--291
 [][]  [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<controlMotor/PI_sintonizado_R.png, id=717, 420.95412pt x 315.90186pt>
+<controlMotor/PI_sintonizado_R.png, id=719, 420.95412pt x 315.90186pt>
 File: controlMotor/PI_sintonizado_R.png Graphic file (type png)
 <use controlMotor/PI_sintonizado_R.png>
 Package pdftex.def Info: controlMotor/PI_sintonizado_R.png  used on input line 
 300.
 (pdftex.def)             Requested size: 184.03517pt x 138.1103pt.
-<controlMotor/PI_sintonizado_I.png, id=718, 420.95412pt x 315.90186pt>
+<controlMotor/PI_sintonizado_I.png, id=720, 420.95412pt x 315.90186pt>
 File: controlMotor/PI_sintonizado_I.png Graphic file (type png)
 <use controlMotor/PI_sintonizado_I.png>
 Package pdftex.def Info: controlMotor/PI_sintonizado_I.png  used on input line 
 308.
 (pdftex.def)             Requested size: 184.03517pt x 138.1103pt.
 
-Overfull \hbox (3.99908pt too wide) in paragraph at lines 298--313
+Overfull \hbox (3.92522pt too wide) in paragraph at lines 298--313
 [][]  [] 
  []
 
@@ -1245,13 +1269,13 @@ aEscalonRI.png (PNG copy)>] [25 <./controlMotor/RespuestaEscalonPID_R.png (PNG
 copy)> <./controlMotor/RespuestaEscalonPID_I.png (PNG copy)> <./controlMotor/PI
 _sintonizado_R.png (PNG copy)> <./controlMotor/PI_sintonizado_I.png (PNG copy)>
 ]) (./navegacion/Navegacion.tex
-<navegacion/RuedaRobotDibujo.png, id=729, 245.41687pt x 271.0125pt>
+<navegacion/RuedaRobotDibujo.png, id=731, 245.41687pt x 271.0125pt>
 File: navegacion/RuedaRobotDibujo.png Graphic file (type png)
 <use navegacion/RuedaRobotDibujo.png>
 Package pdftex.def Info: navegacion/RuedaRobotDibujo.png  used on input line 7.
 
 (pdftex.def)             Requested size: 93.89265pt x 103.68468pt.
-<navegacion/ArcoRecorridoRobot.png, id=730, 197.23688pt x 182.18062pt>
+<navegacion/ArcoRecorridoRobot.png, id=732, 197.23688pt x 182.18062pt>
 File: navegacion/ArcoRecorridoRobot.png Graphic file (type png)
 <use navegacion/ArcoRecorridoRobot.png>
 Package pdftex.def Info: navegacion/ArcoRecorridoRobot.png  used on input line 
@@ -1268,7 +1292,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
  []
 
-<Localizacion/board.jpg, id=748, 1304.875pt x 702.625pt>
+<Localizacion/board.jpg, id=750, 1304.875pt x 702.625pt>
 File: Localizacion/board.jpg Graphic file (type jpg)
 <use Localizacion/board.jpg>
 Package pdftex.def Info: Localizacion/board.jpg  used on input line 8.
@@ -1283,18 +1307,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
-<PoseEstimation.png, id=758, 600.74437pt x 332.74312pt>
+<PoseEstimation.png, id=761, 600.74437pt x 332.74312pt>
 File: PoseEstimation.png Graphic file (type png)
 <use PoseEstimation.png>
 Package pdftex.def Info: PoseEstimation.png  used on input line 40.
 (pdftex.def)             Requested size: 211.26027pt x 117.01524pt.
-<ejesCamara.png, id=759, 3035.34pt x 2276.505pt>
+<ejesCamara.png, id=762, 3035.34pt x 2276.505pt>
 File: ejesCamara.png Graphic file (type png)
 <use ejesCamara.png>
 Package pdftex.def Info: ejesCamara.png  used on input line 47.
 (pdftex.def)             Requested size: 122.06331pt x 91.531pt.
 
-Overfull \hbox (22.77477pt too wide) in paragraph at lines 38--51
+Overfull \hbox (22.7009pt too wide) in paragraph at lines 38--51
 [][]  [] 
  []
 
@@ -1302,18 +1326,18 @@ Overfull \hbox (22.77477pt too wide) in paragraph at lines 38--51
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [28] [29 <./PoseEstimation.png> <./ejesCamara.png (PNG copy)>]
-<Localizacion/oscilacionX.png, id=781, 399.74344pt x 304.88907pt>
+<Localizacion/oscilacionX.png, id=784, 399.74344pt x 304.88907pt>
 File: Localizacion/oscilacionX.png Graphic file (type png)
 <use Localizacion/oscilacionX.png>
 Package pdftex.def Info: Localizacion/oscilacionX.png  used on input line 107.
 (pdftex.def)             Requested size: 180.74632pt x 137.85942pt.
-<Localizacion/oscilacionY.png, id=782, 406.51875pt x 309.40594pt>
+<Localizacion/oscilacionY.png, id=785, 406.51875pt x 309.40594pt>
 File: Localizacion/oscilacionY.png Graphic file (type png)
 <use Localizacion/oscilacionY.png>
 Package pdftex.def Info: Localizacion/oscilacionY.png  used on input line 113.
 (pdftex.def)             Requested size: 180.74632pt x 137.56482pt.
 
-Overfull \hbox (49.38322pt too wide) in paragraph at lines 105--117
+Overfull \hbox (49.3715pt too wide) in paragraph at lines 105--117
 [][] [] 
  []
 
@@ -1327,23 +1351,15 @@ LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
 .
 
 Missing character: There is no · in font cmr10!
-<CreacionInfraestructura/RedRobotario.png, id=784, 423.83344pt x 297.36093pt>
+<CreacionInfraestructura/RedRobotario.png, id=787, 423.83344pt x 297.36093pt>
 File: CreacionInfraestructura/RedRobotario.png Graphic file (type png)
 <use CreacionInfraestructura/RedRobotario.png>
 Package pdftex.def Info: CreacionInfraestructura/RedRobotario.png  used on inpu
 t line 14.
 (pdftex.def)             Requested size: 328.62788pt x 230.57484pt.
-[30 <./Localizacion/oscilacionX.png> <./Localizacion/oscilacionY.png>]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 3
-3.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
- [31 <./CreacionInfraestructura/RedRobotario.png>] [32]
-<CreacionInfraestructura/latencia.png, id=832, 396.7322pt x 263.48438pt>
+[30 <./Localizacion/oscilacionX.png> <./Localizacion/oscilacionY.png>] [31 <./C
+reacionInfraestructura/RedRobotario.png>] [32]
+<CreacionInfraestructura/latencia.png, id=835, 396.7322pt x 263.48438pt>
 File: CreacionInfraestructura/latencia.png Graphic file (type png)
 <use CreacionInfraestructura/latencia.png>
 Package pdftex.def Info: CreacionInfraestructura/latencia.png  used on input li
@@ -1354,7 +1370,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--76
 
  []
 
-<CreacionInfraestructura/jitterS.png, id=834, 693.34032pt x 277.035pt>
+<CreacionInfraestructura/jitterS.png, id=837, 693.34032pt x 277.035pt>
 File: CreacionInfraestructura/jitterS.png Graphic file (type png)
 <use CreacionInfraestructura/jitterS.png>
 Package pdftex.def Info: CreacionInfraestructura/jitterS.png  used on input lin
@@ -1367,19 +1383,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--88
 
 ) (./software/estructuraSoftware.tex [34 <./CreacionInfraestructura/jitterS.png
 >]
-<software/servidor.png, id=850, 521.44812pt x 451.18562pt>
+<software/servidor.png, id=853, 521.44812pt x 451.18562pt>
 File: software/servidor.png Graphic file (type png)
 <use software/servidor.png>
 Package pdftex.def Info: software/servidor.png  used on input line 7.
 (pdftex.def)             Requested size: 328.62788pt x 284.3517pt.
-<software/softwareRaspberryPi.png, id=852, 523.7166pt x 451.4466pt>
+<software/softwareRaspberryPi.png, id=855, 523.7166pt x 451.4466pt>
 File: software/softwareRaspberryPi.png Graphic file (type png)
 <use software/softwareRaspberryPi.png>
 Package pdftex.def Info: software/softwareRaspberryPi.png  used on input line 1
 7.
 (pdftex.def)             Requested size: 328.62788pt x 283.29002pt.
  [35 <./software/servidor.png>]
-<software/arduino.png, id=860, 344.487pt x 691.6239pt>
+<software/arduino.png, id=862, 344.487pt x 691.6239pt>
 File: software/arduino.png Graphic file (type png)
 <use software/arduino.png>
 Package pdftex.def Info: software/arduino.png  used on input line 27.
@@ -1387,14 +1403,14 @@ Package pdftex.def Info: software/arduino.png  used on input line 27.
  [36 <./software/softwareRaspberryPi.png>]
 [37 <./software/arduino.png>]) (./Demostracion/Demostracion.tex
 (./Demostracion/experimento2.tex
-<Demostracion/calculoVector.png, id=875, 745.05154pt x 435.1101pt>
+<Demostracion/calculoVector.png, id=878, 745.05154pt x 435.1101pt>
 File: Demostracion/calculoVector.png Graphic file (type png)
 <use Demostracion/calculoVector.png>
 Package pdftex.def Info: Demostracion/calculoVector.png  used on input line 10.
 
 (pdftex.def)             Requested size: 352.10284pt x 205.63045pt.
  [38 <./Demostracion/calculoVector.png (PNG copy)>]
-<Demostracion/navegacion.jpg, id=887, 407.27156pt x 310.91156pt>
+<Demostracion/navegacion.jpg, id=890, 407.27156pt x 310.91156pt>
 File: Demostracion/navegacion.jpg Graphic file (type jpg)
 <use Demostracion/navegacion.jpg>
 Package pdftex.def Info: Demostracion/navegacion.jpg  used on input line 37.
@@ -1403,20 +1419,20 @@ Package pdftex.def Info: Demostracion/navegacion.jpg  used on input line 37.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Demostracion/posicionInicial.png, id=892, 463.7325pt x 338.01282pt>
+<Demostracion/posicionInicial.png, id=895, 463.7325pt x 338.01282pt>
 File: Demostracion/posicionInicial.png Graphic file (type png)
 <use Demostracion/posicionInicial.png>
 Package pdftex.def Info: Demostracion/posicionInicial.png  used on input line 4
 9.
 (pdftex.def)             Requested size: 180.74632pt x 131.74709pt.
-<Demostracion/posicionFinal.png, id=893, 450.9347pt x 325.215pt>
+<Demostracion/posicionFinal.png, id=896, 450.9347pt x 325.215pt>
 File: Demostracion/posicionFinal.png Graphic file (type png)
 <use Demostracion/posicionFinal.png>
 Package pdftex.def Info: Demostracion/posicionFinal.png  used on input line 56.
 
 (pdftex.def)             Requested size: 180.74632pt x 130.35661pt.
 
-Overfull \hbox (60.33325pt too wide) in paragraph at lines 47--60
+Overfull \hbox (60.25938pt too wide) in paragraph at lines 47--60
 [][]  [] 
  []
 
@@ -1424,7 +1440,7 @@ Overfull \hbox (60.33325pt too wide) in paragraph at lines 47--60
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [39]) (./Demostracion/experimento1.tex
-<Demostracion/algoritmoExp2.png, id=903, 424.7067pt x 566.5968pt>
+<Demostracion/algoritmoExp2.png, id=906, 424.7067pt x 566.5968pt>
 File: Demostracion/algoritmoExp2.png Graphic file (type png)
 <use Demostracion/algoritmoExp2.png>
 Package pdftex.def Info: Demostracion/algoritmoExp2.png  used on input line 8.
@@ -1433,7 +1449,7 @@ Package pdftex.def Info: Demostracion/algoritmoExp2.png  used on input line 8.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Demostracion/trianguloRobotsInicio.png, id=904, 474.27188pt x 360.59718pt>
+<Demostracion/trianguloRobotsInicio.png, id=907, 474.27188pt x 360.59718pt>
 File: Demostracion/trianguloRobotsInicio.png Graphic file (type png)
 <use Demostracion/trianguloRobotsInicio.png>
 Package pdftex.def Info: Demostracion/trianguloRobotsInicio.png  used on input 
@@ -1442,13 +1458,13 @@ line 14.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Demostracion/trayectoriaExp2.jpg, id=909, 567.11874pt x 425.59pt>
+<Demostracion/trayectoriaExp2.jpg, id=912, 567.11874pt x 425.59pt>
 File: Demostracion/trayectoriaExp2.jpg Graphic file (type jpg)
 <use Demostracion/trayectoriaExp2.jpg>
 Package pdftex.def Info: Demostracion/trayectoriaExp2.jpg  used on input line 2
 5.
 (pdftex.def)             Requested size: 305.15292pt x 229.00342pt.
-<Demostracion/velAutomatico.jpg, id=912, 567.11874pt x 425.59pt>
+<Demostracion/velAutomatico.jpg, id=915, 567.11874pt x 425.59pt>
 File: Demostracion/velAutomatico.jpg Graphic file (type jpg)
 <use Demostracion/velAutomatico.jpg>
 Package pdftex.def Info: Demostracion/velAutomatico.jpg  used on input line 32.
@@ -1458,7 +1474,7 @@ Package pdftex.def Info: Demostracion/velAutomatico.jpg  used on input line 32.
 ostracion/posicionFinal.png>] [41 <./Demostracion/algoritmoExp2.png>] [42 <./De
 mostracion/trianguloRobotsInicio.png (PNG copy)> <./Demostracion/trayectoriaExp
 2.jpg>]
-<Demostracion/LocalizacionRobots.png, id=930, 944.02687pt x 345.54094pt>
+<Demostracion/LocalizacionRobots.png, id=933, 944.02687pt x 345.54094pt>
 File: Demostracion/LocalizacionRobots.png Graphic file (type png)
 <use Demostracion/LocalizacionRobots.png>
 Package pdftex.def Info: Demostracion/LocalizacionRobots.png  used on input lin
@@ -1477,7 +1493,7 @@ Package epstopdf Info: Source file: <Demostracion/p21_thm1.eps>
 converted-to.pdf Demostracion/p21_thm1.eps>
 (epstopdf)             \includegraphics on input line 51.
 Package epstopdf Info: Output file is already uptodate.
-<Demostracion/p21_thm1-eps-converted-to.pdf, id=940, 1388.18625pt x 697.60625pt
+<Demostracion/p21_thm1-eps-converted-to.pdf, id=943, 1388.18625pt x 697.60625pt
 >
 File: Demostracion/p21_thm1-eps-converted-to.pdf Graphic file (type pdf)
 <use Demostracion/p21_thm1-eps-converted-to.pdf>
@@ -1495,7 +1511,7 @@ Package epstopdf Info: Source file: <Demostracion/p23_thm1.eps>
 converted-to.pdf Demostracion/p23_thm1.eps>
 (epstopdf)             \includegraphics on input line 58.
 Package epstopdf Info: Output file is already uptodate.
-<Demostracion/p23_thm1-eps-converted-to.pdf, id=941, 1388.18625pt x 697.60625pt
+<Demostracion/p23_thm1-eps-converted-to.pdf, id=944, 1388.18625pt x 697.60625pt
 >
 File: Demostracion/p23_thm1-eps-converted-to.pdf Graphic file (type pdf)
 <use Demostracion/p23_thm1-eps-converted-to.pdf>
@@ -1503,7 +1519,7 @@ Package pdftex.def Info: Demostracion/p23_thm1-eps-converted-to.pdf  used on in
 put line 58.
 (pdftex.def)             Requested size: 180.74632pt x 90.83037pt.
 
-Overfull \hbox (60.33325pt too wide) in paragraph at lines 49--62
+Overfull \hbox (60.25938pt too wide) in paragraph at lines 49--62
 [][]  [] 
  []
 
@@ -1518,7 +1534,7 @@ Package epstopdf Info: Source file: <Demostracion/p21_thm2.eps>
 converted-to.pdf Demostracion/p21_thm2.eps>
 (epstopdf)             \includegraphics on input line 68.
 Package epstopdf Info: Output file is already uptodate.
-<Demostracion/p21_thm2-eps-converted-to.pdf, id=942, 1388.18625pt x 697.60625pt
+<Demostracion/p21_thm2-eps-converted-to.pdf, id=945, 1388.18625pt x 697.60625pt
 >
 File: Demostracion/p21_thm2-eps-converted-to.pdf Graphic file (type pdf)
 <use Demostracion/p21_thm2-eps-converted-to.pdf>
@@ -1536,7 +1552,7 @@ Package epstopdf Info: Source file: <Demostracion/p23_thm2.eps>
 converted-to.pdf Demostracion/p23_thm2.eps>
 (epstopdf)             \includegraphics on input line 75.
 Package epstopdf Info: Output file is already uptodate.
-<Demostracion/p23_thm2-eps-converted-to.pdf, id=943, 1388.18625pt x 697.60625pt
+<Demostracion/p23_thm2-eps-converted-to.pdf, id=946, 1388.18625pt x 697.60625pt
 >
 File: Demostracion/p23_thm2-eps-converted-to.pdf Graphic file (type pdf)
 <use Demostracion/p23_thm2-eps-converted-to.pdf>
@@ -1544,7 +1560,7 @@ Package pdftex.def Info: Demostracion/p23_thm2-eps-converted-to.pdf  used on in
 put line 75.
 (pdftex.def)             Requested size: 180.74632pt x 90.83037pt.
 
-Overfull \hbox (60.33325pt too wide) in paragraph at lines 66--79
+Overfull \hbox (60.25938pt too wide) in paragraph at lines 66--79
 [][]  [] 
  []
 
@@ -1571,70 +1587,77 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
  []
 
 ) [45] (./bibliografia/Bibliografia.tex (./document.bbl
-Underfull \hbox (badness 1038) in paragraph at lines 4--7
-[]\OT1/cmr/m/n/10.95 Arduino.  Ar-duino nano 33 iot.  Avai-la-ble at []$\OT1/cm
-tt/m/n/10.95 https : / / docs . arduino . cc / hardware /
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 6
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+Underfull \hbox (badness 1515) in paragraph at lines 4--7
+[]\T1/cmr/m/n/10.95 Arduino.  Ar-duino nano 33 iot.  Avai-la-ble at []$\T1/cmtt
+/m/n/10.95 https : / / docs . arduino . cc / hardware /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 31--35
-\OT1/cmtt/m/n/10.95 camaras-[]sensores / 2667-[]camara-[]de-[]5mp-[]para-[]rasp
-berry-[]pi-[]3-[]160-[]-[]3272496298354 .
+\T1/cmtt/m/n/10.95 camaras-[]sensores / 2667-[]camara-[]de-[]5mp-[]para-[]raspb
+erry-[]pi-[]3-[]160-[]-[]3272496298354 .
  []
 
 [46])) 
 AED: lastpage setting LastPage
 [47]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 187.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 187.
  (./document.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 180.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 187.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 187.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: BC18202A3B43426E383DF5D32E51CE20;4976.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
+(rerunfilecheck)             Checksum: A17C9237347E809B86A6AA56C0EAD965;4976.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 187.
  ) 
 Here is how much of TeX's memory you used:
- 33468 strings out of 481239
- 745691 string characters out of 5920376
- 1221974 words of memory out of 5000000
- 47881 multiletter control sequences out of 15000+600000
- 541806 words of font info for 57 fonts, out of 8000000 for 9000
+ 34010 strings out of 481239
+ 751618 string characters out of 5920376
+ 1228522 words of memory out of 5000000
+ 48408 multiletter control sequences out of 15000+600000
+ 549360 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,11n,71p,1909b,1443s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-frm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb>
-Output written on document.pdf (53 pages, 33880945 bytes).
+ 60i,11n,70p,1909b,1317s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
+fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/eurosym/f
+eymr10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/sha
+re/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1
+/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfb
+x1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/shar
+e/texmf/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texmf/fonts/type1/
+public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
+1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share
+/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/p
+ublic/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0
+900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/
+texmf/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on document.pdf (53 pages, 34015129 bytes).
 PDF statistics:
- 1172 PDF objects out of 1200 (max. 8388607)
- 990 compressed objects within 10 object streams
- 244 named destinations out of 1000 (max. 500000)
+ 1183 PDF objects out of 1200 (max. 8388607)
+ 999 compressed objects within 10 object streams
+ 240 named destinations out of 1000 (max. 500000)
  849 words of extra memory for PDF output out of 10000 (max. 10000000)
 

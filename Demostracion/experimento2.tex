@@ -27,7 +27,7 @@ Se calcula el ángulo respecto al eje $X$ mediante el arcotangente de las compon
 \theta_{e}=\theta_{2} - \theta_{1}
 \end{equation}
 
-Para orientar al robot, se debe dar la instrucción de cuanto debe girar. Para ello se recurre a las ecuaciones de navegación desarrolladas en el capítulo~\ref{ch:navegacion} en particular a la ecuación (~\ref{eqn:navegacion}) y se hace girar al robot una cantidad W hasta que el error este en un umbral aceptable. Para corregir el error se recurre a un control PI, proporcional e integral. Se multiplica el error por una constante de proporcionalidad y se integra el error para suavizar el giro que se realiza para orientarse.
+Para orientar al robot, se debe dar la instrucción de cuanto debe girar. Para ello se recurre a las ecuaciones de navegación desarrolladas en el capítulo~\ref{ch:navegacion} en particular a la ecuación (~\ref{eqn:navegacion}) y se hace girar al robot una cantidad W hasta que el error esté en un umbral aceptable. Para corregir el error se recurre a un control PI, proporcional e integral. Se multiplica el error por una constante de proporcionalidad y se integra para suavizar el giro que realiza para orientarse.
 \subsubsection{Guiado}
  Una vez que el robot esté orientado se debe iniciar el rumbo al punto deseado y corregir las posibles desviaciones de orientación. Se recurre al mismo cálculo explicado para corregir la orientación. Se fija una velocidad de rumbo fija $V=27.47 cm/s$ y se guía al robot hasta $25 cm$ una distancia de del punto destino, de esta manera se evita que choquen los robots en el punto destino.
 

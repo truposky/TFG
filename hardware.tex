@@ -34,13 +34,22 @@ Se ha elegido un chasis de bajo presupuesto\cite{chasis} como el mostrado en la 
 
 \subsubsection{Arduino nano 33 IoT}
 
-Para tener un control sobre el robot, obtener datos de los sensores y poder establecer la comunicación del robot con el servidor y los demás robots se usa una placa Arduino\cite{arduino} nano 33 IoT como la mostrada en la figura~\ref{fig:arduinonano33}. Arduino es una compañía de software y hardware libre que desarrolla y diseña placas con microcontroladores. La placa Arduino adquirida cuenta con un microprocesador Arm Cortex-M0 32-bit SAMD2. Además, tiene incorporado una antena, que permite la comunicación WiFi y Bluetooth. La placa cuenta con una IMU que incorpora acelerómetro y giróscopo, en este proyecto no se va a usar este módulo, pero es de utilidad para futuras ampliaciones.
+Para tener un control sobre el robot, obtener datos de los sensores y poder establecer la comunicación del robot con el servidor y los demás robots se usa una placa Arduino\cite{arduino} nano 33 IoT como la que se observa en la figura~\ref{fig:arduinonano33}. Arduino es una compañía de software y hardware libre que desarrolla y diseña placas con microcontroladores. La placa Arduino adquirida cuenta con un microprocesador Arm Cortex-M0 32-bit SAMD2. La placa también tiene incorporada una antena, que permite la comunicación WiFi y Bluetooth. La placa cuenta con una IMU que incorpora acelerómetro y giróscopo, en este proyecto no se va a usar este módulo, pero es de utilidad para futuras ampliaciones.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.3\linewidth]{Arduinonano33}
 	\caption{Placa de Arduino nano 33 IoT}
 	\label{fig:arduinonano33}
 \end{figure}
+
+\subsubsection{RaspberryPi y Picam}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.25\linewidth]{raspberry_cam}
+	\caption{RaspberryPi conectada con la cámara}
+	\label{fig:raspyYcam}
+\end{figure}
+Se tiene una placa RaspberryPi4 montada en el robot para poder procesar imágenes adquiridas por una cámara Picam que va conectada a la RaspberryPi tal y como se muestra en la figura~\ref{fig:raspyYcam}. Permite obtener imágenes con un angular de 160º según especificaciones del fabricante \cite{picam}. Este módulo no es esencial para el Robotario pero lo hace más versátil pudiendo experimentar con algoritmos de localización a bordo, visión artificial,etc.
 \subsubsection{Integrado L298n, puente H}
 \begin{figure}[!h]
 	\centering
@@ -48,8 +57,7 @@ Para tener un control sobre el robot, obtener datos de los sensores y poder esta
 	\caption{L298n}
 	\label{fig:puenteH}
 \end{figure}
-Para poder gobernar los motores correctamente se usa un puente H\cite{Hhbridge} para cada motor. En este caso se usa un integrado como el de la figura~\ref{fig:puenteH} que incorpora 2 puentes H y un regulador de tensión que proporciona 5 voltios a la salida y se usa para alimentar la placa de Arduino. El puente H es un circuito formado por transistores y diodos que es de uso común en el gobierno de motores. El integrado Ln298n cuenta con un rango de voltaje de entrada de 2.5V-46V y soporta una corriente DC de hasta 4 amperios. En el robot se alimenta con una batería de 9.9 voltios para ajustarse a al rango de operación de los motores. El puente H se alimenta con la tensión de entrada y se regula la alimentación que le llega al motor mediante una señal PWM procedente de la placa Arduino. Se detalla el funcionamiento de la señal PWM en conjunto con el puente H en el capítulo ~\ref{ch:ControlMotor}.
-\newpage
+Para poder gobernar los motores correctamente se usa un puente H\cite{Hhbridge} para cada motor. En este caso se usa un integrado como el de la figura~\ref{fig:puenteH} que incorpora 2 puentes H y un regulador de tensión que proporciona 5 voltios a la salida y se usa para alimentar la placa de Arduino. El puente H es un circuito formado por transistores y diodos que es de uso común en el gobierno de motores. El integrado L298n cuenta con un rango de voltaje de entrada de 2.5V-46V y soporta una corriente DC de hasta 4 amperios. En el robot se alimenta con una batería de 9.9 voltios para ajustarse a al rango de operación de los motores. El puente H se alimenta con la tensión de entrada y se regula la alimentación que le llega al motor mediante una señal PWM procedente de la placa Arduino. Se detalla el funcionamiento de la señal PWM en conjunto con el puente H en el capítulo~\ref{ch:ControlMotor}.
 \subsubsection{Encoder óptico}	%REVISAR LO DEL FILTRO%
 \begin{figure}[h]
 	\centering
@@ -68,18 +76,10 @@ El encoder además tiene dos salidas, una analógica y otra digital. Esta últim
 	\caption{Step-Down}
 	\label{fig:StepDown}
 	\end{figure}
-Se emplean dos conversores DC-DC como el de la figura~\ref{fig:StepDown} para bajar el voltaje de salida de la batería, uno es para alimentar el módulo Ln298 y otro es para alimentar la raspberryPi a bordo que requiere como máximo 5V. De esta manera se evita el uso de otra batería y se separa la alimentación de la placa de Arduino y de la raspberryPi que se detalla a continuación.
+Se emplean dos conversores DC-DC como el de la figura~\ref{fig:StepDown} para bajar el voltaje de salida de la batería, uno es para alimentar el módulo Ln298 y otro es para alimentar la raspberryPi a bordo que requiere como máximo 5V. De esta manera se evita el uso de otra batería y se separa la alimentación de la placa de Arduino y de la raspberryPi.
 
 
 
-\subsubsection{RaspberryPi y Picam}
-	\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.25\linewidth]{raspberry_cam}
-	\caption{RaspberryPi conectada con la cámara}
-	\label{fig:raspyYcam}
-\end{figure}
-	Se tiene una placa RaspberryPi4 montada en el robot para poder procesar imágenes adquiridas por una cámara Picam que va conectada a la RaspberryPi tal y como se muestra en la figura~\ref{fig:raspyYcam}. Permite obtener imágenes con un angular de 160º según especificaciones del fabricante \cite{picam}. Este módulo no es esencial para el Robotario pero lo hace más versátil pudiendo experimentar con algoritmos de localización a bordo, visión artificial,etc.
 \subsubsection{Batería}
 \begin{figure}[!h]
 	\centering
@@ -107,7 +107,7 @@ Para alimentar el robot se usa una batería LiFePo de 3 celdas de 3.3 V cada una
 	\end{figure}
 En la Figura~\ref{fig:robotFinal} se tiene el robot construido, con los componentes anteriormente mencionados. Al robot se le ha añadido una tercera planta para poder incorporar la cámara y la raspberryPi. En este momento se tienen 3 robots montados.
 
-
+\newpage
 	\subsection{Camara logitech C920}
 		\begin{figure}[!h]
 		\centering
@@ -130,13 +130,13 @@ El Router permite la comunicación de los distintos dispositivos de la red, es u
 	\item Potencia máxima en 2.4GHz de 20dBm.
 	\item Potencia máxima en 5 GHz de 23dBm y en la banda de 547-5725MHz la potencia máxima es de 30 dBm.
 \end{itemize}
-Según un análisis realizado por Red zone \cite{router} el router es más que suficiente para la situación actual de Robotario que cuenta con 3 robots construidos y pronto serán 5. Se entra en más profundidad en el análisis de las características de la red en el capítulo ~\ref{ch:RedLan}.
+Según un análisis realizado por Red zone \cite{router} el router es más que suficiente para la situación actual del Robotario que cuenta con 3 robots construidos y pronto serán 5. Se entra en más profundidad en el análisis de las características de la red en el capítulo~\ref{ch:RedLan}.
 \subsection{Software}
 El software a usar está relacionado con la programación de la placa de Arduino, la raspberryPi y la localización.
 
 \subsubsection{Lenguaje de programación}
 Todo el entorno de comunicación se ha desarrollado en C, con los sockets que se tienen en sistemas operativos Unix/linux y también con programación multihilo propia de sistemas Unix.\\
-La placa de Arduino se ha programado en c++ y empleando el conjunto de librerías que proporciona el entorno de Arduino.
+La placa de Arduino se ha programado en C++ y empleando el conjunto de librerías que proporciona el entorno de Arduino.
 \subsubsection{OpenCV}\label{ch:openCV}
 \begin{figure}[h]
 	\centering
@@ -145,8 +145,8 @@ La placa de Arduino se ha programado en c++ y empleando el conjunto de librería
 	\label{fig:ejemplodemarker}
 \end{figure}
 
-Para la visión por computador se usa una librería denominada OpenCV \cite{opencv_library} que está desarrollada en dos lenguajes de programación C++ y Python. Permite reconocer el entorno con una cámara y tratar las imágenes para desarrollar la aplicación que se desee. En este proyecto se usa ArUco\cite{ArUco1}\cite{ArUco2} de OpenCV, que permite el reconocimiento de un Marker de tamaño 4x4 formado por 16 bits. En la figura ~\ref{fig:ejemplodemarker} se tiene un ejemplo de como son lo identificadores de los robots. Estos van colocados uno encima de los robots y otro en la parte delantera/trasera de estos. 
-En la Figura ~\ref{fig:robotMarker} se muestra como están colocados los Markers en el robot para poder localizarlo.
+Para la visión por computador se usa una librería denominada OpenCV \cite{opencv_library} que está desarrollada en dos lenguajes de programación C++ y Python. Permite reconocer el entorno con una cámara y tratar las imágenes para desarrollar la aplicación que se desee. En este proyecto se usa ArUco\cite{ArUco1}\cite{ArUco2} de OpenCV, que permite el reconocimiento de un Marker de tamaño 4x4 formado por 16 bits. En la figura~\ref{fig:ejemplodemarker} se tiene un ejemplo de como son lo identificadores de los robots. Estos van colocados uno encima de los robots y otro en la parte delantera/trasera de estos. 
+En la figura~\ref{fig:robotMarker} se muestra como están colocados los Markers en el robot para poder localizarlo.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.3\linewidth]{RobotMarker}
@@ -195,7 +195,7 @@ El cuadro~\ref{tab:MatRobot} muestra el precio de los componentes de un robot.
 \end{center}
 \end{table}
 El componente más caro del robot es la raspberryPi. Por 134.99 \euro, se tiene un robot que permite desarrollar diversos algoritmos en el entorno de pruebas y puede comunicarse y reconocer el entorno. Además, el Robotario puede funcionar sin la raspberryPi y la cámara de Picam, pero esto limita el tipo de experimentos realizables. En total el coste de los robots del Robotario, con 5 robots adquiridos de los cuales 2 tiene RaspberryPi es de 452.83 \euro.\\
-El material restante, necesario para la comunicación y para que los robots se muevan de manera adecuada, es el mostrado en el Cuadro ~\ref{tab:MatRobotario}	
+El material restante, necesario para la comunicación y para que los robots se muevan de manera adecuada, es el mostrado en el Cuadro~\ref{tab:MatRobotario}	
 \begin{table}[h]
 	\begin{center}
 		\begin{tabular}{| c | c |}
@@ -220,10 +220,10 @@ El material restante, necesario para la comunicación y para que los robots se m
 \\En total, por 1121.83 \euro, \thinspace se tiene un Robotario funcional.
 \newpage
 \subsection{Montaje final de Robotario}
-Por último, con los componentes adquiridos se ensambla el Robotario que se muestra en la figura ~\ref{fig:montajefinal}. La cámara Logitech, se coloca como cámara cenital que sirve como sistema de localización global. Se coloca encima de los límites del Robotario y lo más centrada posible.
+Por último, con los componentes adquiridos se ensambla el Robotario que se muestra en la figura~\ref{fig:montajefinal}. La cámara Logitech, se coloca como cámara cenital que sirve como sistema de localización global. Se coloca encima de los límites del Robotario y lo más centrada posible.
 Por último, se instala un suelo de goma en la zona del Robotario que marcará sus límites. Se hacen pruebas de movimientos con los robots y se detecta que, a pesar de ser el suelo de goma, al ser de baja calidad los robots se quedan atrapados en algunas zonas, reduciendo su velocidad o en otras zonas sus ruedas motrices resbalan. La solución a futuro es adquirir un suelo de goma duro y liso, similar al que se puede encontrar en un gimnasio.
 
-En la figura ~\ref{fig:montajefinal} se puede ver cómo queda el Robotario montado, con 3 robots. En el techo se puede ver la cámara colocada. En la imagen se aprecia como el espacio es pequeño, por ello se tiene la necesidad de que los robots vayan despacio, para aprovechar de manera eficaz el espacio. Las medidas del Robotario son 180cm de largo y 132 cm de ancho. Las medidas están limitas por la disponibilidad del espacio en el lugar que se encuentra el Robotario\\ 
+En la figura~\ref{fig:montajefinal} se puede ver cómo queda el Robotario montado, con 3 robots. En el techo se puede ver la cámara colocada. En la imagen se aprecia como el espacio es pequeño, por ello se tiene la necesidad de que los robots vayan despacio, para aprovechar de manera eficaz el espacio. Las medidas del Robotario son 180 cm de largo y 132 cm de ancho. Las medidas están limitas por la disponibilidad del espacio en el lugar que se encuentra el Robotario\\ 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.6]{MontajeFinal}

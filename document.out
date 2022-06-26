@@ -15,10 +15,10 @@
 \BOOKMARK [2][-]{subsection.3.1}{Robot m\363vil}{section.3}% 15
 \BOOKMARK [3][-]{subsubsection.3.1.1}{Chasis del robot}{subsection.3.1}% 16
 \BOOKMARK [3][-]{subsubsection.3.1.2}{Arduino nano 33 IoT}{subsection.3.1}% 17
-\BOOKMARK [3][-]{subsubsection.3.1.3}{Integrado L298n, puente H}{subsection.3.1}% 18
-\BOOKMARK [3][-]{subsubsection.3.1.4}{Encoder \363ptico}{subsection.3.1}% 19
-\BOOKMARK [3][-]{subsubsection.3.1.5}{LM2596 \(conversor DC-DC\)}{subsection.3.1}% 20
-\BOOKMARK [3][-]{subsubsection.3.1.6}{RaspberryPi y Picam}{subsection.3.1}% 21
+\BOOKMARK [3][-]{subsubsection.3.1.3}{RaspberryPi y Picam}{subsection.3.1}% 18
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Integrado L298n, puente H}{subsection.3.1}% 19
+\BOOKMARK [3][-]{subsubsection.3.1.5}{Encoder \363ptico}{subsection.3.1}% 20
+\BOOKMARK [3][-]{subsubsection.3.1.6}{LM2596 \(conversor DC-DC\)}{subsection.3.1}% 21
 \BOOKMARK [3][-]{subsubsection.3.1.7}{Bater\355a}{subsection.3.1}% 22
 \BOOKMARK [3][-]{subsubsection.3.1.8}{Montaje final de robot}{subsection.3.1}% 23
 \BOOKMARK [2][-]{subsection.3.2}{Camara logitech C920}{section.3}% 24

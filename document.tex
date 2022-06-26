@@ -1,4 +1,4 @@
-\documentclass[11pt, a4paper]{article} %tamaño mínimo de letra 11pto.
+\documentclass[final, 11pt,oneside]{article} %tamaño mínimo de letra 11pto.
 
 \usepackage{url}
 
@@ -23,8 +23,13 @@
 \usepackage{import}
 \usepackage{eurosym}
 
+\usepackage[Glenn]{fncychap}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
 
 
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}[\titlerule\vspace*{4pt}]
 
 
 \lstset{ 
@@ -107,6 +112,8 @@
 
 
 \newpage
+\ChNameVar{\bfseries\Large\sf} \ChNumVar{\Huge} \ChTitleVar{\bfseries\Large\rm}
+\ChRuleWidth{1pt} \ChNameUpperCase \ChTitleUpperCase
 \pagenumbering{roman}
 \setcounter{page}{1}
 \tableofcontents
@@ -120,7 +127,7 @@
 
 {\bfseries \large Resumen:} \vspace{5mm}
 
-El presente proyecto se trata de la creación y diseño de un entorno de pruebas de robótica multi-agente con aplicaciones en investigación y docencia, que recibe el nombre de Robotario. Permite comprobar el funcionamiento de algoritmos multi-agente mas allá de simulaciones. Se ha diseñado y construido una serie de robots móviles, que incorporan un control de velocidad, un sistema de comunicación y un sistema de localización a bordo. Se ha diseñado y programado un sistema de localización global que localiza e identifica a todos los robots del Robotario. Se ha diseñado y programado un servidor que recopila información de los robots involucrados en los experimentos y además les manda instrucciones para que puedan llevar a cabo el experimento previsto. Como parte final del proyecto se realizan dos pruebas en el Robotario para comprobar el funcionamiento del mismo.
+El presente proyecto se trata de la creación y diseño de un entorno de pruebas de robótica multiagente con aplicaciones en investigación y docencia, que recibe el nombre de Robotario. Permite comprobar el funcionamiento de algoritmos multiagente mas allá de simulaciones. Se ha diseñado y construido una serie de robots móviles, que incorporan un control de velocidad, un sistema de comunicación y un sistema de localización a bordo. Se ha diseñado y programado un sistema de localización global que localiza e identifica a todos los robots del Robotario. Se ha diseñado y programado un servidor que recopila información de los robots involucrados en los experimentos y además les manda instrucciones para que puedan llevar a cabo el experimento previsto. Como parte final del proyecto se realizan dos pruebas en el Robotario para comprobar el funcionamiento del mismo.
 \vspace{1cm}
 \begin{center}
 	
@@ -130,7 +137,7 @@ El presente proyecto se trata de la creación y diseño de un entorno de pruebas
 
 \vspace{0.5cm}
 
-sistema multiagente, robots móviles, robótica cooperativa, Robotarium, sistemas multirobots.\\
+Sistema multiagente, robots móviles, robótica cooperativa, Robotarium, sistemas multirobots.\\
 
 
 {\bfseries \large Abstract: }\vspace{5mm} 
